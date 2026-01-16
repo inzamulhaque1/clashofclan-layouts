@@ -129,6 +129,9 @@ function Header() {
             <Link href="/bh" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
               Builder Hall
             </Link>
+            <Link href="/guides" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
+              Guides
+            </Link>
             <Link href="/search" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
               Search
             </Link>
@@ -201,14 +204,14 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Base Types */}
+          {/* Guides */}
           <div>
-            <h4 className="text-sm font-medium mb-4">Base Types</h4>
+            <h4 className="text-sm font-medium mb-4">Guides</h4>
             <ul className="space-y-2.5">
-              <li><Link href="/search?type=war" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>War Bases</Link></li>
-              <li><Link href="/search?type=farm" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>Farm Bases</Link></li>
-              <li><Link href="/search?type=trophy" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>Trophy Bases</Link></li>
-              <li><Link href="/search?type=hybrid" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>Hybrid Bases</Link></li>
+              <li><Link href="/guides/how-to-copy-base" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>How to Copy Bases</Link></li>
+              <li><Link href="/guides/best-th18-attack-strategies" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>TH18 Attack Strategies</Link></li>
+              <li><Link href="/guides/cwl-base-building-tips" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>CWL Base Building</Link></li>
+              <li><Link href="/guides" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>All Guides →</Link></li>
             </ul>
           </div>
         </div>

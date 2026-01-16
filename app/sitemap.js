@@ -1,4 +1,5 @@
 import { getAllBases } from '@/lib/bases';
+import { getAllGuideSlugs } from '@/lib/guides';
 import { SITE_CONFIG } from '@/lib/seo';
 
 export default function sitemap() {
@@ -9,6 +10,7 @@ export default function sitemap() {
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'daily', priority: 1.0 },
     { url: `${baseUrl}/th`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/bh`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/guides`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/search`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
     { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
@@ -42,5 +44,14 @@ export default function sitemap() {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...thPages, ...bhPages, ...basePages];
+  // Guide pages
+  const guideSlugs = getAllGuideSlugs();
+  const guidePages = guideSlugs.map(slug => ({
+    url: `${baseUrl}/guides/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...thPages, ...bhPages, ...guidePages, ...basePages];
 }

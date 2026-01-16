@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import VoteButtons from './VoteButtons';
+import CopyStats from './CopyStats';
+import { getBaseId, incrementCopyCount } from '@/lib/stats';
 
 export default function BaseCard({ base, showDetails = true }) {
   const [copied, setCopied] = useState(false);
@@ -16,6 +19,7 @@ export default function BaseCard({ base, showDetails = true }) {
     try {
       await navigator.clipboard.writeText(base.copyLink);
       setCopied(true);
+      incrementCopyCount(getBaseId(base));
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       const textArea = document.createElement('textarea');
@@ -25,6 +29,7 @@ export default function BaseCard({ base, showDetails = true }) {
       document.execCommand('copy');
       document.body.removeChild(textArea);
       setCopied(true);
+      incrementCopyCount(getBaseId(base));
       setTimeout(() => setCopied(false), 2000);
     }
   };
@@ -71,16 +76,27 @@ export default function BaseCard({ base, showDetails = true }) {
             {base.hallType}{base.hallLevel}
           </span>
         </div>
+
+        {/* Vote buttons on hover */}
+        <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+          <VoteButtons base={base} size="sm" showCount={false} />
+        </div>
       </Link>
 
       {/* Info */}
       {showDetails && (
         <div className="p-4">
-          <Link href={baseUrl} className="block mb-3">
+          <Link href={baseUrl} className="block mb-2">
             <h3 className="font-medium text-sm leading-tight hover:text-primary transition-colors line-clamp-2" title={base.title}>
               {base.title || `${base.hallType}${base.hallLevel} ${base.baseType?.charAt(0).toUpperCase() + base.baseType?.slice(1)} Base #${base.baseNumber}`}
             </h3>
           </Link>
+
+          {/* Stats Row */}
+          <div className="flex items-center justify-between mb-3">
+            <CopyStats base={base} size="sm" />
+            <VoteButtons base={base} size="sm" />
+          </div>
 
           {/* Copy Button */}
           {base.copyLink ? (

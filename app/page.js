@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getAllBases, getBaseStats } from '@/lib/bases';
-import BaseCard from '@/components/BaseCard';
+import WeeklyFeaturedBases from '@/components/WeeklyFeaturedBases';
+import { TotalCopyStats } from '@/components/CopyStats';
 
 const TH_LEVELS = [18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3];
 const BH_LEVELS = [10, 9, 8, 7, 6, 5, 4, 3];
@@ -40,10 +41,6 @@ const BH_IMAGES = {
 export default function HomePage() {
   const allBases = getAllBases();
   const stats = getBaseStats();
-
-  const featuredBases = allBases
-    .filter(b => b.hallType === 'TH' && b.hallLevel >= 14)
-    .slice(0, 6);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -178,19 +175,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Bases */}
-      {featuredBases.length > 0 && (
+      {/* Weekly Featured Bases */}
+      {allBases.length > 0 && (
         <section className="py-16">
           <SectionHeader
-            title="Featured Bases"
-            subtitle="Popular layouts this week"
+            title="Weekly Featured"
+            subtitle="This week's top picks - refreshed every Monday"
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {featuredBases.map((base, index) => (
-              <BaseCard key={index} base={base} />
-            ))}
-          </div>
+          <WeeklyFeaturedBases bases={allBases} />
         </section>
       )}
 
@@ -226,6 +219,57 @@ export default function HomePage() {
           <TypeCard type="farm" label="Farming" description="Protect resources" icon={<FarmIcon />} />
           <TypeCard type="trophy" label="Trophy" description="Push trophies" icon={<TrophyIcon />} />
           <TypeCard type="hybrid" label="Hybrid" description="Balanced defense" icon={<HybridIcon />} />
+        </div>
+      </section>
+
+      {/* Guides Section */}
+      <section className="py-16">
+        <SectionHeader
+          title="CoC Guides"
+          subtitle="Learn strategies and tips"
+          href="/guides"
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Link href="/guides/how-to-copy-base" className="card p-6 hover:border-primary/50 transition-all group">
+            <span className="text-2xl mb-2 block">📋</span>
+            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">How to Copy Bases</h3>
+            <p className="text-sm text-muted">Step-by-step guide to import layouts</p>
+          </Link>
+          <Link href="/guides/best-th18-attack-strategies" className="card p-6 hover:border-primary/50 transition-all group">
+            <span className="text-2xl mb-2 block">⚔️</span>
+            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">TH18 Attack Strategies</h3>
+            <p className="text-sm text-muted">Master the best attacks for TH18</p>
+          </Link>
+          <Link href="/guides/cwl-base-building-tips" className="card p-6 hover:border-primary/50 transition-all group">
+            <span className="text-2xl mb-2 block">🏰</span>
+            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">CWL Base Building</h3>
+            <p className="text-sm text-muted">Build anti-3 star war bases</p>
+          </Link>
+        </div>
+      </section>
+
+      {/* Stats Banner */}
+      <section className="py-8">
+        <div className="rounded-2xl p-8 text-center" style={{ background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%)', border: '1px solid rgba(245, 158, 11, 0.2)' }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div>
+              <div className="text-3xl font-bold text-primary">{stats.total?.toLocaleString() || '4,500'}+</div>
+              <div className="text-sm text-muted">Base Layouts</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-primary"><TotalCopyStats /></div>
+              <div className="text-sm text-muted">Bases Copied</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-primary">TH3-18</div>
+              <div className="text-sm text-muted">All TH Levels</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-primary">BH3-10</div>
+              <div className="text-sm text-muted">Builder Base</div>
+            </div>
+          </div>
         </div>
       </section>
 

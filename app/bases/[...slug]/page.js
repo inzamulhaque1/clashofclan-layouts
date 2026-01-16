@@ -2,8 +2,8 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getBaseById, getBasesByLevel } from '@/lib/bases';
 import { generatePageMeta, generateBaseStructuredData, generateBreadcrumbStructuredData } from '@/lib/seo';
-import CopyButton from '@/components/CopyButton';
 import BaseCard from '@/components/BaseCard';
+import BaseDetailClient from '@/components/BaseDetailClient';
 
 export async function generateMetadata({ params }) {
   const [hallKey, baseType, baseNumber] = params.slug || [];
@@ -150,21 +150,11 @@ export default function BaseDetailPage({ params }) {
               </span>
             </div>
 
-            {/* Copy Section */}
-            <div className="space-y-4">
-              <h2 className="font-semibold">Copy This Base</h2>
-
-              {base.copyLink ? (
-                <>
-                  <CopyButton link={base.copyLink} />
-                  <p className="text-sm text-muted">
-                    Click to copy the link, then open Clash of Clans and paste in the base editor.
-                  </p>
-                </>
-              ) : (
-                <p className="text-muted">Copy link not available for this base.</p>
-              )}
-            </div>
+            {/* Interactive Elements (Vote, Copy, Share) */}
+            <BaseDetailClient
+              base={base}
+              baseUrl={`/bases/${hallKey}/${baseType}/${baseNumber}`}
+            />
 
             {/* How to Use */}
             <div className="mt-8 pt-6 border-t border-white/5">
