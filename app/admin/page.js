@@ -1,9 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function AdminPage() {
   const [activeTab, setActiveTab] = useState('scrape');
+  const router = useRouter();
   const [levels, setLevels] = useState({ th: [], bh: [] });
   const [selectedType, setSelectedType] = useState('TH');
   const [selectedLevel, setSelectedLevel] = useState('');
@@ -147,13 +149,34 @@ export default function AdminPage() {
 
   const runningJobsCount = jobs.filter(j => j.status === 'running' || j.status === 'scraping').length;
 
+  const handleLogout = async () => {
+    try {
+      await fetch('/api/admin/auth', { method: 'DELETE' });
+      router.push('/admin/login');
+      router.refresh();
+    } catch (err) {
+      console.error('Logout failed:', err);
+    }
+  };
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-      <div className="mb-8">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-3">
-          Admin <span className="text-primary">Dashboard</span>
-        </h1>
-        <p className="text-muted">Manage scrapers, jobs, and base data</p>
+      <div className="flex justify-between items-start mb-8">
+        <div>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-3">
+            Admin <span className="text-primary">Dashboard</span>
+          </h1>
+          <p className="text-muted">Manage scrapers, jobs, and base data</p>
+        </div>
+        <button
+          onClick={handleLogout}
+          className="flex items-center gap-2 px-4 py-2 text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-xl transition-colors"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Logout
+        </button>
       </div>
 
       {/* Tabs */}
