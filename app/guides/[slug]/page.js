@@ -17,6 +17,7 @@ export async function generateMetadata({ params }) {
     title: guide.title,
     description: guide.description,
     path: `/guides/${params.slug}`,
+    image: guide.image,
   });
 }
 
@@ -253,9 +254,18 @@ export default function GuidePage({ params }) {
 
           {/* Title Section */}
           <div className="flex flex-col sm:flex-row sm:items-start gap-6">
-            {/* Icon */}
-            <div className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl flex-shrink-0" style={{ background: colors.bg, border: `1px solid ${colors.border}` }}>
-              {guide.icon}
+            {/* Image/Icon */}
+            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden" style={{ background: colors.bg, border: `1px solid ${colors.border}` }}>
+              {guide.image ? (
+                <img
+                  src={guide.image}
+                  alt={guide.title}
+                  className="w-20 h-20 sm:w-28 sm:h-28 object-contain"
+                  style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }}
+                />
+              ) : (
+                <span className="text-5xl">{guide.icon}</span>
+              )}
             </div>
 
             <div className="flex-1">
@@ -291,6 +301,23 @@ export default function GuidePage({ params }) {
           </div>
         </div>
       </div>
+
+      {/* Hero Image Banner */}
+      {guide.image && (
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 -mt-4 mb-8">
+          <div className="relative rounded-2xl overflow-hidden" style={{ background: colors.bg, border: `1px solid ${colors.border}` }}>
+            <div className="flex items-center justify-center py-8 px-4">
+              <img
+                src={guide.image}
+                alt={guide.title}
+                className="w-40 h-40 sm:w-52 sm:h-52 object-contain"
+                style={{ filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.3))' }}
+              />
+            </div>
+            <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at center, transparent 30%, var(--bg-primary) 100%)' }}></div>
+          </div>
+        </div>
+      )}
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">

@@ -410,3 +410,112 @@ body {
 [data-theme="light"] .text-muted {
   color: #475569;
 }
+
+/* Light theme - surface backgrounds */
+[data-theme="light"] .bg-surface-100 {
+  background-color: #f1f5f9;
+}
+
+[data-theme="light"] .bg-surface-200 {
+  background-color: #e2e8f0;
+}
+
+[data-theme="light"] .bg-surface-300 {
+  background-color: #cbd5e1;
+}
+
+/* Light theme - vote/action colors */
+[data-theme="light"] .text-emerald-400 {
+  color: #059669;
+}
+
+[data-theme="light"] .text-red-400 {
+  color: #dc2626;
+}
+
+[data-theme="light"] .bg-emerald-500\/10,
+[data-theme="light"] .bg-emerald-500\/20 {
+  background-color: rgba(16, 185, 129, 0.15);
+}
+
+[data-theme="light"] .bg-red-500\/10,
+[data-theme="light"] .bg-red-500\/20 {
+  background-color: rgba(239, 68, 68, 0.15);
+}
+
+/* Light theme - badge colors */
+[data-theme="light"] .text-purple-400 {
+  color: #7c3aed;
+}
+
+[data-theme="light"] .text-blue-400 {
+  color: #2563eb;
+}
+
+[data-theme="light"] .text-zinc-400 {
+  color: #52525b;
+}
+
+[data-theme="light"] .bg-purple-500\/10 {
+  background-color: rgba(139, 92, 246, 0.15);
+}
+
+[data-theme="light"] .bg-blue-500\/10 {
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+[data-theme="light"] .bg-zinc-500\/10 {
+  background-color: rgba(113, 113, 122, 0.15);
+}
+
+/* Light theme - black backgrounds to softer versions */
+[data-theme="light"] .bg-black\/60 {
+  background-color: rgba(15, 23, 42, 0.75);
+}
+
+/* Light theme - card interactive */
+[data-theme="light"] .card-interactive {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .card-interactive:hover {
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2);
+}
+
+/* Light theme - announcement bar text */
+[data-theme="light"] .announcement-bar .announcement-content {
+  color: #000;
+}
+
+/* Light theme - footer */
+[data-theme="light"] footer {
+  background: #f8fafc;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Light theme - header */
+[data-theme="light"] header {
+  background: rgba(248, 250, 252, 0.9);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Light theme - link hovers */
+[data-theme="light"] a:hover {
+  color: var(--primary);
+}
+
+/* Light theme - border colors */
+[data-theme="light"] .border-white\/10,
+[data-theme="light"] .border-white\/5 {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Light theme - scrollbar */
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
