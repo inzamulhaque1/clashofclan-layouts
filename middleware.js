@@ -3,15 +3,23 @@ import { NextResponse } from 'next/server';
 export function middleware(request) {
   const pathname = request.nextUrl.pathname;
 
-  // Skip login page and API routes
-  if (pathname === '/admin/login' || pathname.startsWith('/api/')) {
+  // Skip login page
+  if (pathname === '/admin/login') {
     return NextResponse.next();
   }
 
-  // Protect /admin routes
-  if (pathname.startsWith('/admin')) {
+  // Protect /admin routes (including /admin itself)
+  if (pathname === '/admin' || pathname.startsWith('/admin/')) {
     const authCookie = request.cookies.get('admin_auth');
-    const isAuthenticated = authCookie?.value === process.env.ADMIN_SECRET;
+    const adminSecret = process.env.ADMIN_SECRET;
+
+    // Check if admin secret is configured
+    if (!adminSecret) {
+      console.error('ADMIN_SECRET not configured');
+      return NextResponse.redirect(new URL('/admin/login', request.url));
+    }
+
+    const isAuthenticated = authCookie?.value === adminSecret;
 
     // If not authenticated, redirect to login
     if (!isAuthenticated) {
@@ -25,5 +33,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*'],
+  matcher: ['/admin', '/admin/:path*'],
 };
