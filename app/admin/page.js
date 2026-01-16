@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useSession, signOut } from 'next-auth/react';
 
 export default function AdminPage() {
+  const { data: session } = useSession();
   const [activeTab, setActiveTab] = useState('scrape');
   const router = useRouter();
   const [levels, setLevels] = useState({ th: [], bh: [] });
@@ -149,14 +151,8 @@ export default function AdminPage() {
 
   const runningJobsCount = jobs.filter(j => j.status === 'running' || j.status === 'scraping').length;
 
-  const handleLogout = async () => {
-    try {
-      await fetch('/api/admin/auth', { method: 'DELETE' });
-      router.push('/admin/login');
-      router.refresh();
-    } catch (err) {
-      console.error('Logout failed:', err);
-    }
+  const handleLogout = () => {
+    signOut({ callbackUrl: '/admin/login' });
   };
 
   return (
@@ -168,15 +164,32 @@ export default function AdminPage() {
           </h1>
           <p className="text-muted">Manage scrapers, jobs, and base data</p>
         </div>
-        <button
-          onClick={handleLogout}
-          className="flex items-center gap-2 px-4 py-2 text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-xl transition-colors"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-          </svg>
-          Logout
-        </button>
+        <div className="flex items-center gap-4">
+          {session?.user && (
+            <div className="flex items-center gap-3 px-4 py-2 rounded-xl bg-surface-100">
+              {session.user.image && (
+                <img
+                  src={session.user.image}
+                  alt={session.user.name}
+                  className="w-8 h-8 rounded-full"
+                />
+              )}
+              <div className="hidden sm:block">
+                <div className="text-sm font-medium">{session.user.name}</div>
+                <div className="text-xs text-muted">{session.user.email}</div>
+              </div>
+            </div>
+          )}
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 px-4 py-2 text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-xl transition-colors"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
+            <span className="hidden sm:inline">Logout</span>
+          </button>
+        </div>
       </div>
 
       {/* Tabs */}

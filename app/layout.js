@@ -5,6 +5,7 @@ import ThemeProvider from '@/components/ThemeProvider';
 import ThemeToggle from '@/components/ThemeToggle';
 import GoogleAnalytics from '@/components/Analytics';
 import { AdSenseScript } from '@/components/AdSense';
+import AuthProvider from '@/components/AuthProvider';
 
 export const metadata = generatePageMeta({});
 
@@ -47,11 +48,13 @@ export default function RootLayout({ children }) {
       <body>
         <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />
         <AdSenseScript publisherId={ADSENSE_ID} />
-        <ThemeProvider>
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider>
+            <Header />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );
