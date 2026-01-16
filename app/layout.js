@@ -20,8 +20,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#0c1222" />
         <script
           dangerouslySetInnerHTML={{
@@ -66,12 +64,14 @@ function Header() {
       <nav className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-amber-600 flex items-center justify-center shadow-lg shadow-primary/20">
-              <svg className="w-5 h-5 text-black" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </div>
+          <Link href="/" className="flex items-center gap-2">
+            <img
+              src="/icon.png"
+              alt="Clash of Clans"
+              width={40}
+              height={40}
+              className="w-10 h-10"
+            />
             <span className="text-lg font-bold">CoC Bases</span>
           </Link>
 
@@ -124,12 +124,14 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-amber-600 flex items-center justify-center">
-                <svg className="w-5 h-5 text-black" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
-              </div>
+            <div className="flex items-center gap-2 mb-4">
+              <img
+                src="/icon.png"
+                alt="Clash of Clans"
+                width={36}
+                height={36}
+                className="w-9 h-9"
+              />
               <span className="font-bold">CoC Bases</span>
             </div>
             <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
