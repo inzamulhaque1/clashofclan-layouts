@@ -94,15 +94,17 @@ export default function GuidesPage() {
                   </span>
                 </div>
 
-                <div className="p-6 flex flex-col items-center text-center" style={{ background: categoryStyles[featuredGuide.category]?.bg || 'transparent' }}>
-                  {featuredGuide.image && (
+                {/* Thumbnail Image */}
+                <div className="relative h-48 overflow-hidden" style={{ background: categoryStyles[featuredGuide.category]?.bg }}>
+                  <div className="w-full h-full flex items-center justify-center p-4">
                     <img
                       src={featuredGuide.image}
                       alt={featuredGuide.title}
-                      className="w-24 h-24 object-contain mb-4"
-                      style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }}
+                      className="max-w-32 max-h-32 object-contain group-hover:scale-110 transition-transform duration-300"
+                      style={{ filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.3))' }}
                     />
-                  )}
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
 
                 <div className="p-5">
@@ -159,30 +161,32 @@ export default function GuidesPage() {
                     className="group rounded-2xl overflow-hidden transition-all duration-200 hover:-translate-y-1"
                     style={{ background: 'var(--card-bg)', border: '1px solid var(--border)' }}
                   >
-                    {/* Card Image */}
-                    <div className="relative h-32 flex items-center justify-center" style={{ background: style.bg }}>
-                      {guide.image ? (
+                    {/* Card Thumbnail */}
+                    <div className="relative h-40 overflow-hidden" style={{ background: style.bg }}>
+                      <div className="w-full h-full flex items-center justify-center p-4">
                         <img
                           src={guide.image}
                           alt={guide.title}
-                          className="w-20 h-20 object-contain"
-                          style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }}
+                          className="max-w-24 max-h-24 object-contain group-hover:scale-110 transition-transform duration-300"
+                          style={{ filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.3))' }}
                         />
-                      ) : (
-                        <span className="text-5xl">{guide.icon}</span>
-                      )}
-                      <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to top, var(--card-bg) 0%, transparent 50%)' }}></div>
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                      {/* Category badge on image */}
+                      <div className="absolute top-3 left-3">
+                        <span className="text-xs font-medium px-2 py-1 rounded-md backdrop-blur-sm" style={{ background: 'rgba(0,0,0,0.5)', color: '#fff' }}>
+                          {guide.icon} {category}
+                        </span>
+                      </div>
                     </div>
 
                     {/* Card Content */}
                     <div className="p-5">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="text-xs font-medium px-2 py-0.5 rounded-md" style={{ background: style.bg, color: style.text }}>
-                          {category}
-                        </span>
-                        <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
-                          • 3 min read
-                        </span>
+                      <div className="flex items-center gap-2 mb-2 text-xs" style={{ color: 'var(--text-muted)' }}>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        3 min read
                       </div>
 
                       <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors line-clamp-2" style={{ color: 'var(--text-primary)' }}>
@@ -194,7 +198,7 @@ export default function GuidesPage() {
                       </p>
 
                       <div className="flex items-center gap-1 text-primary text-sm font-medium">
-                        Read more
+                        Read guide
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>

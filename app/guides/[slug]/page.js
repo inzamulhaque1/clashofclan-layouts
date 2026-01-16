@@ -305,16 +305,22 @@ export default function GuidePage({ params }) {
       {/* Hero Image Banner */}
       {guide.image && (
         <div className="max-w-4xl mx-auto px-4 sm:px-6 -mt-4 mb-8">
-          <div className="relative rounded-2xl overflow-hidden" style={{ background: colors.bg, border: `1px solid ${colors.border}` }}>
-            <div className="flex items-center justify-center py-8 px-4">
+          <div className="relative rounded-2xl overflow-hidden h-48 sm:h-56" style={{ background: colors.bg, border: `1px solid ${colors.border}` }}>
+            <div className="w-full h-full flex items-center justify-center p-6">
               <img
                 src={guide.image}
                 alt={guide.title}
-                className="w-40 h-40 sm:w-52 sm:h-52 object-contain"
-                style={{ filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.3))' }}
+                className="max-w-40 max-h-40 sm:max-w-48 sm:max-h-48 object-contain"
+                style={{ filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.4))' }}
               />
             </div>
-            <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at center, transparent 30%, var(--bg-primary) 100%)' }}></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div className="absolute bottom-4 left-4 right-4">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">{guide.icon}</span>
+                <span className="text-white font-medium">{guide.category} Guide</span>
+              </div>
+            </div>
           </div>
         </div>
       )}

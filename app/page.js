@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getAllBases, getBaseStats } from '@/lib/bases';
 import WeeklyFeaturedBases from '@/components/WeeklyFeaturedBases';
 import { TotalCopyStats } from '@/components/CopyStats';
+import CoCEvents from '@/components/CoCEvents';
 
 const TH_LEVELS = [18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3];
 const BH_LEVELS = [10, 9, 8, 7, 6, 5, 4, 3];
@@ -186,6 +187,9 @@ export default function HomePage() {
           <WeeklyFeaturedBases bases={allBases} />
         </section>
       )}
+
+      {/* CoC Events Section */}
+      <CoCEvents />
 
       {/* Builder Hall Section */}
       <section className="py-16">
