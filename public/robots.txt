@@ -1,0 +1,12 @@
+# Robots.txt for CoC Base Layouts
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /search?
+
+# Sitemap
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Crawl-delay (optional, be nice to your server)
+Crawl-delay: 1
