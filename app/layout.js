@@ -69,12 +69,12 @@ function Header() {
           <Link href="/" className="flex items-center gap-2">
             <img
               src="/icon.jpg"
-              alt="Clash of Clans"
+              alt="Clashofclan Layout"
               width={40}
               height={40}
               className="w-10 h-10 rounded-lg"
             />
-            <span className="text-lg font-bold">CoC Bases</span>
+            <span className="text-lg font-bold">Clashofclan Layout</span>
           </Link>
 
           {/* Navigation */}
@@ -137,12 +137,12 @@ function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <img
                 src="/icon.jpg"
-                alt="Clash of Clans"
+                alt="Clashofclan Layout"
                 width={36}
                 height={36}
                 className="w-9 h-9 rounded-lg"
               />
-              <span className="font-bold">CoC Bases</span>
+              <span className="font-bold">Clashofclan Layout</span>
             </div>
             <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
               The best Clash of Clans base layouts. Copy with one click.
