@@ -1,0 +1,32 @@
+{
+  "name": "coc-bases",
+  "version": "1.0.0",
+  "description": "Clash of Clans Base Layouts - Website with built-in scraper",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "clash-of-clans",
+    "coc",
+    "base-layouts"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.0.0",
+    "next": "^14.0.0",
+    "next-auth": "^4.24.13",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
+  }
+}
