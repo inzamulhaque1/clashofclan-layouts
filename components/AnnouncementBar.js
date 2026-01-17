@@ -3,18 +3,16 @@
 import { useState, useEffect } from 'react';
 
 const announcements = [
-  { icon: '🏰', text: 'New TH18 War Bases Added!' },
-  { icon: '🔥', text: 'Updated Daily with Fresh Layouts' },
-  { icon: '📋', text: 'One-Click Copy Links' },
-  { icon: '⚔️', text: 'Anti 3-Star CWL Bases' },
-  { icon: '🏆', text: 'Pro Player Approved Designs' },
+  'New TH18 War Bases Added',
+  'Updated Daily with Fresh Layouts',
+  'One-Click Copy Links',
+  'Anti 3-Star CWL Bases',
+  'Pro Player Approved Designs',
 ];
 
 export default function AnnouncementBar() {
   const [isVisible, setIsVisible] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
 
-  // Check if user dismissed before
   useEffect(() => {
     const dismissed = sessionStorage.getItem('announcement-dismissed');
     if (dismissed) setIsVisible(false);
@@ -27,35 +25,28 @@ export default function AnnouncementBar() {
 
   if (!isVisible) return null;
 
-  // Duplicate for seamless loop
-  const items = [...announcements, ...announcements];
+  const items = [...announcements, ...announcements, ...announcements];
 
   return (
-    <div className="relative bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 overflow-hidden">
-      {/* Shimmer effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 animate-shimmer" />
+    <div className="relative flex items-center bg-[#1a1f2e] border-b border-[#2a3040] overflow-hidden">
+      {/* Left tag */}
+      <div className="relative z-10 flex items-center gap-2 px-4 py-2 bg-primary shrink-0">
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black/30"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-black/50"></span>
+        </span>
+        <span className="text-xs font-bold text-black uppercase tracking-wider">Latest</span>
+      </div>
 
-      {/* Content */}
-      <div
-        className="relative flex items-center"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {/* Scrolling content */}
-        <div
-          className="flex items-center py-2"
-          style={{
-            animation: `scroll 30s linear infinite`,
-            animationPlayState: isHovered ? 'paused' : 'running',
-          }}
-        >
-          {items.map((item, index) => (
-            <div key={index} className="flex items-center px-6 shrink-0">
-              <span className="text-lg mr-2">{item.icon}</span>
-              <span className="text-sm font-semibold text-black whitespace-nowrap">
-                {item.text}
+      {/* Scrolling content - right to left */}
+      <div className="flex-1 overflow-hidden">
+        <div className="flex items-center animate-marquee">
+          {items.map((text, index) => (
+            <div key={index} className="flex items-center shrink-0">
+              <span className="px-6 text-sm text-gray-300 whitespace-nowrap">
+                {text}
               </span>
-              <span className="ml-6 text-black/40">|</span>
+              <span className="text-primary">•</span>
             </div>
           ))}
         </div>
@@ -64,29 +55,25 @@ export default function AnnouncementBar() {
       {/* Dismiss button */}
       <button
         onClick={handleDismiss}
-        className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/10 hover:bg-black/20 transition-colors"
-        aria-label="Dismiss announcement"
+        className="relative z-10 p-2 text-gray-500 hover:text-gray-300 transition-colors shrink-0"
+        aria-label="Dismiss"
       >
-        <svg className="w-3.5 h-3.5 text-black/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
 
-      {/* Edge fades */}
-      <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-amber-500 to-transparent pointer-events-none" />
-      <div className="absolute right-8 top-0 bottom-0 w-8 bg-gradient-to-l from-amber-500 to-transparent pointer-events-none" />
-
       <style jsx>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+        @keyframes marquee {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-33.33%);
+          }
         }
-        @keyframes shimmer {
-          0% { transform: translateX(-100%) skewX(-12deg); }
-          100% { transform: translateX(200%) skewX(-12deg); }
-        }
-        .animate-shimmer {
-          animation: shimmer 3s ease-in-out infinite;
+        .animate-marquee {
+          animation: marquee 25s linear infinite;
         }
       `}</style>
     </div>
