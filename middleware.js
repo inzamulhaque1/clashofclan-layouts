@@ -6,8 +6,18 @@ const ADMIN_EMAILS = [
   'inzamulhaque1002@gmail.com',
 ];
 
+// Primary domain (Render)
+const PRIMARY_DOMAIN = 'clashofclan-layouts.onrender.com';
+
 export async function middleware(request) {
+  const hostname = request.headers.get('host');
   const pathname = request.nextUrl.pathname;
+
+  // Redirect Vercel to Render (301 permanent redirect for SEO)
+  if (hostname?.includes('vercel.app')) {
+    const newUrl = `https://${PRIMARY_DOMAIN}${pathname}${request.nextUrl.search}`;
+    return NextResponse.redirect(newUrl, 301);
+  }
 
   // Skip login page and auth API
   if (pathname === '/admin/login' || pathname.startsWith('/api/auth')) {
@@ -41,5 +51,14 @@ export async function middleware(request) {
 }
 
 export const config = {
-  matcher: ['/admin', '/admin/:path*'],
+  matcher: [
+    /*
+     * Match all request paths except:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     * - public files (images, etc.)
+     */
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)',
+  ],
 };
