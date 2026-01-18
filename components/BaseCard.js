@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import VoteButtons from './VoteButtons';
 import CopyStats from './CopyStats';
+import FavoriteButton from './FavoriteButton';
 import { getBaseId, incrementCopyCount } from '@/lib/stats';
 
 export default function BaseCard({ base, showDetails = true }) {
@@ -77,8 +78,9 @@ export default function BaseCard({ base, showDetails = true }) {
           </span>
         </div>
 
-        {/* Vote buttons on hover */}
-        <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+        {/* Favorite & Vote buttons on hover */}
+        <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2">
+          <FavoriteButton base={base} size="sm" />
           <VoteButtons base={base} size="sm" showCount={false} />
         </div>
       </Link>

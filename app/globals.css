@@ -209,6 +209,27 @@ body {
   color: var(--text-muted);
 }
 
+.text-foreground {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.bg-surface-100 {
+  background: var(--surface-100);
+}
+
+/* User menu item hover */
+.user-menu-item:hover {
+  background: var(--surface-100);
+}
+
+[data-theme="light"] .user-menu-item:hover {
+  background: var(--surface-200);
+}
+
 /* TH/BH level card with image */
 .level-card {
   position: relative;

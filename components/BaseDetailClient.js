@@ -4,6 +4,7 @@ import { useState } from 'react';
 import VoteButtons from './VoteButtons';
 import ShareButtons from './ShareButtons';
 import CopyStats from './CopyStats';
+import FavoriteButton from './FavoriteButton';
 import { getBaseId, incrementCopyCount } from '@/lib/stats';
 
 export default function BaseDetailClient({ base, baseUrl }) {
@@ -37,7 +38,10 @@ export default function BaseDetailClient({ base, baseUrl }) {
       {/* Stats & Vote Row */}
       <div className="flex items-center justify-between p-4 rounded-xl bg-surface-100">
         <CopyStats base={base} size="md" />
-        <VoteButtons base={base} size="md" />
+        <div className="flex items-center gap-2">
+          <FavoriteButton base={base} size="md" showLabel />
+          <VoteButtons base={base} size="md" />
+        </div>
       </div>
 
       {/* Copy Button */}

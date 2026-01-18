@@ -3,9 +3,10 @@ import { generatePageMeta, generateWebsiteStructuredData } from '@/lib/seo';
 import Link from 'next/link';
 import ThemeProvider from '@/components/ThemeProvider';
 import ThemeToggle from '@/components/ThemeToggle';
+import UserMenu from '@/components/UserMenu';
 import GoogleAnalytics from '@/components/Analytics';
 import { AdSenseScript } from '@/components/AdSense';
-import AuthProvider from '@/components/AuthProvider';
+import { AuthProvider } from '@/contexts/AuthContext';
 import AnnouncementBar from '@/components/AnnouncementBar';
 
 export const metadata = generatePageMeta({});
@@ -113,6 +114,7 @@ function Header() {
           {/* Actions */}
           <div className="flex items-center gap-3">
             <ThemeToggle />
+            <UserMenu />
 
             {/* Mobile menu button */}
             <button className="md:hidden p-2 rounded-lg" style={{ background: 'var(--surface-100)' }}>

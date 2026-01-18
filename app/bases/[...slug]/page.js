@@ -4,6 +4,7 @@ import { getBaseById, getBasesByLevel } from '@/lib/bases';
 import { generatePageMeta, generateBaseStructuredData, generateBreadcrumbStructuredData } from '@/lib/seo';
 import BaseCard from '@/components/BaseCard';
 import BaseDetailClient from '@/components/BaseDetailClient';
+import CommentsSection from '@/components/CommentsSection';
 
 export async function generateMetadata({ params }) {
   const [hallKey, baseType, baseNumber] = params.slug || [];
@@ -185,6 +186,11 @@ export default function BaseDetailPage({ params }) {
           </div>
         </div>
       </div>
+
+      {/* Comments Section */}
+      <section className="mt-12 pt-8 border-t border-white/5">
+        <CommentsSection baseId={`${base.hallType}${base.hallLevel}-${base.baseType}-${base.baseNumber}`} />
+      </section>
 
       {/* Related Bases */}
       {relatedBases.length > 0 && (
