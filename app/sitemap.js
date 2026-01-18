@@ -1,6 +1,9 @@
-import { getAllBases } from '@/lib/bases';
 import { getAllGuideSlugs } from '@/lib/guides';
 import { SITE_CONFIG } from '@/lib/seo';
+
+// Force static generation at build time
+export const dynamic = 'force-static';
+export const revalidate = 86400; // Revalidate once per day
 
 export default function sitemap() {
   const baseUrl = SITE_CONFIG.url;
@@ -39,15 +42,6 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  // Individual base pages
-  const bases = getAllBases();
-  const basePages = bases.map(base => ({
-    url: `${baseUrl}/bases/${base.hallType?.toLowerCase()}${base.hallLevel}/${base.baseType}/${base.baseNumber}`,
-    lastModified: base.scrapedAt ? new Date(base.scrapedAt) : new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.6,
-  }));
-
   // Guide pages
   const guideSlugs = getAllGuideSlugs();
   const guidePages = guideSlugs.map(slug => ({
@@ -57,5 +51,5 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...thPages, ...bhPages, ...guidePages, ...basePages];
+  return [...staticPages, ...thPages, ...bhPages, ...guidePages];
 }
