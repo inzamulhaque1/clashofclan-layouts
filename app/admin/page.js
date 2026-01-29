@@ -3,9 +3,21 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
+import Link from 'next/link';
+
+// Game configurations for admin
+const ADMIN_GAMES = [
+  { slug: 'clash-of-clans', name: 'Clash of Clans', shortName: 'CoC', color: '#F59E0B', hasContent: true },
+  { slug: 'brawl-stars', name: 'Brawl Stars', shortName: 'BS', color: '#FF6B35', hasContent: false },
+  { slug: 'clash-royale', name: 'Clash Royale', shortName: 'CR', color: '#2563EB', hasContent: false },
+  { slug: 'frozen-city', name: 'Frozen City', shortName: 'FC', color: '#06B6D4', hasContent: false },
+  { slug: 'free-fire', name: 'Free Fire', shortName: 'FF', color: '#EF4444', hasContent: false },
+  { slug: 'pubg', name: 'PUBG Mobile', shortName: 'PUBG', color: '#F59E0B', hasContent: false },
+];
 
 export default function AdminPage() {
   const { data: session } = useSession();
+  const [selectedGame, setSelectedGame] = useState('clash-of-clans');
   const [activeTab, setActiveTab] = useState('scrape');
   const router = useRouter();
   const [levels, setLevels] = useState({ th: [], bh: [] });
@@ -18,11 +30,15 @@ export default function AdminPage() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
+  const currentGame = ADMIN_GAMES.find(g => g.slug === selectedGame);
+
   useEffect(() => {
-    fetchLevels();
-    fetchJobs();
-    fetchBases();
-  }, []);
+    if (selectedGame === 'clash-of-clans') {
+      fetchLevels();
+      fetchJobs();
+      fetchBases();
+    }
+  }, [selectedGame]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -157,12 +173,13 @@ export default function AdminPage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      {/* Header */}
       <div className="flex justify-between items-start mb-8">
         <div>
           <h1 className="text-3xl sm:text-4xl font-bold mb-3">
-            Admin <span className="text-primary">Dashboard</span>
+            Admin <span style={{ color: currentGame?.color || '#8B5CF6' }}>Dashboard</span>
           </h1>
-          <p className="text-muted">Manage scrapers, jobs, and base data</p>
+          <p className="text-muted">Manage content across all games</p>
         </div>
         <div className="flex items-center gap-4">
           {session?.user && (
@@ -192,318 +209,391 @@ export default function AdminPage() {
         </div>
       </div>
 
-      {/* Tabs */}
-      <div className="flex gap-2 mb-8 border-b border-white/5 pb-4">
-        <button
-          onClick={() => setActiveTab('scrape')}
-          className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
-            activeTab === 'scrape'
-              ? 'bg-primary text-black'
-              : 'bg-surface-100 text-muted hover:text-white hover:bg-surface-200'
-          }`}
-        >
-          Scraper
-        </button>
-        <button
-          onClick={() => setActiveTab('jobs')}
-          className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
-            activeTab === 'jobs'
-              ? 'bg-primary text-black'
-              : 'bg-surface-100 text-muted hover:text-white hover:bg-surface-200'
-          }`}
-        >
-          Jobs
-          {runningJobsCount > 0 && (
-            <span className="ml-2 px-1.5 py-0.5 text-xs bg-primary/20 text-primary rounded">
-              {runningJobsCount}
-            </span>
-          )}
-        </button>
-        <button
-          onClick={() => setActiveTab('bases')}
-          className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
-            activeTab === 'bases'
-              ? 'bg-primary text-black'
-              : 'bg-surface-100 text-muted hover:text-white hover:bg-surface-200'
-          }`}
-        >
-          Bases
-          <span className="ml-2 text-muted">{bases.length}</span>
-        </button>
+      {/* Game Selector */}
+      <div className="mb-8">
+        <h2 className="text-sm font-medium text-muted mb-3">Select Game</h2>
+        <div className="flex flex-wrap gap-2">
+          {ADMIN_GAMES.map((game) => (
+            <button
+              key={game.slug}
+              onClick={() => setSelectedGame(game.slug)}
+              className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                selectedGame === game.slug
+                  ? 'text-black'
+                  : 'bg-surface-100 hover:bg-surface-200'
+              }`}
+              style={{
+                background: selectedGame === game.slug ? game.color : undefined,
+              }}
+            >
+              <span className="mr-2">{game.shortName}</span>
+              {!game.hasContent && (
+                <span className="text-xs opacity-60">(Coming Soon)</span>
+              )}
+            </button>
+          ))}
+        </div>
       </div>
 
-      {/* Message */}
-      {message && (
-        <div className={`p-4 rounded-xl mb-6 ${
-          message.includes('Error') || message.includes('Failed')
-            ? 'bg-red-500/10 border border-red-500/20 text-red-400'
-            : 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400'
-        }`}>
-          {message}
-        </div>
-      )}
-
-      {/* Scrape Tab */}
-      {activeTab === 'scrape' && (
-        <div className="space-y-6">
-          {/* Scrape by Level */}
-          <div className="card p-6">
-            <h2 className="text-lg font-semibold mb-4">Scrape by Level</h2>
-
-            <div className="flex flex-wrap gap-3 mb-4">
-              <select
-                value={selectedType}
-                onChange={(e) => {
-                  setSelectedType(e.target.value);
-                  const lvls = e.target.value === 'TH' ? levels.th : levels.bh;
-                  if (lvls.length > 0) setSelectedLevel(lvls[0]);
-                }}
-                className="px-4 py-2.5 bg-surface-100 border border-white/10 rounded-xl text-white focus:outline-none focus:border-primary"
-              >
-                <option value="TH">Town Hall</option>
-                <option value="BH">Builder Hall</option>
-              </select>
-
-              <select
-                value={selectedLevel}
-                onChange={(e) => setSelectedLevel(e.target.value)}
-                className="px-4 py-2.5 bg-surface-100 border border-white/10 rounded-xl text-white focus:outline-none focus:border-primary"
-              >
-                {(selectedType === 'TH' ? levels.th : levels.bh).map(level => (
-                  <option key={level} value={level}>{selectedType}{level}</option>
-                ))}
-              </select>
-
-              <button
-                onClick={startScrape}
-                disabled={loading || !selectedLevel}
-                className="btn-primary px-6 py-2.5 disabled:opacity-50"
-              >
-                {loading ? 'Starting...' : `Scrape ${selectedType}${selectedLevel}`}
-              </button>
-            </div>
-
-            <p className="text-sm text-muted">
-              This will scrape all bases from the selected level.
-            </p>
+      {/* Content Area */}
+      {selectedGame === 'clash-of-clans' ? (
+        <>
+          {/* Tabs */}
+          <div className="flex gap-2 mb-8 border-b border-white/5 pb-4">
+            <button
+              onClick={() => setActiveTab('scrape')}
+              className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
+                activeTab === 'scrape'
+                  ? 'text-black'
+                  : 'bg-surface-100 text-muted hover:text-white hover:bg-surface-200'
+              }`}
+              style={{ background: activeTab === 'scrape' ? currentGame?.color : undefined }}
+            >
+              Scraper
+            </button>
+            <button
+              onClick={() => setActiveTab('jobs')}
+              className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
+                activeTab === 'jobs'
+                  ? 'text-black'
+                  : 'bg-surface-100 text-muted hover:text-white hover:bg-surface-200'
+              }`}
+              style={{ background: activeTab === 'jobs' ? currentGame?.color : undefined }}
+            >
+              Jobs
+              {runningJobsCount > 0 && (
+                <span className="ml-2 px-1.5 py-0.5 text-xs rounded" style={{ background: `${currentGame?.color}30`, color: currentGame?.color }}>
+                  {runningJobsCount}
+                </span>
+              )}
+            </button>
+            <button
+              onClick={() => setActiveTab('bases')}
+              className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
+                activeTab === 'bases'
+                  ? 'text-black'
+                  : 'bg-surface-100 text-muted hover:text-white hover:bg-surface-200'
+              }`}
+              style={{ background: activeTab === 'bases' ? currentGame?.color : undefined }}
+            >
+              Bases
+              <span className="ml-2 text-muted">{bases.length}</span>
+            </button>
           </div>
 
-          {/* Scrape by URL */}
-          <div className="card p-6">
-            <h2 className="text-lg font-semibold mb-4">Scrape Single URL</h2>
-
-            <div className="flex gap-3 mb-4">
-              <input
-                type="text"
-                value={customUrl}
-                onChange={(e) => setCustomUrl(e.target.value)}
-                placeholder="https://clashofclans-layouts.com/plans/th_17/war_181.html"
-                className="flex-1 px-4 py-2.5 bg-surface-100 border border-white/10 rounded-xl text-white placeholder-muted focus:outline-none focus:border-primary"
-              />
-              <button
-                onClick={scrapeUrl}
-                disabled={loading || !customUrl}
-                className="btn-secondary px-6 py-2.5 disabled:opacity-50"
-              >
-                Scrape URL
-              </button>
+          {/* Message */}
+          {message && (
+            <div className={`p-4 rounded-xl mb-6 ${
+              message.includes('Error') || message.includes('Failed')
+                ? 'bg-red-500/10 border border-red-500/20 text-red-400'
+                : 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400'
+            }`}>
+              {message}
             </div>
+          )}
 
-            <p className="text-sm text-muted">
-              Paste a single base page URL to scrape just that base.
-            </p>
-          </div>
+          {/* Scrape Tab */}
+          {activeTab === 'scrape' && (
+            <div className="space-y-6">
+              {/* Scrape by Level */}
+              <div className="card p-6">
+                <h2 className="text-lg font-semibold mb-4">Scrape by Level</h2>
 
-          {/* Quick Actions */}
-          <div className="card p-6">
-            <h2 className="text-lg font-semibold mb-4">Quick Actions</h2>
-            <div className="flex flex-wrap gap-2">
-              {[18, 17, 16, 15].map(level => (
-                <button
-                  key={level}
-                  onClick={() => {
-                    setSelectedType('TH');
-                    setSelectedLevel(level);
-                    setTimeout(startScrape, 100);
-                  }}
-                  disabled={loading}
-                  className="px-4 py-2 bg-primary/10 border border-primary/20 text-primary rounded-xl text-sm font-medium hover:bg-primary/20 transition-colors disabled:opacity-50"
-                >
-                  Scrape TH{level}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+                <div className="flex flex-wrap gap-3 mb-4">
+                  <select
+                    value={selectedType}
+                    onChange={(e) => {
+                      setSelectedType(e.target.value);
+                      const lvls = e.target.value === 'TH' ? levels.th : levels.bh;
+                      if (lvls.length > 0) setSelectedLevel(lvls[0]);
+                    }}
+                    className="px-4 py-2.5 bg-surface-100 border border-white/10 rounded-xl text-white focus:outline-none focus:border-primary"
+                  >
+                    <option value="TH">Town Hall</option>
+                    <option value="BH">Builder Hall</option>
+                  </select>
 
-      {/* Jobs Tab */}
-      {activeTab === 'jobs' && (
-        <div className="space-y-4">
-          {jobs.length === 0 ? (
-            <div className="text-center py-20">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-surface-100 flex items-center justify-center">
-                <svg className="w-8 h-8 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                </svg>
-              </div>
-              <h2 className="text-xl font-semibold mb-2">No jobs yet</h2>
-              <p className="text-muted">Start one from the Scraper tab.</p>
-            </div>
-          ) : (
-            jobs.map((job) => (
-              <div
-                key={job.id}
-                className={`card p-6 border-l-4 ${
-                  job.status === 'completed' ? 'border-l-emerald-500' :
-                  job.status === 'failed' ? 'border-l-red-500' :
-                  'border-l-primary'
-                }`}
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="font-semibold">
-                      {job.hallType}{job.level} Scrape
-                    </h3>
-                    <p className="text-sm text-muted">
-                      Started: {new Date(job.startedAt).toLocaleString()}
-                    </p>
-                  </div>
-                  <span className={`badge ${
-                    job.status === 'completed' ? 'bg-emerald-500/10 text-emerald-400' :
-                    job.status === 'failed' ? 'bg-red-500/10 text-red-400' :
-                    'bg-primary/10 text-primary'
-                  }`}>
-                    {job.status}
-                  </span>
+                  <select
+                    value={selectedLevel}
+                    onChange={(e) => setSelectedLevel(e.target.value)}
+                    className="px-4 py-2.5 bg-surface-100 border border-white/10 rounded-xl text-white focus:outline-none focus:border-primary"
+                  >
+                    {(selectedType === 'TH' ? levels.th : levels.bh).map(level => (
+                      <option key={level} value={level}>{selectedType}{level}</option>
+                    ))}
+                  </select>
+
+                  <button
+                    onClick={startScrape}
+                    disabled={loading || !selectedLevel}
+                    className="px-6 py-2.5 text-black font-medium rounded-xl disabled:opacity-50"
+                    style={{ background: currentGame?.color }}
+                  >
+                    {loading ? 'Starting...' : `Scrape ${selectedType}${selectedLevel}`}
+                  </button>
                 </div>
 
-                {(job.status === 'scraping' || job.status === 'running') && (
-                  <div className="mb-4">
-                    <div className="flex justify-between text-sm mb-2">
-                      <span className="text-muted">Progress</span>
-                      <span>{job.scraped}/{job.total} ({job.progress}%)</span>
+                <p className="text-sm text-muted">
+                  This will scrape all bases from the selected level.
+                </p>
+              </div>
+
+              {/* Scrape by URL */}
+              <div className="card p-6">
+                <h2 className="text-lg font-semibold mb-4">Scrape Single URL</h2>
+
+                <div className="flex gap-3 mb-4">
+                  <input
+                    type="text"
+                    value={customUrl}
+                    onChange={(e) => setCustomUrl(e.target.value)}
+                    placeholder="https://clashofclans-layouts.com/plans/th_17/war_181.html"
+                    className="flex-1 px-4 py-2.5 bg-surface-100 border border-white/10 rounded-xl text-white placeholder-muted focus:outline-none focus:border-primary"
+                  />
+                  <button
+                    onClick={scrapeUrl}
+                    disabled={loading || !customUrl}
+                    className="btn-secondary px-6 py-2.5 disabled:opacity-50"
+                  >
+                    Scrape URL
+                  </button>
+                </div>
+
+                <p className="text-sm text-muted">
+                  Paste a single base page URL to scrape just that base.
+                </p>
+              </div>
+
+              {/* Quick Actions */}
+              <div className="card p-6">
+                <h2 className="text-lg font-semibold mb-4">Quick Actions</h2>
+                <div className="flex flex-wrap gap-2">
+                  {[18, 17, 16, 15].map(level => (
+                    <button
+                      key={level}
+                      onClick={() => {
+                        setSelectedType('TH');
+                        setSelectedLevel(level);
+                        setTimeout(startScrape, 100);
+                      }}
+                      disabled={loading}
+                      className="px-4 py-2 rounded-xl text-sm font-medium transition-colors disabled:opacity-50"
+                      style={{
+                        background: `${currentGame?.color}15`,
+                        border: `1px solid ${currentGame?.color}30`,
+                        color: currentGame?.color,
+                      }}
+                    >
+                      Scrape TH{level}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Jobs Tab */}
+          {activeTab === 'jobs' && (
+            <div className="space-y-4">
+              {jobs.length === 0 ? (
+                <div className="text-center py-20">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-surface-100 flex items-center justify-center">
+                    <svg className="w-8 h-8 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                  </div>
+                  <h2 className="text-xl font-semibold mb-2">No jobs yet</h2>
+                  <p className="text-muted">Start one from the Scraper tab.</p>
+                </div>
+              ) : (
+                jobs.map((job) => (
+                  <div
+                    key={job.id}
+                    className={`card p-6 border-l-4 ${
+                      job.status === 'completed' ? 'border-l-emerald-500' :
+                      job.status === 'failed' ? 'border-l-red-500' :
+                      ''
+                    }`}
+                    style={{ borderLeftColor: job.status !== 'completed' && job.status !== 'failed' ? currentGame?.color : undefined }}
+                  >
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="font-semibold">
+                          {job.hallType}{job.level} Scrape
+                        </h3>
+                        <p className="text-sm text-muted">
+                          Started: {new Date(job.startedAt).toLocaleString()}
+                        </p>
+                      </div>
+                      <span className={`badge ${
+                        job.status === 'completed' ? 'bg-emerald-500/10 text-emerald-400' :
+                        job.status === 'failed' ? 'bg-red-500/10 text-red-400' :
+                        ''
+                      }`}
+                      style={{
+                        background: job.status !== 'completed' && job.status !== 'failed' ? `${currentGame?.color}15` : undefined,
+                        color: job.status !== 'completed' && job.status !== 'failed' ? currentGame?.color : undefined,
+                      }}
+                      >
+                        {job.status}
+                      </span>
                     </div>
-                    <div className="h-2 bg-surface-200 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-primary transition-all duration-300"
-                        style={{ width: `${job.progress}%` }}
-                      />
-                    </div>
+
+                    {(job.status === 'scraping' || job.status === 'running') && (
+                      <div className="mb-4">
+                        <div className="flex justify-between text-sm mb-2">
+                          <span className="text-muted">Progress</span>
+                          <span>{job.scraped}/{job.total} ({job.progress}%)</span>
+                        </div>
+                        <div className="h-2 bg-surface-200 rounded-full overflow-hidden">
+                          <div
+                            className="h-full transition-all duration-300"
+                            style={{ width: `${job.progress}%`, background: currentGame?.color }}
+                          />
+                        </div>
+                      </div>
+                    )}
+
+                    {job.status === 'completed' && (
+                      <p className="text-emerald-400 text-sm">
+                        Scraped {job.results?.length || 0} bases successfully
+                      </p>
+                    )}
+
+                    {job.status === 'failed' && (
+                      <p className="text-red-400 text-sm">Error: {job.error}</p>
+                    )}
+                  </div>
+                ))
+              )}
+            </div>
+          )}
+
+          {/* Bases Tab */}
+          {activeTab === 'bases' && (
+            <div>
+              {/* Stats */}
+              {stats && (
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                  <div className="card p-4">
+                    <div className="text-2xl font-bold" style={{ color: currentGame?.color }}>{stats.total}</div>
+                    <div className="text-sm text-muted">Total Bases</div>
+                  </div>
+                  <div className="card p-4">
+                    <div className="text-2xl font-bold text-red-400">{stats.byType?.war || 0}</div>
+                    <div className="text-sm text-muted">War Bases</div>
+                  </div>
+                  <div className="card p-4">
+                    <div className="text-2xl font-bold text-emerald-400">{stats.byType?.farm || 0}</div>
+                    <div className="text-sm text-muted">Farm Bases</div>
+                  </div>
+                  <div className="card p-4">
+                    <div className="text-2xl font-bold text-amber-400">{stats.byType?.trophy || 0}</div>
+                    <div className="text-sm text-muted">Trophy Bases</div>
+                  </div>
+                </div>
+              )}
+
+              {/* Bases List */}
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-muted">Base</th>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-muted">Type</th>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-muted">Copy Link</th>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-muted">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/5">
+                      {bases.slice(0, 50).map((base, index) => (
+                        <tr key={index} className="hover:bg-surface-50 transition-colors">
+                          <td className="px-4 py-3">
+                            <div className="font-medium">{base.hallType}{base.hallLevel}</div>
+                            <div className="text-sm text-muted">#{base.baseNumber}</div>
+                          </td>
+                          <td className="px-4 py-3">
+                            <span className={`badge ${
+                              base.baseType === 'war' ? 'badge-war' :
+                              base.baseType === 'farm' ? 'badge-farm' :
+                              'badge-trophy'
+                            }`}>
+                              {base.baseType}
+                            </span>
+                          </td>
+                          <td className="px-4 py-3">
+                            {base.copyLink ? (
+                              <span className="text-emerald-400 text-sm flex items-center gap-1">
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                </svg>
+                                Yes
+                              </span>
+                            ) : (
+                              <span className="text-red-400 text-sm flex items-center gap-1">
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                                No
+                              </span>
+                            )}
+                          </td>
+                          <td className="px-4 py-3">
+                            <button
+                              onClick={() => deleteBase(base.copyLink)}
+                              className="text-red-400 hover:text-red-300 text-sm transition-colors"
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                {bases.length > 50 && (
+                  <div className="p-4 text-center text-muted text-sm border-t border-white/5">
+                    Showing 50 of {bases.length} bases
                   </div>
                 )}
 
-                {job.status === 'completed' && (
-                  <p className="text-emerald-400 text-sm">
-                    Scraped {job.results?.length || 0} bases successfully
-                  </p>
+                {bases.length === 0 && (
+                  <div className="p-12 text-center text-muted">
+                    No bases yet. Start scraping to add bases.
+                  </div>
                 )}
-
-                {job.status === 'failed' && (
-                  <p className="text-red-400 text-sm">Error: {job.error}</p>
-                )}
-              </div>
-            ))
-          )}
-        </div>
-      )}
-
-      {/* Bases Tab */}
-      {activeTab === 'bases' && (
-        <div>
-          {/* Stats */}
-          {stats && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div className="card p-4">
-                <div className="text-2xl font-bold text-primary">{stats.total}</div>
-                <div className="text-sm text-muted">Total Bases</div>
-              </div>
-              <div className="card p-4">
-                <div className="text-2xl font-bold text-red-400">{stats.byType?.war || 0}</div>
-                <div className="text-sm text-muted">War Bases</div>
-              </div>
-              <div className="card p-4">
-                <div className="text-2xl font-bold text-emerald-400">{stats.byType?.farm || 0}</div>
-                <div className="text-sm text-muted">Farm Bases</div>
-              </div>
-              <div className="card p-4">
-                <div className="text-2xl font-bold text-amber-400">{stats.byType?.trophy || 0}</div>
-                <div className="text-sm text-muted">Trophy Bases</div>
               </div>
             </div>
           )}
-
-          {/* Bases List */}
-          <div className="card overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="bg-surface-100">
-                  <tr>
-                    <th className="px-4 py-3 text-left text-sm font-medium text-muted">Base</th>
-                    <th className="px-4 py-3 text-left text-sm font-medium text-muted">Type</th>
-                    <th className="px-4 py-3 text-left text-sm font-medium text-muted">Copy Link</th>
-                    <th className="px-4 py-3 text-left text-sm font-medium text-muted">Actions</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-white/5">
-                  {bases.slice(0, 50).map((base, index) => (
-                    <tr key={index} className="hover:bg-surface-50 transition-colors">
-                      <td className="px-4 py-3">
-                        <div className="font-medium">{base.hallType}{base.hallLevel}</div>
-                        <div className="text-sm text-muted">#{base.baseNumber}</div>
-                      </td>
-                      <td className="px-4 py-3">
-                        <span className={`badge ${
-                          base.baseType === 'war' ? 'badge-war' :
-                          base.baseType === 'farm' ? 'badge-farm' :
-                          'badge-trophy'
-                        }`}>
-                          {base.baseType}
-                        </span>
-                      </td>
-                      <td className="px-4 py-3">
-                        {base.copyLink ? (
-                          <span className="text-emerald-400 text-sm flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                            Yes
-                          </span>
-                        ) : (
-                          <span className="text-red-400 text-sm flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                            No
-                          </span>
-                        )}
-                      </td>
-                      <td className="px-4 py-3">
-                        <button
-                          onClick={() => deleteBase(base.copyLink)}
-                          className="text-red-400 hover:text-red-300 text-sm transition-colors"
-                        >
-                          Delete
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {bases.length > 50 && (
-              <div className="p-4 text-center text-muted text-sm border-t border-white/5">
-                Showing 50 of {bases.length} bases
-              </div>
-            )}
-
-            {bases.length === 0 && (
-              <div className="p-12 text-center text-muted">
-                No bases yet. Start scraping to add bases.
-              </div>
-            )}
+        </>
+      ) : (
+        // Coming soon for other games
+        <div className="text-center py-20">
+          <div
+            className="w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center"
+            style={{ background: `${currentGame?.color}15` }}
+          >
+            <svg className="w-10 h-10" style={{ color: currentGame?.color }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
           </div>
+          <h2 className="text-2xl font-bold mb-3">{currentGame?.name} Admin</h2>
+          <p className="text-muted max-w-md mx-auto mb-6">
+            Admin tools for {currentGame?.name} are coming soon. We're working on adding
+            content management features for this game.
+          </p>
+          <Link
+            href={`/${currentGame?.slug}`}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-colors"
+            style={{ background: currentGame?.color, color: '#000' }}
+          >
+            View {currentGame?.shortName} Page
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </Link>
         </div>
       )}
     </div>

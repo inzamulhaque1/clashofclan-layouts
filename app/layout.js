@@ -6,9 +6,11 @@ import ThemeToggle from '@/components/ThemeToggle';
 import GoogleAnalytics from '@/components/Analytics';
 import { AdSenseScript } from '@/components/AdSense';
 import AuthProvider from '@/components/AuthProvider';
-import AnnouncementBar from '@/components/AnnouncementBar';
 
-export const metadata = generatePageMeta({});
+export const metadata = generatePageMeta({
+  title: 'Game365Hub - Multi-Game Resource Hub',
+  description: 'Your ultimate gaming resource hub. Base layouts, tier lists, guides, and strategies for Clash of Clans, Brawl Stars, Clash Royale, and more.',
+});
 
 // Get your GA4 Measurement ID from Google Analytics
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
@@ -49,7 +51,6 @@ export default function RootLayout({ children }) {
         <AdSenseScript publisherId={ADSENSE_ID} />
         <AuthProvider>
           <ThemeProvider>
-            <AnnouncementBar />
             <Header />
             <main className="min-h-screen">{children}</main>
             <Footer />
@@ -67,29 +68,22 @@ function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <img
-              src="/icon.jpg"
-              alt="Clash of Clans"
-              width={40}
-              height={40}
-              className="w-10 h-10 rounded-lg"
-            />
-            <span className="text-lg font-bold">CoC Bases</span>
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%)' }}>
+              <span className="text-xl font-bold text-white">G</span>
+            </div>
+            <span className="text-lg font-bold">Game365Hub</span>
           </Link>
 
           {/* Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            <Link href="/th" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
-              Town Hall
+            <Link href="/clash-of-clans" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
+              Clash of Clans
             </Link>
-            <Link href="/bh" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
-              Builder Hall
+            <Link href="/brawl-stars" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
+              Brawl Stars
             </Link>
-            <Link href="/guides" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
-              Guides
-            </Link>
-            <Link href="/search" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
-              Search
+            <Link href="/clash-royale" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
+              Clash Royale
             </Link>
           </div>
 
@@ -118,27 +112,23 @@ function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img
-                src="/icon.jpg"
-                alt="Clash of Clans"
-                width={36}
-                height={36}
-                className="w-9 h-9 rounded-lg"
-              />
-              <span className="font-bold">CoC Bases</span>
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%)' }}>
+                <span className="text-lg font-bold text-white">G</span>
+              </div>
+              <span className="font-bold">Game365Hub</span>
             </div>
             <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
-              The best Clash of Clans base layouts. Copy with one click.
+              Your ultimate gaming resource hub for mobile games.
             </p>
           </div>
 
-          {/* Town Hall */}
+          {/* Clash of Clans */}
           <div>
-            <h4 className="text-sm font-medium mb-4">Town Hall</h4>
+            <h4 className="text-sm font-medium mb-4">Clash of Clans</h4>
             <ul className="space-y-2.5">
               {[18, 17, 16, 15].map(level => (
                 <li key={level}>
-                  <Link href={`/th/${level}`} className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>
+                  <Link href={`/clash-of-clans/th/${level}`} className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>
                     TH{level} Bases
                   </Link>
                 </li>
@@ -146,17 +136,14 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Builder Hall */}
+          {/* More Games */}
           <div>
-            <h4 className="text-sm font-medium mb-4">Builder Hall</h4>
+            <h4 className="text-sm font-medium mb-4">More Games</h4>
             <ul className="space-y-2.5">
-              {[10, 9, 8, 7].map(level => (
-                <li key={level}>
-                  <Link href={`/bh/${level}`} className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>
-                    BH{level} Bases
-                  </Link>
-                </li>
-              ))}
+              <li><Link href="/brawl-stars" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>Brawl Stars</Link></li>
+              <li><Link href="/clash-royale" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>Clash Royale</Link></li>
+              <li><Link href="/free-fire" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>Free Fire</Link></li>
+              <li><Link href="/pubg" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>PUBG Mobile</Link></li>
             </ul>
           </div>
 
@@ -164,10 +151,10 @@ function Footer() {
           <div>
             <h4 className="text-sm font-medium mb-4">Guides</h4>
             <ul className="space-y-2.5">
-              <li><Link href="/guides/how-to-copy-base" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>How to Copy Bases</Link></li>
-              <li><Link href="/guides/best-th18-attack-strategies" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>TH18 Attack Strategies</Link></li>
-              <li><Link href="/guides/cwl-base-building-tips" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>CWL Base Building</Link></li>
-              <li><Link href="/guides" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>All Guides →</Link></li>
+              <li><Link href="/clash-of-clans/guides/how-to-copy-base" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>How to Copy Bases</Link></li>
+              <li><Link href="/clash-of-clans/guides/best-th18-attack-strategies" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>TH18 Attack Strategies</Link></li>
+              <li><Link href="/clash-of-clans/guides/cwl-base-building-tips" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>CWL Base Building</Link></li>
+              <li><Link href="/clash-of-clans/guides" className="text-sm transition-colors hover:text-primary" style={{ color: 'var(--text-muted)' }}>All Guides</Link></li>
             </ul>
           </div>
         </div>
@@ -181,7 +168,7 @@ function Footer() {
               <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
             </div>
             <p className="text-xs text-center" style={{ color: 'var(--text-muted)' }}>
-              Not affiliated with Supercell. Clash of Clans is a trademark of Supercell.
+              Not affiliated with Supercell, Garena, or Krafton.
             </p>
           </div>
         </div>

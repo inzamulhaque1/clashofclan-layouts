@@ -6,7 +6,7 @@ import VoteButtons from './VoteButtons';
 import CopyStats from './CopyStats';
 import { getBaseId, incrementCopyCount } from '@/lib/stats';
 
-export default function BaseCard({ base, showDetails = true }) {
+export default function BaseCard({ base, showDetails = true, gameSlug = 'clash-of-clans' }) {
   const [copied, setCopied] = useState(false);
   const [imageError, setImageError] = useState(false);
 
@@ -34,7 +34,7 @@ export default function BaseCard({ base, showDetails = true }) {
     }
   };
 
-  const baseUrl = `/bases/${base.hallType?.toLowerCase()}${base.hallLevel}/${base.baseType}/${base.baseNumber}`;
+  const baseUrl = `/${gameSlug}/bases/${base.hallType?.toLowerCase()}${base.hallLevel}/${base.baseType}/${base.baseNumber}`;
   const imageUrl = base.originalImageUrl || base.thumbnailUrl;
 
   const typeBadgeClass = {

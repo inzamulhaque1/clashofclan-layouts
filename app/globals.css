@@ -6,8 +6,20 @@
 
 /* Theme Variables */
 :root {
-  --primary: #F59E0B;
-  --primary-hover: #D97706;
+  /* Portal default colors */
+  --portal-primary: #8B5CF6;    /* Portal purple */
+  --portal-primary-hover: #7C3AED;
+
+  /* Game-specific colors (overridden by data-game attribute) */
+  --game-primary: #F59E0B;       /* Default game primary */
+  --game-primary-hover: #D97706;
+  --game-secondary: #78350F;
+  --game-accent: #FCD34D;
+  --game-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+
+  /* Active primary - uses game color when in game context */
+  --primary: var(--game-primary);
+  --primary-hover: var(--game-primary-hover);
 
   /* Dark theme (default) */
   --bg-primary: #0c1222;
@@ -518,4 +530,144 @@ body {
 
 [data-theme="light"] ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+/* ============================================================
+   GAME-SPECIFIC THEME OVERRIDES
+   ============================================================ */
+
+/* Clash of Clans */
+[data-game="clash-of-clans"] {
+  --game-primary: #F59E0B;
+  --game-primary-hover: #D97706;
+  --game-secondary: #78350F;
+  --game-accent: #FCD34D;
+  --game-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+}
+
+/* Brawl Stars */
+[data-game="brawl-stars"] {
+  --game-primary: #FF6B35;
+  --game-primary-hover: #E85A2A;
+  --game-secondary: #7C2D12;
+  --game-accent: #FDBA74;
+  --game-gradient: linear-gradient(135deg, #FF6B35 0%, #E85A2A 100%);
+}
+
+/* Clash Royale */
+[data-game="clash-royale"] {
+  --game-primary: #2563EB;
+  --game-primary-hover: #1D4ED8;
+  --game-secondary: #1E3A8A;
+  --game-accent: #60A5FA;
+  --game-gradient: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+}
+
+/* Frozen City */
+[data-game="frozen-city"] {
+  --game-primary: #06B6D4;
+  --game-primary-hover: #0891B2;
+  --game-secondary: #164E63;
+  --game-accent: #67E8F9;
+  --game-gradient: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+}
+
+/* Free Fire */
+[data-game="free-fire"] {
+  --game-primary: #EF4444;
+  --game-primary-hover: #DC2626;
+  --game-secondary: #7F1D1D;
+  --game-accent: #FCA5A5;
+  --game-gradient: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+}
+
+/* PUBG */
+[data-game="pubg"] {
+  --game-primary: #F59E0B;
+  --game-primary-hover: #D97706;
+  --game-secondary: #78350F;
+  --game-accent: #FCD34D;
+  --game-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+}
+
+/* Game-aware styling */
+[data-game] .text-primary {
+  color: var(--game-primary);
+}
+
+[data-game] .bg-primary {
+  background-color: var(--game-primary);
+}
+
+[data-game] .border-primary {
+  border-color: var(--game-primary);
+}
+
+[data-game] .hover\:text-primary:hover {
+  color: var(--game-primary);
+}
+
+[data-game] .hover\:bg-primary:hover {
+  background-color: var(--game-primary);
+}
+
+[data-game] .hover\:border-primary:hover {
+  border-color: var(--game-primary);
+}
+
+/* Game-specific selection */
+[data-game]::selection,
+[data-game] ::selection {
+  background: rgba(var(--game-primary), 0.3);
+}
+
+/* Game-specific badges */
+[data-game] .badge-game {
+  background: color-mix(in srgb, var(--game-primary) 20%, transparent);
+  color: var(--game-primary);
+}
+
+/* Game gradient text */
+[data-game] .text-game-gradient {
+  background: var(--game-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Portal-specific styles (for landing page) */
+.portal-gradient {
+  background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 50%, #8B5CF6 100%);
+}
+
+.portal-text-gradient {
+  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 50%, #8B5CF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Game card hover effects */
+.game-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: var(--game-gradient, linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%));
+}
+
+.game-card:hover::before {
+  opacity: 0.1;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
