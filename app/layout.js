@@ -1,11 +1,12 @@
 import './globals.css';
+import Script from 'next/script';
 import { generatePageMeta, generateWebsiteStructuredData } from '@/lib/seo';
 import Link from 'next/link';
 import ThemeProvider from '@/components/ThemeProvider';
-import ThemeToggle from '@/components/ThemeToggle';
 import GoogleAnalytics from '@/components/Analytics';
 import { AdSenseScript } from '@/components/AdSense';
 import AuthProvider from '@/components/AuthProvider';
+import DynamicHeader from '@/components/DynamicHeader';
 
 export const metadata = generatePageMeta({
   title: 'Game365Hub - Multi-Game Resource Hub',
@@ -24,26 +25,14 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#0c1222" />
+        {/* Theme initialization - runs before page renders */}
+        <Script src="/theme-init.js" strategy="beforeInteractive" />
         {/* Google AdSense */}
-        <script
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3380799438335685"
           crossOrigin="anonymous"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme');
-                  if (!theme) {
-                    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                  }
-                  document.documentElement.setAttribute('data-theme', theme);
-                } catch (e) {}
-              })();
-            `,
-          }}
+          strategy="afterInteractive"
         />
         <script
           type="application/ld+json"
@@ -57,60 +46,13 @@ export default function RootLayout({ children }) {
         <AdSenseScript publisherId={ADSENSE_ID} />
         <AuthProvider>
           <ThemeProvider>
-            <Header />
+            <DynamicHeader />
             <main className="min-h-screen">{children}</main>
             <Footer />
           </ThemeProvider>
         </AuthProvider>
       </body>
     </html>
-  );
-}
-
-function Header() {
-  return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl border-b" style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)' }}>
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <img
-              src="/logo.png"
-              alt="Game365Hub"
-              className="h-10 w-auto"
-            />
-          </Link>
-
-          {/* Navigation */}
-          <div className="hidden md:flex items-center gap-1">
-            <Link href="/clash-of-clans" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
-              Clash of Clans
-            </Link>
-            <Link href="/brawl-stars" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
-              Brawl Stars
-            </Link>
-            <Link href="/clash-royale" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
-              Clash Royale
-            </Link>
-            <Link href="/contact" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
-              Contact
-            </Link>
-          </div>
-
-          {/* Actions */}
-          <div className="flex items-center gap-3">
-            <ThemeToggle />
-
-            {/* Mobile menu button */}
-            <button className="md:hidden p-2 rounded-lg" style={{ background: 'var(--surface-100)' }}>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </nav>
-    </header>
   );
 }
 
@@ -178,6 +120,7 @@ function Footer() {
               <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
               <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
+              <Link href="/admin/login" className="hover:text-primary transition-colors">Admin</Link>
             </div>
             <p className="text-xs text-center" style={{ color: 'var(--text-muted)' }}>
               Not affiliated with Supercell, Garena, or Krafton.

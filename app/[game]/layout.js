@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getGameBySlug, getGameSlugs } from '@/config/games';
 import GameThemeProvider from '@/components/providers/GameThemeProvider';
-import GameHeader from '@/components/layout/GameHeader';
 
 // Generate static params for all games
 export async function generateStaticParams() {
@@ -32,7 +31,6 @@ export default function GameLayout({ children, params }) {
 
   return (
     <GameThemeProvider game={game}>
-      <GameHeader game={game} />
       {children}
     </GameThemeProvider>
   );
