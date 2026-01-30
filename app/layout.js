@@ -67,11 +67,12 @@ function Header() {
       <nav className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%)' }}>
-              <span className="text-xl font-bold text-white">G</span>
-            </div>
-            <span className="text-lg font-bold">Game365Hub</span>
+          <Link href="/" className="flex items-center">
+            <img
+              src="/logo.png"
+              alt="Game365Hub"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Navigation */}
@@ -84,6 +85,9 @@ function Header() {
             </Link>
             <Link href="/clash-royale" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
               Clash Royale
+            </Link>
+            <Link href="/contact" className="px-4 py-2 text-sm rounded-lg transition-colors" style={{ color: 'var(--text-muted)' }}>
+              Contact
             </Link>
           </div>
 
@@ -111,12 +115,13 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%)' }}>
-                <span className="text-lg font-bold text-white">G</span>
-              </div>
-              <span className="font-bold">Game365Hub</span>
-            </div>
+            <Link href="/" className="inline-block mb-4">
+              <img
+                src="/logo.png"
+                alt="Game365Hub"
+                className="h-9 w-auto"
+              />
+            </Link>
             <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
               Your ultimate gaming resource hub for mobile games.
             </p>
@@ -164,6 +169,7 @@ function Footer() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex flex-wrap justify-center gap-4 text-xs" style={{ color: 'var(--text-muted)' }}>
               <Link href="/about" className="hover:text-primary transition-colors">About</Link>
+              <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
               <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
             </div>
