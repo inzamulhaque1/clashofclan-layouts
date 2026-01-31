@@ -107,6 +107,11 @@ function FeatureList({ features }) {
   );
 }
 
+// Helper to parse inline markdown (bold only)
+function parseInline(text) {
+  return text.replace(/\*\*(.*?)\*\*/g, '<strong style="color: var(--text-primary)">$1</strong>');
+}
+
 // Pros/Cons component
 function ProsCons({ pros, cons }) {
   return (
@@ -121,7 +126,8 @@ function ProsCons({ pros, cons }) {
         <ul className="space-y-1">
           {pros.map((p, i) => (
             <li key={i} className="text-sm flex items-start gap-2" style={{ color: 'var(--text-muted)' }}>
-              <span style={{ color: '#10B981' }}>+</span> {p}
+              <span style={{ color: '#10B981' }}>+</span>
+              <span dangerouslySetInnerHTML={{ __html: parseInline(p) }} />
             </li>
           ))}
         </ul>
@@ -136,7 +142,8 @@ function ProsCons({ pros, cons }) {
         <ul className="space-y-1">
           {cons.map((c, i) => (
             <li key={i} className="text-sm flex items-start gap-2" style={{ color: 'var(--text-muted)' }}>
-              <span style={{ color: '#EF4444' }}>-</span> {c}
+              <span style={{ color: '#EF4444' }}>-</span>
+              <span dangerouslySetInnerHTML={{ __html: parseInline(c) }} />
             </li>
           ))}
         </ul>
@@ -159,12 +166,76 @@ function TipsBox({ title, items }) {
         {items.map((item, i) => (
           <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'var(--text-muted)' }}>
             <span className="text-purple-500 font-bold">{i + 1}.</span>
-            {item}
+            <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong style="color: var(--text-primary)">$1</strong>').replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-purple-500 hover:text-purple-400 underline">$1</a>') }} />
           </li>
         ))}
       </ul>
     </div>
   );
+}
+
+// Parse markdown content to HTML
+function parseMarkdown(text) {
+  if (!text) return '';
+
+  let html = text;
+
+  // Parse markdown tables
+  const tableRegex = /\|(.+)\|\n\|[-|\s]+\|\n((?:\|.+\|\n?)+)/g;
+  html = html.replace(tableRegex, (match, headerRow, bodyRows) => {
+    const headers = headerRow.split('|').filter(h => h.trim());
+    const rows = bodyRows.trim().split('\n').map(row =>
+      row.split('|').filter(c => c.trim())
+    );
+
+    return `<div class="overflow-x-auto my-4 rounded-xl" style="border: 1px solid var(--border)">
+      <table class="w-full text-sm">
+        <thead>
+          <tr style="background: var(--surface-100)">
+            ${headers.map(h => `<th class="px-4 py-3 text-left font-semibold whitespace-nowrap" style="color: var(--text-primary)">${h.trim()}</th>`).join('')}
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map(row => `<tr class="border-t" style="border-color: var(--border)">
+            ${row.map((cell, i) => `<td class="px-4 py-3" style="color: ${i === 0 ? 'var(--text-primary)' : 'var(--text-muted)'}">${cell.trim()}</td>`).join('')}
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>`;
+  });
+
+  // Parse headings (## Heading)
+  html = html.replace(/^## (.+)$/gm, '<h3 class="text-lg font-bold mt-6 mb-3" style="color: var(--text-primary)">$1</h3>');
+  html = html.replace(/^### (.+)$/gm, '<h4 class="font-bold mt-4 mb-2" style="color: var(--text-primary)">$1</h4>');
+
+  // Parse links [text](url)
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-purple-500 hover:text-purple-400 underline">$1</a>');
+
+  // Parse bold text
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong style="color: var(--text-primary)">$1</strong>');
+
+  // Parse italic text
+  html = html.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+  // Parse bullet lists (- item)
+  html = html.replace(/^- (.+)$/gm, '<li class="ml-4 list-disc" style="color: var(--text-muted)">$1</li>');
+  html = html.replace(/(<li[^>]*>.*<\/li>\n?)+/g, '<ul class="my-3 space-y-1">$&</ul>');
+
+  // Parse numbered lists (1. item)
+  html = html.replace(/^\d+\. (.+)$/gm, '<li class="ml-4 list-decimal" style="color: var(--text-muted)">$1</li>');
+
+  // Parse line breaks (double newline = paragraph)
+  html = html.split('\n\n').map(p => {
+    const trimmed = p.trim();
+    if (trimmed.startsWith('<div') || trimmed.startsWith('<table') ||
+        trimmed.startsWith('<h3') || trimmed.startsWith('<h4') ||
+        trimmed.startsWith('<ul') || trimmed.startsWith('<ol') ||
+        trimmed.startsWith('<li')) return p;
+    if (!trimmed) return '';
+    return `<p class="mb-4">${p.replace(/\n/g, '<br/>')}</p>`;
+  }).join('');
+
+  return html;
 }
 
 // Section component
@@ -179,15 +250,17 @@ function Section({ section, index }) {
       )}
 
       {section.image && (
-        <div className="my-4 rounded-xl overflow-hidden h-48 sm:h-64">
-          <ArticleImage src={section.image} alt={section.title} className="w-full h-full object-cover" />
+        <div className="my-4 rounded-xl overflow-hidden h-56 sm:h-72 md:h-80">
+          <ArticleImage src={section.image} alt={section.imageAlt || section.title} className="w-full h-full object-cover" />
         </div>
       )}
 
       {section.content && (
-        <p className="mb-4 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-          {section.content}
-        </p>
+        <div
+          className="mb-4 leading-relaxed"
+          style={{ color: 'var(--text-muted)' }}
+          dangerouslySetInnerHTML={{ __html: parseMarkdown(section.content) }}
+        />
       )}
 
       {section.list && (
@@ -219,7 +292,8 @@ function Section({ section, index }) {
           <ul className="space-y-1">
             {section.tips.map((tip, i) => (
               <li key={i} className="text-sm flex items-start gap-2" style={{ color: 'var(--text-muted)' }}>
-                <span style={{ color: '#8B5CF6' }}>•</span> {tip}
+                <span style={{ color: '#8B5CF6' }}>•</span>
+                <span dangerouslySetInnerHTML={{ __html: tip.replace(/\*\*(.*?)\*\*/g, '<strong style="color: var(--text-primary)">$1</strong>') }} />
               </li>
             ))}
           </ul>
@@ -327,9 +401,11 @@ export default function BlogArticlePage({ params }) {
       {/* Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
         {/* Intro */}
-        <div className="text-lg leading-relaxed mb-10" style={{ color: 'var(--text-muted)' }}>
-          <p dangerouslySetInnerHTML={{ __html: content.intro.replace(/\*\*(.*?)\*\*/g, '<strong style="color: var(--text-primary)">$1</strong>') }} />
-        </div>
+        <div
+          className="text-lg leading-relaxed mb-10"
+          style={{ color: 'var(--text-muted)' }}
+          dangerouslySetInnerHTML={{ __html: parseMarkdown(content.intro) }}
+        />
 
         {/* Table of Contents */}
         <div className="mb-10 p-6 rounded-xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
@@ -390,7 +466,11 @@ export default function BlogArticlePage({ params }) {
         {content.conclusion && (
           <div className="mt-10 p-6 rounded-xl" style={{ background: 'var(--surface-50)', border: '1px solid var(--border)' }}>
             <h3 className="font-bold text-lg mb-4" style={{ color: 'var(--text-primary)' }}>Conclusion</h3>
-            <div className="leading-relaxed" style={{ color: 'var(--text-muted)' }} dangerouslySetInnerHTML={{ __html: content.conclusion.replace(/\*\*(.*?)\*\*/g, '<strong style="color: var(--text-primary)">$1</strong>') }} />
+            <div
+              className="leading-relaxed"
+              style={{ color: 'var(--text-muted)' }}
+              dangerouslySetInnerHTML={{ __html: parseMarkdown(content.conclusion) }}
+            />
           </div>
         )}
 
