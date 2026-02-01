@@ -1,11 +1,16 @@
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import Link from 'next/link';
 import { getGameBySlug, getGameSlugs } from '@/config/games';
 import { getContentStats, queryContent } from '@/lib/data';
 
-// Generate static params for all games
+// Games with dedicated static routes (should redirect to avoid conflict)
+const STATIC_GAME_ROUTES = ['brawl-stars'];
+
+// Generate static params for all games (exclude games with dedicated static routes)
 export async function generateStaticParams() {
-  return getGameSlugs().map(slug => ({ game: slug }));
+  return getGameSlugs()
+    .filter(slug => !STATIC_GAME_ROUTES.includes(slug))
+    .map(slug => ({ game: slug }));
 }
 
 // Generate metadata
@@ -26,12 +31,15 @@ export default function GameHomePage({ params }) {
     notFound();
   }
 
+  // Redirect games with dedicated static routes
+  if (STATIC_GAME_ROUTES.includes(game.slug)) {
+    redirect(`/${game.slug}`);
+  }
+
   // Route to game-specific home page
   switch (game.slug) {
     case 'clash-of-clans':
       return <ClashOfClansHome game={game} />;
-    case 'brawl-stars':
-      return <ComingSoonHome game={game} contentType="brawlers and tier lists" />;
     case 'clash-royale':
       return <ComingSoonHome game={game} contentType="decks and card guides" />;
     default:
