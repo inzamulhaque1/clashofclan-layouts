@@ -27,6 +27,9 @@ const GAME_NAV = {
   ],
   'brawl-stars': [
     { href: '/brawl-stars', label: 'Home' },
+    { href: '/brawl-stars/tier-list', label: 'Tier List' },
+    { href: '/brawl-stars/brawlers', label: 'Brawlers' },
+    { href: '/brawl-stars/modes', label: 'Game Modes' },
     { href: '/brawl-stars/guides', label: 'Guides' },
   ],
   'clash-royale': [
@@ -86,7 +89,7 @@ export default function DynamicHeader() {
                 {currentGame ? (
                   <>
                     <span className="w-2 h-2 rounded-full" style={{ background: currentGame.color }} />
-                    <span className="font-medium">{currentGame.shortName}</span>
+                    <span className="font-medium">{currentGame.name}</span>
                   </>
                 ) : (
                   <span>Games</span>

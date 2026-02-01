@@ -2,6 +2,7 @@ import { getAllBases } from '@/lib/bases';
 import { getAllGuideSlugs } from '@/lib/guides';
 import { SITE_CONFIG } from '@/lib/seo';
 import { getAllArticles } from '@/data/blog-index';
+import { BRAWLERS, GAME_MODES } from '@/lib/brawl-stars/brawlers';
 
 export default function sitemap() {
   const baseUrl = SITE_CONFIG.url;
@@ -71,5 +72,31 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...thPages, ...bhPages, ...guidePages, ...blogPages, ...basePages];
+  // Brawl Stars pages
+  const brawlStarsPages = [
+    { url: `${baseUrl}/brawl-stars`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.9 },
+    { url: `${baseUrl}/brawl-stars/tier-list`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.9 },
+    { url: `${baseUrl}/brawl-stars/brawlers`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/brawl-stars/modes`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/brawl-stars/guides`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/brawl-stars/guides/beginners-guide`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+  ];
+
+  // Individual brawler pages
+  const brawlerPages = BRAWLERS.map(brawler => ({
+    url: `${baseUrl}/brawl-stars/brawlers/${brawler.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }));
+
+  // Game mode pages
+  const gameModePages = GAME_MODES.map(mode => ({
+    url: `${baseUrl}/brawl-stars/modes/${mode.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...thPages, ...bhPages, ...guidePages, ...blogPages, ...basePages, ...brawlStarsPages, ...brawlerPages, ...gameModePages];
 }
