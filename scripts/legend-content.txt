@@ -1,0 +1,367 @@
+
+## Legend League Pushing Guide 2026: Complete Trophy Blueprint
+
+Legend League is the pinnacle of Clash of Clans competitive play. Reaching 5000+ trophies and competing against the world's best players is the ultimate achievement for any Clasher. It's not just a trophy milestone—it's a completely different game mode with unique mechanics, daily attack limits, and a global ranking system.
+
+This comprehensive guide covers everything you need to know: the journey to 5000 trophies, Legend League mechanics explained, the best attack strategies for 2026, daily routines that top players follow, and tips for climbing the global leaderboard.
+
+![Legend League Badge Trophy Screen](https://static.wikia.nocookie.net/clashofclans/images/1/13/Trophy_Leagues_Main_Banner.png/revision/latest?cb=20171220173449)
+
+*Related: [Best TH18 Attack Strategies](/clash-of-clans/guides/best-th18-attack-strategies) | [Anti 3-Star Base Design](/clash-of-clans/guides/anti-3-star-base-design)*
+
+---
+
+### What Is Legend League?
+
+Legend League is the highest competitive tier in Clash of Clans, accessible to players who reach 5000+ trophies. But it's not just a trophy range—it's an entirely different system with unique rules.
+
+| Feature | Regular Leagues | Legend League |
+|---------|-----------------|---------------|
+| Trophy Range | 0-4999 | 5000+ |
+| Daily Attacks | Unlimited | Exactly 8 per day |
+| Daily Defenses | Unlimited | Exactly 8 per day |
+| Matchmaking | Search and choose | Auto-assigned opponents |
+| Shields | Earned from defenses | No shields exist |
+| Cloud Time | Varies by league | None (instant matches) |
+| Rankings | Trophy count only | Global and local leaderboards |
+
+Why Legend League Matters:
+
+Legend League separates casual players from competitive ones. It requires daily commitment, consistent skill, and strategic thinking. The rewards include:
+
+- Exclusive Legend League badge on your profile
+- Global and local leaderboard rankings
+- Increased clan recruitment appeal
+- Ultimate bragging rights in the CoC community
+
+---
+
+### Requirements for Legend League
+
+Before you start pushing, make sure you meet these requirements:
+
+Minimum Requirements:
+- 5000+ trophies (obviously)
+- Town Hall 11+ (technically possible)
+- All heroes available for attacks
+- Solid understanding of at least one attack strategy
+
+Realistic Requirements for Success:
+- Town Hall 14 or higher (TH15+ recommended)
+- Near-maxed offensive buildings (Army Camps, Spell Factory, etc.)
+- Heroes at competitive levels (see table below)
+- 30-60 minutes daily for attacks
+- Willingness to attack every single day
+
+Hero Level Guidelines by Town Hall:
+
+| Town Hall | Minimum Levels | Competitive Levels |
+|-----------|----------------|-------------------|
+| TH14 | 75/75/50/25 | 80/80/55/30 |
+| TH15 | 80/80/55/30 | 90/90/65/40 |
+| TH16 | 85/85/60/35 | 95/95/70/45 |
+| TH17-18 | 90/90/65/40 | Max levels |
+
+The Hard Truth:
+
+While technically possible at TH11-13, competing seriously in Legend League below TH14 is extremely difficult. You'll face max TH18 bases with every defense maxed. If you're below TH14, consider waiting until your base is stronger.
+
+![Legend League Attack Army](https://preview.redd.it/attack-stratergies-used-by-top-legend-league-players-v0-gjrzdc81a4gc1.jpeg?width=640&crop=smart&auto=webp&s=ac296ebc1afb985c86bc59653f87a0d7020d1c27)
+
+---
+
+### Phase 1: Pushing to 5000 Trophies
+
+The journey to Legend League is different from the league itself. Here's how to make the push from wherever you are now.
+
+The Golden Rule:
+
+Only attack when you can guarantee at least 2 stars. Trophy pushing isn't about 3-starring every base—it's about consistent star gains while minimizing losses.
+
+Trophy Pushing Strategy:
+
+1. Attack only with all heroes available — Never attack with heroes upgrading or regenerating
+2. Skip bases you can't confidently 2-star — Use the Next button freely
+3. Use your BEST strategy — This isn't the time to practice new attacks
+4. Protect your shield — Don't attack until your shield expires naturally
+5. Attack during off-peak hours — Early morning often has easier opponents
+
+Best Pushing Armies (4000-5000 range):
+
+| Army | TH Level | Consistency | 3-Star Rate |
+|------|----------|-------------|-------------|
+| Root Rider Smash | TH15-18 | Very High | 70-85% |
+| Super Witch Spam | TH14-18 | High | 60-75% |
+| Hydra (Hog/Miner) | TH13-18 | Very High | 55-70% |
+| Queen Charge LaLo | TH14-18 | Medium-High | 65-80% |
+
+Trophy Math:
+
+To gain trophies consistently:
+- Average 2-star attacks: +24 to +32 trophies
+- Average defenses lost: -20 to -30 trophies
+- Net gain per attack session: +5 to +10 per attack
+
+At this rate, reaching 5000 from 4000 takes approximately 100-200 attacks over 1-2 weeks of consistent play.
+
+---
+
+### Phase 2: Understanding Legend League Mechanics
+
+Once you hit 5000 trophies, you'll be prompted to sign up for Legend League. Here's what changes:
+
+The Attack System:
+
+- You get exactly 8 attacks per day
+- Attacks reset at 5:00 AM your local time
+- Unused attacks = 0 trophies gained (they don't carry over)
+- Opponents are randomly assigned—no searching
+
+The Defense System:
+
+- You get attacked exactly 8 times per day
+- Attacks are distributed throughout the day
+- You cannot influence who attacks you
+- Your base cannot be sniped or shield-farmed
+
+Trophy Calculation:
+
+| Attack Result | Trophies Earned/Lost |
+|--------------|---------------------|
+| 3-Star Attack | +40 |
+| 2-Star (80%+) | +32 |
+| 2-Star (70-79%) | +28 |
+| 1-Star | +16 to +24 |
+| 0-Star (50%+ damage) | +8 |
+| Opponent 3-Stars You | -40 |
+| Opponent 2-Stars You | -24 to -32 |
+| Opponent 1-Stars You | -8 to -16 |
+
+Daily Trophy Math:
+
+- Maximum possible gain: 8 attacks × 40 trophies = +320
+- Maximum possible loss: 8 defenses × 40 trophies = -320
+- Realistic daily goal: +50 to +100 net trophies
+
+To climb in Legend League, you need to average more than +20 net trophies per day consistently.
+
+![Base Scouting Legend League](https://preview.redd.it/legend-league-players-do-you-use-a-custom-display-base-or-v0-zj3lxgcwwd8f1.jpeg?width=2400&format=pjpg&auto=webp&s=47dc36ed720312c302c0197f38556b4a7bec539d)
+
+---
+
+### Best Legend League Strategies for 2026
+
+The meta in Legend League is different from regular wars. You need consistent strategies that work against any base type.
+
+Tier S Strategies (Highest Success Rate):
+
+1. Root Rider Smash — TH15-18
+- 3-Star Rate: 70-85%
+- Difficulty: Medium
+- Best Against: Compartmentalized bases, ring bases
+
+Root Riders ignore walls completely, making them devastating against traditional base designs. Pair with Super Witches for additional firepower.
+
+2. Super Witch Spam — TH14-18
+- 3-Star Rate: 60-75%
+- Difficulty: Low-Medium
+- Best Against: Compact cores, single-target Infernos
+
+The Big Boy spawns tank massive damage while skeletons swarm defenses. Very forgiving of mistakes.
+
+Tier A Strategies (Reliable Options):
+
+3. Hydra (Hog/Miner Hybrid) — All TH
+- 3-Star Rate: 55-70%
+- Difficulty: High
+- Best Against: Anti-air bases, spread defenses
+
+Requires precise execution but works against bases that counter ground smash strategies.
+
+4. Queen Charge LaLo — TH14-18
+- 3-Star Rate: 65-80%
+- Difficulty: High
+- Best Against: Weak air defenses, exposed Eagle Artillery
+
+Classic strategy that still works when executed properly. Requires good Queen Charge mechanics.
+
+Pro Tip: Master ONE strategy completely before learning others. Consistency beats variety in Legend League.
+
+---
+
+### Daily Routine for Legend League Success
+
+Top Legend League players follow structured daily routines. Here's what a typical day looks like:
+
+Recommended Attack Schedule:
+
+| Time Period | Activity | Attacks Used |
+|-------------|----------|--------------|
+| Morning (6-9 AM) | First attack session | 4 attacks |
+| Midday | Review morning replays | 0 attacks |
+| Evening (6-10 PM) | Second attack session | 4 attacks |
+| Before bed | Check defense results | 0 attacks |
+
+Daily Checklist:
+
+- Complete all 8 attacks before reset
+- Watch all defense replays for base weaknesses
+- Train tomorrow's army before logging off
+- Fill Clan Castle with optimal troops/spells
+- Check if base needs rotation/updating
+
+Why Split Sessions Work:
+
+Splitting your 8 attacks into two sessions has advantages:
+- Mental freshness for each attack
+- Time to review replays between sessions
+- Flexibility if life interrupts
+- Better focus on each individual attack
+
+Time Management:
+
+Each Legend League attack takes approximately 3-5 minutes including:
+- Base scouting (30 seconds)
+- Army deployment (3 minutes)
+- Result review (1 minute)
+
+Total daily time commitment: 30-45 minutes minimum
+
+---
+
+### Defense in Legend League
+
+Your defense matters just as much as your offense. A good base can save you 50-100 trophies per day compared to a weak one.
+
+Base Requirements for Legend League:
+
+1. Anti-3 star design — Focus on preventing 3-stars, not all stars
+2. Updated for current meta — Counter Root Riders, Super Witches, Hydra
+3. Tested in Friendly Challenges — Ask clanmates to attack before using
+4. Rotated regularly — Change bases every 1-2 weeks
+
+Critical Warning:
+
+Base changes in Legend League take 24 hours to apply. If you change your base at 6 PM, the new layout won't be active until 6 PM the next day. Plan accordingly!
+
+Best Defense Strategies:
+
+- Spread buildings far apart (counters Root Riders)
+- Use Multi-target Infernos (counters Super Witches)
+- Offset TH from Eagle (forces difficult choices)
+- Strategic trap placement (Giant Bombs between defenses)
+
+![Legend League Leaderboard](https://external-preview.redd.it/legends-league-top-10-leaderboard-armies-april-2023-v0-A8Z6ry93xzS5aPWu_JUp8a2jxP16bxxVU-p3_C0ZJHo.jpg?auto=webp&s=10418adf76d13b89355b8565f1b98214d8520562)
+
+---
+
+### Climbing the Global Leaderboard
+
+Want to see your name among the world's best? Here's what it takes:
+
+Trophy Requirements for Rankings:
+
+| Ranking | Typical Trophy Range |
+|---------|---------------------|
+| Top 1000 Global | 5600-5800 |
+| Top 200 Global | 5900-6100 |
+| Top 50 Global | 6200+ |
+| Top 10 Global | 6400+ |
+| Number 1 Global | 6600+ (end of season) |
+
+What Separates Average from Elite:
+
+| Factor | Average Legend Player | Top 200 Player |
+|--------|----------------------|----------------|
+| 3-Star Rate | 60-70% | 85-95% |
+| Time Investment | 30-45 min/day | 1-2 hours/day |
+| Consistency | Most days | Every single day |
+| Strategy Mastery | 1-2 strategies | 3-4 strategies |
+| Base Updates | Monthly | Weekly |
+
+The Reality Check:
+
+Reaching top 1000 global requires near-perfect play for an entire season. Missing even one day drops you hundreds of spots. It's a serious commitment that most players can't maintain long-term.
+
+![3 Star Attack Legend League](https://i.ytimg.com/vi/IoZZ2vm7cec/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCjOtPVrYVzhLsay1AGl_3dAW72Dw)
+
+---
+
+### Pro Tips for Legend League Success
+
+1. Never miss a day — One day of missed attacks costs you 200-320 potential trophies while you still lose up to 320 from defenses
+
+2. Attack shortly after daily reset — Opponents who just reset may have weaker defenses active
+
+3. Stop when tilted — If you lose 2-3 attacks in a row, take a break. Losses compound when you're frustrated
+
+4. Watch top player attacks — YouTube channels like Judo Sloth, Klaus Gaming, and iTzu show optimal execution
+
+5. Track your 3-star rate — If you're below 60%, you need more practice before competing seriously
+
+6. Always use all heroes — Never attack with a hero upgrading in Legend League
+
+7. Fill CC before every attack — Proper CC troops add 10-20% to your success rate
+
+8. Have backup strategies — Some bases hard-counter your main strategy
+
+9. Join an active clan — You need donations and Friendly Challenge practice
+
+10. Review every attack replay — Win or lose, there's always something to learn
+
+---
+
+### Frequently Asked Questions
+
+Q: What's the minimum Town Hall for Legend League?
+
+A: Technically TH11, but realistically TH14+ is required to compete effectively. Below TH14, you'll face constant 3-stars on defense.
+
+Q: What happens if I miss a day?
+
+A: You gain 0 trophies from attacks (unused attacks don't carry over) but still lose trophies from 8 defenses. Missing one day can cost you 200-320 trophies.
+
+Q: How do I handle losing streaks?
+
+A: Stop immediately. Take a 30-minute break minimum. Watch replays of successful attacks. Return with fresh focus. Never force attacks when frustrated.
+
+Q: Is Legend League worth the time investment?
+
+A: If you enjoy competitive play and have 30-60 minutes daily, absolutely. If you're a casual player, it might feel like a chore.
+
+Q: Can I drop out of Legend League?
+
+A: Yes. If your trophies drop below 4900 at season reset, you'll exit Legend League. You can also manually leave through settings.
+
+Q: How do seasons work?
+
+A: Seasons reset monthly. At reset, trophies above 5000 are compressed (you keep a portion). Everyone effectively restarts the climb.
+
+---
+
+### Conclusion
+
+Legend League success comes from three pillars:
+
+1. Consistency — Complete all 8 attacks every single day without exception
+2. Strategy Mastery — Perfect one attack strategy before branching out
+3. Continuous Improvement — Watch every replay and learn from mistakes
+
+The journey to Legend League is challenging but rewarding. Start by reaching TH14+ with near-max offense, master Root Rider Smash or Super Witch, and commit to daily attacks.
+
+Key Takeaways:
+
+- Legend League requires 8 daily attacks—no exceptions
+- Net trophy gain depends on 3-star rate vs. defense quality
+- Split attacks into two daily sessions for best results
+- Base changes take 24 hours to activate
+- Top rankings require near-perfect play every day
+- Stop playing when frustrated—losses compound
+
+Ready to start your Legend League journey? Browse our collection of [anti-3 star Legend bases](/clash-of-clans/bases) and [attack strategy guides](/clash-of-clans/guides)!
+
+---
+
+Image Credits: Clash of Clans Wiki, Reddit/r/ClashOfClans, YouTube/Clash Community, Supercell
+
+Updated: February 2026 | Current Meta: Root Rider Smash, Super Witch Spam

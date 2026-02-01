@@ -132,6 +132,15 @@ export default function GuideDetailPage({ params }) {
               li: ({ node, ...props }) => <li className="leading-relaxed" {...props} />,
               strong: ({ node, ...props }) => <strong className="font-semibold" style={{ color: 'var(--text-primary)' }} {...props} />,
               a: ({ node, ...props }) => <a className="underline transition-colors" style={{ color: 'var(--game-primary)' }} {...props} />,
+              img: ({ node, ...props }) => (
+                <img
+                  className="w-full rounded-xl my-6"
+                  style={{ maxHeight: '400px', objectFit: 'cover' }}
+                  loading="lazy"
+                  {...props}
+                />
+              ),
+              hr: ({ node, ...props }) => <hr className="my-8 border-0" style={{ borderTop: '1px solid var(--border)' }} {...props} />,
               table: ({ node, ...props }) => (
                 <div className="overflow-x-auto mb-6">
                   <table className="w-full text-sm" style={{ borderColor: 'var(--border)' }} {...props} />
