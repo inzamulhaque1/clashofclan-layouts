@@ -110,6 +110,8 @@ export default function sitemap() {
     { url: `${baseUrl}/clash-royale/tier-list`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.9 },
     { url: `${baseUrl}/clash-royale/guides`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/clash-royale/guides/beginners-guide`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/clash-royale/guides/elixir-management`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/clash-royale/guides/deck-building`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
   ];
 
   // Individual Clash Royale card pages

@@ -40,7 +40,7 @@ const guides = [
     color: "#8A2BE2",
     readTime: "10 min",
     difficulty: "Intermediate",
-    isAvailable: false
+    isAvailable: true
   },
   {
     slug: "deck-building",
@@ -50,7 +50,7 @@ const guides = [
     color: "#FFD700",
     readTime: "15 min",
     difficulty: "Intermediate",
-    isAvailable: false
+    isAvailable: true
   },
 ];
 

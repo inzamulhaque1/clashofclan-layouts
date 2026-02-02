@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { CARDS, CARD_TYPES, TIERS, META_DECKS, getTopCards, getCardsByTier } from '@/lib/clash-royale/cards';
+import { GUIDE_IMAGES } from '@/lib/clash-royale/images';
 
 export default function ClashRoyaleHomePage() {
   const [selectedTier, setSelectedTier] = useState('S');
@@ -341,102 +342,163 @@ export default function ClashRoyaleHomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-2 mb-3">
-              <span className="text-2xl">📚</span>
+              <div className="w-8 h-1 rounded-full" style={{ background: 'linear-gradient(90deg, #1E90FF, #8A2BE2)' }} />
               <span className="text-xs font-bold uppercase tracking-wider" style={{ color: '#8A2BE2' }}>Pro Guides</span>
+              <div className="w-8 h-1 rounded-full" style={{ background: 'linear-gradient(90deg, #8A2BE2, #1E90FF)' }} />
             </div>
             <h2 className="text-3xl sm:text-4xl font-black mb-3" style={{ color: 'var(--text-primary)' }}>
               Strategies & Tips
             </h2>
+            <p className="text-base max-w-lg mx-auto" style={{ color: 'var(--text-muted)' }}>
+              Master Clash Royale with our in-depth guides
+            </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Beginner's Guide */}
             <Link
               href="/clash-royale/guides/beginners-guide"
-              className="group relative p-6 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02]"
+              className="group relative rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1"
               style={{
                 background: 'var(--surface-100)',
                 border: '1px solid var(--border)',
               }}
             >
-              <div
-                className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold"
-                style={{ background: 'rgba(16, 185, 129, 0.15)', color: '#10B981' }}
-              >
-                Available
+              <div className="relative h-44 overflow-hidden">
+                <img
+                  src={GUIDE_IMAGES.beginnersGuide.hero.url}
+                  alt={GUIDE_IMAGES.beginnersGuide.hero.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div
+                  className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold"
+                  style={{ background: '#10B981', color: '#fff' }}
+                >
+                  Available
+                </div>
+                <div className="absolute bottom-3 left-3">
+                  <span className="px-2 py-1 rounded text-xs font-semibold" style={{ background: 'rgba(30, 144, 255, 0.9)', color: '#fff' }}>
+                    Beginner
+                  </span>
+                </div>
               </div>
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4"
-                style={{ background: 'rgba(30, 144, 255, 0.15)' }}
-              >
-                🎮
-              </div>
-              <h3 className="font-bold text-lg mb-2 group-hover:text-blue-500 transition-colors" style={{ color: 'var(--text-primary)' }}>
-                Beginner's Guide 2026
-              </h3>
-              <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>
-                Everything new players need to know to start winning
-              </p>
-              <div className="flex items-center gap-2 text-sm font-semibold" style={{ color: '#1E90FF' }}>
-                Read Guide →
+              <div className="p-5">
+                <h3 className="font-bold text-lg mb-2 group-hover:text-blue-500 transition-colors" style={{ color: 'var(--text-primary)' }}>
+                  Beginner's Guide 2026
+                </h3>
+                <p className="text-sm mb-4 line-clamp-2" style={{ color: 'var(--text-muted)' }}>
+                  Everything new players need to know. Elixir management, deck building, and climbing arenas.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs" style={{ color: 'var(--text-muted)' }}>12 min read</span>
+                  <span className="text-sm font-semibold group-hover:underline" style={{ color: '#1E90FF' }}>
+                    Read Guide →
+                  </span>
+                </div>
               </div>
             </Link>
 
             {/* Elixir Management */}
-            <div
-              className="relative p-6 rounded-2xl opacity-75"
+            <Link
+              href="/clash-royale/guides/elixir-management"
+              className="group relative rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1"
               style={{
                 background: 'var(--surface-100)',
                 border: '1px solid var(--border)',
               }}
             >
-              <div
-                className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold"
-                style={{ background: 'rgba(138, 43, 226, 0.15)', color: '#8A2BE2' }}
-              >
-                Coming Soon
+              <div className="relative h-44 overflow-hidden">
+                <img
+                  src={GUIDE_IMAGES.elixirGuide.hero.url}
+                  alt={GUIDE_IMAGES.elixirGuide.hero.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div
+                  className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold"
+                  style={{ background: '#8A2BE2', color: '#fff' }}
+                >
+                  Intermediate
+                </div>
+                <div className="absolute bottom-3 left-3">
+                  <span className="px-2 py-1 rounded text-xs font-semibold" style={{ background: 'rgba(138, 43, 226, 0.9)', color: '#fff' }}>
+                    Strategy
+                  </span>
+                </div>
               </div>
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4"
-                style={{ background: 'rgba(138, 43, 226, 0.15)' }}
-              >
-                💎
+              <div className="p-5">
+                <h3 className="font-bold text-lg mb-2 group-hover:text-blue-500 transition-colors" style={{ color: 'var(--text-primary)' }}>
+                  Elixir Management Mastery
+                </h3>
+                <p className="text-sm mb-4 line-clamp-2" style={{ color: 'var(--text-muted)' }}>
+                  Master positive trades, elixir counting, and never leak elixir again.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs" style={{ color: 'var(--text-muted)' }}>10 min read</span>
+                  <span className="text-sm font-semibold group-hover:underline" style={{ color: '#1E90FF' }}>
+                    Read Guide →
+                  </span>
+                </div>
               </div>
-              <h3 className="font-bold text-lg mb-2" style={{ color: 'var(--text-primary)' }}>
-                Elixir Management
-              </h3>
-              <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>
-                Master elixir counting and positive trades
-              </p>
-            </div>
+            </Link>
 
             {/* Deck Building */}
-            <div
-              className="relative p-6 rounded-2xl opacity-75"
+            <Link
+              href="/clash-royale/guides/deck-building"
+              className="group relative rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1"
               style={{
                 background: 'var(--surface-100)',
                 border: '1px solid var(--border)',
               }}
             >
-              <div
-                className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold"
-                style={{ background: 'rgba(138, 43, 226, 0.15)', color: '#8A2BE2' }}
-              >
-                Coming Soon
+              <div className="relative h-44 overflow-hidden">
+                <img
+                  src={GUIDE_IMAGES.deckBuildingGuide.hero.url}
+                  alt={GUIDE_IMAGES.deckBuildingGuide.hero.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div
+                  className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold"
+                  style={{ background: '#FFD700', color: '#000' }}
+                >
+                  Intermediate
+                </div>
+                <div className="absolute bottom-3 left-3">
+                  <span className="px-2 py-1 rounded text-xs font-semibold" style={{ background: 'rgba(255, 215, 0, 0.9)', color: '#000' }}>
+                    Deck Guide
+                  </span>
+                </div>
               </div>
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4"
-                style={{ background: 'rgba(255, 165, 0, 0.15)' }}
-              >
-                🃏
+              <div className="p-5">
+                <h3 className="font-bold text-lg mb-2 group-hover:text-blue-500 transition-colors" style={{ color: 'var(--text-primary)' }}>
+                  Deck Building Guide
+                </h3>
+                <p className="text-sm mb-4 line-clamp-2" style={{ color: 'var(--text-muted)' }}>
+                  Build balanced decks that counter the meta. Win conditions, synergies, and archetypes.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs" style={{ color: 'var(--text-muted)' }}>15 min read</span>
+                  <span className="text-sm font-semibold group-hover:underline" style={{ color: '#1E90FF' }}>
+                    Read Guide →
+                  </span>
+                </div>
               </div>
-              <h3 className="font-bold text-lg mb-2" style={{ color: 'var(--text-primary)' }}>
-                Deck Building Guide
-              </h3>
-              <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>
-                Build balanced decks that counter the meta
-              </p>
-            </div>
+            </Link>
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/clash-royale/guides"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all hover:gap-3"
+              style={{ background: 'rgba(138, 43, 226, 0.1)', color: '#8A2BE2' }}
+            >
+              View All Guides
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

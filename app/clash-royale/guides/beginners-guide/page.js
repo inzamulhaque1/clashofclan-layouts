@@ -152,6 +152,19 @@ export default function BeginnersGuidePage() {
           <p className="mb-4" style={{ color: 'var(--text-muted)' }}>
             <strong style={{ color: 'var(--text-primary)' }}>Clash Royale</strong> is a real-time strategy card game developed by Supercell. Released in 2016, it combines elements of collectible card games, tower defense, and multiplayer online battle arena (MOBA) games.
           </p>
+
+          {/* Arena Image */}
+          <figure className="mb-6">
+            <img
+              src={images.arena.url}
+              alt={images.arena.alt}
+              className="w-full rounded-xl"
+            />
+            <figcaption className="text-sm mt-2 text-center" style={{ color: 'var(--text-muted)' }}>
+              The Clash Royale arena where all battles take place
+            </figcaption>
+          </figure>
+
           <p className="mb-4" style={{ color: 'var(--text-muted)' }}>
             In each match, two players face off with decks of 8 cards. The goal is to destroy your opponent's towers while defending your own. Matches last 3 minutes (plus overtime if needed), making it perfect for quick gaming sessions.
           </p>
@@ -168,6 +181,18 @@ export default function BeginnersGuidePage() {
           <p className="mb-6" style={{ color: 'var(--text-muted)' }}>
             <strong style={{ color: 'var(--text-primary)' }}>Elixir</strong> is your resource for playing cards. You start with 5 elixir and gain 1 more every 2.8 seconds (faster in double/triple elixir time). Managing elixir is the most important skill in Clash Royale.
           </p>
+
+          {/* Game UI Image */}
+          <figure className="mb-6">
+            <img
+              src={images.gameUI.url}
+              alt={images.gameUI.alt}
+              className="w-full rounded-xl"
+            />
+            <figcaption className="text-sm mt-2 text-center" style={{ color: 'var(--text-muted)' }}>
+              The elixir bar (purple) at the bottom shows your available elixir
+            </figcaption>
+          </figure>
 
           <div className="space-y-4 mb-6">
             <div className="p-4 rounded-xl" style={{ background: 'var(--surface-100)' }}>
@@ -198,6 +223,18 @@ export default function BeginnersGuidePage() {
           <p className="mb-6" style={{ color: 'var(--text-muted)' }}>
             Cards fall into three main categories. Understanding each type helps you build balanced decks and counter opponents effectively.
           </p>
+
+          {/* Cards Collection Image */}
+          <figure className="mb-6">
+            <img
+              src={images.cards.url}
+              alt={images.cards.alt}
+              className="w-full rounded-xl"
+            />
+            <figcaption className="text-sm mt-2 text-center" style={{ color: 'var(--text-muted)' }}>
+              Clash Royale features over 100 unique cards across different types
+            </figcaption>
+          </figure>
 
           <div className="grid sm:grid-cols-3 gap-4 mb-6">
             <div className="p-5 rounded-xl" style={{ background: 'var(--surface-100)', border: '2px solid #E74C3C30' }}>
