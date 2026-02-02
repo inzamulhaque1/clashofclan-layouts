@@ -37,6 +37,12 @@ const GAME_NAV = {
     { href: '/clash-royale/tier-list', label: 'Tier List' },
     { href: '/clash-royale/guides', label: 'Guides' },
   ],
+  'free-fire': [
+    { href: '/free-fire', label: 'Home' },
+    { href: '/free-fire/characters', label: 'Characters' },
+    { href: '/free-fire/weapons', label: 'Weapons' },
+    { href: '/free-fire/guides', label: 'Guides' },
+  ],
 };
 
 export default function DynamicHeader() {
