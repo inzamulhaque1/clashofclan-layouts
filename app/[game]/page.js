@@ -4,7 +4,7 @@ import { getGameBySlug, getGameSlugs } from '@/config/games';
 import { getContentStats, queryContent } from '@/lib/data';
 
 // Games with dedicated static routes (should redirect to avoid conflict)
-const STATIC_GAME_ROUTES = ['brawl-stars'];
+const STATIC_GAME_ROUTES = ['brawl-stars', 'clash-royale'];
 
 // Generate static params for all games (exclude games with dedicated static routes)
 export async function generateStaticParams() {

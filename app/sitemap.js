@@ -3,6 +3,7 @@ import { getAllGuideSlugs } from '@/lib/guides';
 import { SITE_CONFIG } from '@/lib/seo';
 import { getAllArticles } from '@/data/blog-index';
 import { BRAWLERS, GAME_MODES } from '@/lib/brawl-stars/brawlers';
+import { CARDS as CR_CARDS } from '@/lib/clash-royale/cards';
 
 export default function sitemap() {
   const baseUrl = SITE_CONFIG.url;
@@ -103,5 +104,21 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...thPages, ...bhPages, ...guidePages, ...blogPages, ...basePages, ...brawlStarsPages, ...brawlerPages, ...gameModePages];
+  // Clash Royale pages
+  const clashRoyalePages = [
+    { url: `${baseUrl}/clash-royale`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.9 },
+    { url: `${baseUrl}/clash-royale/tier-list`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.9 },
+    { url: `${baseUrl}/clash-royale/guides`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/clash-royale/guides/beginners-guide`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+  ];
+
+  // Individual Clash Royale card pages
+  const crCardPages = CR_CARDS.map(card => ({
+    url: `${baseUrl}/clash-royale/cards/${card.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...thPages, ...bhPages, ...guidePages, ...blogPages, ...basePages, ...brawlStarsPages, ...brawlerPages, ...gameModePages, ...clashRoyalePages, ...crCardPages];
 }

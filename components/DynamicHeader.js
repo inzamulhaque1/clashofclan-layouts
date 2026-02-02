@@ -34,6 +34,7 @@ const GAME_NAV = {
   ],
   'clash-royale': [
     { href: '/clash-royale', label: 'Home' },
+    { href: '/clash-royale/tier-list', label: 'Tier List' },
     { href: '/clash-royale/guides', label: 'Guides' },
   ],
 };
