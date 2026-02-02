@@ -17,55 +17,39 @@ export default function ClashRoyaleHomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden" style={{ background: '#0a0a0f' }}>
-
-      {/* Animated Background */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
-      </div>
+    <div className="min-h-screen overflow-x-hidden" style={{ background: 'var(--bg-primary)' }}>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
-        {/* Hero Image with Parallax Effect */}
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        {/* Hero Image */}
         <div className="absolute inset-0">
           <img
             src={GENERAL_IMAGES.heroBanner.url}
             alt={GENERAL_IMAGES.heroBanner.alt}
-            className="w-full h-full object-cover scale-110"
-            style={{ filter: 'brightness(0.3)' }}
+            className="w-full h-full object-cover"
           />
-          {/* Vignette Effect */}
-          <div className="absolute inset-0" style={{
-            background: 'radial-gradient(ellipse at center, transparent 0%, #0a0a0f 70%)'
-          }} />
-          {/* Bottom Fade */}
-          <div className="absolute bottom-0 left-0 right-0 h-64" style={{
-            background: 'linear-gradient(to top, #0a0a0f, transparent)'
-          }} />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
 
         <div className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="text-center">
-            {/* Animated Badge */}
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full text-sm font-bold mb-8 border border-blue-500/30 bg-blue-500/10 backdrop-blur-xl">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full text-sm font-bold mb-8 bg-white/10 backdrop-blur-md border border-white/20">
               <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
               </span>
-              <span className="text-blue-400 tracking-wide">SEASON 56 • META UPDATE LIVE</span>
+              <span className="text-white tracking-wide">SEASON 56 • META UPDATE LIVE</span>
             </div>
 
             {/* Main Title */}
-            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black mb-6 tracking-tight">
-              <span className="text-white">CLASH</span>
-              <br />
-              <span className="text-blue-500">ROYALE</span>
+            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black mb-6 tracking-tight text-white">
+              CLASH
+              <span className="block text-blue-400">ROYALE</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xl sm:text-2xl mb-4 text-white/60 font-light max-w-2xl mx-auto">
+            <p className="text-xl sm:text-2xl mb-6 text-white/70 font-light max-w-2xl mx-auto">
               The Ultimate Competitive Resource
             </p>
 
@@ -76,9 +60,9 @@ export default function ClashRoyaleHomePage() {
                 { value: '52%', label: 'AVG WIN RATE' },
                 { value: 'DAILY', label: 'UPDATES' },
               ].map((stat, i) => (
-                <div key={i} className="group">
-                  <div className="text-3xl sm:text-4xl font-black text-white group-hover:text-blue-400 transition-colors">{stat.value}</div>
-                  <div className="text-xs text-white/40 tracking-widest font-medium">{stat.label}</div>
+                <div key={i}>
+                  <div className="text-3xl sm:text-4xl font-black text-white">{stat.value}</div>
+                  <div className="text-xs text-white/50 tracking-widest font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -87,14 +71,9 @@ export default function ClashRoyaleHomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/clash-royale/tier-list"
-                className="group relative px-10 py-5 rounded-2xl font-bold text-lg overflow-hidden transition-all duration-300 hover:scale-105"
+                className="group px-10 py-5 rounded-2xl font-bold text-lg bg-blue-500 text-white transition-all duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20"
               >
-                <div className="absolute inset-0 bg-blue-500" />
-                <div className="absolute inset-0 bg-blue-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity" style={{
-                  background: 'radial-gradient(circle at center, white 0%, transparent 70%)'
-                }} />
-                <span className="relative z-10 flex items-center justify-center gap-2 text-white">
+                <span className="flex items-center justify-center gap-2">
                   View Tier List
                   <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -103,7 +82,7 @@ export default function ClashRoyaleHomePage() {
               </Link>
               <Link
                 href="/clash-royale/guides"
-                className="group px-10 py-5 rounded-2xl font-bold text-lg border-2 border-white/20 text-white transition-all duration-300 hover:border-white/40 hover:bg-white/5 hover:scale-105"
+                className="px-10 py-5 rounded-2xl font-bold text-lg bg-white/10 backdrop-blur-sm text-white border border-white/20 transition-all duration-300 hover:bg-white/20 hover:scale-105"
               >
                 Pro Guides
               </Link>
@@ -112,35 +91,55 @@ export default function ClashRoyaleHomePage() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <span className="text-xs text-white/30 tracking-widest uppercase">Scroll</span>
-          <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2">
-            <div className="w-1.5 h-3 bg-white/40 rounded-full animate-bounce" />
-          </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+          <svg className="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      </section>
+
+      {/* Quick Stats Bar */}
+      <section className="relative -mt-12 z-20 max-w-5xl mx-auto px-4 sm:px-6">
+        <div
+          className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 rounded-3xl shadow-xl"
+          style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
+        >
+          {[
+            { value: '100+', label: 'Cards', icon: '🃏', color: '#3B82F6' },
+            { value: META_DECKS.length, label: 'Meta Decks', icon: '🏆', color: '#F59E0B' },
+            { value: '3', label: 'Pro Guides', icon: '📚', color: '#10B981' },
+            { value: 'Daily', label: 'Updates', icon: '🔄', color: '#8B5CF6' },
+          ].map((stat, i) => (
+            <div key={i} className="text-center p-4 rounded-2xl transition-all duration-300 hover:scale-105" style={{ background: 'var(--surface-50)' }}>
+              <div className="text-2xl mb-2">{stat.icon}</div>
+              <div className="text-2xl sm:text-3xl font-black" style={{ color: stat.color }}>{stat.value}</div>
+              <div className="text-xs uppercase tracking-wider font-medium" style={{ color: 'var(--text-muted)' }}>{stat.label}</div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Top Cards Section */}
-      <section className="relative py-24">
+      <section className="py-20 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-1 bg-blue-500 rounded-full" />
-                <span className="text-blue-500 font-bold text-sm tracking-widest uppercase">Meta Snapshot</span>
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full mb-4" style={{ background: 'rgba(59, 130, 246, 0.1)' }}>
+                <div className="w-2 h-2 rounded-full bg-blue-500" />
+                <span className="text-blue-500 font-bold text-sm tracking-wider uppercase">Meta Snapshot</span>
               </div>
-              <h2 className="text-4xl sm:text-5xl font-black text-white mb-2">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black" style={{ color: 'var(--text-primary)' }}>
                 Top Performing Cards
               </h2>
-              <p className="text-white/40 text-lg">Highest win rates in Grand Challenges</p>
+              <p className="mt-2 text-lg" style={{ color: 'var(--text-muted)' }}>Highest win rates in Grand Challenges</p>
             </div>
             <Link
               href="/clash-royale/tier-list"
-              className="group flex items-center gap-3 text-blue-400 font-bold hover:text-blue-300 transition-colors"
+              className="group flex items-center gap-3 text-blue-500 font-bold hover:text-blue-600 transition-colors"
             >
               <span>View Full Tier List</span>
-              <div className="w-10 h-10 rounded-full border-2 border-current flex items-center justify-center group-hover:bg-blue-500 group-hover:border-blue-500 group-hover:text-white transition-all">
+              <div className="w-10 h-10 rounded-full border-2 border-blue-500 flex items-center justify-center group-hover:bg-blue-500 group-hover:text-white transition-all">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -157,24 +156,17 @@ export default function ClashRoyaleHomePage() {
                 onMouseEnter={() => setHoveredCard(card.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                {/* Card Glow Effect */}
                 <div
-                  className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"
-                  style={{ background: TIERS[card.tier].color }}
-                />
-
-                {/* Card Content */}
-                <div
-                  className="relative rounded-2xl overflow-hidden transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2"
-                  style={{ background: '#12121a', border: '1px solid rgba(255,255,255,0.08)' }}
+                  className="relative rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl"
+                  style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
                 >
-                  {/* Rank */}
+                  {/* Rank Badge */}
                   <div className="absolute top-4 left-4 z-10">
                     <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg"
+                      className="w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg shadow-lg"
                       style={{
-                        background: index < 3 ? '#FFD700' : 'rgba(255,255,255,0.1)',
-                        color: index < 3 ? '#000' : '#fff'
+                        background: index < 3 ? '#FFD700' : 'var(--surface-200)',
+                        color: index < 3 ? '#000' : 'var(--text-primary)'
                       }}
                     >
                       {index + 1}
@@ -183,35 +175,37 @@ export default function ClashRoyaleHomePage() {
 
                   {/* Tier Badge */}
                   <div
-                    className="absolute top-4 right-4 z-10 px-3 py-1.5 rounded-lg font-bold text-xs tracking-wider"
+                    className="absolute top-4 right-4 z-10 px-3 py-1.5 rounded-lg font-bold text-xs tracking-wider text-white shadow-lg"
                     style={{ background: TIERS[card.tier].color }}
                   >
                     {card.tier}-TIER
                   </div>
 
-                  {/* Card Image Area */}
-                  <div className="relative pt-16 pb-8 px-8 flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.02)' }}>
+                  {/* Card Image */}
+                  <div className="pt-16 pb-6 px-6 flex items-center justify-center" style={{ background: 'var(--surface-50)' }}>
                     <img
                       src={card.image}
                       alt={card.name}
                       className="w-24 h-24 sm:w-28 sm:h-28 object-contain transition-all duration-500 group-hover:scale-110"
-                      style={{ filter: hoveredCard === card.id ? 'drop-shadow(0 0 20px rgba(255,255,255,0.3))' : 'none' }}
+                      style={{
+                        filter: hoveredCard === card.id ? `drop-shadow(0 0 20px ${TIERS[card.tier].color}80)` : 'none'
+                      }}
                     />
                   </div>
 
                   {/* Card Info */}
-                  <div className="p-5 border-t border-white/5">
-                    <h3 className="font-bold text-lg text-white mb-3 truncate">{card.name}</h3>
+                  <div className="p-5">
+                    <h3 className="font-bold text-lg mb-3 truncate" style={{ color: 'var(--text-primary)' }}>{card.name}</h3>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center">
-                          <span className="text-purple-400 text-xs font-bold">{card.elixir}</span>
+                        <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
+                          <span className="text-purple-500 text-xs font-bold">{card.elixir}</span>
                         </div>
-                        <span className="text-white/40 text-sm">Elixir</span>
+                        <span style={{ color: 'var(--text-muted)' }} className="text-sm">Elixir</span>
                       </div>
                       <div className="text-right">
-                        <div className="text-green-400 font-black text-xl">{card.winRate}%</div>
-                        <div className="text-white/30 text-xs">WIN RATE</div>
+                        <div className="text-green-500 font-black text-xl">{card.winRate}%</div>
+                        <div className="text-xs" style={{ color: 'var(--text-muted)' }}>WIN RATE</div>
                       </div>
                     </div>
                   </div>
@@ -223,93 +217,73 @@ export default function ClashRoyaleHomePage() {
       </section>
 
       {/* Tier List Interactive Section */}
-      <section className="relative py-24" style={{ background: '#0d0d14' }}>
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-          backgroundSize: '40px 40px'
-        }} />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-24" style={{ background: 'var(--surface-50)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 mb-4">
-              <div className="w-8 h-1 bg-purple-500 rounded-full" />
-              <span className="text-purple-500 font-bold text-sm tracking-widest uppercase">Interactive</span>
-              <div className="w-8 h-1 bg-purple-500 rounded-full" />
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full mb-4" style={{ background: 'rgba(139, 92, 246, 0.1)' }}>
+              <div className="w-2 h-2 rounded-full bg-purple-500" />
+              <span className="text-purple-500 font-bold text-sm tracking-wider uppercase">Interactive</span>
+              <div className="w-2 h-2 rounded-full bg-purple-500" />
             </div>
-            <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4" style={{ color: 'var(--text-primary)' }}>
               Card Tier List
             </h2>
-            <p className="text-white/40 text-lg max-w-lg mx-auto">
+            <p className="text-lg max-w-lg mx-auto" style={{ color: 'var(--text-muted)' }}>
               Click on any tier to explore cards
             </p>
           </div>
 
           {/* Tier Selector */}
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10">
             {Object.entries(TIERS).map(([tier, data]) => (
               <button
                 key={tier}
                 onClick={() => setSelectedTier(tier)}
-                className="relative group"
+                className="relative px-6 sm:px-8 py-4 rounded-2xl font-black text-lg transition-all duration-300"
+                style={{
+                  background: selectedTier === tier ? data.color : 'var(--surface-100)',
+                  color: selectedTier === tier ? '#fff' : 'var(--text-muted)',
+                  border: `2px solid ${selectedTier === tier ? data.color : 'var(--border)'}`,
+                  transform: selectedTier === tier ? 'scale(1.1)' : 'scale(1)',
+                  boxShadow: selectedTier === tier ? `0 10px 40px -10px ${data.color}` : 'none'
+                }}
               >
-                {/* Button Glow */}
-                {selectedTier === tier && (
-                  <div
-                    className="absolute -inset-1 rounded-2xl blur-lg opacity-50"
-                    style={{ background: data.color }}
-                  />
-                )}
-                <div
-                  className="relative px-6 sm:px-8 py-4 rounded-2xl font-black text-lg transition-all duration-300"
-                  style={{
-                    background: selectedTier === tier ? data.color : 'rgba(255,255,255,0.05)',
-                    color: selectedTier === tier ? '#fff' : 'rgba(255,255,255,0.5)',
-                    border: `2px solid ${selectedTier === tier ? data.color : 'transparent'}`,
-                    transform: selectedTier === tier ? 'scale(1.1)' : 'scale(1)',
-                  }}
-                >
-                  <span className="text-2xl sm:text-3xl">{tier}</span>
-                  <span className="ml-2 text-sm opacity-60">({getCardsByTier(tier).length})</span>
-                </div>
+                <span className="text-2xl sm:text-3xl">{tier}</span>
+                <span className="ml-2 text-sm opacity-70">({getCardsByTier(tier).length})</span>
               </button>
             ))}
           </div>
 
           {/* Cards Display */}
           <div
-            className="p-6 sm:p-8 rounded-3xl border border-white/10"
-            style={{ background: 'rgba(255,255,255,0.02)' }}
+            className="p-6 sm:p-8 rounded-3xl"
+            style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
           >
             <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3 sm:gap-4">
-              {tierCards.slice(0, 16).map((card, index) => (
+              {tierCards.slice(0, 16).map((card) => (
                 <div
                   key={card.id}
-                  className="group relative rounded-xl p-3 text-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer"
-                  style={{
-                    background: 'rgba(255,255,255,0.03)',
-                    border: '1px solid rgba(255,255,255,0.06)',
-                    animationDelay: `${index * 30}ms`
-                  }}
+                  className="group rounded-xl p-3 text-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer"
+                  style={{ background: 'var(--surface-50)', border: '1px solid var(--border)' }}
                 >
                   <img
                     src={card.image}
                     alt={card.name}
                     className="w-10 h-10 sm:w-14 sm:h-14 mx-auto mb-2 object-contain transition-transform group-hover:scale-110"
                   />
-                  <div className="text-[10px] sm:text-xs font-semibold text-white/80 truncate">{card.name}</div>
-                  <div className="text-[10px] font-bold text-green-400">{card.winRate}%</div>
+                  <div className="text-[10px] sm:text-xs font-semibold truncate" style={{ color: 'var(--text-primary)' }}>{card.name}</div>
+                  <div className="text-[10px] font-bold text-green-500">{card.winRate}%</div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* CTA */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-10">
             <Link
               href="/clash-royale/tier-list"
-              className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-lg bg-purple-500 text-white transition-all duration-300 hover:bg-purple-400 hover:scale-105"
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-lg bg-purple-500 text-white transition-all duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20"
             >
               <span>View Complete Tier List</span>
               <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -321,29 +295,29 @@ export default function ClashRoyaleHomePage() {
       </section>
 
       {/* Meta Decks Section */}
-      <section className="relative py-24">
+      <section className="py-20 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-1 bg-amber-500 rounded-full" />
-                <span className="text-amber-500 font-bold text-sm tracking-widest uppercase">Competitive</span>
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full mb-4" style={{ background: 'rgba(245, 158, 11, 0.1)' }}>
+                <div className="w-2 h-2 rounded-full bg-amber-500" />
+                <span className="text-amber-500 font-bold text-sm tracking-wider uppercase">Competitive</span>
               </div>
-              <h2 className="text-4xl sm:text-5xl font-black text-white mb-2">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black" style={{ color: 'var(--text-primary)' }}>
                 Meta Decks
               </h2>
-              <p className="text-white/40 text-lg">Best performing decks in ranked play</p>
+              <p className="mt-2 text-lg" style={{ color: 'var(--text-muted)' }}>Best performing decks in ranked play</p>
             </div>
           </div>
 
           {/* Decks Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {META_DECKS.slice(0, 6).map((deck, index) => (
+            {META_DECKS.slice(0, 6).map((deck) => (
               <div
                 key={deck.id}
-                className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
-                style={{ background: '#12121a', border: '1px solid rgba(255,255,255,0.08)' }}
+                className="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
               >
                 {/* Top Accent */}
                 <div className="h-1 bg-amber-500" />
@@ -351,30 +325,30 @@ export default function ClashRoyaleHomePage() {
                 <div className="p-6">
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
-                    <h3 className="font-bold text-xl text-white pr-4">{deck.name}</h3>
-                    <div className="flex-shrink-0 px-3 py-1 rounded-lg bg-green-500/20 text-green-400 font-black text-sm">
+                    <h3 className="font-bold text-xl pr-4" style={{ color: 'var(--text-primary)' }}>{deck.name}</h3>
+                    <div className="flex-shrink-0 px-3 py-1 rounded-lg font-black text-sm" style={{ background: 'rgba(16, 185, 129, 0.15)', color: '#10B981' }}>
                       {deck.winRate}%
                     </div>
                   </div>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 text-white/60">
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold" style={{ background: 'var(--surface-200)', color: 'var(--text-muted)' }}>
                       {deck.avgElixir} Elixir
                     </span>
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-400">
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold" style={{ background: 'rgba(59, 130, 246, 0.15)', color: '#3B82F6' }}>
                       {deck.archetype}
                     </span>
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-400">
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold" style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#F59E0B' }}>
                       {deck.difficulty}
                     </span>
                   </div>
 
                   {/* Description */}
-                  <p className="text-white/40 text-sm mb-6 line-clamp-2">{deck.description}</p>
+                  <p className="text-sm mb-6 line-clamp-2" style={{ color: 'var(--text-muted)' }}>{deck.description}</p>
 
                   {/* Action */}
-                  <div className="flex items-center gap-2 text-blue-400 font-semibold text-sm group-hover:gap-4 transition-all">
+                  <div className="flex items-center gap-2 text-blue-500 font-semibold text-sm group-hover:gap-4 transition-all">
                     <span>View Deck</span>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -388,19 +362,19 @@ export default function ClashRoyaleHomePage() {
       </section>
 
       {/* Guides Section */}
-      <section className="relative py-24" style={{ background: '#0d0d14' }}>
+      <section className="py-20 sm:py-24" style={{ background: 'var(--surface-50)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 mb-4">
-              <div className="w-8 h-1 bg-green-500 rounded-full" />
-              <span className="text-green-500 font-bold text-sm tracking-widest uppercase">Learn & Improve</span>
-              <div className="w-8 h-1 bg-green-500 rounded-full" />
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full mb-4" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>
+              <div className="w-2 h-2 rounded-full bg-green-500" />
+              <span className="text-green-500 font-bold text-sm tracking-wider uppercase">Learn & Improve</span>
+              <div className="w-2 h-2 rounded-full bg-green-500" />
             </div>
-            <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4" style={{ color: 'var(--text-primary)' }}>
               Pro Guides
             </h2>
-            <p className="text-white/40 text-lg max-w-lg mx-auto">
+            <p className="text-lg max-w-lg mx-auto" style={{ color: 'var(--text-muted)' }}>
               Master the game with in-depth strategies
             </p>
           </div>
@@ -439,36 +413,36 @@ export default function ClashRoyaleHomePage() {
               <Link
                 key={index}
                 href={guide.href}
-                className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
-                style={{ background: '#12121a' }}
+                className="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
               >
                 {/* Image */}
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-52 overflow-hidden">
                   <img
                     src={guide.image.url}
                     alt={guide.image.alt}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #12121a 0%, transparent 60%)' }} />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
 
                   {/* Tag */}
                   <div
-                    className="absolute top-4 left-4 px-3 py-1 rounded-lg font-bold text-xs tracking-wider text-white"
+                    className="absolute top-4 left-4 px-3 py-1.5 rounded-lg font-bold text-xs tracking-wider text-white"
                     style={{ background: guide.color }}
                   >
                     {guide.tag}
                   </div>
 
                   {/* Time */}
-                  <div className="absolute top-4 right-4 px-3 py-1 rounded-lg font-semibold text-xs text-white bg-black/50 backdrop-blur-sm">
+                  <div className="absolute top-4 right-4 px-3 py-1.5 rounded-lg font-semibold text-xs text-white bg-black/40 backdrop-blur-sm">
                     {guide.time}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 -mt-12 relative">
-                  <h3 className="text-2xl font-black text-white mb-1">{guide.title}</h3>
-                  <p className="text-white/40 mb-4">{guide.subtitle}</p>
+                <div className="p-6">
+                  <h3 className="text-xl font-black mb-1" style={{ color: 'var(--text-primary)' }}>{guide.title}</h3>
+                  <p className="mb-4" style={{ color: 'var(--text-muted)' }}>{guide.subtitle}</p>
 
                   <div className="flex items-center gap-2 font-semibold text-sm" style={{ color: guide.color }}>
                     <span>Read Guide</span>
@@ -482,10 +456,10 @@ export default function ClashRoyaleHomePage() {
           </div>
 
           {/* CTA */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-10">
             <Link
               href="/clash-royale/guides"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-green-400 border-2 border-green-500/30 transition-all hover:bg-green-500/10 hover:border-green-500/50"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-green-500 border-2 border-green-500/30 transition-all hover:bg-green-500 hover:text-white hover:border-green-500"
             >
               View All Guides
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -497,31 +471,27 @@ export default function ClashRoyaleHomePage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative py-32 overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-3xl" />
-        </div>
-
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="text-6xl mb-8">👑</div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6">
+      <section className="py-24 sm:py-32">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <div className="text-6xl mb-6">👑</div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6" style={{ color: 'var(--text-primary)' }}>
             Ready to Dominate?
           </h2>
-          <p className="text-xl text-white/50 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl mb-10 max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
             Use our tier lists, meta decks, and guides to climb to Ultimate Champion
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/clash-royale/tier-list"
-              className="group px-10 py-5 rounded-2xl font-bold text-lg bg-blue-500 text-white transition-all duration-300 hover:bg-blue-400 hover:scale-105"
+              className="px-10 py-5 rounded-2xl font-bold text-lg bg-blue-500 text-white transition-all duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20"
             >
               View Tier List
             </Link>
             <Link
               href="/clash-royale/guides/beginners-guide"
-              className="px-10 py-5 rounded-2xl font-bold text-lg border-2 border-white/20 text-white transition-all duration-300 hover:bg-white/10 hover:border-white/30 hover:scale-105"
+              className="px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-105"
+              style={{ background: 'var(--surface-100)', border: '1px solid var(--border)', color: 'var(--text-primary)' }}
             >
               Start Learning
             </Link>
