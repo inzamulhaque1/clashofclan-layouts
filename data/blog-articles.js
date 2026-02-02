@@ -1,33 +1,36 @@
-// Blog Articles Data - 15 Comprehensive Gaming Articles
+// Blog Articles Data - Part 1 (Articles 1-3)
+// Images imported from centralized library for reusability
 
-// Working Image URLs
+import { GAME_IMAGES, ARTICLE_IMAGES, CATEGORY_IMAGES } from '@/lib/blog/images';
+
+// Backward compatible IMG object - maps to centralized images
 const IMG = {
-  // Main article images - Updated with real game images
-  offline: 'https://i.ytimg.com/vi/f6bPBHz4tZc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCy6vPcLqnE8VdZFE5y2k_My3EP0g',
-  freeGames: 'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&q=80',
-  racing: 'https://images.unsplash.com/photo-1511882150382-421056c89033?w=800&q=80',
+  // Article hero images
+  offline: ARTICLE_IMAGES.offlineGames.url,
+  freeGames: ARTICLE_IMAGES.freeGames.url,
+  racing: ARTICLE_IMAGES.racingGames.url,
   // Game-specific images
-  minecraft: 'https://cdn.mos.cms.futurecdn.net/kBdvweFYoEVHCYegqh5Qub.jpg',
-  altosOdyssey: 'https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt7f7e65bb2e6d3032/650efbc2e602707ee7a547cb/altolead.jpg',
-  stardewValley: 'https://www.allkeyshop.com/blog/wp-content/uploads/Stardew-Valley-Sells-41-Million-Copies-1024x536.webp',
-  monumentValley: 'https://eshopperreviews.com/wp-content/uploads/2025/05/monument-valley-1-2-bundle.jpg',
-  deadCells: 'https://i0.wp.com/cliqist.com/wp-content/uploads/2018/08/deadcells7.jpg',
-  terraria: 'https://i.redd.it/started-playing-terraria-for-the-first-time-about-3-weeks-v0-6f1bu0ufsh2a1.jpg?width=3840&format=pjpg&auto=webp&s=eda70d2cf4fef509113b79b2a6374d573f489270',
-  gridAutosport: 'https://miro.medium.com/0*8iuwsxZgxNEAX9dJ.jpg',
-  plagueInc: 'https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000015517/d2f7dd044608a7a4f565eb2c9245b1c9fc66638c4c85739b12a63307130cfed2',
-  eternium: 'https://miro.medium.com/0*H9Ikt4z72cXlJcB6.jpg',
-  limbo: 'https://cdn1.epicgames.com/spt-assets/483e8369f22e4c46884b0b8406a33bde/limbo-1u3pj.jpg',
-  // Other images
-  mobile: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
-  gaming: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80',
-  controller: 'https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800&q=80',
-  esports: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80',
-  phone: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&q=80',
-  racing2: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80',
-  tech: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
-  strategy: 'https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=800&q=80',
-  puzzle: 'https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=800&q=80',
-  rpg: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&q=80',
+  minecraft: GAME_IMAGES.minecraft.url,
+  altosOdyssey: GAME_IMAGES.altosOdyssey.url,
+  stardewValley: GAME_IMAGES.stardewValley.url,
+  monumentValley: GAME_IMAGES.monumentValley.url,
+  deadCells: GAME_IMAGES.deadCells.url,
+  terraria: GAME_IMAGES.terraria.url,
+  gridAutosport: GAME_IMAGES.gridAutosport.url,
+  plagueInc: GAME_IMAGES.plagueInc.url,
+  eternium: GAME_IMAGES.eternium.url,
+  limbo: GAME_IMAGES.limbo.url,
+  // Category images
+  mobile: CATEGORY_IMAGES.mobile.url,
+  gaming: CATEGORY_IMAGES.gaming.url,
+  controller: CATEGORY_IMAGES.controller.url,
+  esports: CATEGORY_IMAGES.esports.url,
+  phone: ARTICLE_IMAGES.gamingPhones.url,
+  racing2: ARTICLE_IMAGES.racingGames.url,
+  tech: CATEGORY_IMAGES.tech.url,
+  strategy: CATEGORY_IMAGES.strategy.url,
+  puzzle: CATEGORY_IMAGES.puzzle.url,
+  rpg: CATEGORY_IMAGES.rpg.url,
 };
 
 export const BLOG_ARTICLES = [

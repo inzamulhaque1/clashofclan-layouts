@@ -1,18 +1,21 @@
 // Blog Articles Data - Part 2 (Articles 4-8)
+// Images imported from centralized library for reusability
 
-// Working Image URLs from Unsplash
+import { GAME_IMAGES, ARTICLE_IMAGES, CATEGORY_IMAGES } from '@/lib/blog/images';
+
+// Backward compatible IMG object - maps to centralized images
 const IMG = {
-  battleRoyale: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80',
-  strategy: 'https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=800&q=80',
-  sensitivity: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800&q=80',
-  gems: 'https://images.unsplash.com/photo-1604076913837-52ab5f9c1904?w=800&q=80',
-  phones: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&q=80',
-  gaming: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80',
-  esports: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80',
-  mobile: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
-  controller: 'https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800&q=80',
-  tech: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
-  rpg: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&q=80',
+  battleRoyale: ARTICLE_IMAGES.battleRoyaleLowEnd.url,
+  strategy: CATEGORY_IMAGES.strategy.url,
+  sensitivity: ARTICLE_IMAGES.sensitivitySettings.url,
+  gems: ARTICLE_IMAGES.gemSpending.url,
+  phones: ARTICLE_IMAGES.gamingPhones.url,
+  gaming: CATEGORY_IMAGES.gaming.url,
+  esports: CATEGORY_IMAGES.esports.url,
+  mobile: CATEGORY_IMAGES.mobile.url,
+  controller: CATEGORY_IMAGES.controller.url,
+  tech: CATEGORY_IMAGES.tech.url,
+  rpg: CATEGORY_IMAGES.rpg.url,
 };
 
 export const BLOG_ARTICLES_PART2 = [

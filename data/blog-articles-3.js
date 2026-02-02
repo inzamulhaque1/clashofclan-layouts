@@ -1,19 +1,22 @@
 // Blog Articles Data - Part 3 (Articles 9-15)
+// Images imported from centralized library for reusability
 
-// Working Image URLs from Unsplash
+import { GAME_IMAGES, ARTICLE_IMAGES, CATEGORY_IMAGES } from '@/lib/blog/images';
+
+// Backward compatible IMG object - maps to centralized images
 const IMG = {
-  fps: 'https://images.unsplash.com/photo-1558742619-fd82741daa9e?w=800&q=80',
-  multiplayer: 'https://images.unsplash.com/photo-1493711662062-fa541f7f3d24?w=800&q=80',
-  openWorld: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80',
-  survival: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&q=80',
-  gacha: 'https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=800&q=80',
-  comparison: 'https://images.unsplash.com/photo-1553481187-be93c21490a9?w=800&q=80',
-  supercell: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80',
-  gaming: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80',
-  esports: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80',
-  mobile: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
-  controller: 'https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800&q=80',
-  strategy: 'https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=800&q=80',
+  fps: CATEGORY_IMAGES.fps.url,
+  multiplayer: ARTICLE_IMAGES.multiplayerGames.url,
+  openWorld: ARTICLE_IMAGES.openWorldGames.url,
+  survival: ARTICLE_IMAGES.survivalGames.url,
+  gacha: ARTICLE_IMAGES.gachaGames.url,
+  comparison: ARTICLE_IMAGES.gameComparison.url,
+  supercell: ARTICLE_IMAGES.supercellGames.url,
+  gaming: CATEGORY_IMAGES.gaming.url,
+  esports: CATEGORY_IMAGES.esports.url,
+  mobile: CATEGORY_IMAGES.mobile.url,
+  controller: CATEGORY_IMAGES.controller.url,
+  strategy: CATEGORY_IMAGES.strategy.url,
 };
 
 export const BLOG_ARTICLES_PART3 = [
