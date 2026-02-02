@@ -314,9 +314,10 @@ export default function ClashRoyaleHomePage() {
           {/* Decks Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {META_DECKS.slice(0, 6).map((deck) => (
-              <div
+              <Link
                 key={deck.id}
-                className="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                href={`/clash-royale/decks/${deck.id}`}
+                className="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl cursor-pointer block"
                 style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
               >
                 {/* Top Accent */}
@@ -331,8 +332,21 @@ export default function ClashRoyaleHomePage() {
                     </div>
                   </div>
 
+                  {/* Card Images */}
+                  <div className="grid grid-cols-8 gap-1 mb-4 p-2 rounded-xl" style={{ background: 'var(--surface-50)' }}>
+                    {deck.cards.map((cardId, idx) => (
+                      <img
+                        key={idx}
+                        src={`https://cdn.royaleapi.com/static/img/cards-150/${cardId}.png`}
+                        alt={cardId}
+                        className="w-full aspect-square object-contain rounded transition-transform hover:scale-110"
+                        title={cardId.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                      />
+                    ))}
+                  </div>
+
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     <span className="px-3 py-1 rounded-full text-xs font-semibold" style={{ background: 'var(--surface-200)', color: 'var(--text-muted)' }}>
                       {deck.avgElixir} Elixir
                     </span>
@@ -345,17 +359,17 @@ export default function ClashRoyaleHomePage() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-sm mb-6 line-clamp-2" style={{ color: 'var(--text-muted)' }}>{deck.description}</p>
+                  <p className="text-sm mb-4 line-clamp-2" style={{ color: 'var(--text-muted)' }}>{deck.description}</p>
 
                   {/* Action */}
                   <div className="flex items-center gap-2 text-blue-500 font-semibold text-sm group-hover:gap-4 transition-all">
-                    <span>View Deck</span>
+                    <span>View Deck Guide</span>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
