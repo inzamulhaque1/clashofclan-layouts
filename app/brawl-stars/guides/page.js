@@ -39,27 +39,27 @@ const guides = [
     color: "#F59E0B",
     readTime: "12 min",
     difficulty: "Advanced",
-    isAvailable: false
+    isAvailable: true
   },
   {
-    slug: "star-powers",
+    slug: "star-powers-gadgets",
     title: "Best Star Powers & Gadgets",
     description: "Optimal builds for every brawler in the meta. Know which Star Powers and Gadgets to prioritize.",
     icon: "⭐",
     color: "#EAB308",
     readTime: "10 min",
     difficulty: "Intermediate",
-    isAvailable: false
+    isAvailable: true
   },
   {
-    slug: "gem-guide",
+    slug: "gem-spending",
     title: "Gem Spending Guide",
     description: "Maximize value from your gems and Brawl Pass. Learn when to spend and when to save.",
     icon: "💎",
     color: "#06B6D4",
     readTime: "8 min",
     difficulty: "Beginner",
-    isAvailable: false
+    isAvailable: true
   },
   {
     slug: "club-league",
@@ -69,7 +69,7 @@ const guides = [
     color: "#8B5CF6",
     readTime: "10 min",
     difficulty: "Intermediate",
-    isAvailable: false
+    isAvailable: true
   },
   {
     slug: "map-control",
@@ -79,7 +79,7 @@ const guides = [
     color: "#EC4899",
     readTime: "12 min",
     difficulty: "Advanced",
-    isAvailable: false
+    isAvailable: true
   },
 ];
 

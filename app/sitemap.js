@@ -80,6 +80,11 @@ export default function sitemap() {
     { url: `${baseUrl}/brawl-stars/modes`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/brawl-stars/guides`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/brawl-stars/guides/beginners-guide`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/brawl-stars/guides/ranked-guide`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/brawl-stars/guides/star-powers-gadgets`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/brawl-stars/guides/gem-spending`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/brawl-stars/guides/club-league`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/brawl-stars/guides/map-control`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
   ];
 
   // Individual brawler pages

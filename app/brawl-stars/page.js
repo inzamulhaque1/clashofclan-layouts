@@ -566,44 +566,190 @@ export default function BrawlStarsHomePage() {
             </div>
           </Link>
 
-          {/* Coming Soon Guides */}
-          {[
-            { title: 'How to Push Ranked', desc: 'Climb to Mythic rank with these pro strategies', icon: '🏆', color: '#F59E0B' },
-            { title: 'Best Star Powers & Gadgets', desc: 'Optimal builds for every brawler in the meta', icon: '⭐', color: '#EAB308' },
-            { title: 'Gem Spending Guide', desc: 'Maximize value from your gems and Brawl Pass', icon: '💎', color: '#06B6D4' },
-            { title: 'Club League Strategy', desc: 'Dominate Club League with coordinated team play', icon: '🏅', color: '#8B5CF6' },
-            { title: 'Map Control Tips', desc: 'Master positioning and zone control in every mode', icon: '🗺️', color: '#EC4899' },
-          ].map((guide, index) => (
+          {/* Ranked Guide - Available */}
+          <Link
+            href="/brawl-stars/guides/ranked-guide"
+            className="group relative p-6 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1"
+            style={{
+              background: 'var(--surface-100)',
+              border: '1px solid var(--border)',
+              boxShadow: '0 4px 20px -5px rgba(0,0,0,0.1)'
+            }}
+          >
+            {/* Available Badge */}
             <div
-              key={index}
-              className="group relative p-6 rounded-2xl overflow-hidden opacity-75"
-              style={{
-                background: 'var(--surface-100)',
-                border: '1px solid var(--border)',
-              }}
+              className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold"
+              style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#F59E0B' }}
             >
-              {/* Coming Soon Badge */}
-              <div
-                className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold"
-                style={{ background: 'rgba(139, 92, 246, 0.15)', color: '#8B5CF6' }}
-              >
-                Coming Soon
-              </div>
-
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4"
-                style={{ background: `${guide.color}15` }}
-              >
-                {guide.icon}
-              </div>
-              <h3 className="font-bold text-lg mb-2" style={{ color: 'var(--text-primary)' }}>
-                {guide.title}
-              </h3>
-              <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
-                {guide.desc}
-              </p>
+              Available
             </div>
-          ))}
+            <div
+              className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4"
+              style={{ background: 'rgba(245, 158, 11, 0.15)' }}
+            >
+              🏆
+            </div>
+            <h3 className="font-bold text-lg mb-2 group-hover:text-orange-500 transition-colors" style={{ color: 'var(--text-primary)' }}>
+              How to Push Ranked
+            </h3>
+            <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>
+              Climb to Mythic rank with these pro strategies
+            </p>
+            <div className="flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3" style={{ color: '#F59E0B' }}>
+              Read Guide
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </Link>
+
+          {/* Star Powers & Gadgets Guide - Available */}
+          <Link
+            href="/brawl-stars/guides/star-powers-gadgets"
+            className="group relative p-6 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1"
+            style={{
+              background: 'var(--surface-100)',
+              border: '1px solid var(--border)',
+              boxShadow: '0 4px 20px -5px rgba(0,0,0,0.1)'
+            }}
+          >
+            {/* Available Badge */}
+            <div
+              className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold"
+              style={{ background: 'rgba(234, 179, 8, 0.15)', color: '#EAB308' }}
+            >
+              Available
+            </div>
+            <div
+              className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4"
+              style={{ background: 'rgba(234, 179, 8, 0.15)' }}
+            >
+              ⭐
+            </div>
+            <h3 className="font-bold text-lg mb-2 group-hover:text-orange-500 transition-colors" style={{ color: 'var(--text-primary)' }}>
+              Best Star Powers & Gadgets
+            </h3>
+            <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>
+              Optimal builds for every brawler in the meta
+            </p>
+            <div className="flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3" style={{ color: '#EAB308' }}>
+              Read Guide
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </Link>
+
+          {/* Gem Spending Guide - Available */}
+          <Link
+            href="/brawl-stars/guides/gem-spending"
+            className="group relative p-6 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1"
+            style={{
+              background: 'var(--surface-100)',
+              border: '1px solid var(--border)',
+              boxShadow: '0 4px 20px -5px rgba(0,0,0,0.1)'
+            }}
+          >
+            {/* Available Badge */}
+            <div
+              className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold"
+              style={{ background: 'rgba(6, 182, 212, 0.15)', color: '#06B6D4' }}
+            >
+              Available
+            </div>
+            <div
+              className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4"
+              style={{ background: 'rgba(6, 182, 212, 0.15)' }}
+            >
+              💎
+            </div>
+            <h3 className="font-bold text-lg mb-2 group-hover:text-orange-500 transition-colors" style={{ color: 'var(--text-primary)' }}>
+              Gem Spending Guide
+            </h3>
+            <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>
+              Maximize value from your gems and Brawl Pass
+            </p>
+            <div className="flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3" style={{ color: '#06B6D4' }}>
+              Read Guide
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </Link>
+
+          {/* Club League Guide - Available */}
+          <Link
+            href="/brawl-stars/guides/club-league"
+            className="group relative p-6 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1"
+            style={{
+              background: 'var(--surface-100)',
+              border: '1px solid var(--border)',
+              boxShadow: '0 4px 20px -5px rgba(0,0,0,0.1)'
+            }}
+          >
+            {/* Available Badge */}
+            <div
+              className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold"
+              style={{ background: 'rgba(139, 92, 246, 0.15)', color: '#8B5CF6' }}
+            >
+              Available
+            </div>
+            <div
+              className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4"
+              style={{ background: 'rgba(139, 92, 246, 0.15)' }}
+            >
+              🏅
+            </div>
+            <h3 className="font-bold text-lg mb-2 group-hover:text-orange-500 transition-colors" style={{ color: 'var(--text-primary)' }}>
+              Club League Strategy
+            </h3>
+            <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>
+              Dominate Club League with coordinated team play
+            </p>
+            <div className="flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3" style={{ color: '#8B5CF6' }}>
+              Read Guide
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </Link>
+
+          {/* Map Control Guide - Available */}
+          <Link
+            href="/brawl-stars/guides/map-control"
+            className="group relative p-6 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1"
+            style={{
+              background: 'var(--surface-100)',
+              border: '1px solid var(--border)',
+              boxShadow: '0 4px 20px -5px rgba(0,0,0,0.1)'
+            }}
+          >
+            {/* Available Badge */}
+            <div
+              className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold"
+              style={{ background: 'rgba(236, 72, 153, 0.15)', color: '#EC4899' }}
+            >
+              Available
+            </div>
+            <div
+              className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4"
+              style={{ background: 'rgba(236, 72, 153, 0.15)' }}
+            >
+              🗺️
+            </div>
+            <h3 className="font-bold text-lg mb-2 group-hover:text-orange-500 transition-colors" style={{ color: 'var(--text-primary)' }}>
+              Map Control Tips
+            </h3>
+            <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>
+              Master positioning and zone control in every mode
+            </p>
+            <div className="flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3" style={{ color: '#EC4899' }}>
+              Read Guide
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </Link>
         </div>
       </section>
 
