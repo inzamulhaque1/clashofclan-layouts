@@ -50,9 +50,9 @@ const freeFire = {
 
   // Navigation links
   navigation: [
-    { href: '/free-fire/loadouts', label: 'Loadouts' },
+    { href: '/free-fire', label: 'Overview' },
     { href: '/free-fire/characters', label: 'Characters' },
-    { href: '/free-fire/tier-list', label: 'Tier List' },
+    { href: '/free-fire/weapons', label: 'Weapons' },
     { href: '/free-fire/guides', label: 'Guides' },
   ],
 
