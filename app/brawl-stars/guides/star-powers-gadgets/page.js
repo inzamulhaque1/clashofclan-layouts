@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { GUIDE_IMAGES } from '@/lib/brawl-stars/images';
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
+import RelatedGuides from '@/components/brawl-stars/RelatedGuides';
+import SocialShare from '@/components/SocialShare';
 
 const images = GUIDE_IMAGES.starPowersGuide;
 const baseUrl = "https://www.game365hub.com";
@@ -528,6 +530,18 @@ export default function StarPowersGadgetsPage() {
             </div>
           </div>
         </div>
+
+        {/* Social Share */}
+        <div className="mt-8 p-6 rounded-2xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
+          <SocialShare
+            url="/brawl-stars/guides/star-powers-gadgets"
+            title="Best Star Powers & Gadgets in Brawl Stars 2026"
+            description="Optimal builds for every brawler in the meta"
+          />
+        </div>
+
+        {/* Related Guides */}
+        <RelatedGuides currentSlug="star-powers-gadgets" />
       </article>
     </div>
   );

@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { GUIDE_IMAGES } from '@/lib/brawl-stars/images';
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
+import RelatedGuides from '@/components/brawl-stars/RelatedGuides';
+import SocialShare from '@/components/SocialShare';
 
 const images = GUIDE_IMAGES.rankedGuide;
 const baseUrl = "https://www.game365hub.com";
@@ -532,6 +534,18 @@ export default function RankedGuidePage() {
             </div>
           </div>
         </div>
+
+        {/* Social Share */}
+        <div className="mt-8 p-6 rounded-2xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
+          <SocialShare
+            url="/brawl-stars/guides/ranked-guide"
+            title="How to Push Ranked in Brawl Stars 2026 - Complete Guide"
+            description="Climb to Mythic rank with these pro strategies"
+          />
+        </div>
+
+        {/* Related Guides */}
+        <RelatedGuides currentSlug="ranked-guide" />
       </article>
     </div>
   );

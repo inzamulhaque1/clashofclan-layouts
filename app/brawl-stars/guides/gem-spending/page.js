@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { GUIDE_IMAGES } from '@/lib/brawl-stars/images';
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
+import RelatedGuides from '@/components/brawl-stars/RelatedGuides';
+import SocialShare from '@/components/SocialShare';
 
 const images = GUIDE_IMAGES.gemSpendingGuide;
 const baseUrl = "https://www.game365hub.com";
@@ -466,6 +468,18 @@ export default function GemSpendingGuidePage() {
             </div>
           </div>
         </div>
+
+        {/* Social Share */}
+        <div className="mt-8 p-6 rounded-2xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
+          <SocialShare
+            url="/brawl-stars/guides/gem-spending"
+            title="Brawl Stars Gem Spending Guide 2026"
+            description="Maximize value from your gems and Brawl Pass"
+          />
+        </div>
+
+        {/* Related Guides */}
+        <RelatedGuides currentSlug="gem-spending" />
       </article>
     </div>
   );

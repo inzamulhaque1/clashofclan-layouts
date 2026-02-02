@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { ArticleJsonLd, FAQJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
+import RelatedGuides from '@/components/brawl-stars/RelatedGuides';
+import SocialShare from '@/components/SocialShare';
 
 export const metadata = {
   title: "Brawl Stars Beginner Guide 2026 | Complete Tutorial for New Players",
@@ -697,6 +699,18 @@ export default function BeginnersGuidePage() {
             </div>
           </div>
         </div>
+
+        {/* Social Share */}
+        <div className="mt-8 p-6 rounded-2xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
+          <SocialShare
+            url="/brawl-stars/guides/beginners-guide"
+            title="Brawl Stars Beginner Guide 2026 - Complete Tutorial"
+            description="Everything new players need to know to start winning in Brawl Stars"
+          />
+        </div>
+
+        {/* Related Guides */}
+        <RelatedGuides currentSlug="beginners-guide" />
       </article>
     </div>
   );
