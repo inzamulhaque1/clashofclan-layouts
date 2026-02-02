@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { GUIDE_IMAGES } from '@/lib/brawl-stars/images';
+import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 const images = GUIDE_IMAGES.clubLeagueGuide;
+const baseUrl = "https://www.game365hub.com";
 
 export const metadata = {
   title: "Brawl Stars Club League Strategy Guide 2026 | Maximize Rewards",
@@ -42,6 +44,24 @@ export const metadata = {
 export default function ClubLeagueGuidePage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-primary)' }}>
+      {/* JSON-LD Structured Data */}
+      <ArticleJsonLd
+        title="Brawl Stars Club League Strategy Guide 2026: Maximize Rewards"
+        description="Master Club League with our complete strategy guide. Learn ticket management, team coordination, best brawlers, and how to climb leagues for maximum rewards in 2026."
+        image={images.hero.url}
+        datePublished="2026-02-02"
+        dateModified="2026-02-02"
+        url={`${baseUrl}/brawl-stars/guides/club-league`}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: baseUrl },
+          { name: "Brawl Stars", url: `${baseUrl}/brawl-stars` },
+          { name: "Guides", url: `${baseUrl}/brawl-stars/guides` },
+          { name: "Club League Guide", url: `${baseUrl}/brawl-stars/guides/club-league` }
+        ]}
+      />
+
       <article className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Breadcrumb */}
         <nav className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>

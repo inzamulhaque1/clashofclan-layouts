@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { GUIDE_IMAGES } from '@/lib/brawl-stars/images';
+import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 const images = GUIDE_IMAGES.mapControlGuide;
+const baseUrl = "https://www.game365hub.com";
 
 export const metadata = {
   title: "Brawl Stars Map Control Guide 2026 | Positioning & Zone Control Tips",
@@ -42,6 +44,24 @@ export const metadata = {
 export default function MapControlGuidePage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-primary)' }}>
+      {/* JSON-LD Structured Data */}
+      <ArticleJsonLd
+        title="Brawl Stars Map Control Guide 2026: Positioning & Zone Control Tips"
+        description="Master map control in Brawl Stars with our complete positioning guide. Learn zone control, wall usage, lane management, and advanced movement techniques for every game mode."
+        image={images.hero.url}
+        datePublished="2026-02-02"
+        dateModified="2026-02-02"
+        url={`${baseUrl}/brawl-stars/guides/map-control`}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: baseUrl },
+          { name: "Brawl Stars", url: `${baseUrl}/brawl-stars` },
+          { name: "Guides", url: `${baseUrl}/brawl-stars/guides` },
+          { name: "Map Control Guide", url: `${baseUrl}/brawl-stars/guides/map-control` }
+        ]}
+      />
+
       <article className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Breadcrumb */}
         <nav className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>

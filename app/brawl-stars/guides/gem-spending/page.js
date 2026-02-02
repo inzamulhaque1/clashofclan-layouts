@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { GUIDE_IMAGES } from '@/lib/brawl-stars/images';
+import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 const images = GUIDE_IMAGES.gemSpendingGuide;
+const baseUrl = "https://www.game365hub.com";
 
 export const metadata = {
   title: "Brawl Stars Gem Spending Guide 2026 | Best Value & What to Buy",
@@ -42,6 +44,24 @@ export const metadata = {
 export default function GemSpendingGuidePage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-primary)' }}>
+      {/* JSON-LD Structured Data */}
+      <ArticleJsonLd
+        title="Brawl Stars Gem Spending Guide 2026: Best Value & What to Buy"
+        description="Learn how to spend gems wisely in Brawl Stars. Complete guide on Brawl Pass value, best purchases, what to avoid, and how to get free gems as F2P in 2026."
+        image={images.hero.url}
+        datePublished="2026-02-02"
+        dateModified="2026-02-02"
+        url={`${baseUrl}/brawl-stars/guides/gem-spending`}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: baseUrl },
+          { name: "Brawl Stars", url: `${baseUrl}/brawl-stars` },
+          { name: "Guides", url: `${baseUrl}/brawl-stars/guides` },
+          { name: "Gem Spending Guide", url: `${baseUrl}/brawl-stars/guides/gem-spending` }
+        ]}
+      />
+
       <article className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Breadcrumb */}
         <nav className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>

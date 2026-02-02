@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { GUIDE_IMAGES } from '@/lib/brawl-stars/images';
+import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 const images = GUIDE_IMAGES.rankedGuide;
+const baseUrl = "https://www.game365hub.com";
 
 export const metadata = {
   title: "How to Push Ranked in Brawl Stars 2026 | Complete Guide to Mythic",
@@ -42,6 +44,24 @@ export const metadata = {
 export default function RankedGuidePage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-primary)' }}>
+      {/* JSON-LD Structured Data */}
+      <ArticleJsonLd
+        title="How to Push Ranked in Brawl Stars 2026: Complete Guide to Mythic"
+        description="Master Brawl Stars ranked mode with our ultimate guide. Learn the best brawlers, team compositions, map strategies, and tips to climb from Bronze to Mythic rank in 2026."
+        image={images.hero.url}
+        datePublished="2026-02-02"
+        dateModified="2026-02-02"
+        url={`${baseUrl}/brawl-stars/guides/ranked-guide`}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: baseUrl },
+          { name: "Brawl Stars", url: `${baseUrl}/brawl-stars` },
+          { name: "Guides", url: `${baseUrl}/brawl-stars/guides` },
+          { name: "Ranked Guide", url: `${baseUrl}/brawl-stars/guides/ranked-guide` }
+        ]}
+      />
+
       <article className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Breadcrumb */}
         <nav className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>

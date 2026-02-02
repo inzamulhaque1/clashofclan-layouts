@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ArticleJsonLd, FAQJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata = {
   title: "Brawl Stars Beginner Guide 2026 | Complete Tutorial for New Players",
@@ -39,9 +40,38 @@ export const metadata = {
 export default function BeginnersGuidePage() {
   const publishDate = "2026-02-01";
   const updateDate = "2026-02-01";
+  const baseUrl = "https://www.game365hub.com";
+
+  const faqs = [
+    { question: "Is Brawl Stars free to play?", answer: "Yes! Brawl Stars is completely free to download and play. You can enjoy all game modes and unlock all brawlers without spending money. Purchases are optional and mainly for cosmetics or faster progression." },
+    { question: "How do I get more brawlers?", answer: "Brawlers are unlocked through Brawl Boxes (free and paid), Trophy Road rewards, Brawl Pass, and special events. Play regularly and you'll steadily unlock more!" },
+    { question: "What's the best brawler for beginners?", answer: "Shelly (your starting brawler) is excellent. Nita, Colt, Bull, and Poco are also great beginner-friendly options that teach different playstyles." },
+    { question: "How do trophies work?", answer: "You earn trophies by winning and lose them by losing (above 500 trophies per brawler). Each brawler has individual trophies, and your total is the sum of all brawlers." },
+    { question: "Should I spend gems on Brawl Boxes?", answer: "No! Save gems for Brawl Pass - it offers much better value. Never spend gems on regular Brawl Boxes." },
+    { question: "When should I play Ranked mode?", answer: "Unlock Ranked at 5000 total trophies. We recommend having at least 15 brawlers at Power 9+ before seriously pushing Ranked." },
+  ];
 
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-primary)' }}>
+      {/* JSON-LD Structured Data */}
+      <ArticleJsonLd
+        title="Brawl Stars Beginner Guide 2026: Complete Tutorial for New Players"
+        description="Master Brawl Stars with our ultimate beginner guide 2026. Learn game modes, best starter brawlers, trophy road tips, controls, upgrading, and pro strategies to dominate from day one."
+        image="https://wowvendor.com/app/uploads/2024/09/Brawl-Stars-beginners-guide-best-tips-for-new-players.png"
+        datePublished={publishDate}
+        dateModified={updateDate}
+        url={`${baseUrl}/brawl-stars/guides/beginners-guide`}
+      />
+      <FAQJsonLd faqs={faqs} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: baseUrl },
+          { name: "Brawl Stars", url: `${baseUrl}/brawl-stars` },
+          { name: "Guides", url: `${baseUrl}/brawl-stars/guides` },
+          { name: "Beginner's Guide", url: `${baseUrl}/brawl-stars/guides/beginners-guide` }
+        ]}
+      />
+
       {/* Article Header */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Breadcrumb */}

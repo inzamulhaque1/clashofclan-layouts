@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { GUIDE_IMAGES } from '@/lib/brawl-stars/images';
+import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 const images = GUIDE_IMAGES.starPowersGuide;
+const baseUrl = "https://www.game365hub.com";
 
 export const metadata = {
   title: "Best Star Powers & Gadgets in Brawl Stars 2026 | Complete Tier List",
@@ -42,6 +44,24 @@ export const metadata = {
 export default function StarPowersGadgetsPage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-primary)' }}>
+      {/* JSON-LD Structured Data */}
+      <ArticleJsonLd
+        title="Best Star Powers & Gadgets in Brawl Stars 2026: Complete Tier List"
+        description="Discover the best star powers and gadgets for every brawler in Brawl Stars 2026. Complete tier list with optimal builds, unlock priorities, and hypercharge guide."
+        image={images.hero.url}
+        datePublished="2026-02-02"
+        dateModified="2026-02-02"
+        url={`${baseUrl}/brawl-stars/guides/star-powers-gadgets`}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: baseUrl },
+          { name: "Brawl Stars", url: `${baseUrl}/brawl-stars` },
+          { name: "Guides", url: `${baseUrl}/brawl-stars/guides` },
+          { name: "Star Powers & Gadgets", url: `${baseUrl}/brawl-stars/guides/star-powers-gadgets` }
+        ]}
+      />
+
       <article className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Breadcrumb */}
         <nav className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>

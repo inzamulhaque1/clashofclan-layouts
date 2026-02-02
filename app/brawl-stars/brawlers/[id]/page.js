@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { BRAWLERS, TIERS, BRAWLER_CLASSES, RARITIES, GAME_MODES, getBrawlerById } from '@/lib/brawl-stars/brawlers';
+import { BreadcrumbJsonLd } from '@/components/JsonLd';
+
+const baseUrl = "https://www.game365hub.com";
 
 export async function generateStaticParams() {
   return BRAWLERS.map((brawler) => ({
@@ -57,8 +60,38 @@ export default function BrawlerPage({ params }) {
     (b.tier === 'S' || b.tier === 'A')
   ).slice(0, 3);
 
+  // JSON-LD Schema for character
+  const characterSchema = {
+    "@context": "https://schema.org",
+    "@type": "Thing",
+    "name": brawler.name,
+    "description": `${brawler.name} is a ${classInfo?.name} brawler in Brawl Stars with a ${brawler.winRate}% win rate. ${tierInfo?.description}`,
+    "image": brawler.image,
+    "url": `${baseUrl}/brawl-stars/brawlers/${brawler.id}`,
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Tier", "value": brawler.tier },
+      { "@type": "PropertyValue", "name": "Win Rate", "value": `${brawler.winRate}%` },
+      { "@type": "PropertyValue", "name": "Class", "value": classInfo?.name },
+      { "@type": "PropertyValue", "name": "Rarity", "value": rarityInfo?.name }
+    ]
+  };
+
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-primary)' }}>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(characterSchema) }}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: baseUrl },
+          { name: "Brawl Stars", url: `${baseUrl}/brawl-stars` },
+          { name: "Brawlers", url: `${baseUrl}/brawl-stars/brawlers` },
+          { name: brawler.name, url: `${baseUrl}/brawl-stars/brawlers/${brawler.id}` }
+        ]}
+      />
+
       {/* Hero Section */}
       <section className="relative py-12 px-4 overflow-hidden">
         <div
