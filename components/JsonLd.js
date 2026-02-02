@@ -166,6 +166,29 @@ export function WebSiteJsonLd() {
   );
 }
 
+// Flexible WebSite Schema - for game section homepages
+export function WebsiteJsonLd({ name, url, description }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": name,
+    "description": description,
+    "url": url,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Game365Hub",
+      "url": "https://www.game365hub.com"
+    }
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 // HowTo Schema - for tutorial guides
 export function HowToJsonLd({ name, description, image, steps, totalTime }) {
   const schema = {
