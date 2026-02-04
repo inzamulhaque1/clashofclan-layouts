@@ -47,6 +47,8 @@ const FILTER_TYPES = [
   { key: 'hybrid', label: 'Hybrid' },
 ];
 
+const ITEMS_PER_PAGE = 12;
+
 export default function THLevelPage({ params, searchParams }) {
   const game = getGameBySlug(params.game);
   const level = parseInt(params.level, 10);
@@ -63,10 +65,28 @@ export default function THLevelPage({ params, searchParams }) {
 
   const allBases = queryContent('clash-of-clans', 'base', { hallType: 'TH', hallLevel: level });
   const typeFilter = searchParams?.type;
+  const currentPage = Math.max(1, parseInt(searchParams?.page) || 1);
 
   const filteredBases = typeFilter
     ? allBases.filter(b => b.baseType === typeFilter)
     : allBases;
+
+  // Pagination calculations
+  const totalBases = filteredBases.length;
+  const totalPages = Math.ceil(totalBases / ITEMS_PER_PAGE);
+  const validPage = Math.min(currentPage, totalPages || 1);
+  const startIndex = (validPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const paginatedBases = filteredBases.slice(startIndex, endIndex);
+
+  // Build pagination URL helper
+  const buildPageUrl = (page) => {
+    const params = new URLSearchParams();
+    if (typeFilter) params.set('type', typeFilter);
+    if (page > 1) params.set('page', page.toString());
+    const queryString = params.toString();
+    return `/${game.slug}/th/${level}${queryString ? `?${queryString}` : ''}`;
+  };
 
   const typeCounts = {
     all: allBases.length,
@@ -103,8 +123,8 @@ export default function THLevelPage({ params, searchParams }) {
         </p>
       </div>
 
-      {/* Filters */}
-      <div className="flex gap-2 mb-8 overflow-x-auto pb-2">
+      {/* Filters - resets to page 1 when changing filter */}
+      <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
         {FILTER_TYPES.map(({ key, label }) => {
           const count = typeCounts[key] || 0;
           const isActive = (key === 'all' && !typeFilter) || typeFilter === key;
@@ -116,10 +136,8 @@ export default function THLevelPage({ params, searchParams }) {
             <Link
               key={key}
               href={href}
-              className={`px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-colors ${
-                isActive
-                  ? 'text-black'
-                  : ''
+              className={`px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all hover:scale-105 ${
+                isActive ? 'text-black' : ''
               }`}
               style={{
                 background: isActive ? 'var(--game-primary)' : 'var(--surface-100)',
@@ -135,10 +153,24 @@ export default function THLevelPage({ params, searchParams }) {
         })}
       </div>
 
+      {/* Results Info */}
+      {totalBases > 0 && (
+        <div className="flex items-center justify-between mb-6">
+          <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+            Showing {startIndex + 1}-{Math.min(endIndex, totalBases)} of {totalBases} bases
+          </p>
+          {totalPages > 1 && (
+            <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+              Page {validPage} of {totalPages}
+            </p>
+          )}
+        </div>
+      )}
+
       {/* Grid */}
-      {filteredBases.length > 0 ? (
+      {paginatedBases.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filteredBases.map((base, index) => (
+          {paginatedBases.map((base, index) => (
             <BaseCard
               key={`${base.baseType}-${base.baseNumber}-${index}`}
               base={base}
@@ -167,13 +199,198 @@ export default function THLevelPage({ params, searchParams }) {
         </div>
       )}
 
-      {/* SEO */}
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <nav className="flex items-center justify-center gap-2 mt-8">
+          {/* Previous Button */}
+          {validPage > 1 ? (
+            <Link
+              href={buildPageUrl(validPage - 1)}
+              className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105"
+              style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Prev
+            </Link>
+          ) : (
+            <span
+              className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium opacity-50 cursor-not-allowed"
+              style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Prev
+            </span>
+          )}
+
+          {/* Page Numbers */}
+          <div className="flex items-center gap-1">
+            {(() => {
+              const pages = [];
+              const showEllipsisStart = validPage > 3;
+              const showEllipsisEnd = validPage < totalPages - 2;
+
+              // Always show first page
+              pages.push(1);
+
+              if (showEllipsisStart) {
+                pages.push('...');
+              }
+
+              // Show pages around current page
+              for (let i = Math.max(2, validPage - 1); i <= Math.min(totalPages - 1, validPage + 1); i++) {
+                if (!pages.includes(i)) pages.push(i);
+              }
+
+              if (showEllipsisEnd) {
+                pages.push('...');
+              }
+
+              // Always show last page
+              if (totalPages > 1 && !pages.includes(totalPages)) {
+                pages.push(totalPages);
+              }
+
+              return pages.map((page, idx) => (
+                page === '...' ? (
+                  <span key={`ellipsis-${idx}`} className="px-2" style={{ color: 'var(--text-muted)' }}>...</span>
+                ) : (
+                  <Link
+                    key={page}
+                    href={buildPageUrl(page)}
+                    className={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-all hover:scale-105 ${
+                      page === validPage ? '' : ''
+                    }`}
+                    style={{
+                      background: page === validPage ? 'var(--game-primary)' : 'var(--surface-100)',
+                      color: page === validPage ? '#000' : 'var(--text-primary)',
+                      border: '1px solid var(--border)',
+                    }}
+                  >
+                    {page}
+                  </Link>
+                )
+              ));
+            })()}
+          </div>
+
+          {/* Next Button */}
+          {validPage < totalPages ? (
+            <Link
+              href={buildPageUrl(validPage + 1)}
+              className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105"
+              style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
+            >
+              Next
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          ) : (
+            <span
+              className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium opacity-50 cursor-not-allowed"
+              style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
+            >
+              Next
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          )}
+        </nav>
+      )}
+
+      {/* Quick Navigation - Other TH Levels */}
       <section className="mt-16 pt-12" style={{ borderTop: '1px solid var(--border)' }}>
+        <h2 className="text-xl font-semibold mb-4">Browse Other Town Hall Levels</h2>
+        <div className="flex flex-wrap gap-2">
+          {[18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3].map((thLevel) => (
+            <Link
+              key={thLevel}
+              href={`/${game.slug}/th/${thLevel}`}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105 ${
+                thLevel === level ? 'ring-2 ring-offset-2' : ''
+              }`}
+              style={{
+                background: thLevel === level ? 'var(--game-primary)' : 'var(--surface-100)',
+                color: thLevel === level ? '#000' : 'var(--text-primary)',
+                border: '1px solid var(--border)',
+                ringColor: 'var(--game-primary)',
+              }}
+            >
+              TH{thLevel}
+            </Link>
+          ))}
+        </div>
+        <Link
+          href={`/${game.slug}/bh`}
+          className="inline-flex items-center gap-1 mt-4 text-sm font-medium"
+          style={{ color: 'var(--game-primary)' }}
+        >
+          View Builder Hall Bases →
+        </Link>
+      </section>
+
+      {/* Related Guides */}
+      <section className="mt-12 pt-8" style={{ borderTop: '1px solid var(--border)' }}>
+        <h2 className="text-xl font-semibold mb-4">TH{level} Guides & Tips</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <Link
+            href={`/${game.slug}/guides/how-to-copy-base`}
+            className="p-4 rounded-xl transition-all hover:scale-[1.02]"
+            style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
+          >
+            <h3 className="font-medium mb-1">How to Copy Bases</h3>
+            <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+              Learn to import layouts with one click
+            </p>
+          </Link>
+          <Link
+            href={`/${game.slug}/guides/cwl-base-building-tips`}
+            className="p-4 rounded-xl transition-all hover:scale-[1.02]"
+            style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
+          >
+            <h3 className="font-medium mb-1">CWL Base Building</h3>
+            <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+              Anti 3-star designs for Clan War Leagues
+            </p>
+          </Link>
+          {level >= 15 && (
+            <Link
+              href={`/${game.slug}/guides/best-th18-attack-strategies`}
+              className="p-4 rounded-xl transition-all hover:scale-[1.02]"
+              style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
+            >
+              <h3 className="font-medium mb-1">Attack Strategies</h3>
+              <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+                Best strategies for high-level Town Halls
+              </p>
+            </Link>
+          )}
+        </div>
+        <Link
+          href={`/${game.slug}/guides`}
+          className="inline-flex items-center gap-1 mt-4 text-sm font-medium"
+          style={{ color: 'var(--game-primary)' }}
+        >
+          View All Guides →
+        </Link>
+      </section>
+
+      {/* SEO Content */}
+      <section className="mt-12 pt-8" style={{ borderTop: '1px solid var(--border)' }}>
         <h2 className="text-xl font-semibold mb-4">About TH{level} Bases</h2>
         <div className="space-y-3 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
           <p>
-            Town Hall {level} introduces {level >= 15 ? 'powerful late-game content' : 'important new features'}.
+            Town Hall {level} {level >= 15 ? 'is an end-game level with powerful defenses and troops.' : level >= 10 ? 'introduces key strategic elements that change gameplay significantly.' : 'is perfect for learning base building fundamentals.'}
             The right base design is crucial for both Clan Wars and protecting your resources.
+          </p>
+          <p>
+            Our TH{level} bases are designed by experienced players and updated regularly for the {new Date().getFullYear()} meta.
+            Each layout comes with a one-click copy link for easy import into your game.
           </p>
         </div>
       </section>

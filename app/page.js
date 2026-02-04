@@ -31,8 +31,8 @@ const GAME_CATEGORIES = [
         logo: '/games/logo-bs.png',
         gradient: 'linear-gradient(135deg, #FF6B35 0%, #F43F5E 100%)',
         color: '#FF6B35',
-        stats: 'Coming Soon',
-        active: false,
+        stats: '50+ Brawlers',
+        active: true,
       },
       {
         slug: 'clash-royale',
@@ -43,8 +43,8 @@ const GAME_CATEGORIES = [
         logo: '/games/logo-cr.png',
         gradient: 'linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%)',
         color: '#2563EB',
-        stats: 'Coming Soon',
-        active: false,
+        stats: '100+ Cards',
+        active: true,
       },
     ]
   },
@@ -61,8 +61,8 @@ const GAME_CATEGORIES = [
         logo: '/games/logo-ff.png',
         gradient: 'linear-gradient(135deg, #EF4444 0%, #DC2626 100%)',
         color: '#EF4444',
-        stats: 'Coming Soon',
-        active: false,
+        stats: '50+ Characters',
+        active: true,
       },
       {
         slug: 'pubg',
@@ -140,22 +140,28 @@ const BLOG_POSTS = [
   },
 ];
 
-// Hero Slider Component
+// Hero Slider Component - optimized for engagement
 function HeroSlider({ compact = false }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageErrors, setImageErrors] = useState({});
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
+    if (isPaused) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 4000);
+    }, 6000); // Slower rotation - gives users time to absorb
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   return (
-    <div className={`relative w-full overflow-hidden shadow-xl ${
-      compact ? 'h-[180px] rounded-xl' : 'h-[200px] sm:h-[280px] md:h-[350px] rounded-xl sm:rounded-2xl'
-    }`}>
+    <div
+      className={`relative w-full overflow-hidden shadow-xl ${
+        compact ? 'h-[180px] rounded-xl' : 'h-[200px] sm:h-[280px] md:h-[350px] rounded-xl sm:rounded-2xl'
+      }`}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       {HERO_SLIDES.map((slide, index) => (
         <div
           key={index}
@@ -170,6 +176,8 @@ function HeroSlider({ compact = false }) {
               src={slide.image}
               alt={slide.name}
               className="absolute inset-0 w-full h-full object-cover"
+              loading={index === 0 ? "eager" : "lazy"}
+              fetchPriority={index === 0 ? "high" : "auto"}
               onError={() => setImageErrors(prev => ({ ...prev, [index]: true }))}
             />
           ) : (
@@ -209,7 +217,7 @@ function HeroSlider({ compact = false }) {
   );
 }
 
-// Game Card Component
+// Game Card Component - optimized for mobile touch
 function GameCard({ game, size = 'default' }) {
   const [imageError, setImageError] = useState(false);
   const isLarge = size === 'large';
@@ -217,12 +225,13 @@ function GameCard({ game, size = 'default' }) {
   return (
     <Link
       href={`/${game.slug}`}
-      className={`group block rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${
+      className={`group block rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl active:scale-[0.98] ${
         isLarge ? 'sm:col-span-2 sm:row-span-2' : ''
       }`}
       style={{ border: '1px solid var(--border)' }}
     >
-      <div className={`relative overflow-hidden ${isLarge ? 'h-40 sm:h-full sm:min-h-[280px]' : 'h-28 sm:h-32'}`}>
+      {/* Increased mobile height for better touch targets */}
+      <div className={`relative overflow-hidden ${isLarge ? 'h-44 sm:h-full sm:min-h-[280px]' : 'h-36 sm:h-32'}`}>
         {!imageError ? (
           <img
             src={game.image}
@@ -326,31 +335,32 @@ export default function HomePage() {
           background: 'radial-gradient(ellipse at top right, rgba(139, 92, 246, 0.2) 0%, transparent 50%)'
         }} />
 
-        {/* Quick Game Links Bar */}
+        {/* Quick Game Links Bar - Mobile optimized with larger touch targets */}
         <div className="relative border-b" style={{ borderColor: 'var(--border)', background: 'var(--surface-100)' }}>
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="flex items-center py-3 overflow-x-auto scrollbar-hide gap-3">
-              <span className="text-xs font-semibold whitespace-nowrap uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>Games</span>
-              <div className="w-px h-4" style={{ background: 'var(--border)' }} />
+            <div className="flex items-center py-2 sm:py-3 overflow-x-auto scrollbar-hide gap-2 sm:gap-3">
+              <span className="text-xs font-semibold whitespace-nowrap uppercase tracking-wider hidden sm:block" style={{ color: 'var(--text-muted)' }}>Games</span>
+              <div className="w-px h-4 hidden sm:block" style={{ background: 'var(--border)' }} />
               <div className="flex items-center gap-2">
                 {[
-                  { slug: 'clash-of-clans', name: 'Clash of Clans', color: '#F59E0B' },
-                  { slug: 'brawl-stars', name: 'Brawl Stars', color: '#FF6B35' },
-                  { slug: 'clash-royale', name: 'Clash Royale', color: '#2563EB' },
-                  { slug: 'free-fire', name: 'Free Fire', color: '#EF4444' },
-                  { slug: 'pubg', name: 'PUBG Mobile', color: '#F59E0B' },
-                  { slug: 'frozen-city', name: 'Frozen City', color: '#06B6D4' },
+                  { slug: 'clash-of-clans', name: 'CoC', fullName: 'Clash of Clans', color: '#F59E0B' },
+                  { slug: 'brawl-stars', name: 'Brawl Stars', fullName: 'Brawl Stars', color: '#FF6B35' },
+                  { slug: 'clash-royale', name: 'Royale', fullName: 'Clash Royale', color: '#2563EB' },
+                  { slug: 'free-fire', name: 'Free Fire', fullName: 'Free Fire', color: '#EF4444' },
+                  { slug: 'pubg', name: 'PUBG', fullName: 'PUBG Mobile', color: '#F59E0B' },
+                  { slug: 'frozen-city', name: 'Frozen', fullName: 'Frozen City', color: '#06B6D4' },
                 ].map((game) => (
                   <Link
                     key={game.slug}
                     href={`/${game.slug}`}
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all hover:opacity-80"
+                    className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap transition-all hover:opacity-80 active:scale-95"
                     style={{
                       background: game.color,
                       color: '#000'
                     }}
                   >
-                    {game.name}
+                    <span className="sm:hidden">{game.name}</span>
+                    <span className="hidden sm:inline">{game.fullName}</span>
                   </Link>
                 ))}
               </div>
@@ -401,24 +411,27 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* CTAs */}
+              {/* CTAs - Mobile optimized with larger touch targets */}
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4">
                 <Link
-                  href="/clash-of-clans"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all hover:scale-105"
+                  href="#games"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3 rounded-xl font-semibold text-white transition-all hover:scale-105 active:scale-95 text-base"
                   style={{ background: 'linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%)' }}
                 >
-                  Explore Games
+                  Browse All Games
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </Link>
                 <Link
-                  href="#about"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-colors"
-                  style={{ background: 'var(--surface-100)', border: '1px solid var(--border)', color: 'var(--text-primary)' }}
+                  href="/clash-of-clans"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3 rounded-xl font-semibold transition-all hover:scale-105 active:scale-95"
+                  style={{ background: '#F59E0B', color: '#000' }}
                 >
-                  Learn More
+                  Clash of Clans
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
                 </Link>
               </div>
             </div>
@@ -558,10 +571,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Town Hall Quick Links */}
+      {/* Town Hall Quick Links - Mobile optimized */}
       <section className="py-10 sm:py-14" style={{ background: 'var(--surface-50)' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-6 sm:mb-8">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3" style={{ background: 'rgba(245, 158, 11, 0.1)', color: '#F59E0B' }}>
+              Quick Access
+            </span>
             <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
               Clash of Clans Base Layouts by Town Hall
             </h2>
@@ -570,12 +586,12 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+          <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 gap-2 sm:gap-3">
             {[18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7].map((level) => (
               <Link
                 key={level}
                 href={`/clash-of-clans/th/${level}`}
-                className="px-4 sm:px-5 py-2 sm:py-3 rounded-lg sm:rounded-xl font-semibold text-sm transition-all hover:scale-105"
+                className="px-2 sm:px-4 py-3 sm:py-3 rounded-lg sm:rounded-xl font-semibold text-sm text-center transition-all hover:scale-105 active:scale-95"
                 style={{
                   background: level >= 15 ? 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)' : 'var(--surface-100)',
                   color: level >= 15 ? '#000' : 'var(--text-primary)',
@@ -585,6 +601,20 @@ export default function HomePage() {
                 TH{level}
               </Link>
             ))}
+          </div>
+
+          {/* Builder Hall link */}
+          <div className="text-center mt-4">
+            <Link
+              href="/clash-of-clans/bh"
+              className="inline-flex items-center gap-2 text-sm font-medium transition-colors"
+              style={{ color: '#F59E0B' }}
+            >
+              View Builder Hall Bases
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

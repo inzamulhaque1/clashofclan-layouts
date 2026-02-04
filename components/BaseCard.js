@@ -6,9 +6,49 @@ import VoteButtons from './VoteButtons';
 import CopyStats from './CopyStats';
 import { getBaseId, incrementCopyCount } from '@/lib/stats';
 
-export default function BaseCard({ base, showDetails = true, gameSlug = 'clash-of-clans' }) {
+export default function BaseCard({ base, showDetails = true, gameSlug = 'clash-of-clans', compact = false }) {
   const [copied, setCopied] = useState(false);
   const [imageError, setImageError] = useState(false);
+
+  // Compact mode: minimal card for internal linking grids
+  if (compact) {
+    const baseUrl = `/${gameSlug}/bases/${base.hallType?.toLowerCase()}${base.hallLevel}/${base.baseType}/${base.baseNumber}`;
+    const imageUrl = base.originalImageUrl || base.thumbnailUrl;
+
+    return (
+      <Link
+        href={baseUrl}
+        className="block rounded-lg overflow-hidden transition-all hover:scale-105 hover:shadow-lg"
+        style={{ border: '1px solid var(--border)' }}
+      >
+        <div className="relative aspect-square" style={{ background: 'var(--surface-200)' }}>
+          {imageUrl && !imageError ? (
+            <img
+              src={imageUrl}
+              alt={`${base.hallType}${base.hallLevel} ${base.baseType} base`}
+              className="w-full h-full object-cover"
+              loading="lazy"
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-xs font-bold" style={{ color: 'var(--text-muted)' }}>
+                {base.hallType}{base.hallLevel}
+              </span>
+            </div>
+          )}
+          <div className="absolute bottom-0 left-0 right-0 p-2" style={{ background: 'linear-gradient(transparent, rgba(0,0,0,0.8))' }}>
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-medium text-white">{base.hallType}{base.hallLevel}</span>
+              <span className="text-xs px-1.5 py-0.5 rounded text-white" style={{ background: 'rgba(255,255,255,0.2)' }}>
+                {base.baseType}
+              </span>
+            </div>
+          </div>
+        </div>
+      </Link>
+    );
+  }
 
   const handleCopy = async (e) => {
     e.preventDefault();

@@ -34,19 +34,32 @@ export async function generateMetadata({ params }) {
   const typeCapitalized = baseType.charAt(0).toUpperCase() + baseType.slice(1);
   const year = new Date().getFullYear();
 
-  const title = base.title && base.title.length > 10
-    ? base.title.replace(/\s*-\s*\(#\d+\)$/, '').trim()
-    : `Best ${typeCapitalized} Base ${hallType}${hallLevel} with Link ${year}`;
+  // CTR-optimized titles - specific, actionable, with year
+  const titleTemplates = {
+    war: `${hallType}${hallLevel} War Base (Anti 3 Star) - Copy Link ${year}`,
+    farm: `${hallType}${hallLevel} Farming Base - Protect Loot ${year}`,
+    trophy: `${hallType}${hallLevel} Trophy Base - Legend League ${year}`,
+    hybrid: `${hallType}${hallLevel} Hybrid Base - War + Farm ${year}`,
+    cwl: `${hallType}${hallLevel} CWL Base (Anti 3 Star) ${year}`,
+    defense: `${hallType}${hallLevel} Defense Base - Unbeatable ${year}`,
+    progress: `${hallType}${hallLevel} Progress Base Layout ${year}`,
+  };
 
+  const title = titleTemplates[baseType] || `Best ${hallType}${hallLevel} ${typeCapitalized} Base ${year}`;
+
+  // CTR-optimized descriptions - action words, benefits, urgency
   const descriptions = {
-    war: `Download the best ${hallType}${hallLevel} war base layout ${year} with copy link. Anti 3 star, anti 2 star ${hallName} ${hallLevel} CWL base design.`,
-    farm: `Best ${hallType}${hallLevel} farming base ${year} with link. Protect your Gold, Elixir & Dark Elixir with this ${hallName} ${hallLevel} base layout.`,
-    trophy: `Top ${hallType}${hallLevel} trophy pushing base ${year} with copy link. Climb to Legend League with this ${hallName} ${hallLevel} base design.`,
-    hybrid: `Best ${hallType}${hallLevel} hybrid base layout ${year}. Protect trophies and resources with this balanced ${hallName} ${hallLevel} base.`,
+    war: `🏆 Top-rated ${hallType}${hallLevel} war base with copy link. Anti 3 star design used by pro players. One-click import to Clash of Clans. Updated ${year}!`,
+    farm: `💰 Protect your Gold, Elixir & Dark Elixir! Best ${hallType}${hallLevel} farming base ${year}. Copy link included - import in seconds.`,
+    trophy: `🚀 Push to Legend League with this ${hallType}${hallLevel} trophy base! Pro-level design with copy link. Updated for ${year} meta.`,
+    hybrid: `⚔️ Best of both worlds! ${hallType}${hallLevel} hybrid base protects loot AND trophies. Copy link included. ${year} meta-proof design.`,
+    cwl: `🏅 Dominate Clan War Leagues! Anti 3 star ${hallType}${hallLevel} CWL base with copy link. Used by top clans ${year}.`,
+    defense: `🛡️ Unbeatable ${hallType}${hallLevel} defense base! Anti-everything design with copy link. Stop any attack. ${year} updated.`,
+    progress: `📈 Perfect ${hallType}${hallLevel} progress base for upgrading. Strategic layout with copy link. ${year} design.`,
   };
 
   const description = descriptions[baseType] ||
-    `Best ${hallType}${hallLevel} ${typeCapitalized} base layout ${year} with one-click copy link.`;
+    `Best ${hallType}${hallLevel} ${typeCapitalized} base layout ${year} with one-click copy link. Import directly to Clash of Clans!`;
 
   return generatePageMeta({
     title,
@@ -86,10 +99,24 @@ export default function BaseDetailPage({ params }) {
     notFound();
   }
 
+  // More related bases of same level (6 instead of 3)
   const relatedBases = queryContent('clash-of-clans', 'base', {
     hallType,
     hallLevel,
-  }).filter(b => b.baseNumber !== base.baseNumber).slice(0, 3);
+  }).filter(b => b.baseNumber !== base.baseNumber).slice(0, 6);
+
+  // Same type bases from adjacent levels (for internal linking)
+  const adjacentLevels = [hallLevel - 1, hallLevel + 1].filter(l => l >= 3 && l <= (hallType === 'TH' ? 18 : 10));
+  const sameTypeBases = adjacentLevels.flatMap(level =>
+    queryContent('clash-of-clans', 'base', {
+      hallType,
+      hallLevel: level,
+      baseType,
+    }).slice(0, 2)
+  );
+
+  // TH level links for quick navigation
+  const thLevels = hallType === 'TH' ? [18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7] : [10, 9, 8, 7, 6, 5, 4, 3];
 
   const baseStructuredData = generateBaseStructuredData(base);
   const breadcrumbs = generateBreadcrumbStructuredData([
@@ -207,7 +234,7 @@ export default function BaseDetailPage({ params }) {
         </div>
       </div>
 
-      {/* Related Bases */}
+      {/* Related Bases - Same Level */}
       {relatedBases.length > 0 && (
         <section className="mt-16 pt-12" style={{ borderTop: '1px solid var(--border)' }}>
           <div className="flex items-end justify-between mb-6">
@@ -215,16 +242,111 @@ export default function BaseDetailPage({ params }) {
               More {hallType}{hallLevel} Bases
             </h2>
             <Link href={levelPath} className="text-sm hover:underline" style={{ color: 'var(--game-primary)' }}>
-              View all
+              View all {hallType}{hallLevel} bases →
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {relatedBases.map((relatedBase, index) => (
-              <BaseCard key={index} base={relatedBase} gameSlug={game.slug} />
+              <BaseCard key={index} base={relatedBase} gameSlug={game.slug} compact />
             ))}
           </div>
         </section>
       )}
+
+      {/* Same Type Bases - Different Levels (Internal Linking) */}
+      {sameTypeBases.length > 0 && (
+        <section className="mt-12 pt-8" style={{ borderTop: '1px solid var(--border)' }}>
+          <div className="flex items-end justify-between mb-6">
+            <h2 className="text-xl font-semibold">
+              {baseType.charAt(0).toUpperCase() + baseType.slice(1)} Bases - Other Levels
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {sameTypeBases.map((otherBase, index) => (
+              <BaseCard key={index} base={otherBase} gameSlug={game.slug} compact />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Quick Navigation - All TH Levels */}
+      <section className="mt-12 pt-8" style={{ borderTop: '1px solid var(--border)' }}>
+        <h2 className="text-xl font-semibold mb-4">
+          Browse All {hallType === 'TH' ? 'Town Hall' : 'Builder Hall'} Levels
+        </h2>
+        <div className="flex flex-wrap gap-2">
+          {thLevels.map((level) => (
+            <Link
+              key={level}
+              href={`/${game.slug}/${hallType.toLowerCase()}/${level}`}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105 ${
+                level === hallLevel ? 'ring-2 ring-offset-2' : ''
+              }`}
+              style={{
+                background: level === hallLevel ? 'var(--game-primary)' : 'var(--surface-100)',
+                color: level === hallLevel ? '#000' : 'var(--text-primary)',
+                border: '1px solid var(--border)',
+                ringColor: 'var(--game-primary)',
+              }}
+            >
+              {hallType}{level}
+            </Link>
+          ))}
+        </div>
+        {hallType === 'TH' && (
+          <Link
+            href={`/${game.slug}/bh`}
+            className="inline-flex items-center gap-1 mt-4 text-sm font-medium"
+            style={{ color: 'var(--game-primary)' }}
+          >
+            View Builder Hall Bases →
+          </Link>
+        )}
+        {hallType === 'BH' && (
+          <Link
+            href={`/${game.slug}/th`}
+            className="inline-flex items-center gap-1 mt-4 text-sm font-medium"
+            style={{ color: 'var(--game-primary)' }}
+          >
+            View Town Hall Bases →
+          </Link>
+        )}
+      </section>
+
+      {/* Related Guide Link */}
+      <section className="mt-12 pt-8 pb-8" style={{ borderTop: '1px solid var(--border)' }}>
+        <div className="p-6 rounded-xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
+          <h3 className="text-lg font-semibold mb-2">Need Help Using This Base?</h3>
+          <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>
+            Learn how to copy base layouts and master base building strategies.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href={`/${game.slug}/guides/how-to-copy-base`}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+              style={{ background: 'var(--game-primary)', color: '#000' }}
+            >
+              How to Copy Bases
+            </Link>
+            {baseType === 'war' && (
+              <Link
+                href={`/${game.slug}/guides/cwl-base-building-tips`}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+                style={{ background: 'var(--surface-200)', color: 'var(--text-primary)' }}
+              >
+                CWL Base Building Tips
+              </Link>
+            )}
+            <Link
+              href={`/${game.slug}/guides`}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+              style={{ background: 'var(--surface-200)', color: 'var(--text-primary)' }}
+            >
+              All Guides →
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

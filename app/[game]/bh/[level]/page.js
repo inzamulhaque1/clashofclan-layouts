@@ -39,7 +39,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function BHLevelPage({ params }) {
+const ITEMS_PER_PAGE = 12;
+
+export default function BHLevelPage({ params, searchParams }) {
   const game = getGameBySlug(params.game);
   const level = parseInt(params.level, 10);
 
@@ -53,7 +55,23 @@ export default function BHLevelPage({ params }) {
     notFound();
   }
 
-  const bases = queryContent('clash-of-clans', 'base', { hallType: 'BH', hallLevel: level });
+  const allBases = queryContent('clash-of-clans', 'base', { hallType: 'BH', hallLevel: level });
+  const currentPage = Math.max(1, parseInt(searchParams?.page) || 1);
+
+  // Pagination calculations
+  const totalBases = allBases.length;
+  const totalPages = Math.ceil(totalBases / ITEMS_PER_PAGE);
+  const validPage = Math.min(currentPage, totalPages || 1);
+  const startIndex = (validPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const paginatedBases = allBases.slice(startIndex, endIndex);
+
+  // Build pagination URL helper
+  const buildPageUrl = (page) => {
+    return page > 1
+      ? `/${game.slug}/bh/${level}?page=${page}`
+      : `/${game.slug}/bh/${level}`;
+  };
 
   const breadcrumbs = generateBreadcrumbStructuredData([
     { name: 'Home', path: '/' },
@@ -78,14 +96,28 @@ export default function BHLevelPage({ params }) {
           BH{level} <span style={{ color: 'var(--game-primary)' }}>Base Layouts</span>
         </h1>
         <p style={{ color: 'var(--text-muted)' }}>
-          {bases.length} layouts available. Click to copy directly to Clash of Clans.
+          {totalBases} layouts available. Click to copy directly to Clash of Clans.
         </p>
       </div>
 
+      {/* Results Info */}
+      {totalBases > 0 && (
+        <div className="flex items-center justify-between mb-6">
+          <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+            Showing {startIndex + 1}-{Math.min(endIndex, totalBases)} of {totalBases} bases
+          </p>
+          {totalPages > 1 && (
+            <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+              Page {validPage} of {totalPages}
+            </p>
+          )}
+        </div>
+      )}
+
       {/* Grid */}
-      {bases.length > 0 ? (
+      {paginatedBases.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {bases.map((base, index) => (
+          {paginatedBases.map((base, index) => (
             <BaseCard
               key={`${base.baseType}-${base.baseNumber}-${index}`}
               base={base}
@@ -107,13 +139,174 @@ export default function BHLevelPage({ params }) {
         </div>
       )}
 
-      {/* SEO */}
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <nav className="flex items-center justify-center gap-2 mt-8">
+          {/* Previous Button */}
+          {validPage > 1 ? (
+            <Link
+              href={buildPageUrl(validPage - 1)}
+              className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105"
+              style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Prev
+            </Link>
+          ) : (
+            <span
+              className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium opacity-50 cursor-not-allowed"
+              style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Prev
+            </span>
+          )}
+
+          {/* Page Numbers */}
+          <div className="flex items-center gap-1">
+            {(() => {
+              const pages = [];
+              const showEllipsisStart = validPage > 3;
+              const showEllipsisEnd = validPage < totalPages - 2;
+
+              pages.push(1);
+
+              if (showEllipsisStart) {
+                pages.push('...');
+              }
+
+              for (let i = Math.max(2, validPage - 1); i <= Math.min(totalPages - 1, validPage + 1); i++) {
+                if (!pages.includes(i)) pages.push(i);
+              }
+
+              if (showEllipsisEnd) {
+                pages.push('...');
+              }
+
+              if (totalPages > 1 && !pages.includes(totalPages)) {
+                pages.push(totalPages);
+              }
+
+              return pages.map((page, idx) => (
+                page === '...' ? (
+                  <span key={`ellipsis-${idx}`} className="px-2" style={{ color: 'var(--text-muted)' }}>...</span>
+                ) : (
+                  <Link
+                    key={page}
+                    href={buildPageUrl(page)}
+                    className="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-all hover:scale-105"
+                    style={{
+                      background: page === validPage ? 'var(--game-primary)' : 'var(--surface-100)',
+                      color: page === validPage ? '#000' : 'var(--text-primary)',
+                      border: '1px solid var(--border)',
+                    }}
+                  >
+                    {page}
+                  </Link>
+                )
+              ));
+            })()}
+          </div>
+
+          {/* Next Button */}
+          {validPage < totalPages ? (
+            <Link
+              href={buildPageUrl(validPage + 1)}
+              className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105"
+              style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
+            >
+              Next
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          ) : (
+            <span
+              className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium opacity-50 cursor-not-allowed"
+              style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
+            >
+              Next
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          )}
+        </nav>
+      )}
+
+      {/* Quick Navigation - Other BH Levels */}
       <section className="mt-16 pt-12" style={{ borderTop: '1px solid var(--border)' }}>
+        <h2 className="text-xl font-semibold mb-4">Browse Other Builder Hall Levels</h2>
+        <div className="flex flex-wrap gap-2">
+          {[10, 9, 8, 7, 6, 5, 4, 3].map((bhLevel) => (
+            <Link
+              key={bhLevel}
+              href={`/${game.slug}/bh/${bhLevel}`}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105 ${
+                bhLevel === level ? 'ring-2 ring-offset-2' : ''
+              }`}
+              style={{
+                background: bhLevel === level ? 'var(--game-primary)' : 'var(--surface-100)',
+                color: bhLevel === level ? '#000' : 'var(--text-primary)',
+                border: '1px solid var(--border)',
+                ringColor: 'var(--game-primary)',
+              }}
+            >
+              BH{bhLevel}
+            </Link>
+          ))}
+        </div>
+        <Link
+          href={`/${game.slug}/th`}
+          className="inline-flex items-center gap-1 mt-4 text-sm font-medium"
+          style={{ color: 'var(--game-primary)' }}
+        >
+          View Town Hall Bases →
+        </Link>
+      </section>
+
+      {/* Related Guides */}
+      <section className="mt-12 pt-8" style={{ borderTop: '1px solid var(--border)' }}>
+        <h2 className="text-xl font-semibold mb-4">Builder Base Guides</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <Link
+            href={`/${game.slug}/guides/how-to-copy-base`}
+            className="p-4 rounded-xl transition-all hover:scale-[1.02]"
+            style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
+          >
+            <h3 className="font-medium mb-1">How to Copy Bases</h3>
+            <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+              Learn to import layouts with one click
+            </p>
+          </Link>
+          <Link
+            href={`/${game.slug}/guides`}
+            className="p-4 rounded-xl transition-all hover:scale-[1.02]"
+            style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}
+          >
+            <h3 className="font-medium mb-1">All Clash of Clans Guides</h3>
+            <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+              Tips, strategies, and tutorials
+            </p>
+          </Link>
+        </div>
+      </section>
+
+      {/* SEO Content */}
+      <section className="mt-12 pt-8" style={{ borderTop: '1px solid var(--border)' }}>
         <h2 className="text-xl font-semibold mb-4">About BH{level} Bases</h2>
         <div className="space-y-3 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
           <p>
-            Builder Hall {level} offers unique defensive capabilities for versus battles.
+            Builder Hall {level} {level >= 9 ? 'is a high-level builder base with advanced defenses and the powerful O.T.T.O hut potential.' : level >= 6 ? 'introduces important defensive buildings and army compositions.' : 'is great for learning Builder Base fundamentals.'}
             A well-designed base can help you climb the trophy ladder and earn more resources.
+          </p>
+          <p>
+            Our BH{level} bases are optimized for versus battles and updated for the {new Date().getFullYear()} meta.
+            Each layout comes with a one-click copy link for easy import into your game.
           </p>
         </div>
       </section>

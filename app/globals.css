@@ -4,6 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Account for sticky header when scrolling to anchors */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
 /* Theme Variables */
 :root {
   /* Portal default colors */
