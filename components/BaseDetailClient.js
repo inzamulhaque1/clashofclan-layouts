@@ -1,16 +1,36 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import VoteButtons from './VoteButtons';
 import ShareButtons from './ShareButtons';
 import CopyStats from './CopyStats';
 import { getBaseId, incrementCopyCount } from '@/lib/stats';
 
-export default function BaseDetailClient({ base, baseUrl }) {
+export default function BaseDetailClient({ base, baseUrl, isPremium = false }) {
   const [copied, setCopied] = useState(false);
+  const [isUnlocked, setIsUnlocked] = useState(false);
+
+  // Check if this premium base was already unlocked
+  useEffect(() => {
+    if (isPremium && typeof window !== 'undefined') {
+      const unlockedBases = JSON.parse(localStorage.getItem('unlockedBases') || '[]');
+      const baseId = `${base.hallType}${base.hallLevel}-${base.baseType}-${base.baseNumber}`;
+      setIsUnlocked(unlockedBases.includes(baseId));
+    }
+  }, [isPremium, base]);
 
   const handleCopy = async () => {
     if (!base.copyLink) return;
+
+    // If premium and not unlocked, trigger CPABuild locker
+    if (isPremium && !isUnlocked) {
+      if (typeof window !== 'undefined' && typeof window._KE === 'function') {
+        window._KE();
+      } else {
+        alert('Locker is loading, please try again.');
+      }
+      return;
+    }
 
     try {
       await navigator.clipboard.writeText(base.copyLink);
@@ -47,8 +67,15 @@ export default function BaseDetailClient({ base, baseUrl }) {
           className={`w-full py-4 px-6 rounded-xl text-base font-semibold transition-all duration-200 flex items-center justify-center gap-3 ${
             copied
               ? 'bg-emerald-500 text-white'
-              : 'bg-primary text-black hover:bg-primary/90 shadow-lg shadow-primary/25'
+              : isPremium && !isUnlocked
+                ? ''
+                : 'bg-primary text-black hover:bg-primary/90 shadow-lg shadow-primary/25'
           }`}
+          style={isPremium && !isUnlocked && !copied ? {
+            background: 'linear-gradient(135deg, #F97316 0%, #EA580C 100%)',
+            color: '#fff',
+            boxShadow: '0 4px 15px rgba(249,115,22,0.4)'
+          } : undefined}
         >
           {copied ? (
             <>
@@ -56,6 +83,13 @@ export default function BaseDetailClient({ base, baseUrl }) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
               Link Copied!
+            </>
+          ) : isPremium && !isUnlocked ? (
+            <>
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+              </svg>
+              Unlock Premium Base
             </>
           ) : (
             <>
