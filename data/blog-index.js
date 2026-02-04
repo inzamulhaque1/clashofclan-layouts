@@ -3,12 +3,14 @@
 import { BLOG_ARTICLES } from './blog-articles';
 import { BLOG_ARTICLES_PART2 } from './blog-articles-2';
 import { BLOG_ARTICLES_PART3 } from './blog-articles-3';
+import { BLOG_ARTICLES_PART4 } from './blog-articles-4';
 
 // Combine all articles
 export const ALL_ARTICLES = [
   ...BLOG_ARTICLES,
   ...BLOG_ARTICLES_PART2,
-  ...BLOG_ARTICLES_PART3
+  ...BLOG_ARTICLES_PART3,
+  ...BLOG_ARTICLES_PART4
 ];
 
 // Get all articles sorted by date (newest first)
