@@ -51,6 +51,11 @@ export default function DynamicHeader() {
   const [gamesOpen, setGamesOpen] = useState(false);
   const dropdownRef = useRef(null);
 
+  // Hide header on admin pages
+  if (pathname?.startsWith('/admin')) {
+    return null;
+  }
+
   // Detect current game from URL
   const currentGameSlug = GAMES.find(g => pathname.startsWith(`/${g.slug}`))?.slug;
   const currentGame = GAMES.find(g => g.slug === currentGameSlug);
