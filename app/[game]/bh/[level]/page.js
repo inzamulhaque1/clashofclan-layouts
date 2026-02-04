@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getGameBySlug, getGameSlugs } from '@/config/games';
 import { queryContent } from '@/lib/data';
 import { generateBreadcrumbStructuredData } from '@/lib/seo';
+import { isPremiumBase } from '@/lib/bases';
 import BaseCard from '@/components/BaseCard';
 
 export async function generateStaticParams() {
@@ -56,21 +57,32 @@ export default function BHLevelPage({ params, searchParams }) {
   }
 
   const allBases = queryContent('clash-of-clans', 'base', { hallType: 'BH', hallLevel: level });
+  const typeFilter = searchParams?.type;
   const currentPage = Math.max(1, parseInt(searchParams?.page) || 1);
 
+  // Filter bases - handle premium filter
+  const filteredBases = typeFilter === 'premium'
+    ? allBases.filter(b => isPremiumBase(b))
+    : allBases;
+
+  // Count premium bases
+  const premiumCount = allBases.filter(b => isPremiumBase(b)).length;
+
   // Pagination calculations
-  const totalBases = allBases.length;
+  const totalBases = filteredBases.length;
   const totalPages = Math.ceil(totalBases / ITEMS_PER_PAGE);
   const validPage = Math.min(currentPage, totalPages || 1);
   const startIndex = (validPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
-  const paginatedBases = allBases.slice(startIndex, endIndex);
+  const paginatedBases = filteredBases.slice(startIndex, endIndex);
 
   // Build pagination URL helper
   const buildPageUrl = (page) => {
-    return page > 1
-      ? `/${game.slug}/bh/${level}?page=${page}`
-      : `/${game.slug}/bh/${level}`;
+    const params = new URLSearchParams();
+    if (typeFilter) params.set('type', typeFilter);
+    if (page > 1) params.set('page', page.toString());
+    const queryString = params.toString();
+    return `/${game.slug}/bh/${level}${queryString ? `?${queryString}` : ''}`;
   };
 
   const breadcrumbs = generateBreadcrumbStructuredData([
@@ -96,8 +108,38 @@ export default function BHLevelPage({ params, searchParams }) {
           BH{level} <span style={{ color: 'var(--game-primary)' }}>Base Layouts</span>
         </h1>
         <p style={{ color: 'var(--text-muted)' }}>
-          {totalBases} layouts available. Click to copy directly to Clash of Clans.
+          {allBases.length} layouts available. Click to copy directly to Clash of Clans.
         </p>
+      </div>
+
+      {/* Filters */}
+      <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
+        <Link
+          href={`/${game.slug}/bh/${level}`}
+          className="px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all hover:scale-105"
+          style={{
+            background: !typeFilter ? 'var(--game-primary)' : 'var(--surface-100)',
+            color: !typeFilter ? '#000' : 'var(--text-muted)',
+          }}
+        >
+          All <span style={{ opacity: !typeFilter ? 0.6 : 1 }}>{allBases.length}</span>
+        </Link>
+        {premiumCount > 0 && (
+          <Link
+            href={`/${game.slug}/bh/${level}?type=premium`}
+            className="px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition-all hover:scale-105 flex items-center gap-1.5"
+            style={{
+              background: 'linear-gradient(135deg, #F97316 0%, #EA580C 100%)',
+              color: '#fff',
+              boxShadow: typeFilter === 'premium' ? '0 2px 10px rgba(249,115,22,0.4)' : '0 2px 8px rgba(249,115,22,0.3)',
+            }}
+          >
+            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/>
+            </svg>
+            Premium <span style={{ opacity: 0.8 }}>{premiumCount}</span>
+          </Link>
+        )}
       </div>
 
       {/* Results Info */}

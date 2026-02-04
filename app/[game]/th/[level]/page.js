@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getGameBySlug, getGameSlugs } from '@/config/games';
 import { queryContent, getContentStats } from '@/lib/data';
 import { generateBreadcrumbStructuredData } from '@/lib/seo';
+import { isPremiumBase } from '@/lib/bases';
 import BaseCard from '@/components/BaseCard';
 
 export async function generateStaticParams() {
@@ -41,6 +42,7 @@ export async function generateMetadata({ params }) {
 
 const FILTER_TYPES = [
   { key: 'all', label: 'All' },
+  { key: 'premium', label: 'Premium', isPremiumFilter: true },
   { key: 'war', label: 'War' },
   { key: 'farm', label: 'Farm' },
   { key: 'trophy', label: 'Trophy' },
@@ -67,9 +69,12 @@ export default function THLevelPage({ params, searchParams }) {
   const typeFilter = searchParams?.type;
   const currentPage = Math.max(1, parseInt(searchParams?.page) || 1);
 
-  const filteredBases = typeFilter
-    ? allBases.filter(b => b.baseType === typeFilter)
-    : allBases;
+  // Filter bases - handle premium filter separately
+  const filteredBases = typeFilter === 'premium'
+    ? allBases.filter(b => isPremiumBase(b))
+    : typeFilter
+      ? allBases.filter(b => b.baseType === typeFilter)
+      : allBases;
 
   // Pagination calculations
   const totalBases = filteredBases.length;
@@ -90,6 +95,7 @@ export default function THLevelPage({ params, searchParams }) {
 
   const typeCounts = {
     all: allBases.length,
+    premium: allBases.filter(b => isPremiumBase(b)).length,
     war: allBases.filter(b => b.baseType === 'war').length,
     farm: allBases.filter(b => b.baseType === 'farm').length,
     trophy: allBases.filter(b => b.baseType === 'trophy').length,
@@ -125,12 +131,37 @@ export default function THLevelPage({ params, searchParams }) {
 
       {/* Filters - resets to page 1 when changing filter */}
       <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
-        {FILTER_TYPES.map(({ key, label }) => {
+        {FILTER_TYPES.map(({ key, label, isPremiumFilter }) => {
           const count = typeCounts[key] || 0;
           const isActive = (key === 'all' && !typeFilter) || typeFilter === key;
           const href = key === 'all' ? `/${game.slug}/th/${level}` : `/${game.slug}/th/${level}?type=${key}`;
 
-          if (key !== 'all' && count === 0) return null;
+          if (key !== 'all' && key !== 'premium' && count === 0) return null;
+          if (key === 'premium' && count === 0) return null;
+
+          // Premium filter gets orange bg with white text
+          if (isPremiumFilter) {
+            return (
+              <Link
+                key={key}
+                href={href}
+                className="px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition-all hover:scale-105 flex items-center gap-1.5"
+                style={{
+                  background: isActive
+                    ? 'linear-gradient(135deg, #F97316 0%, #EA580C 100%)'
+                    : 'linear-gradient(135deg, #F97316 0%, #EA580C 100%)',
+                  color: '#fff',
+                  boxShadow: isActive ? '0 2px 10px rgba(249,115,22,0.4)' : '0 2px 8px rgba(249,115,22,0.3)',
+                }}
+              >
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/>
+                </svg>
+                {label}
+                <span style={{ opacity: 0.8 }}>{count}</span>
+              </Link>
+            );
+          }
 
           return (
             <Link

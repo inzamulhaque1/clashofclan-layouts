@@ -34,6 +34,14 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+        {/* CPABuild Content Locker */}
+        <Script id="cpabuild-config" strategy="afterInteractive">
+          {`var tHFLO_ebv_ecSjvc={"it":4587736,"key":"04270"};`}
+        </Script>
+        <Script
+          src="https://da4talg8ap14y.cloudfront.net/a47da62.js"
+          strategy="afterInteractive"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

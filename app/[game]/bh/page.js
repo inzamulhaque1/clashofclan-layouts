@@ -44,6 +44,48 @@ export default function BHIndexPage({ params }) {
         </p>
       </div>
 
+      {/* Premium Banner */}
+      <Link
+        href={`/${game.slug}/premium`}
+        className="block mb-8 p-5 rounded-2xl transition-all hover:scale-[1.01] group"
+        style={{
+          background: 'linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,165,0,0.08) 50%, rgba(255,215,0,0.15) 100%)',
+          border: '2px solid rgba(255,215,0,0.3)',
+          boxShadow: '0 4px 20px rgba(255,215,0,0.15)'
+        }}
+      >
+        <div className="flex items-center gap-4">
+          <div
+            className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
+            style={{
+              background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+              boxShadow: '0 4px 15px rgba(255,215,0,0.4)'
+            }}
+          >
+            <svg className="w-6 h-6 text-black" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+            </svg>
+          </div>
+          <div className="flex-1">
+            <h3 className="font-bold mb-0.5" style={{ color: '#FFD700' }}>
+              Premium BH10 Bases
+            </h3>
+            <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+              Top-tier versus battle layouts
+            </p>
+          </div>
+          <span
+            className="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold"
+            style={{
+              background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+              color: '#000'
+            }}
+          >
+            View →
+          </span>
+        </div>
+      </Link>
+
       {/* Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         {BH_LEVELS.map(({ level }) => {

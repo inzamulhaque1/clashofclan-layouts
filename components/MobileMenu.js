@@ -96,6 +96,31 @@ export default function MobileMenu({ currentGame, gameNav }) {
                     const isActive = pathname === item.href ||
                       (item.href !== `/${currentGame.slug}` && pathname.startsWith(item.href));
 
+                    // Premium link gets orange bg with white text
+                    if (item.isPremium) {
+                      return (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            className="flex items-center gap-3 px-4 py-3 rounded-xl"
+                            style={{
+                              background: 'linear-gradient(135deg, #F97316 0%, #EA580C 100%)',
+                              borderLeft: '3px solid #F97316',
+                              boxShadow: '0 2px 8px rgba(249,115,22,0.3)'
+                            }}
+                            onClick={closeMenu}
+                          >
+                            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="#fff">
+                              <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/>
+                            </svg>
+                            <span style={{ color: '#fff', fontWeight: 600 }}>
+                              {item.label}
+                            </span>
+                          </Link>
+                        </li>
+                      );
+                    }
+
                     return (
                       <li key={item.href}>
                         <Link

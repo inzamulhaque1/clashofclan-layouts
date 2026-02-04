@@ -22,6 +22,7 @@ const GAME_NAV = {
     { href: '/clash-of-clans', label: 'Home' },
     { href: '/clash-of-clans/th', label: 'Town Hall' },
     { href: '/clash-of-clans/bh', label: 'Builder Hall' },
+    { href: '/clash-of-clans/premium', label: 'Premium', isPremium: true },
     { href: '/clash-of-clans/guides', label: 'Guides' },
     { href: '/clash-of-clans/search', label: 'Search' },
   ],
@@ -146,6 +147,28 @@ export default function DynamicHeader() {
                 {gameNav.map((item) => {
                   const isActive = pathname === item.href ||
                     (item.href !== `/${currentGameSlug}` && pathname.startsWith(item.href));
+
+                  // Premium link gets orange bg with white text
+                  if (item.isPremium) {
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="px-3 py-2 text-sm rounded-lg transition-all hover:scale-105 flex items-center gap-1.5"
+                        style={{
+                          background: 'linear-gradient(135deg, #F97316 0%, #EA580C 100%)',
+                          color: '#fff',
+                          fontWeight: 600,
+                          boxShadow: isActive ? '0 2px 10px rgba(249,115,22,0.4)' : '0 2px 8px rgba(249,115,22,0.3)'
+                        }}
+                      >
+                        <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/>
+                        </svg>
+                        {item.label}
+                      </Link>
+                    );
+                  }
 
                   return (
                     <Link
