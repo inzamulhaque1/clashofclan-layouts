@@ -178,7 +178,8 @@ function TipsBox({ title, items }) {
 function parseMarkdown(text) {
   if (!text) return '';
 
-  let html = text;
+  // Normalize line endings (handle both CRLF and LF)
+  let html = text.replace(/\r\n/g, '\n');
 
   // Parse markdown tables
   const tableRegex = /\|(.+)\|\n\|[-|\s]+\|\n((?:\|.+\|\n?)+)/g;
