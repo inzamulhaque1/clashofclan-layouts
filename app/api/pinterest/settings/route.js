@@ -30,6 +30,7 @@ export async function GET() {
       appSecret: settings.appSecret ? '••••••••' : '',
       accessToken: settings.accessToken ? '••••••••' : '',
       hasCredentials: !!(settings.appId && settings.appSecret && settings.accessToken),
+      accountUsername: settings.accountUsername || '',
       defaultBoardId: settings.defaultBoardId,
       defaultBoardName: settings.defaultBoardName,
       automationEnabled: settings.automationEnabled,
