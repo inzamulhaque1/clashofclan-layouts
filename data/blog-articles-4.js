@@ -1409,7 +1409,7 @@ Genshin is free-to-play with gacha character pulls. While you can complete all c
         },
         {
           title: '2. Honkai: Star Rail — Best Turn-Based RPG',
-          subtitle: 'Genshin\\'s Strategic Cousin',
+          subtitle: 'Genshin\'s Strategic Cousin',
           image: GAME_IMAGES.honkaiStarRail.url,
           imageAlt: GAME_IMAGES.honkaiStarRail.alt,
           content: `**Honkai: Star Rail takes miHoYo's polish and applies it to turn-based combat.** Explore a sci-fi universe aboard the Astral Express, building a team of Pathfinders to combat cosmic threats.
@@ -1786,7 +1786,7 @@ There's no set path. Become a gatherer, crafter, trader, PvP fighter, or all of 
           ]
         },
         {
-          title: '12. Pascal\\'s Wager — Best Soulslike RPG',
+          title: '12. Pascal\'s Wager — Best Soulslike RPG',
           subtitle: 'Dark Souls on Mobile',
           content: `**Pascal's Wager proves that Soulslike games can work on mobile.** Dark, challenging, and atmospheric — it's the closest thing to playing Dark Souls on your phone.
 
