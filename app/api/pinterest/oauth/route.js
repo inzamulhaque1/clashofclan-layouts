@@ -4,7 +4,9 @@ import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import PinterestSettings from '@/models/PinterestSettings';
 
-const PINTEREST_OAUTH_URL = 'https://api.pinterest.com/oauth';
+// Pinterest OAuth endpoints
+const PINTEREST_AUTH_URL = 'https://www.pinterest.com/oauth';  // For user authorization
+const PINTEREST_TOKEN_URL = 'https://api.pinterest.com/v5/oauth/token';  // For token exchange
 const PINTEREST_API_URL = 'https://api.pinterest.com/v5';
 
 // GET - Generate OAuth URL or handle callback
@@ -41,7 +43,7 @@ export async function GET(request) {
       const redirectUri = `${baseUrl}/api/pinterest/oauth`;
 
       // Exchange code for access token
-      const tokenResponse = await fetch(`${PINTEREST_OAUTH_URL}/token`, {
+      const tokenResponse = await fetch(PINTEREST_TOKEN_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -122,7 +124,7 @@ export async function GET(request) {
 
     // Build OAuth URL
     const scopes = ['boards:read', 'boards:write', 'pins:read', 'pins:write', 'user_accounts:read'];
-    const authUrl = new URL(`${PINTEREST_OAUTH_URL}/`);
+    const authUrl = new URL(`${PINTEREST_AUTH_URL}/`);
     authUrl.searchParams.set('client_id', settings.appId);
     authUrl.searchParams.set('redirect_uri', redirectUri);
     authUrl.searchParams.set('response_type', 'code');
@@ -150,7 +152,7 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Missing credentials or refresh token' }, { status: 400 });
     }
 
-    const tokenResponse = await fetch(`${PINTEREST_OAUTH_URL}/token`, {
+    const tokenResponse = await fetch(PINTEREST_TOKEN_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
