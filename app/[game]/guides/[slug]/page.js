@@ -5,6 +5,7 @@ import { getContentById, queryContent } from '@/lib/data';
 import { generatePageMeta, generateBreadcrumbStructuredData } from '@/lib/seo';
 import GuideShareButtons from '@/components/GuideShareButtons';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export async function generateStaticParams() {
   // Generate params for CoC guides
@@ -122,6 +123,7 @@ export default function GuideDetailPage({ params }) {
           }}
         >
           <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
             components={{
               h2: ({ node, ...props }) => <h2 className="text-2xl font-bold mt-10 mb-4" style={{ color: 'var(--text-primary)' }} {...props} />,
               h3: ({ node, ...props }) => <h3 className="text-xl font-semibold mt-8 mb-3" style={{ color: 'var(--text-primary)' }} {...props} />,
@@ -142,12 +144,13 @@ export default function GuideDetailPage({ params }) {
               ),
               hr: ({ node, ...props }) => <hr className="my-8 border-0" style={{ borderTop: '1px solid var(--border)' }} {...props} />,
               table: ({ node, ...props }) => (
-                <div className="overflow-x-auto mb-6">
-                  <table className="w-full text-sm" style={{ borderColor: 'var(--border)' }} {...props} />
+                <div className="overflow-x-auto mb-6 rounded-xl" style={{ border: '1px solid var(--border)' }}>
+                  <table className="w-full text-sm" {...props} />
                 </div>
               ),
-              th: ({ node, ...props }) => <th className="px-4 py-2 text-left font-semibold" style={{ background: 'var(--surface-100)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} {...props} />,
-              td: ({ node, ...props }) => <td className="px-4 py-2" style={{ borderColor: 'var(--border)', color: 'var(--text-secondary)' }} {...props} />,
+              thead: ({ node, ...props }) => <thead style={{ background: 'var(--surface-100)' }} {...props} />,
+              th: ({ node, ...props }) => <th className="px-4 py-3 text-left font-semibold border-b" style={{ borderColor: 'var(--border)', color: 'var(--text-primary)' }} {...props} />,
+              td: ({ node, ...props }) => <td className="px-4 py-3 border-b" style={{ borderColor: 'var(--border)', color: 'var(--text-secondary)' }} {...props} />,
               blockquote: ({ node, ...props }) => (
                 <blockquote
                   className="pl-4 my-4 italic"
