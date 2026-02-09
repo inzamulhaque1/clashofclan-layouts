@@ -35,9 +35,9 @@ export async function GET(request) {
       }
 
       // Get the redirect URI (must match what was used in authorization)
-      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ||
-                      process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` :
-                      'http://localhost:3000';
+      // Use the actual request origin to ensure www. is included if present
+      const requestUrl = new URL(request.url);
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || `${requestUrl.protocol}//${requestUrl.host}`;
       const redirectUri = `${baseUrl}/api/pinterest/oauth`;
 
       // Exchange code for access token
@@ -112,9 +112,9 @@ export async function GET(request) {
       return NextResponse.json({ error: 'App ID not configured' }, { status: 400 });
     }
 
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ||
-                    process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` :
-                    'http://localhost:3000';
+    // Use request origin to include www. if present
+    const requestUrl = new URL(request.url);
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || `${requestUrl.protocol}//${requestUrl.host}`;
     const redirectUri = `${baseUrl}/api/pinterest/oauth`;
 
     // Generate state for CSRF protection
