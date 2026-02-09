@@ -1,7 +1,7 @@
 // Blog Articles Data - Part 4 (Article 17+)
 // Images imported from centralized library for reusability
 
-import { GAME_IMAGES, ARTICLE_IMAGES } from '@/lib/blog/images';
+import { GAME_IMAGES, ARTICLE_IMAGES, CATEGORY_IMAGES } from '@/lib/blog/images';
 
 export const BLOG_ARTICLES_PART4 = [
   {
@@ -756,6 +756,570 @@ Now let's break down each category in detail.`
 The "better" game is whichever fits your lifestyle and preferences. Both are among the best mobile games ever made.
 
 *Ready to start? Check out our [Brawl Stars Beginner Guide](/brawl-stars/guides/beginners-guide) or [Clash of Clans Base Layouts](/clash-of-clans/bases) to get started!*`
+        }
+      ]
+    }
+  },
+  {
+    id: 19,
+    slug: 'best-mobile-strategy-games-2026',
+    title: 'Best Mobile Strategy Games 2026 — 12 Games for Tactical Minds',
+    excerpt: 'Discover the best strategy games for mobile in 2026. From Clash of Clans to Civilization VI, we rank 12 tactical games that will challenge your brain on iOS and Android.',
+    category: 'Game Lists',
+    categoryColor: '#10B981',
+    image: CATEGORY_IMAGES.strategy.url,
+    date: '2026-02-10',
+    readTime: '16 min read',
+    author: 'Game365Hub Team',
+    tags: ['best strategy games mobile', 'strategy games 2026', 'clash of clans', 'clash royale', 'mobile strategy', 'tactical games android ios', 'tower defense mobile', 'civilization mobile', '4x strategy games'],
+    metaDescription: 'Best mobile strategy games 2026. Play 12 top-rated tactical games on Android and iOS including Clash of Clans, Clash Royale, Civilization VI, and more.',
+    content: {
+      intro: `**Strategy games are the ultimate test of tactical thinking — and mobile has become the best platform for gaming on the go.** Whether you want to build empires, command armies, or outplay opponents in real-time, 2026 offers incredible strategy games right in your pocket.
+
+Unlike casual mobile games, **strategy games reward planning, patience, and smart decision-making.** The best ones offer hundreds of hours of gameplay, competitive multiplayer, and that satisfying feeling when a plan comes together perfectly.
+
+**What You'll Find in This Guide:**
+- 12 best strategy games ranked and reviewed
+- Different strategy sub-genres explained
+- Feature breakdowns, pros, and cons
+- Which games are free vs premium
+
+From base-building to real-time tactics to 4X empire games, there's a strategy game here for every tactical mind. Let's dive in!
+
+*Related: [Clash of Clans vs Brawl Stars](/blog/clash-of-clans-vs-brawl-stars-comparison) | [Best Offline Games](/blog/best-offline-games-no-wifi)*`,
+
+      sections: [
+        {
+          title: 'Strategy Game Types Explained',
+          subtitle: 'Finding Your Perfect Sub-Genre',
+          content: `Before diving into our picks, here are the main strategy sub-genres on mobile:
+
+| Type | Description | Examples |
+|------|-------------|----------|
+| **Base Building** | Build & upgrade your base, train armies, attack others | Clash of Clans, Rise of Kingdoms |
+| **Real-Time Strategy (RTS)** | Control units in real-time battles | Clash Royale, Command & Conquer |
+| **Turn-Based Strategy** | Take turns making moves | Civilization VI, XCOM 2 |
+| **Tower Defense** | Place towers to stop enemy waves | Kingdom Rush, Arknights |
+| **4X Strategy** | Explore, Expand, Exploit, Exterminate | Civilization, Polytopia |
+| **Auto Chess/Auto Battler** | Position units that fight automatically | Teamfight Tactics, Chess Rush |
+
+Each sub-genre offers different pacing and decision-making styles. Some players love the slow burn of 4X games; others prefer the instant action of real-time battles.
+
+Now let's look at the 12 best strategy games across all these categories!`
+        },
+        {
+          title: '1. Clash of Clans — Best Base-Building Strategy',
+          subtitle: 'The King of Mobile Strategy',
+          image: GAME_IMAGES.clashOfClans.url,
+          imageAlt: GAME_IMAGES.clashOfClans.alt,
+          content: `**Clash of Clans invented the mobile base-building genre** and remains the gold standard 12+ years later. Build your village, train troops, attack enemies, and dominate in Clan Wars.
+
+**Why It's #1:**
+
+CoC has incredible depth hidden beneath its colorful surface. Base design, army composition, attack timing, hero usage, spell placement — mastering these takes months. And the social element (clans, wars, CWL) keeps millions playing for years.
+
+**2026 Updates:** TH18 added the Spirit Fox hero and new siege machines. The meta continues evolving with Root Rider and Super Witch strategies dominating high-level play.
+
+| Feature | Details |
+|---------|---------|
+| **Genre** | Base-building / Army Strategy |
+| **Multiplayer** | Clan Wars, CWL, Legend League |
+| **Content** | TH1-18, Builder Base, Clan Capital |
+| **F2P Friendly** | Moderate (Gold Pass helps significantly) |
+| **Price** | Free (with optional Gold Pass $4.99/mo) |
+| **Platforms** | Android, iOS |`,
+          pros: [
+            'Deepest strategy of any base-builder',
+            'Incredible clan and social features',
+            '12+ years of content and balance updates',
+            'Satisfying long-term progression',
+            'Active esports scene'
+          ],
+          cons: [
+            'Very slow progression without spending',
+            'Years to reach max level',
+            'Can feel grindy at higher THs',
+            'War commitment can feel demanding',
+            'Gold Pass almost essential for serious players'
+          ]
+        },
+        {
+          title: '2. Clash Royale — Best Real-Time Strategy',
+          subtitle: 'Fast-Paced Card Battles',
+          image: GAME_IMAGES.clashRoyale.url,
+          imageAlt: GAME_IMAGES.clashRoyale.alt,
+          content: `**Clash Royale combines real-time strategy with card collection** in 3-minute battles that demand quick thinking and faster reflexes. Deploy troops, manage elixir, and destroy enemy towers.
+
+**What Makes It Special:**
+
+Every match is a chess game played at 10x speed. You're constantly making decisions — when to attack, when to defend, which cards to cycle, how to counter your opponent's plays. It's strategy compressed into bite-sized sessions.
+
+**The Card System:**
+
+Build a deck of 8 cards from 100+ options. Each card has counters and synergies. Understanding the meta and building effective decks is half the strategy.
+
+| Feature | Details |
+|---------|---------|
+| **Genre** | Real-time Strategy / Card Game |
+| **Match Length** | 3-5 minutes |
+| **Cards** | 100+ troops, spells, and buildings |
+| **Competitive** | Trophy Road, Challenges, CRL esports |
+| **Price** | Free (with Pass Royale $4.99/mo) |
+| **Platforms** | Android, iOS |`,
+          pros: [
+            'Perfect for short gaming sessions',
+            'High skill ceiling with quick decision-making',
+            'Regular balance updates keep meta fresh',
+            'Strong competitive and esports scene',
+            'Satisfying progression with card upgrades'
+          ],
+          cons: [
+            'Can feel pay-to-win at mid-levels',
+            'Card leveling creates power imbalances',
+            'Frustrating matchmaking at times',
+            'Tilting is a real problem',
+            'Meta can feel stale between updates'
+          ]
+        },
+        {
+          title: '3. Civilization VI — Best 4X Strategy',
+          subtitle: 'Build Empires That Span History',
+          content: `**Civilization VI is the definitive 4X strategy experience on mobile.** Build a civilization from ancient times to the space age, competing against AI or other players through military conquest, cultural influence, scientific achievement, or religious domination.
+
+**The 4X Formula:**
+
+- **Explore** the map and discover resources
+- **Expand** your empire with new cities
+- **Exploit** resources for growth and military
+- **Exterminate** opponents (or win peacefully)
+
+**Why It Works on Mobile:**
+
+Turn-based gameplay is perfect for mobile — pause anytime, think through decisions, no twitch reflexes needed. The touch interface works surprisingly well for this complex game.
+
+| Feature | Details |
+|---------|---------|
+| **Genre** | 4X Turn-Based Strategy |
+| **Session Length** | 1-20+ hours per game |
+| **Victory Types** | Domination, Science, Culture, Religion, Diplomacy |
+| **Civilizations** | 50+ leaders with unique abilities |
+| **Price** | $19.99 (base) + DLC expansions |
+| **Platforms** | Android, iOS |`,
+          pros: [
+            'Full Civilization experience on mobile',
+            '"One more turn" addiction',
+            'Massive replayability with different civs',
+            'No internet required (single-player)',
+            'Cross-save with Steam version (iOS)'
+          ],
+          cons: [
+            'Premium price plus expensive DLC',
+            'Drains battery quickly',
+            'Complex for strategy newcomers',
+            'Sessions can stretch hours unexpectedly',
+            'Requires high-end device for smooth play'
+          ]
+        },
+        {
+          title: '4. The Battle of Polytopia — Best Casual 4X',
+          subtitle: 'Civilization Simplified',
+          content: `**Polytopia distills 4X strategy into quick, satisfying sessions.** Explore, expand, and conquer across procedurally generated maps in 20-45 minute games. Perfect for when you want Civ-like gameplay but don't have 5 hours.
+
+**The Brilliance of Polytopia:**
+
+Every mechanic is streamlined without losing strategic depth. Tech trees, combat, city management, and diplomacy — it's all here, just elegantly simplified. You can genuinely finish a conquest in a lunch break.
+
+**Tribe Variety:**
+
+Choose from 16 tribes, each with unique starting tech and playstyle. Some focus on economy, others on military, others on exploration. Learning each tribe's strengths is part of the fun.
+
+| Feature | Details |
+|---------|---------|
+| **Genre** | Casual 4X Strategy |
+| **Session Length** | 20-45 minutes |
+| **Tribes** | 16 playable (some paid) |
+| **Modes** | Single-player, Pass & Play, Online |
+| **Price** | Free (4 tribes) / $1.99-4.99 per tribe |
+| **Platforms** | Android, iOS |`,
+          pros: [
+            'Perfect pacing for mobile play',
+            'Easy to learn, hard to master',
+            'Each tribe feels unique',
+            'Offline single-player available',
+            'No pay-to-win — just cosmetics/tribes'
+          ],
+          cons: [
+            'Less depth than full Civ games',
+            'Limited diplomacy options',
+            'AI can be predictable at high levels',
+            'Multiplayer can be slow (async turns)',
+            'Premium tribes add up'
+          ]
+        },
+        {
+          title: '5. Kingdom Rush Series — Best Tower Defense',
+          subtitle: 'The Gold Standard of TD Games',
+          content: `**Kingdom Rush set the template for premium tower defense games.** Build towers, upgrade them, use hero abilities, and stop endless waves of enemies across beautifully designed levels.
+
+**Why Kingdom Rush Dominates:**
+
+Perfect balance between complexity and accessibility. Four tower types with upgrade paths, special abilities, hero units, and level-specific challenges. Each level is a puzzle with multiple solutions.
+
+**The Series:**
+
+- **Kingdom Rush** (Original) — Fantasy setting
+- **Kingdom Rush Frontiers** — Expanded mechanics
+- **Kingdom Rush Origins** — Prequel story
+- **Kingdom Rush Vengeance** — Play as the villain
+- **Legends of Kingdom Rush** — RPG spinoff
+
+| Feature | Details |
+|---------|---------|
+| **Genre** | Tower Defense |
+| **Games** | 5 in the series |
+| **Difficulty** | Casual to Brutal challenges |
+| **Content** | 60+ levels across series |
+| **Price** | Free or $2.99-4.99 per game |
+| **Platforms** | Android, iOS |`,
+          pros: [
+            'Best-in-class tower defense gameplay',
+            'Beautiful art and animations',
+            'Challenging but fair difficulty',
+            'Hours of content per game',
+            'No aggressive monetization'
+          ],
+          cons: [
+            'Premium games (not free-to-play)',
+            'Linear level progression',
+            'No competitive multiplayer',
+            'Similar formula across games',
+            'Later games have more IAPs'
+          ]
+        },
+        {
+          title: '6. Rise of Kingdoms — Best Multiplayer Strategy',
+          subtitle: 'Massive Alliance Battles',
+          content: `**Rise of Kingdoms offers massive-scale multiplayer warfare** with alliances of 200+ players fighting over a persistent world map. Build your city, train armies, and coordinate with allies to dominate your server.
+
+**The Scale:**
+
+Unlike Clash of Clans' clan vs clan wars, Rise of Kingdoms has thousands of players on each server fighting over territory in real-time. Alliance coordination, rally attacks, and kingdom politics create emergent gameplay you won't find elsewhere.
+
+**Commander System:**
+
+Collect and upgrade historical commanders (Joan of Arc, Sun Tzu, etc.) with unique abilities. Pairing the right commanders with the right troops is crucial for battlefield success.
+
+| Feature | Details |
+|---------|---------|
+| **Genre** | MMO Strategy |
+| **Server Size** | 2000+ players |
+| **Commanders** | 50+ historical figures |
+| **Modes** | PvE, PvP, Alliance Wars, KvK |
+| **Price** | Free (heavy pay-to-progress) |
+| **Platforms** | Android, iOS |`,
+          pros: [
+            'Massive scale warfare is thrilling',
+            'Strong social/alliance features',
+            'Historical theme is well-executed',
+            'Constant events and content updates',
+            'Cross-server battles add variety'
+          ],
+          cons: [
+            'Very pay-to-win at high levels',
+            'Enormous time investment required',
+            'Whales dominate competitive play',
+            'Can feel like a second job',
+            'New players get crushed by veterans'
+          ]
+        },
+        {
+          title: '7. Plague Inc: Evolved — Best Unique Strategy',
+          subtitle: 'Infect the World',
+          image: GAME_IMAGES.plagueInc.url,
+          imageAlt: GAME_IMAGES.plagueInc.alt,
+          content: `**Plague Inc. flips the strategy genre on its head** — instead of saving the world, you're destroying it. Evolve a pathogen and wipe out humanity before they develop a cure.
+
+**Strategic Depth:**
+
+Balancing infectivity vs. lethality is the core decision. Kill too fast and you burn out. Spread too slow and the cure finishes first. Environmental factors, government responses, and mutation choices create complex strategy.
+
+**Disease Types:**
+
+Each pathogen type (Bacteria, Virus, Fungus, Parasite, etc.) plays completely differently with unique mechanics and strategies.
+
+| Feature | Details |
+|---------|---------|
+| **Genre** | Simulation Strategy |
+| **Pathogens** | 12+ disease types |
+| **Difficulty** | Casual to Mega Brutal |
+| **Game Length** | 15-30 minutes |
+| **Price** | Free / $0.99 (premium version) |
+| **Platforms** | Android, iOS |`,
+          pros: [
+            'Unique concept in mobile strategy',
+            'Surprisingly deep strategy',
+            'High replayability with different diseases',
+            'Addictive "one more game" quality',
+            'Works completely offline'
+          ],
+          cons: [
+            'Can feel slow during mid-game',
+            'RNG can feel frustrating',
+            'Later disease types require purchase',
+            'Realism updates changed balance',
+            'Dark theme not for everyone'
+          ]
+        },
+        {
+          title: '8. Arknights — Best Gacha Tower Defense',
+          subtitle: 'Anime Strategy Meets TD',
+          content: `**Arknights combines tower defense with gacha character collection** in a stylish, challenging strategy game. Deploy operators with unique abilities to defend against waves of enemies.
+
+**What Sets It Apart:**
+
+Deep tactical mechanics rarely seen in gacha games. Grid-based positioning, operator synergies, and skill timing matter more than raw stats. Free-to-play players can clear all content with smart strategy.
+
+**The Gacha Element:**
+
+Collect operators with distinct classes, skills, and roles. While the gacha is generous compared to competitors, building teams and leveling operators takes time.
+
+| Feature | Details |
+|---------|---------|
+| **Genre** | Gacha Tower Defense |
+| **Operators** | 200+ characters |
+| **Events** | Regular story events and challenges |
+| **F2P Friendly** | Moderate-Good |
+| **Price** | Free (gacha + monthly pass) |
+| **Platforms** | Android, iOS |`,
+          pros: [
+            'Excellent tactical depth for a gacha',
+            'Generous free-to-play economy',
+            'Stylish art and music',
+            'Challenging high-difficulty content',
+            'Active community and events'
+          ],
+          cons: [
+            'Stamina system limits play',
+            'Gacha addiction potential',
+            'Complex for newcomers',
+            'Grind-heavy at higher levels',
+            'Story is convoluted'
+          ]
+        },
+        {
+          title: '9. Teamfight Tactics — Best Auto-Battler',
+          subtitle: 'League of Legends Strategy Spinoff',
+          content: `**Teamfight Tactics (TFT) brings auto-chess gameplay to mobile** with the League of Legends universe. Build a team, position them on the board, and watch them battle automatically. Strategy is in the team-building, not the combat execution.
+
+**How TFT Works:**
+
+Each match, you draft champions from a shared pool, combine them for upgrades, and equip items. Champions fight automatically each round — your job is building the optimal team composition and positioning.
+
+**Why It's Strategic:**
+
+Reading the lobby (what others are building), adapting your strategy mid-game, and managing economy are core skills. No two games play the same.
+
+| Feature | Details |
+|---------|---------|
+| **Genre** | Auto-Battler / Auto-Chess |
+| **Champions** | Rotates each set (60+ per set) |
+| **Match Length** | 25-35 minutes |
+| **Ranked** | Competitive ladder system |
+| **Price** | Free (cosmetics only) |
+| **Platforms** | Android, iOS |`,
+          pros: [
+            'Deep strategy without execution pressure',
+            'Regular set rotations keep it fresh',
+            'Completely F2P (no pay-to-win)',
+            'Cross-play with PC version',
+            'Active esports scene'
+          ],
+          cons: [
+            'Learning curve for new players',
+            'RNG can feel bad (shop variance)',
+            'Long matches for mobile',
+            'Set rotations mean constant learning',
+            'Can feel passive (watching battles)'
+          ]
+        },
+        {
+          title: '10. Bad North — Best Real-Time Tactics',
+          subtitle: 'Minimalist Viking Defense',
+          content: `**Bad North is a beautifully minimalist real-time tactics game** where you defend procedurally generated islands from Viking invaders. No base-building — just pure tactical combat.
+
+**The Appeal:**
+
+Position your soldiers, react to enemy landings, and protect your villagers. Every decision matters. Lose soldiers and they're gone forever. Lose an island and your kingdom shrinks.
+
+**Roguelite Elements:**
+
+Procedural islands, permanent death, and unlockable unit types create high replayability. Each campaign plays differently.
+
+| Feature | Details |
+|---------|---------|
+| **Genre** | Real-Time Tactics / Roguelite |
+| **Session Length** | 20-40 minutes per campaign |
+| **Difficulty** | Challenging with permadeath |
+| **Style** | Minimalist, beautiful |
+| **Price** | $4.99-6.99 (premium) |
+| **Platforms** | Android, iOS |`,
+          pros: [
+            'Stunning minimalist art style',
+            'Tight, focused tactical gameplay',
+            'High replayability via roguelite elements',
+            'No ads or IAPs — premium experience',
+            'Works great on all devices'
+          ],
+          cons: [
+            'Can feel repetitive over time',
+            'Difficulty spikes can frustrate',
+            'Limited unit variety',
+            'Premium price point',
+            'Relatively short campaigns'
+          ]
+        },
+        {
+          title: '11. XCOM 2 Collection — Best Tactical RPG',
+          subtitle: 'Squad Tactics Perfected',
+          content: `**XCOM 2 is the gold standard of squad-based tactical combat**, now fully available on mobile. Command a squad of soldiers, make turn-based decisions, and accept that you will lose soldiers you've grown attached to.
+
+**Why XCOM Is Special:**
+
+Permanent death creates genuine stakes. When your veteran sniper dies because you miscalculated, it hurts. This tension makes every decision meaningful. The base-building meta-layer adds resource management strategy.
+
+**Mobile Port Quality:**
+
+Feral Interactive did excellent work — full XCOM 2 experience with touch controls that actually work well.
+
+| Feature | Details |
+|---------|---------|
+| **Genre** | Turn-Based Tactics |
+| **Content** | Full game + War of the Chosen DLC |
+| **Campaign Length** | 40-60 hours |
+| **Difficulty** | Challenging (permadeath) |
+| **Price** | $24.99 (Collection) |
+| **Platforms** | Android, iOS |`,
+          pros: [
+            'Full AAA tactics experience on mobile',
+            'Excellent touch controls',
+            'Massive content value',
+            'Genuine challenge and consequence',
+            'Works offline'
+          ],
+          cons: [
+            'Premium price ($25)',
+            'Large download size (8GB+)',
+            'Requires high-end device',
+            'Long sessions feel demanding on mobile',
+            'Battery drains quickly'
+          ]
+        },
+        {
+          title: '12. Stormbound — Best Card Strategy',
+          subtitle: 'Strategic Card Battles',
+          content: `**Stormbound combines collectible card games with grid-based tactics** for a unique strategy hybrid. Play cards to deploy units on a battlefield, push toward the enemy base, and destroy it.
+
+**What Makes It Different:**
+
+Unlike pure card games (Hearthstone) or pure tactics games, Stormbound requires both deck-building strategy and positional thinking each turn. Units move and fight automatically, but where you place them matters enormously.
+
+**The Free-to-Play Model:**
+
+Generous for card game standards. Competitive decks are achievable without spending, though progression is slow.
+
+| Feature | Details |
+|---------|---------|
+| **Genre** | Tactical Card Game |
+| **Match Length** | 3-8 minutes |
+| **Cards** | 200+ cards across 4 factions |
+| **Competitive** | Ranked ladder |
+| **Price** | Free (with card purchases) |
+| **Platforms** | Android, iOS |`,
+          pros: [
+            'Unique blend of cards and tactics',
+            'Quick matches perfect for mobile',
+            'Deep strategy despite simple appearance',
+            'Reasonable F2P experience',
+            'Active community and updates'
+          ],
+          cons: [
+            'Card leveling creates imbalance',
+            'Slow progression without paying',
+            'Smaller playerbase than mega-games',
+            'Some factions feel weaker',
+            'Late-game grind for card levels'
+          ]
+        },
+        {
+          title: 'Strategy Games Comparison',
+          subtitle: 'Quick Reference Chart',
+          content: `Here's a side-by-side comparison to help you choose:
+
+| Game | Sub-Genre | Session Length | F2P? | Best For |
+|------|-----------|----------------|------|----------|
+| **Clash of Clans** | Base Building | 30-60 min | Moderate | Long-term strategists |
+| **Clash Royale** | Real-Time Cards | 3-5 min | Moderate | Quick thinkers |
+| **Civilization VI** | 4X | 1-20+ hrs | No ($20) | Empire builders |
+| **Polytopia** | Casual 4X | 20-45 min | Yes | Casual Civ fans |
+| **Kingdom Rush** | Tower Defense | 20-40 min | No ($3-5) | TD purists |
+| **Rise of Kingdoms** | MMO Strategy | Hours daily | Heavy P2W | Alliance players |
+| **Plague Inc** | Simulation | 15-30 min | Yes | Unique experience |
+| **Arknights** | Gacha TD | 15-30 min | Good | Anime TD fans |
+| **TFT** | Auto-Battler | 25-35 min | Yes | LoL fans, auto-chess |
+| **Bad North** | Real-Time Tactics | 20-40 min | No ($5) | Minimalists |
+| **XCOM 2** | Tactical RPG | 1-3 hrs | No ($25) | Hardcore tacticians |
+| **Stormbound** | Card Tactics | 3-8 min | Moderate | Card + tactics hybrid |
+
+**Our Top Picks:**
+
+- **Best Overall:** Clash of Clans — deepest, most polished
+- **Best Quick Sessions:** Clash Royale — 3-minute matches
+- **Best Premium:** XCOM 2 Collection — AAA tactics
+- **Best F2P:** Teamfight Tactics — zero pay-to-win
+- **Best Casual:** Polytopia — Civ in 30 minutes
+- **Best Unique:** Plague Inc — nothing else like it`
+        },
+        {
+          title: 'How to Choose Your Strategy Game',
+          subtitle: 'Finding the Perfect Fit',
+          content: `With 12 excellent options, here's how to narrow it down:
+
+**By Time Available:**
+
+| Time Per Session | Best Games |
+|------------------|------------|
+| 5-10 minutes | Clash Royale, Stormbound |
+| 15-30 minutes | Plague Inc, Polytopia, Kingdom Rush |
+| 30-60 minutes | Clash of Clans, Bad North, TFT |
+| 1+ hours | XCOM 2, Civilization VI |
+
+**By Playstyle:**
+
+| If You Like... | Try... |
+|----------------|--------|
+| Building and upgrading | Clash of Clans, Rise of Kingdoms |
+| Head-to-head competition | Clash Royale, TFT |
+| Solo thinking games | Civ VI, XCOM 2, Plague Inc |
+| Tower defense | Kingdom Rush, Arknights |
+| Social/alliance play | Rise of Kingdoms, Clash of Clans |
+
+**By Budget:**
+
+| Budget | Recommended |
+|--------|-------------|
+| Free only | Polytopia (4 tribes), Clash Royale, TFT |
+| Under $5 | Plague Inc, Kingdom Rush, Bad North |
+| $10-25 | Civilization VI, XCOM 2 Collection |
+
+---
+
+**Final Thoughts:**
+
+Strategy gaming on mobile has never been better. Whether you want quick card battles on your commute, massive alliance wars that span months, or deep 4X campaigns, there's a game here that fits.
+
+Start with Clash of Clans if you want the best overall, Clash Royale for quick sessions, or Polytopia if you want premium quality without ongoing commitment. All three are excellent entry points to mobile strategy gaming.
+
+*Related Guides: [Best Offline Games](/blog/best-offline-games-no-wifi) | [Best AI Games 2026](/blog/best-ai-games-mobile-2026) | [CWL Attack Strategies](/clash-of-clans/guides/cwl-attack-strategies)*`
         }
       ]
     }
