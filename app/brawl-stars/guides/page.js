@@ -23,6 +23,16 @@ export const metadata = {
 
 const guides = [
   {
+    slug: "tier-list-2026",
+    title: "Tier List 2026",
+    description: "Complete tier list with S to D rankings for every brawler. Know the meta for Gem Grab, Brawl Ball, Showdown, and Ranked.",
+    image: GUIDE_IMAGES.tierListGuide?.hero || GUIDE_IMAGES.rankedGuide.hero,
+    color: "#EAB308",
+    readTime: "12 min",
+    difficulty: "All Levels",
+    isAvailable: true
+  },
+  {
     slug: "beginners-guide",
     title: "Beginner's Guide 2026",
     description: "Everything new players need to know to start winning. Complete tutorial covering controls, game modes, brawlers, and progression.",
