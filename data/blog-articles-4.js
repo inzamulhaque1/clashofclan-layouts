@@ -1338,7 +1338,7 @@ Start with Clash of Clans if you want the best overall, Clash Royale for quick s
     tags: ['best rpg games mobile', 'mobile rpg 2026', 'genshin impact', 'honkai star rail', 'jrpg mobile', 'gacha rpg', 'action rpg mobile', 'turn based rpg android ios', 'anime rpg games'],
     metaDescription: 'Best RPG games for mobile in 2026. Play 12 top role-playing games on Android and iOS including Genshin Impact, Honkai Star Rail, Eternium, and classic JRPGs.',
     content: {
-      intro: \`**Role-playing games on mobile have evolved from simple ports to full-fledged adventures rivaling console experiences.** In 2026, you can explore vast open worlds, engage in tactical turn-based combat, and experience stories that rival the best console RPGs — all from your phone.
+      intro: `**Role-playing games on mobile have evolved from simple ports to full-fledged adventures rivaling console experiences.** In 2026, you can explore vast open worlds, engage in tactical turn-based combat, and experience stories that rival the best console RPGs — all from your phone.
 
 **The mobile RPG landscape offers incredible variety:**
 - Action RPGs with real-time combat
@@ -1348,13 +1348,13 @@ Start with Clash of Clans if you want the best overall, Clash Royale for quick s
 
 This guide covers the **12 best RPG games for mobile in 2026**, from free-to-play behemoths to premium one-time purchases. Whether you want epic quests, anime aesthetics, or old-school charm, there's an RPG here for you.
 
-*Related: [Best Strategy Games Mobile](/blog/best-mobile-strategy-games-2026) | [Best AI Games 2026](/blog/best-ai-games-mobile-2026)*\`,
+*Related: [Best Strategy Games Mobile](/blog/best-mobile-strategy-games-2026) | [Best AI Games 2026](/blog/best-ai-games-mobile-2026)*`,
 
       sections: [
         {
           title: 'RPG Types on Mobile',
           subtitle: 'Find Your Perfect Adventure Style',
-          content: \`Before diving into our picks, here are the main RPG sub-genres on mobile:
+          content: `Before diving into our picks, here are the main RPG sub-genres on mobile:
 
 | Type | Description | Examples |
 |------|-------------|----------|
@@ -1367,14 +1367,14 @@ This guide covers the **12 best RPG games for mobile in 2026**, from free-to-pla
 
 Each sub-genre offers different pacing. Action RPGs are fast and skill-based; turn-based games reward planning. Gacha games offer ongoing collection; premium ports are one-time experiences.
 
-Now let's look at the 12 best RPGs you can play right now!\`
+Now let's look at the 12 best RPGs you can play right now!`
         },
         {
           title: '1. Genshin Impact — Best Open World Action RPG',
           subtitle: 'The Game That Changed Mobile Gaming',
           image: GAME_IMAGES.genshinImpact.url,
           imageAlt: GAME_IMAGES.genshinImpact.alt,
-          content: \`**Genshin Impact remains the undisputed king of mobile RPGs.** Three years after launch, miHoYo continues to add new regions, characters, and stories at an incredible pace. It's a full open-world action RPG that happens to run on your phone.
+          content: `**Genshin Impact remains the undisputed king of mobile RPGs.** Three years after launch, miHoYo continues to add new regions, characters, and stories at an incredible pace. It's a full open-world action RPG that happens to run on your phone.
 
 **Why It's #1:**
 
@@ -1391,7 +1391,7 @@ Genshin is free-to-play with gacha character pulls. While you can complete all c
 | **World Size** | 6+ major regions (growing) |
 | **Story** | 70+ hours main quest |
 | **Price** | Free (gacha-based) |
-| **Platforms** | Android, iOS, PC, PlayStation |\`,
+| **Platforms** | Android, iOS, PC, PlayStation |`,
           pros: [
             'Stunning open world with constant updates',
             'Satisfying elemental combat system',
@@ -1412,7 +1412,7 @@ Genshin is free-to-play with gacha character pulls. While you can complete all c
           subtitle: 'Genshin\\'s Strategic Cousin',
           image: GAME_IMAGES.honkaiStarRail.url,
           imageAlt: GAME_IMAGES.honkaiStarRail.alt,
-          content: \`**Honkai: Star Rail takes miHoYo's polish and applies it to turn-based combat.** Explore a sci-fi universe aboard the Astral Express, building a team of Pathfinders to combat cosmic threats.
+          content: `**Honkai: Star Rail takes miHoYo's polish and applies it to turn-based combat.** Explore a sci-fi universe aboard the Astral Express, building a team of Pathfinders to combat cosmic threats.
 
 **What Makes It Special:**
 
@@ -1429,7 +1429,7 @@ Star Rail prioritizes storytelling more than Genshin. Each planet has self-conta
 | **Exploration** | Linear with hub areas |
 | **Story** | Character-driven with humor |
 | **Price** | Free (gacha-based) |
-| **Platforms** | Android, iOS, PC |\`,
+| **Platforms** | Android, iOS, PC |`,
           pros: [
             'Polished turn-based combat',
             'Excellent story and characters',
@@ -1450,7 +1450,7 @@ Star Rail prioritizes storytelling more than Genshin. Each planet has self-conta
           subtitle: 'Diablo on Mobile, Done Right',
           image: GAME_IMAGES.eternium.url,
           imageAlt: GAME_IMAGES.eternium.alt,
-          content: \`**Eternium is the best action RPG for players who hate gacha.** It's a fully premium experience — no energy systems, no character pulls, just pure loot-grinding ARPG goodness reminiscent of Diablo.
+          content: `**Eternium is the best action RPG for players who hate gacha.** It's a fully premium experience — no energy systems, no character pulls, just pure loot-grinding ARPG goodness reminiscent of Diablo.
 
 **Why It Stands Out:**
 
@@ -1467,7 +1467,7 @@ Unlike most mobile RPGs, Eternium is genuinely free with optional purchases for 
 | **Classes** | Mage, Warrior, Bounty Hunter |
 | **Loot** | Random drops, crafting, enchanting |
 | **Price** | Free (truly F2P friendly) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'No gacha, no energy, no paywalls',
             'Innovative gesture controls',
@@ -1488,7 +1488,7 @@ Unlike most mobile RPGs, Eternium is genuinely free with optional purchases for 
           subtitle: 'Console-Quality Anime RPG',
           image: GAME_IMAGES.epicSeven.url,
           imageAlt: GAME_IMAGES.epicSeven.alt,
-          content: \`**Epic Seven delivers gorgeous 2D animation and strategic turn-based combat.** It's the closest thing to a playable anime on mobile, with fluid animations that rival console games.
+          content: `**Epic Seven delivers gorgeous 2D animation and strategic turn-based combat.** It's the closest thing to a playable anime on mobile, with fluid animations that rival console games.
 
 **Visual Excellence:**
 
@@ -1505,7 +1505,7 @@ Speed tuning, debuff management, and team composition create genuine strategic d
 | **Animation** | 2D Live2D quality |
 | **PvP** | Arena, RTA, Guild Wars |
 | **Price** | Free (gacha-based) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Best 2D animation in mobile gaming',
             'Deep strategic combat',
@@ -1526,7 +1526,7 @@ Speed tuning, debuff management, and team composition create genuine strategic d
           subtitle: 'A JRPG By Chrono Trigger Creators',
           image: GAME_IMAGES.anotherEden.url,
           imageAlt: GAME_IMAGES.anotherEden.alt,
-          content: \`**Another Eden is a love letter to classic JRPGs** — and it's written by the creator of Chrono Trigger. Time travel, memorable characters, and a sweeping orchestral soundtrack create a genuine JRPG experience.
+          content: `**Another Eden is a love letter to classic JRPGs** — and it's written by the creator of Chrono Trigger. Time travel, memorable characters, and a sweeping orchestral soundtrack create a genuine JRPG experience.
 
 **Why It's Special:**
 
@@ -1543,7 +1543,7 @@ Time travel is central to the plot. You'll visit different eras, meet alternate 
 | **Exploration** | Classic JRPG world map |
 | **Story** | 100+ hours of content |
 | **Price** | Free (optional gacha) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'No stamina or energy system',
             'Massive story content that never expires',
@@ -1564,7 +1564,7 @@ Time travel is central to the plot. You'll visit different eras, meet alternate 
           subtitle: 'HD-2D Brilliance on Mobile',
           image: GAME_IMAGES.octopathTraveler.url,
           imageAlt: GAME_IMAGES.octopathTraveler.alt,
-          content: \`**Octopath Traveler: Champions of the Continent brings the HD-2D magic to mobile.** The stunning visual style — 2D sprites on 3D backgrounds — looks gorgeous on modern phone screens.
+          content: `**Octopath Traveler: Champions of the Continent brings the HD-2D magic to mobile.** The stunning visual style — 2D sprites on 3D backgrounds — looks gorgeous on modern phone screens.
 
 **The Octopath System:**
 
@@ -1581,7 +1581,7 @@ This isn't a simplified mobile version — it's a full Octopath experience. The 
 | **Travelers** | 8 main + gacha characters |
 | **Story** | Multiple interweaving paths |
 | **Price** | Free (gacha-based) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Stunning HD-2D visual style',
             'Strategic Break/Boost combat',
@@ -1602,7 +1602,7 @@ This isn't a simplified mobile version — it's a full Octopath experience. The 
           subtitle: 'Massive Champion Roster',
           image: GAME_IMAGES.raidShadowLegends.url,
           imageAlt: GAME_IMAGES.raidShadowLegends.alt,
-          content: \`**Raid: Shadow Legends offers one of the largest champion rosters in mobile gaming** — over 700+ heroes to collect, build, and battle with. The 3D graphics are impressive for a mobile game.
+          content: `**Raid: Shadow Legends offers one of the largest champion rosters in mobile gaming** — over 700+ heroes to collect, build, and battle with. The 3D graphics are impressive for a mobile game.
 
 **Collection Depth:**
 
@@ -1619,7 +1619,7 @@ Raid is one of the most aggressively monetized mobile games. F2P is possible but
 | **Champions** | 700+ collectible heroes |
 | **Modes** | Campaign, Dungeons, Arena, Clan Boss |
 | **Price** | Free (heavy monetization) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Massive champion roster',
             'Impressive 3D graphics',
@@ -1640,7 +1640,7 @@ Raid is one of the most aggressively monetized mobile games. F2P is possible but
           subtitle: '10 Years and Still Going Strong',
           image: GAME_IMAGES.summonersWar.url,
           imageAlt: GAME_IMAGES.summonersWar.alt,
-          content: \`**Summoners War pioneered the mobile gacha RPG genre** and remains one of the best 10 years later. Its longevity speaks to the depth of its systems and the fairness of its progression.
+          content: `**Summoners War pioneered the mobile gacha RPG genre** and remains one of the best 10 years later. Its longevity speaks to the depth of its systems and the fairness of its progression.
 
 **Why It Lasts:**
 
@@ -1657,7 +1657,7 @@ Summoners War is one of the more F2P-friendly gacha games. Many top players are 
 | **Monsters** | 1000+ with fusion system |
 | **Runes** | Deep customization system |
 | **Price** | Free (fairer gacha) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             '10 years of content and updates',
             'F2P viable with time investment',
@@ -1676,7 +1676,7 @@ Summoners War is one of the more F2P-friendly gacha games. Many top players are 
         {
           title: '9. Diablo Immortal — Best AAA Mobile RPG',
           subtitle: 'Blizzard Quality on Mobile',
-          content: \`**Diablo Immortal brings Blizzard's signature polish to mobile.** The action RPG combat feels authentic — fluid, visceral, and satisfying. It's genuinely Diablo, not a mobile imitation.
+          content: `**Diablo Immortal brings Blizzard's signature polish to mobile.** The action RPG combat feels authentic — fluid, visceral, and satisfying. It's genuinely Diablo, not a mobile imitation.
 
 **The Combat:**
 
@@ -1693,7 +1693,7 @@ Immortal's monetization is infamously aggressive. Endgame progression heavily fa
 | **Classes** | 6 playable classes |
 | **Multiplayer** | MMO-style with dungeons/raids |
 | **Price** | Free (controversial P2W) |
-| **Platforms** | Android, iOS, PC |\`,
+| **Platforms** | Android, iOS, PC |`,
           pros: [
             'Authentic Diablo combat',
             'Blizzard production quality',
@@ -1712,7 +1712,7 @@ Immortal's monetization is infamously aggressive. Endgame progression heavily fa
         {
           title: '10. Final Fantasy Series — Best Classic Ports',
           subtitle: 'Legendary JRPGs on Your Phone',
-          content: \`**The Final Fantasy mobile ports let you experience gaming history anywhere.** FF6, FF7, FF9, FF Tactics — some of the greatest RPGs ever made are available on your phone.
+          content: `**The Final Fantasy mobile ports let you experience gaming history anywhere.** FF6, FF7, FF9, FF Tactics — some of the greatest RPGs ever made are available on your phone.
 
 **Which to Play:**
 
@@ -1733,7 +1733,7 @@ Square Enix has improved their mobile ports over time. Newer versions include qu
 | **Combat** | Varies (ATB, Turn-based, Tactical) |
 | **Story** | 20-60+ hours per game |
 | **Price** | $10-20 per game (premium) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Gaming history in your pocket',
             'One-time purchase, no gacha',
@@ -1752,7 +1752,7 @@ Square Enix has improved their mobile ports over time. Newer versions include qu
         {
           title: '11. Albion Online — Best Mobile MMORPG',
           subtitle: 'Full Sandbox MMO on Mobile',
-          content: \`**Albion Online is a full-featured sandbox MMORPG** that runs on mobile with cross-play to PC. Gather, craft, trade, fight, and conquer in a player-driven world.
+          content: `**Albion Online is a full-featured sandbox MMORPG** that runs on mobile with cross-play to PC. Gather, craft, trade, fight, and conquer in a player-driven world.
 
 **True Cross-Platform:**
 
@@ -1769,7 +1769,7 @@ There's no set path. Become a gatherer, crafter, trader, PvP fighter, or all of 
 | **Economy** | Fully player-driven |
 | **PvP** | Full loot open-world zones |
 | **Price** | Free (Premium optional) |
-| **Platforms** | Android, iOS, PC |\`,
+| **Platforms** | Android, iOS, PC |`,
           pros: [
             'True cross-platform MMO',
             'Player-driven economy',
@@ -1788,7 +1788,7 @@ There's no set path. Become a gatherer, crafter, trader, PvP fighter, or all of 
         {
           title: '12. Pascal\\'s Wager — Best Soulslike RPG',
           subtitle: 'Dark Souls on Mobile',
-          content: \`**Pascal's Wager proves that Soulslike games can work on mobile.** Dark, challenging, and atmospheric — it's the closest thing to playing Dark Souls on your phone.
+          content: `**Pascal's Wager proves that Soulslike games can work on mobile.** Dark, challenging, and atmospheric — it's the closest thing to playing Dark Souls on your phone.
 
 **The Challenge:**
 
@@ -1805,7 +1805,7 @@ The graphics push mobile hardware to its limits. Dark, foggy environments create
 | **Difficulty** | High (Souls-style) |
 | **Length** | 15-20 hours |
 | **Price** | $6.99 (premium) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Genuine Soulslike challenge',
             'Impressive mobile graphics',
@@ -1824,7 +1824,7 @@ The graphics push mobile hardware to its limits. Dark, foggy environments create
         {
           title: 'RPG Games Comparison',
           subtitle: 'Quick Reference Chart',
-          content: \`Here's a side-by-side comparison to help you choose:
+          content: `Here's a side-by-side comparison to help you choose:
 
 | Game | Sub-Genre | Combat | F2P? | Best For |
 |------|-----------|--------|------|----------|
@@ -1847,12 +1847,12 @@ The graphics push mobile hardware to its limits. Dark, foggy environments create
 - **Best Turn-Based:** Honkai: Star Rail — strategic depth with great story
 - **Best F2P:** Eternium — no gacha, no paywalls
 - **Best Story:** Another Eden — JRPG storytelling at its finest
-- **Best Premium:** Pascal's Wager — pay once, no compromises\`
+- **Best Premium:** Pascal's Wager — pay once, no compromises`
         },
         {
           title: 'How to Choose Your Mobile RPG',
           subtitle: 'Finding the Perfect Adventure',
-          content: \`With 12 excellent options, here's how to narrow it down:
+          content: `With 12 excellent options, here's how to narrow it down:
 
 **By Time Available:**
 
@@ -1888,7 +1888,7 @@ Mobile RPGs have never been better. From sprawling open worlds to classic JRPG a
 
 Start with Genshin Impact if you want the most polished free experience, Eternium if you hate gacha, or the Final Fantasy ports if you prefer one-time purchases. All three represent the best of mobile RPG gaming.
 
-*Related Guides: [Best Strategy Games Mobile](/blog/best-mobile-strategy-games-2026) | [Best AI Games 2026](/blog/best-ai-games-mobile-2026) | [Best Offline Games](/blog/best-offline-games-no-wifi)*\`
+*Related Guides: [Best Strategy Games Mobile](/blog/best-mobile-strategy-games-2026) | [Best AI Games 2026](/blog/best-ai-games-mobile-2026) | [Best Offline Games](/blog/best-offline-games-no-wifi)*`
         }
       ]
     }
@@ -1907,7 +1907,7 @@ Start with Genshin Impact if you want the most polished free experience, Eterniu
     tags: ['best puzzle games mobile', 'puzzle games 2026', 'monument valley', 'the room', 'brain games mobile', 'logic puzzles android ios', 'relaxing puzzle games', 'hard puzzle games', 'best brain teasers'],
     metaDescription: 'Best puzzle games for mobile in 2026. Play 15 top brain-teasing games on Android and iOS including Monument Valley, The Room, Limbo, and more.',
     content: {
-      intro: \`**Puzzle games are the perfect mobile gaming genre.** They're designed for thoughtful, focused play sessions — perfect for commutes, breaks, or winding down before bed. No reflexes needed, just your brain.
+      intro: `**Puzzle games are the perfect mobile gaming genre.** They're designed for thoughtful, focused play sessions — perfect for commutes, breaks, or winding down before bed. No reflexes needed, just your brain.
 
 **The best mobile puzzle games offer:**
 - Satisfying "aha!" moments when you crack a solution
@@ -1917,13 +1917,13 @@ Start with Genshin Impact if you want the most polished free experience, Eterniu
 
 This guide covers the **15 best puzzle games for mobile in 2026**, from artistic masterpieces to devious brain-benders. Whether you want relaxing puzzles or genuine head-scratchers, there's a game here for you.
 
-*Related: [Best Offline Games](/blog/best-offline-games-no-wifi) | [Best RPG Games Mobile](/blog/best-rpg-games-mobile-2026)*\`,
+*Related: [Best Offline Games](/blog/best-offline-games-no-wifi) | [Best RPG Games Mobile](/blog/best-rpg-games-mobile-2026)*`,
 
       sections: [
         {
           title: 'Puzzle Game Types',
           subtitle: 'Find Your Perfect Challenge',
-          content: \`Before diving in, here are the main puzzle sub-genres on mobile:
+          content: `Before diving in, here are the main puzzle sub-genres on mobile:
 
 | Type | Description | Examples |
 |------|-------------|----------|
@@ -1937,14 +1937,14 @@ This guide covers the **15 best puzzle games for mobile in 2026**, from artistic
 
 Each type exercises different mental muscles. Spatial puzzles test visualization; logic puzzles test deduction; escape rooms test observation and lateral thinking.
 
-Now let's look at the 15 best puzzle games!\`
+Now let's look at the 15 best puzzle games!`
         },
         {
           title: '1. Monument Valley 1 & 2 — Best Artistic Puzzler',
           subtitle: 'Impossible Architecture, Beautiful Journey',
           image: GAME_IMAGES.monumentValley.url,
           imageAlt: GAME_IMAGES.monumentValley.alt,
-          content: \`**Monument Valley is a masterpiece of visual design and spatial puzzles.** Guide Princess Ida through impossible architecture inspired by M.C. Escher, manipulating perspectives to create paths that shouldn't exist.
+          content: `**Monument Valley is a masterpiece of visual design and spatial puzzles.** Guide Princess Ida through impossible architecture inspired by M.C. Escher, manipulating perspectives to create paths that shouldn't exist.
 
 **Why It's #1:**
 
@@ -1961,7 +1961,7 @@ Monument Valley 2 continues the visual excellence with a mother-daughter story. 
 | **Difficulty** | Easy-Medium (focus on experience) |
 | **Art Style** | Minimalist, Escher-inspired |
 | **Price** | $3.99 each (premium) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Stunning, award-winning art design',
             'Puzzles feel like magic tricks',
@@ -1982,7 +1982,7 @@ Monument Valley 2 continues the visual excellence with a mother-daughter story. 
           subtitle: 'Intricate Puzzle Boxes',
           image: GAME_IMAGES.theRoom.url,
           imageAlt: GAME_IMAGES.theRoom.alt,
-          content: \`**The Room series sets the standard for mobile escape room puzzles.** Examine intricate puzzle boxes, discover hidden mechanisms, and unravel mysterious stories through tactile, hands-on gameplay.
+          content: `**The Room series sets the standard for mobile escape room puzzles.** Examine intricate puzzle boxes, discover hidden mechanisms, and unravel mysterious stories through tactile, hands-on gameplay.
 
 **What Makes It Special:**
 
@@ -2003,7 +2003,7 @@ The touch controls are perfect — pinch, swipe, rotate, and tap to manipulate o
 | **Difficulty** | Medium (hints available) |
 | **Art Style** | Dark, Victorian, mysterious |
 | **Price** | $0.99-4.99 each (premium) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Best-in-class touch interaction',
             'Genuinely mysterious atmosphere',
@@ -2024,7 +2024,7 @@ The touch controls are perfect — pinch, swipe, rotate, and tap to manipulate o
           subtitle: 'Dark, Beautiful, Haunting',
           image: GAME_IMAGES.limbo.url,
           imageAlt: GAME_IMAGES.limbo.alt,
-          content: \`**Limbo is a puzzle-platformer that's as unsettling as it is beautiful.** Guide a boy through a monochrome nightmare, solving physics puzzles while avoiding gruesome deaths.
+          content: `**Limbo is a puzzle-platformer that's as unsettling as it is beautiful.** Guide a boy through a monochrome nightmare, solving physics puzzles while avoiding gruesome deaths.
 
 **The Atmosphere:**
 
@@ -2041,7 +2041,7 @@ Physics-based challenges involving timing, momentum, and environmental hazards. 
 | **Difficulty** | Medium-Hard |
 | **Art Style** | Monochrome, film noir |
 | **Price** | $3.99 (premium) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Unforgettable atmosphere',
             'Clever physics puzzles',
@@ -2062,7 +2062,7 @@ Physics-based challenges involving timing, momentum, and environmental hazards. 
           subtitle: 'Think Outside the Box',
           image: GAME_IMAGES.brainOut.url,
           imageAlt: GAME_IMAGES.brainOut.alt,
-          content: \`**Brain Out is the ultimate "trick question" puzzle game.** Every level looks simple, but the obvious answer is wrong. You need lateral thinking, creativity, and willingness to break the rules.
+          content: `**Brain Out is the ultimate "trick question" puzzle game.** Every level looks simple, but the obvious answer is wrong. You need lateral thinking, creativity, and willingness to break the rules.
 
 **Examples of Brain Out Logic:**
 
@@ -2081,7 +2081,7 @@ The joy is in the "aha!" moment when you realize how you've been tricked. Share 
 | **Difficulty** | Easy concept, hard execution |
 | **Style** | Cartoon, humorous |
 | **Price** | Free (ad-supported) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Genuinely clever trick puzzles',
             'Great for sharing with friends',
@@ -2102,7 +2102,7 @@ The joy is in the "aha!" moment when you realize how you've been tricked. Share 
           subtitle: 'The Original Sliding Number Puzzle',
           image: GAME_IMAGES.threes.url,
           imageAlt: GAME_IMAGES.threes.alt,
-          content: \`**Threes is the elegant number puzzle that inspired countless clones (including 2048).** Slide numbered tiles, combine multiples of three, and chase high scores in this perfectly balanced game.
+          content: `**Threes is the elegant number puzzle that inspired countless clones (including 2048).** Slide numbered tiles, combine multiples of three, and chase high scores in this perfectly balanced game.
 
 **How It Works:**
 
@@ -2119,7 +2119,7 @@ Threes came first and is the superior design. The 1s and 2s add complexity. The 
 | **Difficulty** | Easy to learn, hard to master |
 | **Style** | Cute, minimalist |
 | **Price** | $5.99 (premium) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Perfectly balanced puzzle design',
             'Endless replayability',
@@ -2140,7 +2140,7 @@ Threes came first and is the superior design. The 1s and 2s add complexity. The 
           subtitle: 'Feed Om Nom!',
           image: GAME_IMAGES.cutTheRope.url,
           imageAlt: GAME_IMAGES.cutTheRope.alt,
-          content: \`**Cut the Rope is a physics puzzle classic** — cut ropes to swing candy into Om Nom's mouth. Simple premise, increasingly complex execution.
+          content: `**Cut the Rope is a physics puzzle classic** — cut ropes to swing candy into Om Nom's mouth. Simple premise, increasingly complex execution.
 
 **The Physics:**
 
@@ -2160,7 +2160,7 @@ Gravity, momentum, air cushions, teleporters, and more mechanics layer on top of
 | **Difficulty** | Easy-Hard (stars add challenge) |
 | **Style** | Colorful, cartoonish |
 | **Price** | Free (with ads/IAP) or Premium |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Timeless physics puzzle design',
             'Hundreds of levels',
@@ -2179,7 +2179,7 @@ Gravity, momentum, air cushions, teleporters, and more mechanics layer on top of
         {
           title: '7. The Witness — Best Open-World Puzzler',
           subtitle: '600+ Panel Puzzles on a Mysterious Island',
-          content: \`**The Witness is a first-person puzzle game with 600+ line-drawing puzzles** scattered across a beautiful, mysterious island. Created by Jonathan Blow (Braid), it's one of the most acclaimed puzzle games ever made.
+          content: `**The Witness is a first-person puzzle game with 600+ line-drawing puzzles** scattered across a beautiful, mysterious island. Created by Jonathan Blow (Braid), it's one of the most acclaimed puzzle games ever made.
 
 **How It Works:**
 
@@ -2196,7 +2196,7 @@ The iOS version is the full game. It's demanding on hardware but a genuine AAA p
 | **Difficulty** | Hard (no hints in-game) |
 | **Length** | 20-40 hours |
 | **Price** | $9.99 (premium) |
-| **Platforms** | iOS only |\`,
+| **Platforms** | iOS only |`,
           pros: [
             'Massive puzzle game',
             'Brilliant rule-teaching design',
@@ -2215,7 +2215,7 @@ The iOS version is the full game. It's demanding on hardware but a genuine AAA p
         {
           title: '8. Baba Is You — Best Rule-Bending Puzzler',
           subtitle: 'Change the Rules to Win',
-          content: \`**Baba Is You is a puzzle game where you push words to change the rules.** "BABA IS YOU" means you control Baba. Push the words to make "ROCK IS YOU" and now you control rocks. Mind-bending genius.
+          content: `**Baba Is You is a puzzle game where you push words to change the rules.** "BABA IS YOU" means you control Baba. Push the words to make "ROCK IS YOU" and now you control rocks. Mind-bending genius.
 
 **How It Works:**
 
@@ -2232,7 +2232,7 @@ No other puzzle game plays like this. Solutions feel impossible until they sudde
 | **Difficulty** | Hard-Very Hard |
 | **Style** | Pixel art, minimalist |
 | **Price** | $6.99 (premium) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Completely unique mechanic',
             'Genuinely challenging',
@@ -2251,7 +2251,7 @@ No other puzzle game plays like this. Solutions feel impossible until they sudde
         {
           title: '9. Machinarium — Best Adventure Puzzler',
           subtitle: 'Robot Love Story',
-          content: \`**Machinarium is a hand-drawn point-and-click adventure** starring a little robot trying to save his girlfriend. Gorgeous artwork, clever puzzles, and zero dialogue — just visual storytelling.
+          content: `**Machinarium is a hand-drawn point-and-click adventure** starring a little robot trying to save his girlfriend. Gorgeous artwork, clever puzzles, and zero dialogue — just visual storytelling.
 
 **The Puzzles:**
 
@@ -2268,7 +2268,7 @@ Every screen is a work of art. The steampunk robot world is beautifully detailed
 | **Difficulty** | Medium (hint book available) |
 | **Style** | Hand-drawn, steampunk |
 | **Price** | $4.99 (premium) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Stunning hand-drawn artwork',
             'Charming wordless story',
@@ -2287,7 +2287,7 @@ Every screen is a work of art. The steampunk robot world is beautifully detailed
         {
           title: '10. Mini Metro — Best Minimalist Strategy Puzzler',
           subtitle: 'Design Subway Systems',
-          content: \`**Mini Metro is a puzzle-strategy game where you design subway networks.** Connect stations with lines, manage passenger flow, and try not to let any station overflow.
+          content: `**Mini Metro is a puzzle-strategy game where you design subway networks.** Connect stations with lines, manage passenger flow, and try not to let any station overflow.
 
 **How It Works:**
 
@@ -2304,7 +2304,7 @@ Starts simple, becomes frantic. Do you add a new line or extend existing ones? W
 | **Cities** | 20+ real-world cities |
 | **Difficulty** | Easy start, challenging mastery |
 | **Price** | $3.99 (premium) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Unique, original concept',
             'Beautiful minimalist design',
@@ -2323,7 +2323,7 @@ Starts simple, becomes frantic. Do you add a new line or extend existing ones? W
         {
           title: '11. Gorogoa — Best Narrative Puzzler',
           subtitle: 'Hand-Illustrated Frame Puzzles',
-          content: \`**Gorogoa is a puzzle game played across four panels.** Rearrange, zoom, and layer illustrations to solve puzzles and tell a story. It's like interactive art.
+          content: `**Gorogoa is a puzzle game played across four panels.** Rearrange, zoom, and layer illustrations to solve puzzles and tell a story. It's like interactive art.
 
 **How It Works:**
 
@@ -2340,7 +2340,7 @@ Every illustration is hand-drawn and gorgeous. The way panels interact is consis
 | **Difficulty** | Medium |
 | **Style** | Hand-illustrated, dreamlike |
 | **Price** | $4.99 (premium) |
-| **Platforms** | Android, iOS |\`,
+| **Platforms** | Android, iOS |`,
           pros: [
             'Completely unique mechanic',
             'Stunning hand-drawn art',
@@ -2359,7 +2359,7 @@ Every illustration is hand-drawn and gorgeous. The way panels interact is consis
         {
           title: '12-15. More Great Puzzle Games',
           subtitle: 'Honorable Mentions',
-          content: \`Here are four more excellent puzzle games worth playing:
+          content: `Here are four more excellent puzzle games worth playing:
 
 **12. Inside** — Spiritual sequel to Limbo with even more polish and disturbing atmosphere. Dark puzzle-platforming at its finest. ($6.99)
 
@@ -2374,12 +2374,12 @@ Every illustration is hand-drawn and gorgeous. The way panels interact is consis
 | Inside | Puzzle-Platformer | $6.99 | Limbo fans |
 | House of Da Vinci | Escape Room | $4.99 | The Room fans |
 | Human Resource Machine | Programming Puzzle | $4.99 | Logic lovers |
-| Crossy Road Castle | Co-op Puzzle | Free/AA | Multiplayer |\`
+| Crossy Road Castle | Co-op Puzzle | Free/AA | Multiplayer |`
         },
         {
           title: 'Puzzle Games Comparison',
           subtitle: 'Quick Reference Chart',
-          content: \`Here's a comparison to help you choose:
+          content: `Here's a comparison to help you choose:
 
 | Game | Type | Difficulty | Length | Price |
 |------|------|------------|--------|-------|
@@ -2401,12 +2401,12 @@ Every illustration is hand-drawn and gorgeous. The way panels interact is consis
 - **Best Challenge:** Baba Is You — will break your brain
 - **Best Free:** Brain Out — clever and shareable
 - **Best Value:** The Room — cheap and excellent
-- **Best Atmosphere:** Limbo — unforgettable experience\`
+- **Best Atmosphere:** Limbo — unforgettable experience`
         },
         {
           title: 'How to Choose Your Puzzle Game',
           subtitle: 'Finding the Perfect Brain-Teaser',
-          content: \`With 15 options, here's how to pick:
+          content: `With 15 options, here's how to pick:
 
 **By Mood:**
 
@@ -2442,7 +2442,7 @@ Puzzle games are the perfect mobile genre — they respect your time, work offli
 
 Happy puzzling!
 
-*Related Guides: [Best Offline Games](/blog/best-offline-games-no-wifi) | [Best RPG Games 2026](/blog/best-rpg-games-mobile-2026) | [Best Strategy Games](/blog/best-mobile-strategy-games-2026)*\`
+*Related Guides: [Best Offline Games](/blog/best-offline-games-no-wifi) | [Best RPG Games 2026](/blog/best-rpg-games-mobile-2026) | [Best Strategy Games](/blog/best-mobile-strategy-games-2026)*`
         }
       ]
     }
