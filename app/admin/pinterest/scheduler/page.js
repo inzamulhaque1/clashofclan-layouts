@@ -156,8 +156,8 @@ export default function PinterestSchedulerPage() {
       // Check daily limit
       const alreadyScheduled = alreadyScheduledToday.length;
       const totalAfterAdd = alreadyScheduled + selectedBases.length + 1;
-      if (totalAfterAdd > 10) {
-        alert('Daily limit is 10 pins. Cannot add more bases.');
+      if (totalAfterAdd > 50) {
+        alert('Daily limit is 50 pins. Cannot add more bases.');
         return;
       }
 
@@ -203,7 +203,7 @@ export default function PinterestSchedulerPage() {
     );
     // Limit to 10 minus already scheduled
     const alreadyScheduled = getSchedulesForDate(selectedDate).length;
-    const maxCanSelect = 10 - alreadyScheduled;
+    const maxCanSelect = 50 - alreadyScheduled;
     setSelectedTimes(unscheduledTimes.slice(0, maxCanSelect));
   };
 
@@ -348,7 +348,7 @@ export default function PinterestSchedulerPage() {
         </div>
         <div className="rounded-xl p-4" style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }}>
           <div className="text-2xl font-bold text-emerald-500">
-            {getSchedulesForDate(new Date()).length}/10
+            {getSchedulesForDate(new Date()).length}
           </div>
           <div className="text-sm" style={{ color: 'var(--text-muted)' }}>Today's Pins</div>
         </div>
@@ -471,7 +471,7 @@ export default function PinterestSchedulerPage() {
               {/* Scheduled for this date */}
               {getSchedulesForDate(selectedDate).length > 0 && (
                 <div className="p-3 md:p-4" style={{ borderBottom: '1px solid var(--border)' }}>
-                  <h3 className="text-sm font-medium mb-2" style={{ color: 'var(--text-muted)' }}>Already Scheduled ({getSchedulesForDate(selectedDate).length}/10)</h3>
+                  <h3 className="text-sm font-medium mb-2" style={{ color: 'var(--text-muted)' }}>Already Scheduled ({getSchedulesForDate(selectedDate).length})</h3>
                   <div className="space-y-2 max-h-[120px] overflow-y-auto">
                     {getSchedulesForDate(selectedDate).map((schedule) => (
                       <div key={schedule._id} className="flex items-center justify-between p-2 rounded-lg" style={{ background: 'var(--surface-100)' }}>
@@ -501,7 +501,7 @@ export default function PinterestSchedulerPage() {
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <label className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
-                    Posting Times (select multiple, max 10/day)
+                    Posting Times (select multiple, max 50/day)
                   </label>
                   <button
                     onClick={selectAllTimes}
@@ -750,7 +750,7 @@ export default function PinterestSchedulerPage() {
               </button>
               <button
                 onClick={handleSchedulePin}
-                disabled={selectedBases.length === 0 || selectedTimes.length === 0 || selectedBases.length > selectedTimes.length || saving || getSchedulesForDate(selectedDate).length >= 10}
+                disabled={selectedBases.length === 0 || selectedTimes.length === 0 || selectedBases.length > selectedTimes.length || saving}
                 className="px-4 md:px-6 py-2 bg-primary text-black font-medium rounded-xl hover:bg-primary/90 transition-colors disabled:opacity-50 text-sm"
               >
                 {saving ? 'Saving...' : `Schedule ${selectedBases.length}`}
