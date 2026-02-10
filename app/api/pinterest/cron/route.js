@@ -72,16 +72,12 @@ export async function GET(request) {
     const now = new Date();
     const currentTime = now.toTimeString().slice(0, 5); // "HH:MM"
 
-    // Find pending schedules for today whose time has passed
-    const startOfDay = new Date(now);
-    startOfDay.setHours(0, 0, 0, 0);
+    // Find ALL pending schedules for today and any missed past days
     const endOfDay = new Date(now);
     endOfDay.setHours(23, 59, 59, 999);
 
-    // Also include past days that were missed
     const pendingSchedules = await PinterestSchedule.find({
       scheduledDate: { $lte: endOfDay },
-      scheduledTime: { $lte: currentTime },
       status: 'pending'
     }).populate('templateId').sort({ scheduledDate: 1, scheduledTime: 1 }).limit(settings.dailyPinLimit);
 
