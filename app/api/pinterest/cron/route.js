@@ -9,6 +9,16 @@ import PinterestSettings from '@/models/PinterestSettings';
 // Pinterest API base URL
 const PINTEREST_API_URL = 'https://api.pinterest.com/v5';
 
+// Bangladesh timezone offset: UTC+6
+const BD_OFFSET_HOURS = 6;
+
+// Get current Bangladesh time
+function getBDTime() {
+  const now = new Date();
+  const utcMs = now.getTime() + now.getTimezoneOffset() * 60000;
+  return new Date(utcMs + BD_OFFSET_HOURS * 3600000);
+}
+
 // Post a pin to Pinterest
 async function postToPinterest(template, settings) {
   const response = await fetch(`${PINTEREST_API_URL}/pins`, {
@@ -37,21 +47,19 @@ async function postToPinterest(template, settings) {
   return await response.json();
 }
 
-// GET - Process scheduled pins (called by cron)
+// GET - Process scheduled pins (called by cron or external service)
 export async function GET(request) {
   try {
     // Verify cron secret (optional security)
     const { searchParams } = new URL(request.url);
     const cronSecret = searchParams.get('secret');
 
-    // You can set CRON_SECRET in your environment variables
     if (process.env.CRON_SECRET && cronSecret !== process.env.CRON_SECRET) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
     await dbConnect();
 
-    // Get settings
     const settings = await PinterestSettings.findById('pinterest_settings');
 
     if (!settings || !settings.automationEnabled) {
@@ -68,24 +76,40 @@ export async function GET(request) {
       }, { status: 400 });
     }
 
-    // Get current time
-    const now = new Date();
-    const currentTime = now.toTimeString().slice(0, 5); // "HH:MM"
+    // Get current Bangladesh time (user schedules in BD time)
+    const bdNow = getBDTime();
+    const bdDate = bdNow.toISOString().slice(0, 10); // "YYYY-MM-DD"
+    const bdTime = bdNow.toTimeString().slice(0, 5); // "HH:MM"
 
-    // Find ALL pending schedules for today and any missed past days
-    const endOfDay = new Date(now);
-    endOfDay.setHours(23, 59, 59, 999);
+    // Find pending schedules where:
+    // 1. Scheduled date is today or earlier (catch missed pins)
+    // 2. Scheduled time has passed (for today) or any time (for past days)
+    const endOfToday = new Date(bdNow);
+    endOfToday.setHours(23, 59, 59, 999);
 
+    const startOfToday = new Date(bdNow);
+    startOfToday.setHours(0, 0, 0, 0);
+
+    // Get pins from past days (all times) + today (only times that passed)
     const pendingSchedules = await PinterestSchedule.find({
-      scheduledDate: { $lte: endOfDay },
-      status: 'pending'
+      status: 'pending',
+      $or: [
+        // Past days - post all missed pins
+        { scheduledDate: { $lt: startOfToday } },
+        // Today - only post if scheduled time has passed
+        {
+          scheduledDate: { $gte: startOfToday, $lte: endOfToday },
+          scheduledTime: { $lte: bdTime }
+        }
+      ]
     }).populate('templateId').sort({ scheduledDate: 1, scheduledTime: 1 }).limit(settings.dailyPinLimit);
 
     if (pendingSchedules.length === 0) {
       return NextResponse.json({
         message: 'No pins ready to post',
         processed: 0,
-        currentTime
+        bdTime,
+        bdDate
       });
     }
 
@@ -96,10 +120,8 @@ export async function GET(request) {
       errors: []
     };
 
-    // Process each scheduled pin
     for (const schedule of pendingSchedules) {
       try {
-        // Update status to processing
         await PinterestSchedule.findByIdAndUpdate(schedule._id, {
           status: 'processing'
         });
@@ -110,10 +132,8 @@ export async function GET(request) {
           throw new Error('Template not found');
         }
 
-        // Post to Pinterest
         const pinResult = await postToPinterest(template, settings);
 
-        // Update schedule as posted
         await PinterestSchedule.findByIdAndUpdate(schedule._id, {
           status: 'posted',
           pinterestPinId: pinResult.id,
@@ -121,7 +141,6 @@ export async function GET(request) {
           postedAt: new Date()
         });
 
-        // Update template status and usage count
         await PinterestTemplate.findByIdAndUpdate(template._id, {
           status: 'posted',
           $inc: { timesUsed: 1 }
@@ -131,7 +150,6 @@ export async function GET(request) {
       } catch (error) {
         console.error(`Failed to post pin ${schedule._id}:`, error);
 
-        // Update schedule as failed
         const retryCount = (schedule.retryCount || 0) + 1;
         const maxRetries = schedule.maxRetries || 3;
 
@@ -155,8 +173,8 @@ export async function GET(request) {
       success: true,
       message: `Processed ${results.processed} pins`,
       ...results,
-      currentTime,
-      checkedTimes: validTimes
+      bdTime,
+      bdDate
     });
 
   } catch (error) {
@@ -195,14 +213,11 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Template not found' }, { status: 404 });
     }
 
-    // Update status to processing
     await PinterestSchedule.findByIdAndUpdate(scheduleId, { status: 'processing' });
 
     try {
-      // Post to Pinterest
       const pinResult = await postToPinterest(schedule.templateId, settings);
 
-      // Update as posted
       await PinterestSchedule.findByIdAndUpdate(scheduleId, {
         status: 'posted',
         pinterestPinId: pinResult.id,
