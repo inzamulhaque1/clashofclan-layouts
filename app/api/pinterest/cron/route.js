@@ -72,29 +72,26 @@ export async function GET(request) {
     const now = new Date();
     const currentTime = now.toTimeString().slice(0, 5); // "HH:MM"
 
-    // Find the nearest posting time that has passed
-    const postingTimes = settings.postingTimes || ['09:00', '12:00', '15:00', '18:00', '21:00'];
-    const validTimes = postingTimes.filter(time => time <= currentTime);
-
-    if (validTimes.length === 0) {
-      return NextResponse.json({
-        message: 'No posting time reached yet',
-        processed: 0,
-        currentTime
-      });
-    }
-
-    // Find pending schedules for today that should be posted
+    // Find pending schedules for today whose time has passed
     const startOfDay = new Date(now);
     startOfDay.setHours(0, 0, 0, 0);
     const endOfDay = new Date(now);
     endOfDay.setHours(23, 59, 59, 999);
 
+    // Also include past days that were missed
     const pendingSchedules = await PinterestSchedule.find({
-      scheduledDate: { $gte: startOfDay, $lte: endOfDay },
-      scheduledTime: { $in: validTimes },
+      scheduledDate: { $lte: endOfDay },
+      scheduledTime: { $lte: currentTime },
       status: 'pending'
-    }).populate('templateId').limit(settings.dailyPinLimit);
+    }).populate('templateId').sort({ scheduledDate: 1, scheduledTime: 1 }).limit(settings.dailyPinLimit);
+
+    if (pendingSchedules.length === 0) {
+      return NextResponse.json({
+        message: 'No pins ready to post',
+        processed: 0,
+        currentTime
+      });
+    }
 
     const results = {
       processed: 0,
