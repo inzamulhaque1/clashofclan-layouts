@@ -9,7 +9,8 @@ function generateTitle(base) {
   const typeLabels = {
     war: 'War',
     farm: 'Farm',
-    trophy: 'Trophy'
+    trophy: 'Trophy',
+    defense: 'Defense'
   };
   const type = typeLabels[base.baseType] || 'Base';
   return `Best ${base.hallType}${base.hallLevel} ${type} Base #${base.baseNumber} - Anti 3 Star`;
@@ -27,7 +28,8 @@ function generateDescription(base) {
   const descriptions = {
     war: `Looking for the best ${base.hallType}${base.hallLevel} War Base? This powerful anti 3-star layout is perfect for Clan War League and regular wars. Features strong defensive positioning against popular attack strategies like Queen Charge, Hybrid, and more. Copy this base now!`,
     farm: `Protect your resources with this amazing ${base.hallType}${base.hallLevel} Farming Base! This layout keeps your Gold, Elixir, and Dark Elixir safe from attackers. Perfect for trophy dropping and resource protection. Copy this base now!`,
-    trophy: `Push to Legends League with this ${base.hallType}${base.hallLevel} Trophy Base! Designed to defend against all attack strategies and help you climb the ranks. Strong core defense with anti-3 star design. Copy this base now!`
+    trophy: `Push to Legends League with this ${base.hallType}${base.hallLevel} Trophy Base! Designed to defend against all attack strategies and help you climb the ranks. Strong core defense with anti-3 star design. Copy this base now!`,
+    defense: `Ultimate ${base.hallType}${base.hallLevel} Defense Base! This anti 3-star layout features perfectly placed defenses to stop every attack strategy. Great for CWL, regular wars, and trophy pushing. Copy this base now!`
   };
 
   const desc = descriptions[base.baseType] || `Amazing ${base.hallType}${base.hallLevel} base layout! Copy this base now!`;

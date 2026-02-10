@@ -8,7 +8,7 @@ const PinterestTemplateSchema = new mongoose.Schema({
   },
   baseType: {
     type: String,
-    enum: ['war', 'farm', 'trophy'],
+    enum: ['war', 'farm', 'trophy', 'defense'],
     required: true,
   },
   hallType: {
