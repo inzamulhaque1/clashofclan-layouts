@@ -6,6 +6,9 @@ export default function PinterestQueuePage() {
   const [schedules, setSchedules] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('pending');
+  const [fromDate, setFromDate] = useState('');
+  const [toDate, setToDate] = useState('');
+  const [bulkDeleting, setBulkDeleting] = useState(false);
 
   useEffect(() => {
     fetchSchedules();
@@ -90,6 +93,36 @@ export default function PinterestQueuePage() {
     }
   };
 
+  const handleBulkDelete = async () => {
+    if (!fromDate) {
+      alert('Please select a From date');
+      return;
+    }
+
+    const params = new URLSearchParams({ from: fromDate, status: activeTab === 'posted' ? 'posted' : activeTab === 'failed' ? 'failed' : 'pending' });
+    if (toDate) params.set('to', toDate);
+
+    const statusLabel = activeTab === 'posted' ? 'posted' : activeTab === 'failed' ? 'failed' : 'pending';
+    const dateRange = toDate ? `${fromDate} to ${toDate}` : `${fromDate} onwards`;
+
+    if (!confirm(`Delete all ${statusLabel} schedules from ${dateRange}?`)) return;
+
+    setBulkDeleting(true);
+    try {
+      const res = await fetch(`/api/pinterest/schedule?${params.toString()}`, { method: 'DELETE' });
+      const data = await res.json();
+      if (res.ok) {
+        alert(`Deleted ${data.deleted} schedules`);
+        fetchSchedules();
+      } else {
+        alert(`Error: ${data.error}`);
+      }
+    } catch (err) {
+      alert('Failed to delete');
+    }
+    setBulkDeleting(false);
+  };
+
   const pendingSchedules = schedules.filter(s => s.status === 'pending' || s.status === 'processing');
   const postedSchedules = schedules.filter(s => s.status === 'posted');
   const failedSchedules = schedules.filter(s => s.status === 'failed');
@@ -164,6 +197,44 @@ export default function PinterestQueuePage() {
             {tab.label} ({tab.count})
           </button>
         ))}
+      </div>
+
+      {/* Bulk Delete */}
+      <div className="rounded-xl p-4 mb-6" style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }}>
+        <h3 className="text-sm font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>Bulk Delete by Date Range</h3>
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-2">
+            <label className="text-sm" style={{ color: 'var(--text-muted)' }}>From:</label>
+            <input
+              type="date"
+              value={fromDate}
+              onChange={(e) => setFromDate(e.target.value)}
+              className="px-3 py-1.5 rounded-lg text-sm"
+              style={{ background: 'var(--bg-primary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }}
+            />
+          </div>
+          <div className="flex items-center gap-2">
+            <label className="text-sm" style={{ color: 'var(--text-muted)' }}>To:</label>
+            <input
+              type="date"
+              value={toDate}
+              onChange={(e) => setToDate(e.target.value)}
+              className="px-3 py-1.5 rounded-lg text-sm"
+              style={{ background: 'var(--bg-primary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }}
+            />
+          </div>
+          <button
+            onClick={handleBulkDelete}
+            disabled={bulkDeleting || !fromDate}
+            className="px-4 py-1.5 rounded-lg text-sm font-medium transition-colors"
+            style={{ background: '#ef4444', color: 'white', opacity: bulkDeleting || !fromDate ? 0.5 : 1 }}
+          >
+            {bulkDeleting ? 'Deleting...' : `Delete ${activeTab} in range`}
+          </button>
+        </div>
+        <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>
+          Deletes all <strong>{activeTab}</strong> schedules within the selected date range. Leave &quot;To&quot; empty to delete from that date onwards.
+        </p>
       </div>
 
       {/* List */}

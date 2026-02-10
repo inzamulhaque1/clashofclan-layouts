@@ -118,16 +118,55 @@ export async function PUT(request) {
   }
 }
 
-// DELETE - Delete schedule
+// DELETE - Delete schedule(s)
 export async function DELETE(request) {
   try {
     await dbConnect();
 
     const { searchParams } = new URL(request.url);
     const id = searchParams.get('id');
+    const fromDate = searchParams.get('from');
+    const toDate = searchParams.get('to');
+    const status = searchParams.get('status');
 
+    // Bulk delete by date range
+    if (fromDate) {
+      const query = { status: status || 'pending' };
+
+      const from = new Date(fromDate);
+      from.setHours(0, 0, 0, 0);
+      query.scheduledDate = { $gte: from };
+
+      if (toDate) {
+        const to = new Date(toDate);
+        to.setHours(23, 59, 59, 999);
+        query.scheduledDate.$lte = to;
+      }
+
+      // Get template IDs to reset status
+      const schedulesToDelete = await PinterestSchedule.find(query, 'templateId');
+      const templateIds = schedulesToDelete.map(s => s.templateId);
+
+      const result = await PinterestSchedule.deleteMany(query);
+
+      // Reset template statuses
+      if (templateIds.length > 0) {
+        await PinterestTemplate.updateMany(
+          { _id: { $in: templateIds }, status: 'scheduled' },
+          { status: 'ready' }
+        );
+      }
+
+      return NextResponse.json({
+        success: true,
+        deleted: result.deletedCount,
+        message: `Deleted ${result.deletedCount} schedules`
+      });
+    }
+
+    // Single delete by ID
     if (!id) {
-      return NextResponse.json({ error: 'Schedule ID is required' }, { status: 400 });
+      return NextResponse.json({ error: 'Schedule ID or date range is required' }, { status: 400 });
     }
 
     const schedule = await PinterestSchedule.findByIdAndDelete(id);
