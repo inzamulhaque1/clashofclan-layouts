@@ -59,24 +59,6 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Template not found' }, { status: 404 });
     }
 
-    // Check daily limit (10 pins per day)
-    const startOfDay = new Date(scheduledDate);
-    startOfDay.setHours(0, 0, 0, 0);
-    const endOfDay = new Date(scheduledDate);
-    endOfDay.setHours(23, 59, 59, 999);
-
-    const dailyCount = await PinterestSchedule.countDocuments({
-      scheduledDate: { $gte: startOfDay, $lte: endOfDay },
-      status: { $in: ['pending', 'processing'] }
-    });
-
-    if (dailyCount >= 50) {
-      return NextResponse.json(
-        { error: 'Daily limit of 50 pins reached for this date' },
-        { status: 400 }
-      );
-    }
-
     const schedule = new PinterestSchedule({
       templateId,
       scheduledDate: new Date(scheduledDate),
