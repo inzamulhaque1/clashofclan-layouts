@@ -37,6 +37,7 @@ const menuItems = [
         name: 'Pinterest',
         icon: 'pinterest',
         submenu: [
+          { name: 'Auto Scheduler', href: '/admin/pinterest/auto-scheduler' },
           { name: 'Templates', href: '/admin/pinterest/templates' },
           { name: 'Scheduler', href: '/admin/pinterest/scheduler' },
           { name: 'Queue', href: '/admin/pinterest/queue' },
