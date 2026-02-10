@@ -67,12 +67,12 @@ export async function POST(request) {
 
     const dailyCount = await PinterestSchedule.countDocuments({
       scheduledDate: { $gte: startOfDay, $lte: endOfDay },
-      status: { $ne: 'cancelled' }
+      status: { $in: ['pending', 'processing'] }
     });
 
-    if (dailyCount >= 10) {
+    if (dailyCount >= 50) {
       return NextResponse.json(
-        { error: 'Daily limit of 10 pins reached for this date' },
+        { error: 'Daily limit of 50 pins reached for this date' },
         { status: 400 }
       );
     }
