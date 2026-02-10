@@ -102,7 +102,7 @@ export async function GET(request) {
           scheduledTime: { $lte: bdTime }
         }
       ]
-    }).populate('templateId').sort({ scheduledDate: 1, scheduledTime: 1 }).limit(settings.dailyPinLimit);
+    }).populate('templateId').sort({ scheduledDate: 1, scheduledTime: 1 }).limit(1);
 
     if (pendingSchedules.length === 0) {
       return NextResponse.json({
