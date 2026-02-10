@@ -160,12 +160,30 @@ export async function POST(request) {
 
     let templatesCreated = 0;
     let schedulesCreated = 0;
+    let baseIndex = 0;
+    let dayOffset = 1; // Start from tomorrow
 
-    for (let day = 0; day < days; day++) {
+    for (let scheduledDays = 0; scheduledDays < days && baseIndex < basesToSchedule.length; dayOffset++) {
       const date = new Date(today);
-      date.setDate(date.getDate() + day + 1); // Start from tomorrow
+      date.setDate(date.getDate() + dayOffset);
 
-      const dayBases = basesToSchedule.slice(day * 10, (day + 1) * 10);
+      // Check how many pins already scheduled for this date
+      const startOfDay = new Date(date);
+      startOfDay.setHours(0, 0, 0, 0);
+      const endOfDay = new Date(date);
+      endOfDay.setHours(23, 59, 59, 999);
+
+      const existingCount = await PinterestSchedule.countDocuments({
+        scheduledDate: { $gte: startOfDay, $lte: endOfDay },
+        status: { $ne: 'cancelled' }
+      });
+
+      const slotsAvailable = 10 - existingCount;
+      if (slotsAvailable <= 0) continue; // Skip this day, already full
+
+      scheduledDays++;
+      const dayBases = basesToSchedule.slice(baseIndex, baseIndex + slotsAvailable);
+      baseIndex += dayBases.length;
 
       if (dayBases.length === 0) break;
 
