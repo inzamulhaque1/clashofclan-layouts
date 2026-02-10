@@ -1,8 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import AdminLayout from '@/components/admin/AdminLayout';
-
 export default function AutoSchedulerPage() {
   const [days, setDays] = useState(30);
   const [preview, setPreview] = useState(null);
@@ -81,8 +79,7 @@ export default function AutoSchedulerPage() {
   };
 
   return (
-    <AdminLayout>
-      <div style={{ maxWidth: '900px' }}>
+    <div style={{ maxWidth: '900px' }}>
         <h1 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '0.5rem' }}>
           Auto Scheduler
         </h1>
@@ -328,7 +325,6 @@ export default function AutoSchedulerPage() {
             </div>
           </div>
         )}
-      </div>
-    </AdminLayout>
+    </div>
   );
 }
