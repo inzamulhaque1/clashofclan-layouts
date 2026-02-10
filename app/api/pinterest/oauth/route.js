@@ -65,18 +65,27 @@ export async function GET(request) {
         );
       }
 
-      // Get user info to verify connection
-      const userResponse = await fetch(`${PINTEREST_API_URL}/user_account`, {
-        headers: {
-          'Authorization': `Bearer ${tokenData.access_token}`
-        }
-      });
-
-      const userData = await userResponse.json();
-
       // Calculate token expiry
       const expiresAt = new Date();
       expiresAt.setSeconds(expiresAt.getSeconds() + (tokenData.expires_in || 3600));
+
+      // Try to get user info (may fail if user_accounts:read not granted)
+      let username = 'Pinterest Account';
+      let userId = null;
+      try {
+        const userResponse = await fetch(`${PINTEREST_API_URL}/user_account`, {
+          headers: {
+            'Authorization': `Bearer ${tokenData.access_token}`
+          }
+        });
+        if (userResponse.ok) {
+          const userData = await userResponse.json();
+          username = userData.username || 'Pinterest Account';
+          userId = userData.id;
+        }
+      } catch (e) {
+        // user_accounts:read not available - continue without username
+      }
 
       // Save tokens to database
       await PinterestSettings.findByIdAndUpdate(
@@ -85,8 +94,8 @@ export async function GET(request) {
           accessToken: tokenData.access_token,
           refreshToken: tokenData.refresh_token,
           tokenExpiresAt: expiresAt,
-          accountId: userData.id,
-          accountUsername: userData.username,
+          ...(userId && { accountId: userId }),
+          ...(username && { accountUsername: username }),
           updatedAt: new Date()
         },
         { upsert: true }
@@ -94,7 +103,7 @@ export async function GET(request) {
 
       // Redirect back to settings with success
       return NextResponse.redirect(
-        new URL(`/admin/pinterest/settings?success=Connected+as+${encodeURIComponent(userData.username || 'Pinterest+User')}`, request.url)
+        new URL(`/admin/pinterest/settings?success=Connected+as+${encodeURIComponent(username)}`, request.url)
       );
 
     } catch (error) {

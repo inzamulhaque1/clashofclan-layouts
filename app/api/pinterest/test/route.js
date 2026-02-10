@@ -25,54 +25,61 @@ export async function POST(request) {
       accessToken = settings.accessToken;
     }
 
-    // Test connection by fetching user info
-    const userResponse = await fetch(`${PINTEREST_API_URL}/user_account`, {
-      headers: {
-        'Authorization': `Bearer ${accessToken}`,
-      },
-    });
-
-    if (!userResponse.ok) {
-      const error = await userResponse.json();
-      return NextResponse.json({
-        error: error.message || `Pinterest API error: ${userResponse.status}`
-      }, { status: 400 });
-    }
-
-    const userData = await userResponse.json();
-
-    // Fetch boards
+    // Fetch boards first (most reliable - only needs boards:read)
     const boardsResponse = await fetch(`${PINTEREST_API_URL}/boards`, {
       headers: {
         'Authorization': `Bearer ${accessToken}`,
       },
     });
 
-    let boards = [];
-    if (boardsResponse.ok) {
-      const boardsData = await boardsResponse.json();
-      boards = (boardsData.items || []).map(board => ({
-        id: board.id,
-        name: board.name,
-        description: board.description,
-        pinCount: board.pin_count
-      }));
+    if (!boardsResponse.ok) {
+      const error = await boardsResponse.json();
+      return NextResponse.json({
+        error: error.message || `Pinterest API error: ${boardsResponse.status}`
+      }, { status: 400 });
+    }
+
+    const boardsData = await boardsResponse.json();
+    const boards = (boardsData.items || []).map(board => ({
+      id: board.id,
+      name: board.name,
+      description: board.description,
+      pinCount: board.pin_count
+    }));
+
+    // Try fetching user info (optional - may fail if user_accounts:read not granted)
+    let username = null;
+    let accountType = null;
+    try {
+      const userResponse = await fetch(`${PINTEREST_API_URL}/user_account`, {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+        },
+      });
+      if (userResponse.ok) {
+        const userData = await userResponse.json();
+        username = userData.username;
+        accountType = userData.account_type;
+      }
+    } catch (e) {
+      // user_accounts:read scope not available - that's fine
     }
 
     // Update settings with account info
-    await PinterestSettings.findByIdAndUpdate('pinterest_settings', {
-      accountId: userData.id || userData.username,
-      accountUsername: userData.username,
-      // Only update token if a new one was provided
+    const updateData = {
+      ...(username && { accountId: username, accountUsername: username }),
       ...(body.accessToken && body.accessToken !== '••••••••' && {
         accessToken: body.accessToken
       })
-    });
+    };
+    if (Object.keys(updateData).length > 0) {
+      await PinterestSettings.findByIdAndUpdate('pinterest_settings', updateData);
+    }
 
     return NextResponse.json({
       success: true,
-      username: userData.username,
-      accountType: userData.account_type,
+      username: username || 'Connected',
+      accountType: accountType || 'business',
       boards
     });
 
