@@ -9,14 +9,19 @@ import PinterestSettings from '@/models/PinterestSettings';
 // Pinterest API base URL
 const PINTEREST_API_URL = 'https://api.pinterest.com/v5';
 
-// Bangladesh timezone offset: UTC+6
-const BD_OFFSET_HOURS = 6;
-
-// Get current Bangladesh time
-function getBDTime() {
+// Get current Bangladesh time components (BD = UTC+6)
+function getBDTimeInfo() {
   const now = new Date();
-  const utcMs = now.getTime() + now.getTimezoneOffset() * 60000;
-  return new Date(utcMs + BD_OFFSET_HOURS * 3600000);
+  const bdHours = (now.getUTCHours() + 6) % 24;
+  const bdMinutes = now.getUTCMinutes();
+  const bdTime = `${String(bdHours).padStart(2, '0')}:${String(bdMinutes).padStart(2, '0')}`;
+
+  // Calculate start of today in BD timezone (as UTC timestamp)
+  // e.g., Feb 11 00:00 BD = Feb 10 18:00 UTC
+  const msSinceBDMidnight = (bdHours * 3600 + bdMinutes * 60 + now.getUTCSeconds()) * 1000;
+  const todayBDStart = new Date(now.getTime() - msSinceBDMidnight);
+
+  return { now, bdTime, todayBDStart };
 }
 
 // Post a pin to Pinterest
@@ -76,29 +81,20 @@ export async function GET(request) {
       }, { status: 400 });
     }
 
-    // Get current Bangladesh time (user schedules in BD time)
-    const bdNow = getBDTime();
-    const bdDate = bdNow.toISOString().slice(0, 10); // "YYYY-MM-DD"
-    const bdTime = bdNow.toTimeString().slice(0, 5); // "HH:MM"
+    // Get current Bangladesh time info
+    const { now, bdTime, todayBDStart } = getBDTimeInfo();
 
     // Find pending schedules where:
-    // 1. Scheduled date is today or earlier (catch missed pins)
-    // 2. Scheduled time has passed (for today) or any time (for past days)
-    const endOfToday = new Date(bdNow);
-    endOfToday.setHours(23, 59, 59, 999);
-
-    const startOfToday = new Date(bdNow);
-    startOfToday.setHours(0, 0, 0, 0);
-
-    // Get pins from past days (all times) + today (only times that passed)
+    // - Past BD days: scheduledDate < todayBDStart → post all missed pins
+    // - Today in BD: scheduledDate >= todayBDStart AND scheduledDate <= now AND time passed
     const pendingSchedules = await PinterestSchedule.find({
       status: 'pending',
       $or: [
-        // Past days - post all missed pins
-        { scheduledDate: { $lt: startOfToday } },
-        // Today - only post if scheduled time has passed
+        // Past BD days - post all missed pins regardless of time
+        { scheduledDate: { $lt: todayBDStart } },
+        // Today in BD - only post if scheduled time has passed
         {
-          scheduledDate: { $gte: startOfToday, $lte: endOfToday },
+          scheduledDate: { $gte: todayBDStart, $lte: now },
           scheduledTime: { $lte: bdTime }
         }
       ]
@@ -109,7 +105,7 @@ export async function GET(request) {
         message: 'No pins ready to post',
         processed: 0,
         bdTime,
-        bdDate
+        todayBDStart: todayBDStart.toISOString()
       });
     }
 
@@ -173,8 +169,7 @@ export async function GET(request) {
       success: true,
       message: `Processed ${results.processed} pins`,
       ...results,
-      bdTime,
-      bdDate
+      bdTime
     });
 
   } catch (error) {
