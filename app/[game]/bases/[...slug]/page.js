@@ -2,8 +2,9 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getGameBySlug } from '@/config/games';
 import { getContentById, queryContent } from '@/lib/data';
-import { generatePageMeta, generateBaseStructuredData, generateBreadcrumbStructuredData } from '@/lib/seo';
+import { generatePageMeta, generateBaseStructuredData, generateBreadcrumbStructuredData, generateFAQStructuredData, generateHowToStructuredData } from '@/lib/seo';
 import { isPremiumBase } from '@/lib/bases';
+import { generateBaseContent } from '@/lib/base-content';
 import BaseCard from '@/components/BaseCard';
 import BaseDetailClient from '@/components/BaseDetailClient';
 
@@ -134,6 +135,11 @@ export default function BaseDetailPage({ params }) {
   const imageUrl = base.originalImageUrl || base.thumbnailUrl;
   const levelPath = `/${game.slug}/${hallType.toLowerCase()}/${hallLevel}`;
 
+  // Generate rich content for this base
+  const content = generateBaseContent(base);
+  const faqStructuredData = content ? generateFAQStructuredData(content.faq) : null;
+  const howToStructuredData = generateHowToStructuredData(hallType, hallLevel, baseType);
+
   const typeBadgeClass = {
     war: 'badge-war',
     farm: 'badge-farm',
@@ -151,6 +157,16 @@ export default function BaseDetailPage({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+      {faqStructuredData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToStructuredData) }}
       />
 
       {/* Breadcrumb */}
@@ -256,6 +272,144 @@ export default function BaseDetailPage({ params }) {
           </div>
         </div>
       </div>
+
+      {/* === RICH CONTENT SECTIONS === */}
+      {content && (
+        <div className="mt-12 space-y-12">
+
+          {/* 1. Base Overview */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">
+              {hallType}{hallLevel} {baseType.charAt(0).toUpperCase() + baseType.slice(1)} Base Overview
+            </h2>
+            <p className="leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+              {content.overview}
+            </p>
+          </section>
+
+          {/* 2. Key Defensive Features */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">Key Defensive Features</h2>
+            <div className="space-y-4">
+              {content.keyFeatures.map((feature, i) => (
+                <div key={i} className="p-4 rounded-xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
+                  <h3 className="font-semibold mb-1">{feature.title}</h3>
+                  <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* 3. Attack Strategies */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">Attack Strategies This Base Defends Against</h2>
+            <p className="mb-4 text-sm" style={{ color: 'var(--text-muted)' }}>{content.attackStrategies.intro}</p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {content.attackStrategies.strategies.map((strat, i) => (
+                <div key={i} className="p-4 rounded-xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold">{strat.name}</h3>
+                    <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                      strat.effectiveness === 'High' ? 'bg-green-500/10 text-green-400' :
+                      strat.effectiveness === 'Medium' ? 'bg-yellow-500/10 text-yellow-400' :
+                      'bg-red-500/10 text-red-400'
+                    }`}>
+                      {strat.effectiveness} Defense
+                    </span>
+                  </div>
+                  <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{strat.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* 4. Troop Compositions */}
+          {content.troopCompositions.length > 0 && (
+            <section>
+              <h2 className="text-2xl font-semibold mb-4">
+                Popular {hallType}{hallLevel} Army Compositions
+              </h2>
+              <div className="space-y-4">
+                {content.troopCompositions.map((comp, i) => (
+                  <div key={i} className="p-4 rounded-xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
+                    <h3 className="font-semibold mb-2">{comp.name}</h3>
+                    <div className="grid sm:grid-cols-2 gap-2 mb-2">
+                      <div>
+                        <span className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Troops: </span>
+                        <span className="text-sm">{comp.troops}</span>
+                      </div>
+                      <div>
+                        <span className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Spells: </span>
+                        <span className="text-sm">{comp.spells}</span>
+                      </div>
+                    </div>
+                    <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{comp.description}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* 5. Building Placement Strategy */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">Building Placement Strategy</h2>
+            <p className="mb-4 text-sm" style={{ color: 'var(--text-muted)' }}>{content.buildingPlacement.intro}</p>
+            <ul className="space-y-3">
+              {content.buildingPlacement.tips.map((tip, i) => (
+                <li key={i} className="flex gap-3 text-sm">
+                  <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium flex-shrink-0" style={{ background: 'var(--surface-200)' }}>
+                    {i + 1}
+                  </span>
+                  <span style={{ color: 'var(--text-muted)' }}>{tip}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* 6. Pros & Cons */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">Pros & Cons</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="p-4 rounded-xl" style={{ background: 'rgba(34, 197, 94, 0.05)', border: '1px solid rgba(34, 197, 94, 0.2)' }}>
+                <h3 className="font-semibold mb-3 text-green-400">Strengths</h3>
+                <ul className="space-y-2">
+                  {content.prosAndCons.pros.map((pro, i) => (
+                    <li key={i} className="flex gap-2 text-sm">
+                      <span className="text-green-400 flex-shrink-0 mt-0.5">+</span>
+                      <span style={{ color: 'var(--text-muted)' }}>{pro}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="p-4 rounded-xl" style={{ background: 'rgba(234, 179, 8, 0.05)', border: '1px solid rgba(234, 179, 8, 0.2)' }}>
+                <h3 className="font-semibold mb-3 text-yellow-400">Weaknesses</h3>
+                <ul className="space-y-2">
+                  {content.prosAndCons.cons.map((con, i) => (
+                    <li key={i} className="flex gap-2 text-sm">
+                      <span className="text-yellow-400 flex-shrink-0 mt-0.5">-</span>
+                      <span style={{ color: 'var(--text-muted)' }}>{con}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* 7. FAQ */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {content.faq.map((item, i) => (
+                <div key={i} className="p-4 rounded-xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
+                  <h3 className="font-semibold mb-2">{item.question}</h3>
+                  <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{item.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+        </div>
+      )}
 
       {/* Related Bases - Same Level */}
       {relatedBases.length > 0 && (

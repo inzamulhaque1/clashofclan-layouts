@@ -2,7 +2,8 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getGameBySlug, getGameSlugs } from '@/config/games';
 import { queryContent, getContentStats } from '@/lib/data';
-import { generateBreadcrumbStructuredData } from '@/lib/seo';
+import { generateBreadcrumbStructuredData, generateFAQStructuredData } from '@/lib/seo';
+import { generateLevelPageContent } from '@/lib/base-content';
 import { isPremiumBase } from '@/lib/bases';
 import BaseCard from '@/components/BaseCard';
 
@@ -102,6 +103,9 @@ export default function THLevelPage({ params, searchParams }) {
     hybrid: allBases.filter(b => b.baseType === 'hybrid').length,
   };
 
+  const levelContent = generateLevelPageContent('TH', level);
+  const faqStructuredData = levelContent ? generateFAQStructuredData(levelContent.faq) : null;
+
   const breadcrumbs = generateBreadcrumbStructuredData([
     { name: 'Home', path: '/' },
     { name: game.name, path: `/${game.slug}` },
@@ -115,6 +119,12 @@ export default function THLevelPage({ params, searchParams }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
       />
+      {faqStructuredData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+        />
+      )}
 
       {/* Header */}
       <div className="mb-8">
@@ -411,20 +421,141 @@ export default function THLevelPage({ params, searchParams }) {
         </Link>
       </section>
 
-      {/* SEO Content */}
-      <section className="mt-12 pt-8" style={{ borderTop: '1px solid var(--border)' }}>
-        <h2 className="text-xl font-semibold mb-4">About TH{level} Bases</h2>
-        <div className="space-y-3 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
-          <p>
-            Town Hall {level} {level >= 15 ? 'is an end-game level with powerful defenses and troops.' : level >= 10 ? 'introduces key strategic elements that change gameplay significantly.' : 'is perfect for learning base building fundamentals.'}
-            The right base design is crucial for both Clan Wars and protecting your resources.
-          </p>
-          <p>
-            Our TH{level} bases are designed by experienced players and updated regularly for the {new Date().getFullYear()} meta.
-            Each layout comes with a one-click copy link for easy import into your game.
-          </p>
-        </div>
-      </section>
+      {/* Rich SEO Content */}
+      {levelContent && (
+        <>
+          {/* Introduction */}
+          <section className="mt-12 pt-8" style={{ borderTop: '1px solid var(--border)' }}>
+            <h2 className="text-2xl font-bold mb-4">About TH{level} Bases</h2>
+            <div className="space-y-4 max-w-3xl" style={{ color: 'var(--text-secondary)', lineHeight: '1.7' }}>
+              {levelContent.introduction.split('\n\n').map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
+          </section>
+
+          {/* What's New at This Level */}
+          {levelContent.whatsNew && levelContent.whatsNew.length > 0 && (
+            <section className="mt-10">
+              <h2 className="text-2xl font-bold mb-4">What&apos;s New at TH{level}</h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {levelContent.whatsNew.map((cat, ci) => {
+                  const colors = ['#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899'];
+                  const color = colors[ci % colors.length];
+                  const bgColor = color.replace('#', 'rgba(') ? `rgba(${parseInt(color.slice(1,3),16)},${parseInt(color.slice(3,5),16)},${parseInt(color.slice(5,7),16)},0.1)` : 'rgba(59,130,246,0.1)';
+                  return (
+                    <div key={ci} className="p-4 rounded-xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
+                      <h3 className="font-semibold mb-2 flex items-center gap-2">
+                        <span className="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style={{ background: bgColor, color }}>
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+                        </span>
+                        {cat.category}
+                      </h3>
+                      <ul className="space-y-1 text-sm" style={{ color: 'var(--text-muted)' }}>
+                        {cat.items.map((item, i) => (
+                          <li key={i} className="flex items-center gap-2">
+                            <span style={{ color }}>+</span> {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          )}
+
+          {/* Best Base Types */}
+          {levelContent.bestBaseTypes && levelContent.bestBaseTypes.length > 0 && (
+            <section className="mt-10">
+              <h2 className="text-2xl font-bold mb-4">Best Base Types for TH{level}</h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {levelContent.bestBaseTypes.map((bt, i) => (
+                  <div key={i} className="p-4 rounded-xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 rounded-md text-xs font-bold" style={{
+                        background: bt.recommended ? 'rgba(16,185,129,0.1)' : 'rgba(107,114,128,0.1)',
+                        color: bt.recommended ? '#10b981' : '#6b7280',
+                      }}>
+                        {bt.recommended ? 'Recommended' : 'Optional'}
+                      </span>
+                      <h3 className="font-semibold">{bt.type}</h3>
+                    </div>
+                    <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{bt.description}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Defense Priority Guide */}
+          {levelContent.defensePriority && levelContent.defensePriority.length > 0 && (
+            <section className="mt-10">
+              <h2 className="text-2xl font-bold mb-4">TH{level} Defense Priority Guide</h2>
+              <div className="space-y-3">
+                {levelContent.defensePriority.map((item, i) => (
+                  <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
+                    <span className="w-8 h-8 rounded-lg flex-shrink-0 flex items-center justify-center text-sm font-bold" style={{
+                      background: i === 0 ? 'rgba(239,68,68,0.1)' : i === 1 ? 'rgba(245,158,11,0.1)' : i === 2 ? 'rgba(59,130,246,0.1)' : 'rgba(107,114,128,0.1)',
+                      color: i === 0 ? '#ef4444' : i === 1 ? '#f59e0b' : i === 2 ? '#3b82f6' : '#6b7280',
+                    }}>
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="font-semibold text-sm">{item.building}</h3>
+                      <p className="text-sm mt-0.5" style={{ color: 'var(--text-muted)' }}>{item.reason}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Recommended Upgrade Order */}
+          {levelContent.upgradeOrder && levelContent.upgradeOrder.length > 0 && (
+            <section className="mt-10">
+              <h2 className="text-2xl font-bold mb-4">TH{level} Recommended Upgrade Order</h2>
+              <div className="space-y-4">
+                {levelContent.upgradeOrder.map((phase, i) => (
+                  <div key={i} className="p-4 rounded-xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
+                    <h3 className="font-semibold mb-2 flex items-center gap-2">
+                      <span className="px-2 py-0.5 rounded-md text-xs font-bold" style={{
+                        background: i === 0 ? 'rgba(239,68,68,0.15)' : i === 1 ? 'rgba(245,158,11,0.15)' : 'rgba(16,185,129,0.15)',
+                        color: i === 0 ? '#ef4444' : i === 1 ? '#f59e0b' : '#10b981',
+                      }}>
+                        Phase {i + 1}
+                      </span>
+                      {phase.title}
+                    </h3>
+                    <ul className="space-y-1">
+                      {phase.items.map((item, j) => (
+                        <li key={j} className="text-sm flex items-center gap-2" style={{ color: 'var(--text-muted)' }}>
+                          <span style={{ color: 'var(--game-primary)' }}>&#8226;</span> {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* FAQ */}
+          {levelContent.faq && levelContent.faq.length > 0 && (
+            <section className="mt-10">
+              <h2 className="text-2xl font-bold mb-4">TH{level} Frequently Asked Questions</h2>
+              <div className="space-y-3">
+                {levelContent.faq.map((item, i) => (
+                  <div key={i} className="p-4 rounded-xl" style={{ background: 'var(--surface-100)', border: '1px solid var(--border)' }}>
+                    <h3 className="font-semibold mb-2">{item.question}</h3>
+                    <p className="text-sm" style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>{item.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+        </>
+      )}
     </div>
   );
 }
