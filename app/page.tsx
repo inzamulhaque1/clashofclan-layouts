@@ -1,33 +1,44 @@
 import Link from "next/link";
 import Image from "next/image";
+import GameCard from "@/components/GameCard";
 import RotatingText from "@/components/RotatingText";
-import THSelector from "@/components/bases/THSelector";
-import BaseCard from "@/components/bases/BaseCard";
-import { GAMES } from "@/lib/constants";
+import { GAMES, SITE_NAME } from "@/lib/constants";
 import { images } from "@/lib/images";
 import { blogPosts } from "@/lib/blog";
-import { getFeaturedBases, getLatestBases, baseLayouts } from "@/lib/bases";
+
+const heroImages: Record<string, string> = {
+  "clash-of-clans": images.games.coc.hero,
+  "brawl-stars": images.games.brawlStars.hero,
+  "clash-royale": images.games.clashRoyale.hero,
+  "free-fire": images.games.freeFire.hero,
+};
 
 export default function HomePage() {
   const activeGames = GAMES.filter((g) => g.active);
-  const featuredBases = getFeaturedBases();
-  const latestBases = getLatestBases(6);
+  const comingSoonGames = GAMES.filter((g) => g.comingSoon);
+  const latestPost = blogPosts[0];
 
   return (
     <>
       {/* ========== HERO ========== */}
-      <section className="relative h-screen min-h-[600px] max-h-[800px] flex items-center bg-[#0a0a0f] overflow-hidden">
-        {/* Background elements */}
+      <section className="relative h-screen flex items-center bg-[#0a0a0f] overflow-hidden">
+        {/* Graphic shapes */}
         <div className="absolute inset-0">
+          {/* Circles */}
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full border-2 border-white/10" />
           <div className="absolute -top-20 -right-20 w-[450px] h-[450px] rounded-full border border-white/[0.07]" />
           <div className="absolute -bottom-24 -left-24 w-[350px] h-[350px] rounded-full border-2 border-white/[0.08]" />
+          <div className="absolute -bottom-10 -left-10 w-[250px] h-[250px] rounded-full border border-white/[0.05]" />
+          {/* Glows */}
           <div className="absolute top-[20%] right-[10%] w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
           <div className="absolute bottom-[20%] left-[20%] w-72 h-72 bg-primary/8 rounded-full blur-[100px]" />
+          <div className="absolute top-[50%] left-[50%] w-60 h-60 bg-white/[0.03] rounded-full blur-[80px]" />
+          {/* Dot grid */}
           <div
             className="absolute inset-0 opacity-[0.07]"
             style={{
-              backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
+              backgroundImage:
+                "radial-gradient(circle, white 1px, transparent 1px)",
               backgroundSize: "40px 40px",
             }}
           />
@@ -36,17 +47,35 @@ export default function HomePage() {
           <div className="absolute top-[60%] right-[5%] w-14 h-14 border border-primary/20 rounded-xl -rotate-12" />
           <div className="absolute top-[75%] left-[8%] w-16 h-16 border border-white/[0.08] rounded-full" />
           <div className="absolute top-[10%] left-[15%] w-10 h-10 border border-primary/15 rounded-lg rotate-45" />
+          {/* Plus signs */}
+          <div className="absolute top-[25%] left-[35%]">
+            <div className="w-6 h-px bg-white/10" />
+            <div className="w-px h-6 bg-white/10 -mt-[15px] ml-[11px]" />
+          </div>
+          <div className="absolute top-[65%] right-[25%]">
+            <div className="w-5 h-px bg-primary/20" />
+            <div className="w-px h-5 bg-primary/20 -mt-[12px] ml-[9px]" />
+          </div>
         </div>
 
-        {/* CoC themed floating icons */}
+        {/* Floating game logos — scattered across hero */}
         <div className="absolute inset-0 hidden md:block">
           {[
-            { src: images.games.coc.logo, pos: "top-[8%] left-[5%]", size: 56, rot: "-rotate-6", op: "opacity-30" },
-            { src: images.games.coc.logo, pos: "top-[12%] right-[6%]", size: 48, rot: "rotate-12", op: "opacity-25" },
-            { src: images.games.coc.logo, pos: "bottom-[20%] left-[8%]", size: 44, rot: "rotate-3", op: "opacity-20" },
-            { src: images.games.coc.logo, pos: "bottom-[15%] right-[8%]", size: 40, rot: "-rotate-6", op: "opacity-20" },
+            { src: images.games.coc.logo, pos: "top-[8%] left-[5%]", size: 56, rot: "-rotate-6", op: "opacity-35" },
+            { src: images.games.brawlStars.logo, pos: "top-[10%] right-[6%]", size: 52, rot: "rotate-12", op: "opacity-35" },
+            { src: images.games.clashRoyale.logo, pos: "top-[40%] left-[3%]", size: 50, rot: "rotate-6", op: "opacity-40" },
+            { src: images.games.freeFire.logo, pos: "top-[38%] right-[3%]", size: 52, rot: "-rotate-12", op: "opacity-40" },
+            { src: images.games.pubg.logo, pos: "bottom-[22%] left-[6%]", size: 50, rot: "rotate-3", op: "opacity-35" },
+            { src: images.games.coc.logo, pos: "bottom-[18%] right-[6%]", size: 48, rot: "-rotate-6", op: "opacity-35" },
+            { src: images.games.brawlStars.logo, pos: "top-[20%] left-[20%]", size: 40, rot: "-rotate-3", op: "opacity-25" },
+            { src: images.games.clashRoyale.logo, pos: "bottom-[12%] right-[20%]", size: 40, rot: "rotate-6", op: "opacity-25" },
+            { src: images.games.freeFire.logo, pos: "top-[16%] right-[18%]", size: 40, rot: "-rotate-12", op: "opacity-25" },
+            { src: images.games.pubg.logo, pos: "bottom-[8%] left-[22%]", size: 40, rot: "rotate-12", op: "opacity-25" },
           ].map((logo, i) => (
-            <div key={i} className={`absolute ${logo.pos} ${logo.rot} ${logo.op}`}>
+            <div
+              key={i}
+              className={`absolute ${logo.pos} ${logo.rot} ${logo.op} hover:opacity-70 transition-opacity duration-500`}
+            >
               <Image
                 src={logo.src}
                 alt=""
@@ -65,70 +94,93 @@ export default function HomePage() {
             <div className="inline-flex items-center gap-2 bg-white/[0.06] border border-white/[0.08] rounded-full px-4 py-1.5 mb-8">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span className="text-white/60 text-[11px] font-medium tracking-wider uppercase">
-                {baseLayouts.length}+ Base Layouts Available
+                Updated daily
               </span>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-heading font-normal leading-[1.1] tracking-wider text-white mb-3">
-              FIND THE BEST
+            {/* Headline — Orbitron */}
+            <h1
+              className="text-3xl md:text-5xl lg:text-7xl font-normal leading-[1.1] tracking-wider text-white mb-3"
+              style={{ fontFamily: "'Michroma', sans-serif" }}
+            >
+              LEVEL UP YOUR
             </h1>
-            <div className="text-3xl md:text-5xl lg:text-7xl font-heading font-normal leading-[1.1] tracking-wider text-primary h-[1.2em] overflow-hidden mb-6">
+            <div
+              className="text-3xl md:text-5xl lg:text-7xl font-normal leading-[1.1] tracking-wider text-primary h-[1.2em] overflow-hidden mb-6"
+              style={{ fontFamily: "'Michroma', sans-serif" }}
+            >
               <RotatingText
                 words={[
-                  "WAR BASES",
-                  "FARMING BASES",
-                  "TROPHY BASES",
-                  "CWL BASES",
-                  "HYBRID BASES",
+                  "GAMING SKILLS",
+                  "STRATEGIES",
+                  "WIN RATE",
+                  "RANK PUSH",
+                  "BATTLE TACTICS",
                 ]}
               />
             </div>
 
             {/* Subtext */}
             <p className="text-white/35 text-sm md:text-[15px] leading-relaxed max-w-lg mb-8">
-              Browse tested Clash of Clans base layouts for every Town Hall level.
-              Copy any base directly into your game with one click.
+              The #1 mobile gaming hub — pro strategies, tier lists &amp;
+              step-by-step guides written by top-ranked players. Free forever.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               <Link
-                href="#th-selector"
+                href="#games"
                 className="group btn-fill-dark px-8 py-3.5 font-bold text-sm rounded-full flex items-center gap-2"
               >
-                Browse Bases
+                Explore Guides
                 <svg
                   className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
                 </svg>
               </Link>
               <Link
-                href="/bases/th-16"
+                href="/blog"
                 className="btn-fill-dark px-8 py-3.5 font-semibold text-sm rounded-full"
               >
-                TH16 Bases
+                Read Articles
               </Link>
             </div>
 
             {/* Stats bar */}
             <div className="flex items-center gap-6 md:gap-10 bg-white/[0.04] border border-white/[0.06] rounded-2xl px-8 py-4">
               {[
-                { value: `${baseLayouts.length}+`, label: "Bases" },
-                { value: "TH7-17", label: "All Levels" },
-                { value: "Copy", label: "Game Links" },
+                { value: "50+", label: "Pro Guides" },
+                { value: "5+", label: "Games" },
+                { value: "100%", label: "Free" },
                 { value: "Daily", label: "Updates" },
               ].map((stat, i) => (
-                <div key={stat.label} className="flex items-center gap-6 md:gap-10">
+                <div
+                  key={stat.label}
+                  className="flex items-center gap-6 md:gap-10"
+                >
                   <div className="text-center">
-                    <p className="text-white text-lg md:text-xl font-heading font-normal">{stat.value}</p>
-                    <p className="text-white/25 text-[9px] uppercase tracking-[0.15em] mt-0.5">{stat.label}</p>
+                    <p
+                      className="text-white text-lg md:text-xl font-normal"
+                      style={{ fontFamily: "'Michroma', sans-serif" }}
+                    >
+                      {stat.value}
+                    </p>
+                    <p className="text-white/25 text-[9px] uppercase tracking-[0.15em] mt-0.5">
+                      {stat.label}
+                    </p>
                   </div>
-                  {i < 3 && <div className="w-px h-7 bg-white/[0.08]" />}
+                  {i < 3 && (
+                    <div className="w-px h-7 bg-white/[0.08]" />
+                  )}
                 </div>
               ))}
             </div>
@@ -143,242 +195,139 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== TH LEVEL SELECTOR ========== */}
-      <section id="th-selector" className="py-16">
+      {/* ========== GAMES ========== */}
+      <section id="games" className="py-20" style={{ fontFamily: "'Manrope', sans-serif" }}>
         <div className="container-custom">
-          <div className="text-center mb-10">
-            <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">
-              Choose Your Level
-            </span>
+          <div className="text-center mb-12">
+            <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">Our Games</span>
             <h2 className="text-3xl md:text-4xl font-extrabold mt-2">
-              Select Your Town Hall
+              Explore Games
             </h2>
             <p className="text-muted text-sm mt-3 max-w-md mx-auto">
-              Browse base layouts for every Town Hall level from TH7 to TH17
+              Choose your game and access pro-level guides, strategies, and tier lists
             </p>
           </div>
-
-          <THSelector />
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+            {activeGames.map((game) => (
+              <GameCard key={game.id} game={game} />
+            ))}
+            {comingSoonGames.map((game) => (
+              <GameCard key={game.id} game={game} />
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ========== FEATURED BASES ========== */}
-      {featuredBases.length > 0 && (
-        <section className="py-16 bg-[#fafafa]">
-          <div className="container-custom">
-            <div className="flex items-end justify-between mb-10">
-              <div>
-                <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">
-                  Editor&apos;s Pick
-                </span>
-                <h2 className="text-3xl md:text-4xl font-extrabold mt-2">
-                  Featured Bases
-                </h2>
-                <p className="text-muted text-sm mt-2 max-w-md">
-                  Hand-picked top-performing base layouts tested against current meta attacks.
+      {/* ========== WHY US ========== */}
+      <section className="bg-[#fafafa] py-20" style={{ fontFamily: "'Manrope', sans-serif" }}>
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">Why Us</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold mt-2">
+              Built for Gamers
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Written by Pros",
+                desc: "Every guide is created by top-ranked players with real competitive experience.",
+                icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+              },
+              {
+                title: "Always Updated",
+                desc: "Strategies refreshed after every patch, meta shift, and new season drop.",
+                icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
+              },
+              {
+                title: "100% Free",
+                desc: "No paywalls, no subscriptions. Every guide is free to read, forever.",
+                icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="bg-white rounded-2xl p-8 text-center border border-gray-100 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                  <svg
+                    className="w-7 h-7 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
+                  </svg>
+                </div>
+                <h3 className="font-bold text-base mb-2">{item.title}</h3>
+                <p className="text-muted text-sm leading-relaxed">
+                  {item.desc}
                 </p>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {featuredBases.map((base) => (
-                <BaseCard key={base.id} base={base} />
-              ))}
+      {/* ========== FEATURED GUIDE ========== */}
+      {latestPost && (
+        <section className="py-20" style={{ fontFamily: "'Manrope', sans-serif" }}>
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">Featured</span>
+              <h2 className="text-3xl md:text-4xl font-extrabold mt-2">
+                Latest Guide
+              </h2>
             </div>
+            <Link
+              href={`/blog/${latestPost.slug}`}
+              className="grid grid-cols-1 md:grid-cols-2 gap-0 bg-white border border-gray-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="relative h-64 md:h-full min-h-[280px]">
+                <Image
+                  src={latestPost.image}
+                  alt={latestPost.title}
+                  fill
+                  className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                />
+              </div>
+              <div className="p-8 md:p-10 flex flex-col justify-center">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">
+                    {latestPost.gameName}
+                  </span>
+                  <span className="text-muted text-xs">
+                    {latestPost.readTime}
+                  </span>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-extrabold leading-tight mb-4 group-hover:text-primary transition-colors">
+                  {latestPost.title}
+                </h3>
+                <p className="text-muted text-sm leading-relaxed mb-6 line-clamp-3">
+                  {latestPost.description}
+                </p>
+                <span className="inline-flex items-center text-primary font-bold text-sm">
+                  Read Full Guide
+                  <svg
+                    className="w-4 h-4 ml-2 group-hover:translate-x-1.5 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </div>
+            </Link>
           </div>
         </section>
       )}
 
-      {/* ========== LATEST BASES ========== */}
-      <section className="py-16">
-        <div className="container-custom">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">
-                Recently Added
-              </span>
-              <h2 className="text-3xl md:text-4xl font-extrabold mt-2">
-                Latest Base Layouts
-              </h2>
-              <p className="text-muted text-sm mt-2 max-w-md">
-                Fresh base layouts added every week. Stay ahead of the meta.
-              </p>
-            </div>
-            <Link
-              href="/bases/th-16"
-              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 border border-gray-200 text-sm font-semibold text-[#1a1a2e] rounded-full hover:border-primary hover:text-primary transition-colors"
-            >
-              View All
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {latestBases.map((base) => (
-              <BaseCard key={base.id} base={base} />
-            ))}
-          </div>
-
-          <div className="text-center mt-10 sm:hidden">
-            <Link
-              href="/bases/th-16"
-              className="inline-flex items-center gap-2 px-7 py-3 bg-[#1a1a2e] text-white text-sm font-bold rounded-full hover:bg-primary transition-colors duration-300"
-            >
-              View All Bases
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== BASE TYPES EXPLAINER ========== */}
-      <section className="relative overflow-hidden">
-        <div className="relative z-10 text-center pt-14 pb-24">
-          <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">Base Categories</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold mt-2">
-            Find the Right Base for You
-          </h2>
-          <p className="text-muted text-sm mt-3 max-w-md mx-auto">
-            Different base types for different goals — war defense, resource farming, or trophy pushing.
-          </p>
-        </div>
-
-        <div className="relative pb-20" style={{ minHeight: 380 }}>
-          {/* Waves */}
-          <svg className="absolute left-0 right-0 -top-20 w-full" style={{ height: "calc(100% + 80px)" }} viewBox="0 0 1440 700" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="wg1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#E03032" stopOpacity="0.10" />
-                <stop offset="50%" stopColor="#CC1517" stopOpacity="0.14" />
-                <stop offset="100%" stopColor="#E03032" stopOpacity="0.08" />
-              </linearGradient>
-              <linearGradient id="wg2" x1="100%" y1="0%" x2="0%" y2="0%">
-                <stop offset="0%" stopColor="#CC1517" stopOpacity="0.07" />
-                <stop offset="50%" stopColor="#A81113" stopOpacity="0.11" />
-                <stop offset="100%" stopColor="#CC1517" stopOpacity="0.06" />
-              </linearGradient>
-              <linearGradient id="wg3" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#A81113" stopOpacity="0.04" />
-                <stop offset="50%" stopColor="#E03032" stopOpacity="0.08" />
-                <stop offset="100%" stopColor="#A81113" stopOpacity="0.04" />
-              </linearGradient>
-            </defs>
-            <path fill="url(#wg1)" d="M0,100 C200,10 400,180 720,60 C1040,-40 1240,120 1440,40 L1440,700 L0,700Z" />
-            <path fill="url(#wg2)" d="M0,220 C300,120 550,300 850,180 C1100,80 1300,220 1440,160 L1440,700 L0,700Z" />
-            <path fill="url(#wg3)" d="M0,360 C350,290 700,400 1050,310 C1250,260 1400,320 1440,300 L1440,700 L0,700Z" />
-          </svg>
-
-          <div className="container-custom relative z-10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-              {[
-                {
-                  title: "War Bases",
-                  desc: "Anti 3-star designs tested against meta attacks. Protect your war stars.",
-                  icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-                  num: "01",
-                  href: "/bases/th-16",
-                },
-                {
-                  title: "Farming Bases",
-                  desc: "Protect resources with centralized storages and outside Town Halls.",
-                  icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
-                  num: "02",
-                  href: "/bases/th-16",
-                },
-                {
-                  title: "Trophy Bases",
-                  desc: "Push to Legend League with centered TH and overlapping defenses.",
-                  icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
-                  num: "03",
-                  href: "/bases/th-16",
-                },
-                {
-                  title: "CWL Bases",
-                  desc: "Competitive bases for Clan War Leagues — force 2-star attacks.",
-                  icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
-                  num: "04",
-                  href: "/bases/th-16",
-                },
-              ].map((item) => (
-                <Link
-                  key={item.title}
-                  href={item.href}
-                  className="group relative bg-white rounded-[20px] p-6 h-[220px] flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                  style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.04), 0 8px 30px rgba(0,0,0,0.06)" }}
-                >
-                  <div className="flex items-start justify-between">
-                    <div
-                      className="w-12 h-12 rounded-2xl flex items-center justify-center"
-                      style={{ background: "linear-gradient(135deg, #CC1517, #E03032)" }}
-                    >
-                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
-                      </svg>
-                    </div>
-                    <span className="text-[28px] font-extrabold text-gray-100 leading-none select-none">{item.num}</span>
-                  </div>
-                  <div className="mt-auto">
-                    <h3 className="font-bold text-[15px] text-[#1a1a2e] mb-1">{item.title}</h3>
-                    <p className="text-xs text-muted leading-relaxed">{item.desc}</p>
-                  </div>
-                  <div className="absolute bottom-0 left-6 right-6 h-[2px] rounded-full bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== OTHER GAMES ========== */}
-      <section id="games" className="py-16 bg-[#fafafa]">
-        <div className="container-custom">
-          <div className="text-center mb-10">
-            <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">More Games</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold mt-2">
-              Explore Other Games
-            </h2>
-            <p className="text-muted text-sm mt-3 max-w-md mx-auto">
-              Guides, tier lists, and strategies for more mobile games
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {activeGames.map((game) => (
-              <Link
-                key={game.id}
-                href={`/${game.id}`}
-                className="group relative h-[180px] rounded-2xl overflow-hidden"
-              >
-                <Image
-                  src={
-                    game.id === "clash-of-clans" ? images.games.coc.hero :
-                    game.id === "brawl-stars" ? images.games.brawlStars.hero :
-                    game.id === "clash-royale" ? images.games.clashRoyale.hero :
-                    game.id === "free-fire" ? images.games.freeFire.hero :
-                    images.games.pubg.hero
-                  }
-                  alt={game.name}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 50vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 transition-all" />
-                <div className="absolute bottom-3 left-3 right-3">
-                  <p className="text-white font-bold text-sm">{game.name}</p>
-                  <p className="text-white/50 text-[11px]">{game.stats}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ========== LATEST ARTICLES ========== */}
       {blogPosts.length > 0 && (
-        <section className="py-16">
+        <section className="bg-[#fafafa] py-20" style={{ fontFamily: "'Manrope', sans-serif" }}>
           <div className="container-custom">
-            <div className="flex items-end justify-between mb-10">
+            <div className="flex items-end justify-between mb-12">
               <div>
                 <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">Blog</span>
                 <h2 className="text-3xl md:text-4xl font-extrabold mt-2">
@@ -387,50 +336,125 @@ export default function HomePage() {
               </div>
               <Link
                 href="/blog"
-                className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 border border-gray-200 text-sm font-semibold text-[#1a1a2e] rounded-full hover:border-primary hover:text-primary transition-colors"
+                className="hidden sm:inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:text-primary-dark transition-colors"
               >
                 View All
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
             </div>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {blogPosts.slice(0, 3).map((post) => (
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+                  className="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-black/5 transition-all duration-300 group"
                 >
-                  <div className="relative h-[160px] overflow-hidden">
+                  <div className="relative h-48 overflow-hidden">
                     <Image
                       src={post.image}
                       alt={post.title}
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    <span className="absolute bottom-3 left-3 px-2.5 py-1 bg-white/90 backdrop-blur-sm text-[10px] font-bold text-primary rounded-full">
-                      {post.gameName}
-                    </span>
                   </div>
-                  <div className="p-4">
-                    <h3 className="font-bold text-sm text-[#1a1a2e] leading-snug group-hover:text-primary transition-colors line-clamp-2 mb-2">
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="px-2.5 py-0.5 bg-primary/10 text-primary text-[11px] font-bold rounded-full">
+                        {post.gameName}
+                      </span>
+                      <span className="text-[11px] text-muted">
+                        {post.readTime}
+                      </span>
+                    </div>
+                    <h3 className="font-bold text-[15px] leading-snug group-hover:text-primary transition-colors">
                       {post.title}
                     </h3>
-                    <div className="flex items-center justify-between text-[11px] text-gray-400">
-                      <span>{post.date}</span>
-                      <span className="text-primary font-semibold">Read →</span>
-                    </div>
                   </div>
                 </Link>
               ))}
             </div>
+            <div className="text-center mt-8 sm:hidden">
+              <Link
+                href="/blog"
+                className="text-sm font-bold text-primary"
+              >
+                View All Articles
+              </Link>
+            </div>
           </div>
         </section>
       )}
+
+      {/* ========== ABOUT ========== */}
+      <section className="relative py-24 bg-[#fafafa] overflow-hidden" style={{ fontFamily: "'Manrope', sans-serif" }}>
+        {/* Red spiral shapes */}
+        <div className="absolute -top-32 -right-32 w-72 h-72 animate-spiral opacity-[0.04]">
+          <svg viewBox="0 0 200 200" fill="none">
+            <path d="M100 10 C150 10, 190 50, 190 100 C190 150, 150 190, 100 190 C50 190, 20 160, 20 120 C20 80, 50 50, 80 50 C110 50, 140 70, 140 100 C140 130, 120 150, 100 150 C80 150, 60 130, 60 110 C60 90, 75 75, 90 75" stroke="#CC1517" strokeWidth="3" strokeLinecap="round" />
+          </svg>
+        </div>
+        <div className="absolute -bottom-24 -left-24 w-60 h-60 animate-spiral-reverse opacity-[0.05]">
+          <svg viewBox="0 0 200 200" fill="none">
+            <path d="M100 10 C150 10, 190 50, 190 100 C190 150, 150 190, 100 190 C50 190, 20 160, 20 120 C20 80, 50 50, 80 50 C110 50, 140 70, 140 100 C140 130, 120 150, 100 150 C80 150, 60 130, 60 110 C60 90, 75 75, 90 75" stroke="#CC1517" strokeWidth="4" strokeLinecap="round" />
+          </svg>
+        </div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 animate-spiral opacity-[0.02]">
+          <svg viewBox="0 0 200 200" fill="none">
+            <path d="M100 5 C155 5, 195 45, 195 100 C195 155, 155 195, 100 195 C45 195, 15 165, 15 115 C15 75, 45 45, 75 45 C105 45, 135 65, 135 95 C135 125, 115 145, 95 145 C75 145, 55 125, 55 105 C55 85, 70 70, 85 70" stroke="#CC1517" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </div>
+
+        <div className="relative container-custom">
+          <div className="text-center mb-16">
+            <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">About Us</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold mt-2">
+              Why Gamers Trust Us
+            </h2>
+          </div>
+
+          {/* Stats strip */}
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-16">
+            {[
+              { value: "5+", label: "Games" },
+              { value: "50+", label: "Guides" },
+              { value: "Daily", label: "Updates" },
+              { value: "Free", label: "Forever" },
+            ].map((stat, i) => (
+              <div key={stat.label} className="flex items-center gap-8 md:gap-16">
+                <div className="text-center">
+                  <p className="text-4xl md:text-5xl font-extrabold text-primary leading-none">{stat.value}</p>
+                  <p className="text-muted text-xs uppercase tracking-[0.15em] font-medium mt-2">{stat.label}</p>
+                </div>
+                {i < 3 && <div className="hidden md:block w-px h-12 bg-gray-200" />}
+              </div>
+            ))}
+          </div>
+
+          {/* Content */}
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-muted text-[16px] leading-[1.9] mb-4">
+              We are a team of passionate mobile gamers creating pro-level guides
+              for players of all skill levels. Every strategy is tested and written
+              by top-ranked competitive players who know the meta inside out.
+            </p>
+            <p className="text-muted text-[16px] leading-[1.9] mb-8">
+              Clash of Clans, Brawl Stars, Clash Royale, Free Fire — whether you
+              are a beginner or pushing top ranks, we have guides for you.
+            </p>
+            <Link
+              href="/about"
+              className="group btn-fill inline-flex items-center gap-2 px-8 py-3.5 font-bold text-sm rounded-full"
+            >
+              Learn More About Us
+              <svg className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ========== CTA ========== */}
       <section className="relative overflow-hidden bg-[#0a0a0f]">
@@ -446,28 +470,32 @@ export default function HomePage() {
             }}
           />
         </div>
-        <div className="relative container-custom py-20 text-center">
-          <h2 className="text-2xl md:text-4xl font-heading font-normal text-white mb-4 tracking-wider">
-            READY TO DEFEND?
+        <div className="relative container-custom py-20 text-center" style={{ fontFamily: "'Manrope', sans-serif" }}>
+          <h2
+            className="text-2xl md:text-4xl font-normal text-white mb-4 tracking-wider"
+            style={{ fontFamily: "'Michroma', sans-serif" }}
+          >
+            READY TO DOMINATE?
           </h2>
           <p className="text-white/40 text-[15px] max-w-lg mx-auto mb-8">
-            Browse our collection of tested base layouts and copy them directly into Clash of Clans. New bases added every week.
+            Pick your game and start winning today. New guides and strategies
+            added every week.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="#th-selector"
+              href="#games"
               className="group btn-fill-dark px-8 py-3.5 font-bold text-sm rounded-full flex items-center gap-2"
             >
-              Browse Bases
+              Browse Games
               <svg className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>
             <Link
-              href="/blog"
+              href="/contact"
               className="btn-fill-dark px-8 py-3.5 font-semibold text-sm rounded-full"
             >
-              Read Guides
+              Contact Us
             </Link>
           </div>
         </div>
