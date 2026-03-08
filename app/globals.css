@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=Michroma&display=swap');
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -54,6 +52,15 @@
 
   .btn-outline {
     @apply inline-flex items-center justify-center px-6 py-3 border border-gray-300 hover:border-primary text-light font-semibold rounded-xl transition-all duration-200;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
 

@@ -1,10 +1,23 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Inter, Manrope } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { createMetadata, createJsonLd, websiteJsonLd } from "@/lib/seo";
 import { SITE_NAME } from "@/lib/constants";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
 
 export const metadata: Metadata = createMetadata({
   title: `${SITE_NAME} - Your Ultimate Mobile Gaming Resource Hub`,
@@ -20,16 +33,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
       <head>
         <meta name="theme-color" content="#FFFFFF" />
         <link rel="icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={createJsonLd(websiteJsonLd)}
         />
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col font-body">
         {/* Google Analytics */}
         {GA_ID && (
           <>

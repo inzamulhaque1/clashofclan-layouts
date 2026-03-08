@@ -8,9 +8,24 @@ interface MetaProps {
   description: string;
   path?: string;
   image?: string;
+  type?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
+  authors?: string[];
+  tags?: string[];
 }
 
-export function createMetadata({ title, description, path = "", image }: MetaProps): Metadata {
+export function createMetadata({
+  title,
+  description,
+  path = "",
+  image,
+  type = "website",
+  publishedTime,
+  modifiedTime,
+  authors,
+  tags,
+}: MetaProps): Metadata {
   const url = `${SITE_URL}${path}`;
   const ogImage = image || `${SITE_URL}/og-image.png`;
 
@@ -27,7 +42,13 @@ export function createMetadata({ title, description, path = "", image }: MetaPro
       url,
       siteName: SITE_NAME,
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
-      type: "website",
+      type: type === "article" ? "article" : "website",
+      ...(type === "article" && {
+        publishedTime,
+        modifiedTime: modifiedTime || publishedTime,
+        authors: authors || [SITE_NAME],
+        tags,
+      }),
     },
     twitter: {
       card: "summary_large_image",
@@ -46,6 +67,7 @@ export function createMetadata({ title, description, path = "", image }: MetaPro
         "max-snippet": -1,
       },
     },
+    keywords: tags,
   };
 }
 
