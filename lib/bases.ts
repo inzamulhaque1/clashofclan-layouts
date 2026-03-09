@@ -1,7 +1,8 @@
 import { images } from "./images";
 
 export type BaseType = "war" | "farming" | "trophy" | "cwl" | "hybrid" | "anti-3-star" | "anti-2-star";
-export type THLevel = 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17;
+export type THLevel = 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18;
+export type BHLevel = 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
 export interface BaseLayout {
   id: string;
@@ -24,6 +25,7 @@ export interface BaseLayout {
 }
 
 export const TH_LEVELS: { level: THLevel; label: string; color: string; bases?: number }[] = [
+  { level: 18, label: "TH18", color: "#B91C1C" },
   { level: 17, label: "TH17", color: "#7C3AED" },
   { level: 16, label: "TH16", color: "#DC2626" },
   { level: 15, label: "TH15", color: "#059669" },
@@ -45,6 +47,18 @@ export const BASE_TYPES: { type: BaseType; label: string; description: string }[
   { type: "hybrid", label: "Hybrid", description: "Balanced base that protects both trophies and resources effectively." },
   { type: "anti-3-star", label: "Anti 3 Star", description: "Force opponents into 2-star attacks with spread defenses and tricky trap placements." },
   { type: "anti-2-star", label: "Anti 2 Star", description: "Protect your Town Hall at all costs — centered TH with maximum defense coverage." },
+];
+
+export const BH_LEVELS: { level: BHLevel; label: string; color: string }[] = [
+  { level: 10, label: "BH10", color: "#7C3AED" },
+  { level: 9, label: "BH9", color: "#DC2626" },
+  { level: 8, label: "BH8", color: "#059669" },
+  { level: 7, label: "BH7", color: "#2563EB" },
+  { level: 6, label: "BH6", color: "#D97706" },
+  { level: 5, label: "BH5", color: "#0891B2" },
+  { level: 4, label: "BH4", color: "#4F46E5" },
+  { level: 3, label: "BH3", color: "#E11D48" },
+  { level: 2, label: "BH2", color: "#CA8A04" },
 ];
 
 export const baseLayouts: BaseLayout[] = [

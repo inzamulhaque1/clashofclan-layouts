@@ -9,7 +9,7 @@ export default function BaseCard({ base }: { base: BaseLayout }) {
 
   return (
     <Link
-      href={`/bases/${base.slug}`}
+      href={`/clash-of-clans/bases/base/${base.slug}`}
       className="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg hover:border-primary/20 transition-all duration-300"
     >
       {/* Image */}

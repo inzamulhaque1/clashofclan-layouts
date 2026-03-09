@@ -32,6 +32,35 @@ export const images = {
     },
   },
 
+  // Town Hall images (from coc.guide — verified working PNGs)
+  townHalls: {
+    7: "https://coc.guide/static/imgs/other/town-hall-7.png",
+    8: "https://coc.guide/static/imgs/other/town-hall-8.png",
+    9: "https://coc.guide/static/imgs/other/town-hall-9.png",
+    10: "https://coc.guide/static/imgs/other/town-hall-10.png",
+    11: "https://coc.guide/static/imgs/other/town-hall-11.png",
+    12: "https://coc.guide/static/imgs/other/town-hall-12.png",
+    13: "https://coc.guide/static/imgs/other/town-hall-13.png",
+    14: "https://coc.guide/static/imgs/other/town-hall-14.png",
+    15: "https://coc.guide/static/imgs/other/town-hall-15.png",
+    16: "https://coc.guide/static/imgs/other/town-hall-16.png",
+    17: "https://coc.guide/static/imgs/other/town-hall-17.png",
+    18: "https://cocbases.com/wp-content/themes/astra-child/images/th18.png",
+  } as Record<number, string>,
+
+  // Builder Hall images (from coc.guide — "town-hall2" = Builder Hall)
+  builderHalls: {
+    2: "https://coc.guide/static/imgs/other/town-hall2-2.png",
+    3: "https://coc.guide/static/imgs/other/town-hall2-3.png",
+    4: "https://coc.guide/static/imgs/other/town-hall2-4.png",
+    5: "https://coc.guide/static/imgs/other/town-hall2-5.png",
+    6: "https://coc.guide/static/imgs/other/town-hall2-6.png",
+    7: "https://coc.guide/static/imgs/other/town-hall2-7.png",
+    8: "https://coc.guide/static/imgs/other/town-hall2-8.png",
+    9: "https://coc.guide/static/imgs/other/town-hall2-9.png",
+    10: "https://coc.guide/static/imgs/other/town-hall2-10.png",
+  } as Record<number, string>,
+
   // Blog article images (centralized)
   blog: {
     // Best Offline Games article

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { GAMES, GAME_SUB_ROUTES, SITE_NAME } from "@/lib/constants";
+import { GAMES, SITE_NAME } from "@/lib/constants";
 import { images } from "@/lib/images";
 import type { GameId } from "@/lib/constants";
 
@@ -16,9 +16,7 @@ const gameLogos: Record<GameId, string> = {
   pubg: images.games.pubg.logo,
 };
 
-const commonLinks = [
-  { label: "Home", href: "/" },
-  { label: "Bases", href: "/bases/th-16" },
+const baseLinks = [
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -32,7 +30,6 @@ export default function Header() {
 
   // Detect which game page we're on
   const currentGame = GAMES.find((g) => pathname === `/${g.id}`);
-  const gameSubRoutes = currentGame ? GAME_SUB_ROUTES[currentGame.id] || [] : [];
 
   const activeGames = GAMES.filter((g) => g.active);
 
@@ -55,7 +52,6 @@ export default function Header() {
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
-    if (href === "/bases/th-16") return pathname.startsWith("/bases");
     return pathname.startsWith(href);
   };
 
@@ -76,8 +72,20 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-0.5">
-            {/* Common links */}
-            {commonLinks.map((link) => (
+            {/* Home — always links to main site */}
+            <Link
+              href="/"
+              className={`px-3 py-1.5 text-[13px] font-medium rounded-lg transition-colors ${
+                pathname === "/"
+                  ? "text-primary font-semibold"
+                  : "text-muted hover:text-light hover:bg-gray-50"
+              }`}
+            >
+              Home
+            </Link>
+
+            {/* Other links */}
+            {baseLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -94,22 +102,32 @@ export default function Header() {
             {/* Pipe separator */}
             <div className="w-px h-4 bg-gray-200 mx-2" />
 
-            {/* Game sub-routes (only on game pages) */}
-            {currentGame && gameSubRoutes.length > 0 && (
-              <>
-                {gameSubRoutes.map((route) => (
-                  <Link
-                    key={route.hash || "overview"}
-                    href={`/${currentGame.id}${route.hash}`}
-                    className="px-2.5 py-1.5 text-[13px] font-medium text-muted hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
-                  >
-                    {route.label}
-                  </Link>
-                ))}
+            {/* CoC Home — only on CoC pages */}
+            {pathname.startsWith("/clash-of-clans") && (
+              <Link
+                href="/clash-of-clans"
+                className={`px-3 py-1.5 text-[13px] font-medium rounded-lg transition-colors ${
+                  pathname === "/clash-of-clans"
+                    ? "text-primary font-semibold"
+                    : "text-muted hover:text-light hover:bg-gray-50"
+                }`}
+              >
+                CoC Home
+              </Link>
+            )}
 
-                {/* Second pipe separator before games dropdown */}
-                <div className="w-px h-4 bg-gray-200 mx-2" />
-              </>
+            {/* Bases link — only on CoC pages */}
+            {pathname.startsWith("/clash-of-clans") && (
+              <Link
+                href="/clash-of-clans/bases"
+                className={`px-3 py-1.5 text-[13px] font-medium rounded-lg transition-colors ${
+                  pathname.startsWith("/clash-of-clans/bases")
+                    ? "text-primary font-semibold"
+                    : "text-muted hover:text-light hover:bg-gray-50"
+                }`}
+              >
+                Bases
+              </Link>
             )}
 
             {/* Games Dropdown */}
@@ -232,7 +250,20 @@ export default function Header() {
         {/* Mobile Nav */}
         {mobileOpen && (
           <nav className="md:hidden pb-4 border-t border-gray-200 pt-4 space-y-1">
-            {commonLinks.map((link) => (
+            {/* Home — always main site */}
+            <Link
+              href="/"
+              onClick={() => setMobileOpen(false)}
+              className={`block px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
+                pathname === "/"
+                  ? "text-primary bg-primary/5 font-semibold"
+                  : "text-muted hover:text-light hover:bg-gray-100"
+              }`}
+            >
+              Home
+            </Link>
+
+            {baseLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -247,23 +278,34 @@ export default function Header() {
               </Link>
             ))}
 
-            {/* Game sub-routes on mobile */}
-            {currentGame && gameSubRoutes.length > 0 && (
-              <div className="pt-2 mt-2 border-t border-gray-100">
-                <p className="px-4 py-2 text-[10px] uppercase tracking-wider text-gray-400 font-medium">
-                  {currentGame.name}
-                </p>
-                {gameSubRoutes.map((route) => (
-                  <Link
-                    key={route.hash || "overview"}
-                    href={`/${currentGame.id}${route.hash}`}
-                    onClick={() => setMobileOpen(false)}
-                    className="block px-4 py-2.5 text-sm font-medium text-muted hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
-                  >
-                    {route.label}
-                  </Link>
-                ))}
-              </div>
+            {/* CoC Home — mobile, only on CoC pages */}
+            {pathname.startsWith("/clash-of-clans") && (
+              <Link
+                href="/clash-of-clans"
+                onClick={() => setMobileOpen(false)}
+                className={`block px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
+                  pathname === "/clash-of-clans"
+                    ? "text-primary bg-primary/5 font-semibold"
+                    : "text-muted hover:text-light hover:bg-gray-100"
+                }`}
+              >
+                CoC Home
+              </Link>
+            )}
+
+            {/* Bases link — mobile, only on CoC pages */}
+            {pathname.startsWith("/clash-of-clans") && (
+              <Link
+                href="/clash-of-clans/bases"
+                onClick={() => setMobileOpen(false)}
+                className={`block px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
+                  pathname.startsWith("/clash-of-clans/bases")
+                    ? "text-primary bg-primary/5 font-semibold"
+                    : "text-muted hover:text-light hover:bg-gray-100"
+                }`}
+              >
+                Bases
+              </Link>
             )}
 
             {/* Games section */}
