@@ -1,45 +1,69 @@
 {
-  "timestamp": "2026-03-14T18:46:13.885Z",
-  "totalPosted": 6,
+  "timestamp": "2026-03-14T19:00:33.214Z",
+  "totalPosted": 10,
   "totalFailed": 0,
-  "totalTracked": 6,
+  "totalTracked": 16,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th13-war-base-anti-hybrid",
-      "title": "TH13 Anti Hybrid War Base",
+      "id": "hv-th7-trophy-base-anti-giant",
+      "title": "TH7 Anti Giant Trophy Base",
       "success": true,
-      "pinId": "1092897034673084320"
+      "pinId": "1092897034673085107"
     },
     {
-      "id": "hv-th8-war-base-anti-dragon-2026",
-      "title": "TH8 War Base (Anti Dragon)",
+      "id": "hv-th9-trophy-base-x-bow-center",
+      "title": "TH9 X-Bow Center Trophy Base",
       "success": true,
-      "pinId": "1092897034673084323"
+      "pinId": "1092897034673085117"
     },
     {
-      "id": "hv-th15-trophy-base-master-champion-push",
-      "title": "TH15 Trophy Base — Master to Champion",
+      "id": "hv-th10-trophy-base-anti-2-star",
+      "title": "TH10 Anti 2 Star Trophy Base",
       "success": true,
-      "pinId": "1092897034673084324"
+      "pinId": "1092897034673085123"
     },
     {
-      "id": "hv-th17-trophy-base-master-champion",
-      "title": "TH17 Master/Champion League Base",
+      "id": "hv-th9-trophy-push-base",
+      "title": "TH9 Trophy Push Base",
       "success": true,
-      "pinId": "1092897034673084345"
+      "pinId": "1092897034673085126"
     },
     {
-      "id": "hv-th12-trophy-push-base",
-      "title": "TH12 Trophy Push Base",
+      "id": "hv-th9-farming-base-collector-outside",
+      "title": "TH9 Collector Outside Farming Base",
       "success": true,
-      "pinId": "1092897034673084351"
+      "pinId": "1092897034673085134"
     },
     {
-      "id": "hv-th18-war-base-ring-style-defense",
-      "title": "TH18 Ring Style War Base",
+      "id": "hv-th9-war-base-asymmetric-layout",
+      "title": "TH9 Asymmetric War Base",
       "success": true,
-      "pinId": "1092897034673084356"
+      "pinId": "1092897034673085138"
+    },
+    {
+      "id": "hv-th10-trophy-base-champion-push-2026",
+      "title": "TH10 Champion Push Base (2026)",
+      "success": true,
+      "pinId": "1092897034673085150"
+    },
+    {
+      "id": "hv-th9-trophy-base-champion-push",
+      "title": "TH9 Champion League Push Base",
+      "success": true,
+      "pinId": "1092897034673085158"
+    },
+    {
+      "id": "hv-th9-war-base-anti-queen-charge",
+      "title": "TH9 Anti Queen Charge War Base",
+      "success": true,
+      "pinId": "1092897034673085164"
+    },
+    {
+      "id": "hv-th10-war-base-inferno-island",
+      "title": "TH10 Inferno Island War Base",
+      "success": true,
+      "pinId": "1092897034673085171"
     }
   ]
 }
