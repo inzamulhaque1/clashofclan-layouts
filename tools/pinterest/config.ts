@@ -21,6 +21,6 @@ export const config = {
     textColor: "#FFFFFF",
     mutedColor: "#9ca3af",
     width: 1000,
-    height: 1500,
+    height: 1150,
   },
 };
