@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-03-14T18:40:16.352Z",
+  "totalPosted": 0,
+  "totalFailed": 5,
+  "totalTracked": 0,
+  "totalAvailable": 425,
+  "results": [
+    {
+      "id": "hv-th8-farming-base-resource-protection",
+      "title": "TH8 Farming Base — Resources",
+      "success": false,
+      "error": "API error 401: {\"code\":3,\"message\":\"Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write']\"}"
+    },
+    {
+      "id": "hv-th11-hybrid-base-balanced",
+      "title": "TH11 Hybrid Base — Balanced",
+      "success": false,
+      "error": "API error 401: {\"code\":3,\"message\":\"Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write']\"}"
+    },
+    {
+      "id": "hv-th15-farming-base-passive-loot-guard",
+      "title": "TH15 Farming Base — Passive Loot Guard",
+      "success": false,
+      "error": "API error 401: {\"code\":3,\"message\":\"Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write']\"}"
+    },
+    {
+      "id": "hv-th17-cwl-base-anti-root-rider-cwl",
+      "title": "TH17 CWL Anti Root Rider",
+      "success": false,
+      "error": "API error 401: {\"code\":3,\"message\":\"Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write']\"}"
+    },
+    {
+      "id": "hv-th14-farming-base-gold-elixir-priority",
+      "title": "TH14 Farming Base — Gold & Elixir Priority",
+      "success": false,
+      "error": "API error 401: {\"code\":3,\"message\":\"Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write']\"}"
+    }
+  ]
+}
