@@ -20,23 +20,50 @@ interface PinData {
 export async function generatePinImage(pin: PinData): Promise<Buffer> {
   const { width, height, bgColor, accentColor, textColor, mutedColor } = config.brand;
 
-  // Fetch the base/guide image
+  // Fetch the base/guide image with retry and User-Agent
   let imageBuffer: Buffer;
-  try {
-    const res = await fetch(pin.imageUrl);
-    if (!res.ok) throw new Error(`Failed to fetch image: ${res.status}`);
-    imageBuffer = Buffer.from(await res.arrayBuffer());
-  } catch {
-    // Create a placeholder if image fetch fails
-    imageBuffer = await sharp({
-      create: { width: 600, height: 400, channels: 3, background: { r: 30, g: 30, b: 40 } },
-    })
-      .png()
-      .toBuffer();
+  let imageFetched = false;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 10000);
+      const res = await fetch(pin.imageUrl, {
+        signal: controller.signal,
+        headers: {
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+          "Accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+        },
+      });
+      clearTimeout(timeout);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      imageBuffer = Buffer.from(await res.arrayBuffer());
+      if (imageBuffer.length > 1000) {
+        imageFetched = true;
+        break;
+      }
+    } catch (e) {
+      console.log(`  Image fetch attempt ${attempt + 1} failed: ${e instanceof Error ? e.message : "unknown"}`);
+      if (attempt < 2) await new Promise((r) => setTimeout(r, 1000));
+    }
   }
 
-  // Resize the fetched image to fit the pin (600x400 area)
-  const baseImage = await sharp(imageBuffer)
+  // Create a styled placeholder if image fetch fails
+  if (!imageFetched) {
+    const levelText = pin.thLevel ? `TH${pin.thLevel}` : pin.bhLevel ? `BH${pin.bhLevel}` : "COC";
+    const placeholderSvg = `
+      <svg width="860" height="560" xmlns="http://www.w3.org/2000/svg">
+        <rect width="860" height="560" fill="#1a1a2e"/>
+        <rect x="2" y="2" width="856" height="556" rx="12" fill="none" stroke="${accentColor}" stroke-width="2" opacity="0.4"/>
+        <text x="430" y="240" font-family="Arial Black, Arial, sans-serif" font-size="120" font-weight="900" fill="${accentColor}" text-anchor="middle" opacity="0.8">${levelText}</text>
+        <text x="430" y="320" font-family="Arial, sans-serif" font-size="32" fill="${mutedColor}" text-anchor="middle">BASE LAYOUT</text>
+        <text x="430" y="380" font-family="Arial, sans-serif" font-size="22" fill="${mutedColor}" text-anchor="middle" opacity="0.6">game365hub.com</text>
+      </svg>
+    `;
+    imageBuffer = await sharp(Buffer.from(placeholderSvg)).png().toBuffer();
+  }
+
+  // Resize the fetched image to fit the pin (860x560 area)
+  const baseImage = await sharp(imageBuffer!)
     .resize(860, 560, { fit: "cover" })
     .png()
     .toBuffer();
