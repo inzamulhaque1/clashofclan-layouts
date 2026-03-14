@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog";
-import { TH_LEVELS, BH_LEVELS, getAllBaseSlugs } from "@/lib/bases";
+import { cocGuides } from "@/lib/guides";
+import { TH_LEVELS, BH_LEVELS, getAllBaseSlugs, getAllBuilderBaseSlugs } from "@/lib/bases";
 
 const SITE_URL = "https://game365hub.com";
 
@@ -28,6 +29,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // Guides index page
+  const guideIndexPages = [
+    {
+      url: `${SITE_URL}/clash-of-clans/guides`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+  ];
+
+  // Individual guide pages
+  const guideDetailPages = cocGuides.map((guide) => ({
+    url: `${SITE_URL}/clash-of-clans/guides/${guide.slug}`,
+    lastModified: new Date(guide.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   // Base index page
   const baseIndexPages = [
     {
@@ -50,13 +69,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const bhPages = BH_LEVELS.map((bh) => ({
     url: `${SITE_URL}/clash-of-clans/bases/bh/${bh.level}`,
     lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
   }));
 
-  // Individual base detail pages
-  const baseSlugs = getAllBaseSlugs();
-  const baseDetailPages = baseSlugs.map((slug) => ({
+  // Individual base detail pages (Home Village + Builder Base)
+  const allSlugs = [...getAllBaseSlugs(), ...getAllBuilderBaseSlugs()];
+  const baseDetailPages = allSlugs.map((slug) => ({
     url: `${SITE_URL}/clash-of-clans/bases/base/${slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
@@ -77,6 +96,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     })),
     ...blogPages,
+    ...guideIndexPages,
+    ...guideDetailPages,
     ...baseIndexPages,
     ...thPages,
     ...bhPages,

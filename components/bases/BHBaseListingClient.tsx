@@ -1,19 +1,19 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import BaseCard from "./BaseCard";
-import BaseTypeFilter from "./BaseTypeFilter";
-import type { BaseLayout, BaseType } from "@/lib/bases";
+import BHBaseCard from "./BHBaseCard";
+import type { BuilderBaseLayout, BHBaseType } from "@/lib/bases";
+import { BH_BASE_TYPES } from "@/lib/bases";
 
 type SortOption = "newest" | "views" | "rating";
 const BASES_PER_PAGE = 9;
 
-export default function BaseListingClient({
+export default function BHBaseListingClient({
   bases,
 }: {
-  bases: BaseLayout[];
+  bases: BuilderBaseLayout[];
 }) {
-  const [activeType, setActiveType] = useState<BaseType | "all">("all");
+  const [activeType, setActiveType] = useState<BHBaseType | "all">("all");
   const [sortBy, setSortBy] = useState<SortOption>("newest");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -38,8 +38,7 @@ export default function BaseListingClient({
     return result;
   }, [bases, activeType, sortBy]);
 
-  // Reset page when filter/sort changes
-  const handleTypeChange = (type: BaseType | "all") => {
+  const handleTypeChange = (type: BHBaseType | "all") => {
     setActiveType(type);
     setCurrentPage(1);
   };
@@ -49,7 +48,6 @@ export default function BaseListingClient({
     setCurrentPage(1);
   };
 
-  // Pagination
   const totalPages = Math.ceil(filtered.length / BASES_PER_PAGE);
   const startIdx = (currentPage - 1) * BASES_PER_PAGE;
   const paginatedBases = filtered.slice(startIdx, startIdx + BASES_PER_PAGE);
@@ -59,29 +57,16 @@ export default function BaseListingClient({
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Generate page numbers to show
   const getPageNumbers = (): (number | "...")[] => {
     if (totalPages <= 7) {
       return Array.from({ length: totalPages }, (_, i) => i + 1);
     }
-
     const pages: (number | "...")[] = [1];
-
-    if (currentPage > 3) {
-      pages.push("...");
-    }
-
+    if (currentPage > 3) pages.push("...");
     const start = Math.max(2, currentPage - 1);
     const end = Math.min(totalPages - 1, currentPage + 1);
-
-    for (let i = start; i <= end; i++) {
-      pages.push(i);
-    }
-
-    if (currentPage < totalPages - 2) {
-      pages.push("...");
-    }
-
+    for (let i = start; i <= end; i++) pages.push(i);
+    if (currentPage < totalPages - 2) pages.push("...");
     pages.push(totalPages);
     return pages;
   };
@@ -90,7 +75,32 @@ export default function BaseListingClient({
     <div>
       {/* Filter & Sort row */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
-        <BaseTypeFilter activeType={activeType} onTypeChange={handleTypeChange} />
+        {/* Type filter */}
+        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-hide">
+          <button
+            onClick={() => handleTypeChange("all")}
+            className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-[11px] font-bold rounded-full border whitespace-nowrap transition-colors ${
+              activeType === "all"
+                ? "bg-[#1a1a2e] text-white border-[#1a1a2e]"
+                : "text-gray-500 border-gray-200 hover:border-gray-300 hover:bg-gray-50"
+            }`}
+          >
+            All Types
+          </button>
+          {BH_BASE_TYPES.map((bt) => (
+            <button
+              key={bt.type}
+              onClick={() => handleTypeChange(bt.type)}
+              className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-[11px] font-bold rounded-full border whitespace-nowrap transition-colors ${
+                activeType === bt.type
+                  ? "bg-[#1a1a2e] text-white border-[#1a1a2e]"
+                  : "text-gray-500 border-gray-200 hover:border-gray-300 hover:bg-gray-50"
+              }`}
+            >
+              {bt.label}
+            </button>
+          ))}
+        </div>
 
         <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           <span className="text-[10px] sm:text-xs text-gray-400 font-medium">Sort:</span>
@@ -132,7 +142,7 @@ export default function BaseListingClient({
       {paginatedBases.length > 0 ? (
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
           {paginatedBases.map((base) => (
-            <BaseCard key={base.id} base={base} />
+            <BHBaseCard key={base.id} base={base} />
           ))}
         </div>
       ) : (
@@ -150,7 +160,6 @@ export default function BaseListingClient({
       {/* Pagination */}
       {totalPages > 1 && (
         <div className="flex items-center justify-center gap-1 sm:gap-1.5 mt-6 sm:mt-8">
-          {/* Previous button */}
           <button
             onClick={() => goToPage(currentPage - 1)}
             disabled={currentPage === 1}
@@ -165,14 +174,9 @@ export default function BaseListingClient({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-
-          {/* Page numbers */}
           {getPageNumbers().map((page, idx) =>
             page === "..." ? (
-              <span
-                key={`dots-${idx}`}
-                className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-xs text-gray-400"
-              >
+              <span key={`dots-${idx}`} className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-xs text-gray-400">
                 ...
               </span>
             ) : (
@@ -189,8 +193,6 @@ export default function BaseListingClient({
               </button>
             )
           )}
-
-          {/* Next button */}
           <button
             onClick={() => goToPage(currentPage + 1)}
             disabled={currentPage === totalPages}

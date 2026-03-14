@@ -1,4 +1,4 @@
-import { createMetadata } from "@/lib/seo";
+import { createMetadata, createJsonLd } from "@/lib/seo";
 import { GAMES, GAME_DETAILS } from "@/lib/constants";
 import GameDetailPage from "@/components/GameDetailPage";
 
@@ -18,6 +18,28 @@ export const metadata = createMetadata({
   ],
 });
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: `${game.name} Guides & Strategies`,
+  description: `Expert ${game.name} guides, best decks, card tier lists, arena strategies & challenge tips.`,
+  url: "https://game365hub.com/clash-royale",
+  isPartOf: { "@type": "WebSite", name: "Game365Hub", url: "https://game365hub.com" },
+  about: { "@type": "VideoGame", name: "Clash Royale", gamePlatform: "Mobile", applicationCategory: "Game" },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://game365hub.com" },
+      { "@type": "ListItem", position: 2, name: "Clash Royale", item: "https://game365hub.com/clash-royale" },
+    ],
+  },
+};
+
 export default function ClashRoyalePage() {
-  return <GameDetailPage game={game} detail={detail} />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={createJsonLd(jsonLd)} />
+      <GameDetailPage game={game} detail={detail} />
+    </>
+  );
 }

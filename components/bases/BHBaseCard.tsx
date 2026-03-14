@@ -1,22 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { BaseLayout } from "@/lib/bases";
-import { formatViews, TH_LEVELS, BASE_TYPES } from "@/lib/bases";
+import type { BuilderBaseLayout } from "@/lib/bases";
+import { formatViews, BH_LEVELS, BH_BASE_TYPES } from "@/lib/bases";
 
 const typeColors: Record<string, { bg: string; text: string; border: string }> = {
+  versus: { bg: "bg-emerald-500/10", text: "text-emerald-600", border: "border-emerald-500/20" },
+  trophy: { bg: "bg-purple-500/10", text: "text-purple-600", border: "border-purple-500/20" },
   war: { bg: "bg-red-500/10", text: "text-red-600", border: "border-red-500/20" },
   farming: { bg: "bg-amber-500/10", text: "text-amber-600", border: "border-amber-500/20" },
-  trophy: { bg: "bg-purple-500/10", text: "text-purple-600", border: "border-purple-500/20" },
-  cwl: { bg: "bg-blue-500/10", text: "text-blue-600", border: "border-blue-500/20" },
   hybrid: { bg: "bg-teal-500/10", text: "text-teal-600", border: "border-teal-500/20" },
-  "anti-3-star": { bg: "bg-orange-500/10", text: "text-orange-600", border: "border-orange-500/20" },
-  "anti-2-star": { bg: "bg-rose-500/10", text: "text-rose-600", border: "border-rose-500/20" },
 };
 
-export default function BaseCard({ base }: { base: BaseLayout }) {
-  const thInfo = TH_LEVELS.find((t) => t.level === base.thLevel);
-  const typeInfo = BASE_TYPES.find((t) => t.type === base.type);
-  const colors = typeColors[base.type] || typeColors.war;
+export default function BHBaseCard({ base }: { base: BuilderBaseLayout }) {
+  const bhInfo = BH_LEVELS.find((b) => b.level === base.bhLevel);
+  const typeInfo = BH_BASE_TYPES.find((t) => t.type === base.type);
+  const colors = typeColors[base.type] || typeColors.versus;
 
   return (
     <Link
@@ -26,7 +24,7 @@ export default function BaseCard({ base }: { base: BaseLayout }) {
       {/* Top accent bar */}
       <div
         className="absolute top-0 left-0 right-0 h-[3px] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{ backgroundColor: thInfo?.color || "#666" }}
+        style={{ backgroundColor: bhInfo?.color || "#666" }}
       />
 
       {/* Image */}
@@ -46,13 +44,13 @@ export default function BaseCard({ base }: { base: BaseLayout }) {
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-        {/* TH badge — top left */}
+        {/* BH badge — top left */}
         <div className="absolute top-2 left-2 sm:top-3 sm:left-3 flex items-center gap-1 sm:gap-1.5">
           <span
             className="px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-[11px] font-extrabold text-white rounded-md sm:rounded-lg shadow-lg"
-            style={{ backgroundColor: thInfo?.color || "#666" }}
+            style={{ backgroundColor: bhInfo?.color || "#666" }}
           >
-            {thInfo?.label}
+            {bhInfo?.label}
           </span>
           {base.tags.includes("new") && (
             <span className="px-1.5 py-0.5 sm:px-2 sm:py-1 bg-green-500 text-[9px] sm:text-[10px] font-bold text-white rounded-md sm:rounded-lg shadow-lg uppercase tracking-wider animate-pulse">
@@ -105,7 +103,7 @@ export default function BaseCard({ base }: { base: BaseLayout }) {
           {base.description}
         </p>
 
-        {/* Strengths preview — hidden on very small screens */}
+        {/* Strengths preview */}
         {base.strengths.length > 0 && (
           <div className="hidden xs:flex flex-wrap gap-1.5 mb-2.5 sm:mb-3">
             {base.strengths.slice(0, 2).map((s, i) => (

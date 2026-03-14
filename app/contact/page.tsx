@@ -1,4 +1,4 @@
-import { createMetadata } from "@/lib/seo";
+import { createMetadata, createJsonLd } from "@/lib/seo";
 import { SITE_NAME } from "@/lib/constants";
 
 export const metadata = createMetadata({
@@ -7,8 +7,35 @@ export const metadata = createMetadata({
   path: "/contact",
 });
 
+const contactJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: `Contact ${SITE_NAME}`,
+  url: "https://game365hub.com/contact",
+  mainEntity: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: "https://game365hub.com",
+    email: "inzamul.dev@gmail.com",
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "inzamul.dev@gmail.com",
+      contactType: "customer support",
+    },
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://game365hub.com" },
+      { "@type": "ListItem", position: 2, name: "Contact", item: "https://game365hub.com/contact" },
+    ],
+  },
+};
+
 export default function ContactPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={createJsonLd(contactJsonLd)} />
     <div className="container-custom py-10">
       <div className="max-w-3xl mx-auto">
         {/* Title */}
@@ -115,5 +142,6 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

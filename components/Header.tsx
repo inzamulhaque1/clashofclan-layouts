@@ -28,8 +28,8 @@ export default function Header() {
   const gamesRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
-  // Detect which game page we're on
-  const currentGame = GAMES.find((g) => pathname === `/${g.id}`);
+  // Detect which game page we're on (includes sub-pages like /clash-of-clans/bases)
+  const currentGame = GAMES.find((g) => pathname.startsWith(`/${g.id}`));
 
   const activeGames = GAMES.filter((g) => g.active);
 
@@ -127,6 +127,20 @@ export default function Header() {
                 }`}
               >
                 Bases
+              </Link>
+            )}
+
+            {/* Guides link — only on CoC pages */}
+            {pathname.startsWith("/clash-of-clans") && (
+              <Link
+                href="/clash-of-clans/guides"
+                className={`px-3 py-1.5 text-[13px] font-medium rounded-lg transition-colors ${
+                  pathname.startsWith("/clash-of-clans/guides")
+                    ? "text-primary font-semibold"
+                    : "text-muted hover:text-light hover:bg-gray-50"
+                }`}
+              >
+                Guides
               </Link>
             )}
 
@@ -305,6 +319,21 @@ export default function Header() {
                 }`}
               >
                 Bases
+              </Link>
+            )}
+
+            {/* Guides link — mobile, only on CoC pages */}
+            {pathname.startsWith("/clash-of-clans") && (
+              <Link
+                href="/clash-of-clans/guides"
+                onClick={() => setMobileOpen(false)}
+                className={`block px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
+                  pathname.startsWith("/clash-of-clans/guides")
+                    ? "text-primary bg-primary/5 font-semibold"
+                    : "text-muted hover:text-light hover:bg-gray-100"
+                }`}
+              >
+                Guides
               </Link>
             )}
 

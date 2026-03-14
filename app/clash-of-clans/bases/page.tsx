@@ -7,16 +7,18 @@ import {
   getFeaturedBases,
   getLatestBases,
   baseLayouts,
+  builderBaseLayouts,
   TH_LEVELS,
   BH_LEVELS,
   BASE_TYPES,
   getBaseCountByTH,
   getBasesByType,
+  getBuilderBaseCountByBH,
 } from "@/lib/bases";
 
 export const metadata = createMetadata({
   title: "Best Clash of Clans Base Layouts 2026 | War, Farming, Trophy Bases with Copy Link",
-  description: `Browse ${baseLayouts.length}+ best Clash of Clans base layouts for TH7 to TH18 in 2026. Download war bases, farming bases, trophy bases, CWL bases & hybrid bases with direct copy links. Anti Root Rider, anti 3-star layouts updated for the latest CoC meta.`,
+  description: `Browse ${baseLayouts.length + builderBaseLayouts.length}+ best Clash of Clans base layouts for TH7 to TH18 in 2026. Download war bases, farming bases, trophy bases, CWL bases & hybrid bases with direct copy links. Anti Root Rider, anti 3-star layouts updated for the latest CoC meta.`,
   path: "/clash-of-clans/bases",
   tags: [
     "clash of clans base layouts",
@@ -46,7 +48,7 @@ const collectionJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Best Clash of Clans Base Layouts 2026",
-  description: `Browse ${baseLayouts.length}+ best Clash of Clans base layouts for TH7 to TH18. War, farming, trophy, CWL bases with copy links.`,
+  description: `Browse ${baseLayouts.length + builderBaseLayouts.length}+ best Clash of Clans base layouts for TH7 to TH18. War, farming, trophy, CWL bases with copy links.`,
   url: "https://game365hub.com/clash-of-clans/bases",
   isPartOf: {
     "@type": "WebSite",
@@ -55,7 +57,7 @@ const collectionJsonLd = {
   },
   mainEntity: {
     "@type": "ItemList",
-    numberOfItems: baseLayouts.length,
+    numberOfItems: baseLayouts.length + builderBaseLayouts.length,
     itemListElement: baseLayouts.slice(0, 10).map((base, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -166,6 +168,8 @@ export default function BasesIndexPage() {
                 width={56}
                 height={56}
                 className="object-cover w-full h-full"
+                priority
+                quality={75}
               />
             </div>
             <div>
@@ -177,7 +181,7 @@ export default function BasesIndexPage() {
                 <span className="hidden sm:inline"> — CLASH OF CLANS</span>
               </h1>
               <p className="text-white/40 text-xs sm:text-sm mt-1.5 sm:mt-2 max-w-lg leading-relaxed">
-                {baseLayouts.length}+ pro base layouts with free copy links for TH7 to TH18. War, farming, trophy &amp; CWL bases — updated for 2026.
+                {baseLayouts.length + builderBaseLayouts.length}+ pro base layouts with free copy links for TH7 to TH18. War, farming, trophy &amp; CWL bases — updated for 2026.
               </p>
             </div>
           </div>
@@ -253,6 +257,8 @@ export default function BasesIndexPage() {
                       width={64}
                       height={64}
                       className="object-contain w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300"
+                      loading="lazy"
+                      quality={75}
                     />
                     <span
                       className="absolute -bottom-0.5 -right-0.5 sm:-bottom-1 sm:-right-1 w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center text-[8px] sm:text-[9px] font-extrabold text-white shadow-md ring-2 ring-white"
@@ -321,6 +327,8 @@ export default function BasesIndexPage() {
                       width={56}
                       height={56}
                       className="object-contain w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300"
+                      loading="lazy"
+                      quality={75}
                     />
                     <span
                       className="absolute -bottom-0.5 -right-0.5 sm:-bottom-1 sm:-right-1 w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center text-[8px] sm:text-[9px] font-extrabold text-white shadow-md ring-2 ring-white"
@@ -333,7 +341,7 @@ export default function BasesIndexPage() {
                     {bh.label}
                   </h3>
                   <p className="text-center text-[9px] sm:text-[10px] mt-0.5 sm:mt-1 text-gray-400">
-                    Soon
+                    {getBuilderBaseCountByBH(bh.level) > 0 ? `${getBuilderBaseCountByBH(bh.level)} bases` : "Soon"}
                   </p>
                   <div className="hidden sm:flex justify-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <svg className="w-4 h-4" style={{ color: bh.color }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -541,11 +549,23 @@ export default function BasesIndexPage() {
           <div className="mt-4 pt-4 border-t border-gray-100">
             <h3 className="text-sm font-bold text-[#1a1a2e] mb-3">Related Guides</h3>
             <div className="flex flex-wrap gap-2">
+              <Link href="/clash-of-clans/guides/best-th18-attack-strategies-2026" className="text-[11px] font-semibold px-3 py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
+                TH18 Attack Strategies
+              </Link>
+              <Link href="/clash-of-clans/guides/best-th17-attack-strategies-2026" className="text-[11px] font-semibold px-3 py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
+                TH17 Attack Strategies
+              </Link>
+              <Link href="/clash-of-clans/guides/best-clan-war-league-strategy-guide" className="text-[11px] font-semibold px-3 py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
+                CWL Strategy Guide
+              </Link>
+              <Link href="/clash-of-clans/guides/best-defensive-cc-troops-for-war" className="text-[11px] font-semibold px-3 py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
+                Defensive CC Troops
+              </Link>
+              <Link href="/clash-of-clans/guides" className="text-[11px] font-semibold px-3 py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
+                All CoC Guides
+              </Link>
               <Link href="/clash-of-clans" className="text-[11px] font-semibold px-3 py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
                 Clash of Clans Hub
-              </Link>
-              <Link href="/blog" className="text-[11px] font-semibold px-3 py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
-                CoC Strategy Guides
               </Link>
             </div>
           </div>
@@ -575,7 +595,7 @@ export default function BasesIndexPage() {
               Back to CoC Hub
             </Link>
             <Link
-              href="/blog"
+              href="/clash-of-clans/guides"
               className="btn-fill-dark rounded-full px-6 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-sm font-bold tracking-wide w-full sm:w-auto text-center"
             >
               Read Strategy Guides

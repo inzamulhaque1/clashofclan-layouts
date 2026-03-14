@@ -1,4 +1,4 @@
-import { createMetadata } from "@/lib/seo";
+import { createMetadata, createJsonLd } from "@/lib/seo";
 import { SITE_NAME } from "@/lib/constants";
 
 export const metadata = createMetadata({
@@ -7,8 +7,33 @@ export const metadata = createMetadata({
   path: "/about",
 });
 
+const aboutJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: `About ${SITE_NAME}`,
+  url: "https://game365hub.com/about",
+  mainEntity: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: "https://game365hub.com",
+    logo: "https://game365hub.com/logo.png",
+    description: "Your ultimate mobile gaming resource hub with expert guides, strategies, and tier lists for top mobile games.",
+    email: "inzamul.dev@gmail.com",
+    foundingDate: "2026",
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://game365hub.com" },
+      { "@type": "ListItem", position: 2, name: "About", item: "https://game365hub.com/about" },
+    ],
+  },
+};
+
 export default function AboutPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={createJsonLd(aboutJsonLd)} />
     <div className="container-custom py-10">
       <div className="max-w-3xl mx-auto">
         {/* Title */}
@@ -163,5 +188,6 @@ export default function AboutPage() {
         </section>
       </div>
     </div>
+    </>
   );
 }

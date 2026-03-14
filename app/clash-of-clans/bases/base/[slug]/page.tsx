@@ -13,12 +13,22 @@ import {
   TH_LEVELS,
   BASE_TYPES,
   getBaseCountByTH,
+  getBuilderBaseBySlug,
+  getAllBuilderBaseSlugs,
+  getRelatedBuilderBases,
+  getAdjacentBuilderBases,
+  BH_LEVELS,
+  BH_BASE_TYPES,
+  getBuilderBaseCountByBH,
 } from "@/lib/bases";
+import type { BuilderBaseLayout } from "@/lib/bases";
 import { images } from "@/lib/images";
 import { createMetadata, createJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
-  return getAllBaseSlugs().map((slug) => ({ slug }));
+  const thSlugs = getAllBaseSlugs().map((slug) => ({ slug }));
+  const bhSlugs = getAllBuilderBaseSlugs().map((slug) => ({ slug }));
+  return [...thSlugs, ...bhSlugs];
 }
 
 export function generateMetadata({
@@ -26,8 +36,12 @@ export function generateMetadata({
 }: {
   params: { slug: string };
 }): Metadata {
+  // Check both TH and BH bases
   const base = getBaseBySlug(params.slug);
-  if (!base) {
+  const bhBase = !base ? getBuilderBaseBySlug(params.slug) : null;
+  const anyBase = base || bhBase;
+
+  if (!anyBase) {
     return createMetadata({
       title: "Base Not Found - Game365Hub",
       description: "This base layout could not be found.",
@@ -35,16 +49,39 @@ export function generateMetadata({
     });
   }
 
-  const thInfo = TH_LEVELS.find((t) => t.level === base.thLevel);
-  const typeInfo = BASE_TYPES.find((t) => t.type === base.type);
+  if (bhBase) {
+    const bhInfo = BH_LEVELS.find((b) => b.level === bhBase.bhLevel);
+    const typeInfo = BH_BASE_TYPES.find((t) => t.type === bhBase.type);
+    return createMetadata({
+      title: `${bhBase.title} with Copy Link (2026) | Game365Hub`,
+      description: `${bhBase.description.slice(0, 150)}... Free copy link for this ${bhInfo?.label} ${typeInfo?.label} Builder Base layout. ${formatViews(bhBase.views)} views, ${bhBase.rating}/5 rating.`,
+      path: `/clash-of-clans/bases/base/${bhBase.slug}`,
+      image: bhBase.image,
+      type: "article",
+      publishedTime: bhBase.date,
+      tags: [
+        `${bhInfo?.label} base layout`,
+        `${bhInfo?.label} ${typeInfo?.label?.toLowerCase()} base`,
+        `best ${bhInfo?.label} builder base 2026`,
+        `builder hall ${bhBase.bhLevel} base copy link`,
+        `clash of clans builder base`,
+        ...bhBase.tags.map((t) => t.replace(/-/g, " ")),
+        "builder base layout",
+        "coc builder base 2026",
+      ],
+    });
+  }
+
+  const thInfo = TH_LEVELS.find((t) => t.level === base!.thLevel);
+  const typeInfo = BASE_TYPES.find((t) => t.type === base!.type);
 
   return createMetadata({
-    title: `${base.title} with Copy Link (2026) | Game365Hub`,
-    description: `${base.description.slice(0, 150)}... Free copy link for this ${thInfo?.label} ${typeInfo?.label} base layout. ${formatViews(base.views)} views, ${base.rating}/5 rating.`,
-    path: `/clash-of-clans/bases/base/${base.slug}`,
-    image: base.image,
+    title: `${base!.title} with Copy Link (2026) | Game365Hub`,
+    description: `${base!.description.slice(0, 150)}... Free copy link for this ${thInfo?.label} ${typeInfo?.label} base layout. ${formatViews(base!.views)} views, ${base!.rating}/5 rating.`,
+    path: `/clash-of-clans/bases/base/${base!.slug}`,
+    image: base!.image,
     type: "article",
-    publishedTime: base.date,
+    publishedTime: base!.date,
     tags: [
       `${thInfo?.label} base layout`,
       `${thInfo?.label} ${typeInfo?.label?.toLowerCase()} base`,
@@ -53,11 +90,281 @@ export function generateMetadata({
       `clash of clans ${thInfo?.label}`,
       `coc ${typeInfo?.label?.toLowerCase()} base`,
       `${thInfo?.label} base with link`,
-      ...base.tags.map((t) => t.replace(/-/g, " ")),
+      ...base!.tags.map((t) => t.replace(/-/g, " ")),
       "clash of clans base layout",
       "coc base 2026",
     ],
   });
+}
+
+// ========== Builder Base Detail Page ==========
+function BHBaseDetailPage({ base }: { base: BuilderBaseLayout }) {
+  const bhInfo = BH_LEVELS.find((b) => b.level === base.bhLevel);
+  const typeInfo = BH_BASE_TYPES.find((t) => t.type === base.type);
+  const relatedBases = getRelatedBuilderBases(base.slug, 4);
+  const bhImage = images.builderHalls[base.bhLevel];
+  const totalBases = getBuilderBaseCountByBH(base.bhLevel);
+  const { prev, next } = getAdjacentBuilderBases(base.slug);
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `${base.title} with Copy Link`,
+    description: base.description,
+    image: base.image,
+    datePublished: base.date,
+    dateModified: base.date,
+    author: { "@type": "Organization", name: "Game365Hub", url: "https://game365hub.com" },
+    publisher: { "@type": "Organization", name: "Game365Hub", url: "https://game365hub.com" },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://game365hub.com/clash-of-clans/bases/base/${base.slug}` },
+    keywords: base.tags.join(", "),
+    aggregateRating: { "@type": "AggregateRating", ratingValue: base.rating, ratingCount: base.ratingCount, bestRating: 5, worstRating: 1 },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://game365hub.com" },
+      { "@type": "ListItem", position: 2, name: "Clash of Clans", item: "https://game365hub.com/clash-of-clans" },
+      { "@type": "ListItem", position: 3, name: "Base Layouts", item: "https://game365hub.com/clash-of-clans/bases" },
+      { "@type": "ListItem", position: 4, name: `${bhInfo?.label} Bases`, item: `https://game365hub.com/clash-of-clans/bases/bh/${base.bhLevel}` },
+      { "@type": "ListItem", position: 5, name: base.title, item: `https://game365hub.com/clash-of-clans/bases/base/${base.slug}` },
+    ],
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={createJsonLd(articleJsonLd)} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={createJsonLd(breadcrumbJsonLd)} />
+
+      {/* Hero */}
+      <section className="relative bg-[#0a0a0f] overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-[120px]" style={{ backgroundColor: `${bhInfo?.color || "#666"}15` }} />
+          <div className="absolute bottom-0 right-1/4 w-60 h-60 bg-emerald-500/5 rounded-full blur-[100px]" />
+        </div>
+        <div className="relative container-custom pt-5 pb-6 sm:pt-6 sm:pb-8 md:pt-8 md:pb-10">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-[10px] sm:text-[11px] text-white/25 mb-4 sm:mb-6 flex-wrap">
+            <Link href="/" className="hover:text-white/50 transition-colors">Home</Link>
+            <span className="text-white/15">/</span>
+            <Link href="/clash-of-clans" className="hover:text-white/50 transition-colors">Clash of Clans</Link>
+            <span className="text-white/15">/</span>
+            <Link href="/clash-of-clans/bases" className="hover:text-white/50 transition-colors">Bases</Link>
+            <span className="text-white/15">/</span>
+            <Link href={`/clash-of-clans/bases/bh/${base.bhLevel}`} className="hover:text-white/50 transition-colors">{bhInfo?.label}</Link>
+            <span className="text-white/15">/</span>
+            <span className="text-white/50 truncate max-w-[150px] sm:max-w-none">{base.title}</span>
+          </nav>
+
+          <div className="flex items-start gap-3 sm:gap-4">
+            <div className="relative w-12 h-12 sm:w-16 sm:h-16 shrink-0">
+              <Image src={bhImage} alt={bhInfo?.label || ""} width={64} height={64} className="object-contain w-full h-full drop-shadow-xl" priority quality={75} />
+              <span className="absolute -bottom-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-[9px] sm:text-[10px] font-extrabold text-white shadow-lg ring-2 ring-[#0a0a0f]" style={{ backgroundColor: bhInfo?.color || "#666" }}>
+                {base.bhLevel}
+              </span>
+            </div>
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                <span className="px-2 py-0.5 text-[10px] sm:text-[11px] font-extrabold text-white rounded-lg shadow-lg" style={{ backgroundColor: bhInfo?.color || "#666" }}>
+                  {bhInfo?.label}
+                </span>
+                <span className="px-2 py-0.5 text-[10px] sm:text-[11px] font-bold text-emerald-400 bg-emerald-500/15 rounded-lg border border-emerald-500/10">
+                  {typeInfo?.label}
+                </span>
+              </div>
+              <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-white leading-tight">
+                {base.title}
+              </h1>
+              <div className="flex items-center gap-3 mt-2 text-[10px] sm:text-[11px] text-white/40">
+                <span className="flex items-center gap-1">
+                  <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  {base.rating}/5 ({base.ratingCount})
+                </span>
+                <span>{formatViews(base.views)} views</span>
+                <span>by {base.author}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="py-6 sm:py-8">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
+            {/* Left: Image + Description */}
+            <div className="lg:col-span-2 space-y-6">
+              <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-gray-100 border border-gray-100">
+                <Image src={base.image} alt={base.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 66vw" priority unoptimized />
+              </div>
+
+              <div className="bg-white border border-gray-100 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+                <h2 className="text-base sm:text-lg font-extrabold text-[#1a1a2e] mb-3">About This Layout</h2>
+                <p className="text-[13px] sm:text-sm text-muted leading-relaxed">{base.description}</p>
+              </div>
+
+              {/* Strengths & Weaknesses */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="bg-green-50/50 border border-green-100 rounded-xl p-4 sm:p-5">
+                  <h3 className="text-sm font-extrabold text-green-800 mb-3 flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    Strengths
+                  </h3>
+                  <ul className="space-y-2">
+                    {base.strengths.map((s, i) => (
+                      <li key={i} className="text-[12px] sm:text-[13px] text-green-700 leading-relaxed flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 shrink-0" />
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="bg-red-50/50 border border-red-100 rounded-xl p-4 sm:p-5">
+                  <h3 className="text-sm font-extrabold text-red-800 mb-3 flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+                    Weaknesses
+                  </h3>
+                  <ul className="space-y-2">
+                    {base.weaknesses.map((w, i) => (
+                      <li key={i} className="text-[12px] sm:text-[13px] text-red-700 leading-relaxed flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 shrink-0" />
+                        {w}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Copy Link + Info */}
+            <div className="space-y-4">
+              <div className="bg-white border border-gray-100 rounded-xl sm:rounded-2xl p-4 sm:p-5 sticky top-4">
+                <h3 className="text-sm font-extrabold text-[#1a1a2e] mb-3">Copy This Layout</h3>
+                <BaseCopyButton copyLink={base.copyLink} />
+                <div className="mt-4 pt-4 border-t border-gray-100 space-y-2.5">
+                  <div className="flex items-center justify-between text-[12px]">
+                    <span className="text-muted">Builder Hall</span>
+                    <span className="font-bold text-[#1a1a2e]">{bhInfo?.label}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[12px]">
+                    <span className="text-muted">Type</span>
+                    <span className="font-bold text-[#1a1a2e]">{typeInfo?.label}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[12px]">
+                    <span className="text-muted">Views</span>
+                    <span className="font-bold text-[#1a1a2e]">{formatViews(base.views)}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[12px]">
+                    <span className="text-muted">Rating</span>
+                    <span className="font-bold text-[#1a1a2e]">{base.rating}/5 ({base.ratingCount})</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[12px]">
+                    <span className="text-muted">Author</span>
+                    <span className="font-bold text-[#1a1a2e]">{base.author}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[12px]">
+                    <span className="text-muted">Updated</span>
+                    <span className="font-bold text-[#1a1a2e]">{base.date}</span>
+                  </div>
+                </div>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="flex flex-wrap gap-1.5">
+                    {base.tags.map((tag) => (
+                      <span key={tag} className="px-2 py-0.5 text-[10px] font-medium text-muted bg-gray-50 rounded-full border border-gray-100">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Browse more */}
+              <div className="bg-white border border-gray-100 rounded-xl sm:rounded-2xl p-4 sm:p-5">
+                <h3 className="text-sm font-extrabold text-[#1a1a2e] mb-3">Browse More</h3>
+                <div className="space-y-2">
+                  <Link href={`/clash-of-clans/bases/bh/${base.bhLevel}`} className="flex items-center gap-2 text-[12px] font-semibold text-muted hover:text-primary transition-colors">
+                    <Image src={bhImage} alt={bhInfo?.label || ""} width={20} height={20} className="object-contain" />
+                    All {bhInfo?.label} Bases ({totalBases})
+                  </Link>
+                  <Link href="/clash-of-clans/bases" className="flex items-center gap-2 text-[12px] font-semibold text-muted hover:text-primary transition-colors">
+                    All Base Layouts
+                  </Link>
+                  <Link href="/clash-of-clans/guides" className="flex items-center gap-2 text-[12px] font-semibold text-muted hover:text-primary transition-colors">
+                    CoC Guides
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Adjacent bases navigation */}
+      <section className="border-t border-gray-100">
+        <div className="container-custom py-6 sm:py-8">
+          <div className="flex items-center justify-between gap-4">
+            {prev ? (
+              <Link href={`/clash-of-clans/bases/base/${prev.slug}`} className="group flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2.5 sm:py-3 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all max-w-[45%]">
+                <svg className="w-4 h-4 text-muted group-hover:text-primary transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                <div className="min-w-0">
+                  <span className="text-[9px] sm:text-[10px] text-muted block">Previous</span>
+                  <span className="text-xs sm:text-sm font-bold text-[#1a1a2e] truncate block">{prev.title}</span>
+                </div>
+              </Link>
+            ) : <div />}
+            <Link href={`/clash-of-clans/bases/bh/${base.bhLevel}`} className="text-[10px] sm:text-xs font-semibold text-muted hover:text-primary transition-colors shrink-0">
+              All {bhInfo?.label} Bases
+            </Link>
+            {next ? (
+              <Link href={`/clash-of-clans/bases/base/${next.slug}`} className="group flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2.5 sm:py-3 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all text-right max-w-[45%]">
+                <div className="min-w-0">
+                  <span className="text-[9px] sm:text-[10px] text-muted block">Next</span>
+                  <span className="text-xs sm:text-sm font-bold text-[#1a1a2e] truncate block">{next.title}</span>
+                </div>
+                <svg className="w-4 h-4 text-muted group-hover:text-primary transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            ) : <div />}
+          </div>
+        </div>
+      </section>
+
+      {/* Related BH bases */}
+      {relatedBases.length > 0 && (
+        <section className="py-8 sm:py-12 bg-[#fafafa] border-t border-gray-100">
+          <div className="container-custom">
+            <h2 className="text-base sm:text-lg font-extrabold text-[#1a1a2e] mb-4 sm:mb-6">Related Builder Base Layouts</h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+              {relatedBases.map((rb) => {
+                const rbInfo = BH_LEVELS.find((b) => b.level === rb.bhLevel);
+                return (
+                  <Link key={rb.id} href={`/clash-of-clans/bases/base/${rb.slug}`} className="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                    <div className="relative aspect-[16/10] bg-gray-100">
+                      <Image src={rb.image} alt={rb.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 50vw, 25vw" loading="lazy" unoptimized />
+                      <div className="absolute top-2 left-2">
+                        <span className="px-2 py-0.5 text-[10px] font-extrabold text-white rounded-md shadow-lg" style={{ backgroundColor: rbInfo?.color || "#666" }}>
+                          {rbInfo?.label}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-3">
+                      <h3 className="text-[12px] sm:text-[13px] font-bold text-[#1a1a2e] line-clamp-2 group-hover:text-primary transition-colors">{rb.title}</h3>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+    </>
+  );
 }
 
 export default function BaseDetailPage({
@@ -65,6 +372,10 @@ export default function BaseDetailPage({
 }: {
   params: { slug: string };
 }) {
+  // Check if it's a Builder Base
+  const bhBase = getBuilderBaseBySlug(params.slug);
+  if (bhBase) return <BHBaseDetailPage base={bhBase} />;
+
   const base = getBaseBySlug(params.slug);
   if (!base) notFound();
 
@@ -345,7 +656,7 @@ export default function BaseDetailPage({
               <div className="lg:hidden mb-4">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-8 h-8 shrink-0">
-                    <Image src={thImage} alt={thInfo?.label || ""} width={32} height={32} className="object-contain w-full h-full" />
+                    <Image src={thImage} alt={thInfo?.label || ""} width={32} height={32} className="object-contain w-full h-full" loading="lazy" quality={60} />
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span
@@ -381,7 +692,10 @@ export default function BaseDetailPage({
                   fill
                   className="object-contain"
                   priority
+                  unoptimized
                   sizes="(max-width: 1024px) 100vw, 66vw"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2YxZjVmOSIvPjwvc3ZnPg=="
                 />
                 {/* Badges — desktop only */}
                 <div className="hidden lg:flex absolute top-4 left-4 items-center gap-2">
@@ -482,7 +796,7 @@ export default function BaseDetailPage({
               <div className="hidden lg:block">
                 <div className="flex items-center gap-2.5 mb-3">
                   <div className="w-10 h-10 shrink-0">
-                    <Image src={thImage} alt={thInfo?.label || ""} width={40} height={40} className="object-contain w-full h-full" />
+                    <Image src={thImage} alt={thInfo?.label || ""} width={40} height={40} className="object-contain w-full h-full" loading="lazy" quality={60} />
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span
@@ -761,6 +1075,28 @@ export default function BaseDetailPage({
 
           {/* Internal link cluster */}
           <div className="mt-5 sm:mt-6 pt-4 border-t border-gray-100">
+            <h3 className="text-xs font-bold text-[#1a1a2e] mb-2">Related Guides</h3>
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
+              {base.thLevel >= 16 && base.thLevel <= 18 && (
+                <Link
+                  href={`/clash-of-clans/guides/best-th${base.thLevel}-attack-strategies-2026`}
+                  className="text-[9px] sm:text-[10px] font-semibold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors"
+                >
+                  {thInfo?.label} Attack Strategies
+                </Link>
+              )}
+              <Link href="/clash-of-clans/guides/best-army-compositions-every-town-hall-level" className="text-[9px] sm:text-[10px] font-semibold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
+                Army Compositions
+              </Link>
+              <Link href="/clash-of-clans/guides/best-defensive-cc-troops-for-war" className="text-[9px] sm:text-[10px] font-semibold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
+                Defensive CC Troops
+              </Link>
+              <Link href="/clash-of-clans/guides" className="text-[9px] sm:text-[10px] font-semibold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
+                All Guides
+              </Link>
+            </div>
+          </div>
+          <div className="mt-3 pt-3 border-t border-gray-100">
             <h3 className="text-xs font-bold text-[#1a1a2e] mb-2">Browse Other Town Hall Levels</h3>
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {TH_LEVELS.filter((t) => t.level !== base.thLevel).map((th) => (

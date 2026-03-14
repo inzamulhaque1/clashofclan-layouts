@@ -106,26 +106,37 @@ function Sidebar({ currentSlug }: { currentSlug: string }) {
       </div>
 
       {/* Share Card */}
-      <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/10 rounded-2xl p-5">
-        <h3 className="font-bold text-[15px] text-[#1a1a2e] mb-2">
-          Enjoy this article?
-        </h3>
-        <p className="text-xs text-muted mb-3">
-          Share it with your friends and fellow gamers!
-        </p>
-        <div className="flex gap-2">
-          <span className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-muted hover:text-primary hover:shadow-sm transition-all cursor-pointer">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.195 4.916 4.916 0 0 0-8.384 4.482A13.944 13.944 0 0 1 1.671 3.149a4.916 4.916 0 0 0 1.523 6.574 4.897 4.897 0 0 1-2.229-.616v.062a4.918 4.918 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.937 4.937 0 0 0 4.604 3.417A9.868 9.868 0 0 1 0 19.54a13.94 13.94 0 0 0 7.548 2.212c9.057 0 14.009-7.503 14.009-14.01 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z"/></svg>
-          </span>
-          <span className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-muted hover:text-primary hover:shadow-sm transition-all cursor-pointer">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
-          </span>
-          <span className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-muted hover:text-primary hover:shadow-sm transition-all cursor-pointer">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.881 3.87 6 2.5 6S.02 4.881.02 3.5C.02 2.12 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM5 8H0v16h5V8zm7.982 0H8.014v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0V24H24V13.869c0-7.88-8.922-7.593-11.018-3.714V8z"/></svg>
-          </span>
-        </div>
-      </div>
+      <ShareCard slug={currentSlug} />
     </aside>
+  );
+}
+
+/* ── Share Card ── */
+function ShareCard({ slug }: { slug: string }) {
+  const post = getBlogPost(slug);
+  const url = encodeURIComponent(`https://game365hub.com/blog/${slug}`);
+  const text = encodeURIComponent(post?.title || "");
+
+  return (
+    <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/10 rounded-2xl p-5">
+      <h3 className="font-bold text-[15px] text-[#1a1a2e] mb-2">
+        Enjoy this article?
+      </h3>
+      <p className="text-xs text-muted mb-3">
+        Share it with your friends and fellow gamers!
+      </p>
+      <div className="flex gap-2">
+        <a href={`https://x.com/intent/tweet?url=${url}&text=${text}`} target="_blank" rel="noopener noreferrer" aria-label="Share on X (Twitter)" className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-muted hover:text-primary hover:shadow-sm transition-all">
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.195 4.916 4.916 0 0 0-8.384 4.482A13.944 13.944 0 0 1 1.671 3.149a4.916 4.916 0 0 0 1.523 6.574 4.897 4.897 0 0 1-2.229-.616v.062a4.918 4.918 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.937 4.937 0 0 0 4.604 3.417A9.868 9.868 0 0 1 0 19.54a13.94 13.94 0 0 0 7.548 2.212c9.057 0 14.009-7.503 14.009-14.01 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z"/></svg>
+        </a>
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook" className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-muted hover:text-primary hover:shadow-sm transition-all">
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+        </a>
+        <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`} target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn" className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-muted hover:text-primary hover:shadow-sm transition-all">
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.881 3.87 6 2.5 6S.02 4.881.02 3.5C.02 2.12 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM5 8H0v16h5V8zm7.982 0H8.014v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0V24H24V13.869c0-7.88-8.922-7.593-11.018-3.714V8z"/></svg>
+        </a>
+      </div>
+    </div>
   );
 }
 
@@ -352,7 +363,7 @@ export default function BlogPostPage({
       logo: { "@type": "ImageObject", url: `${siteUrl}/logo.png` },
     },
     articleSection: post.gameName,
-    keywords: [post.gameName, post.category, "mobile gaming", "offline games", "2026"].filter(Boolean).join(", "),
+    keywords: [post.gameName, post.category, "mobile gaming", "2026"].filter(Boolean).join(", "),
   };
 
   // Breadcrumb schema

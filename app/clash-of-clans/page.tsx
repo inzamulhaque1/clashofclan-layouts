@@ -4,7 +4,8 @@ import { createMetadata, createJsonLd } from "@/lib/seo";
 import { GAMES, GAME_DETAILS } from "@/lib/constants";
 import { images } from "@/lib/images";
 import BaseCard from "@/components/bases/BaseCard";
-import { getFeaturedBases, getLatestBases, BASE_TYPES, TH_LEVELS, BH_LEVELS, baseLayouts, getBaseCountByTH } from "@/lib/bases";
+import { getFeaturedBases, getLatestBases, BASE_TYPES, TH_LEVELS, BH_LEVELS, baseLayouts, builderBaseLayouts, getBaseCountByTH, getBuilderBaseCountByBH } from "@/lib/bases";
+import { cocGuides } from "@/lib/guides";
 
 const game = GAMES.find((g) => g.id === "clash-of-clans")!;
 const detail = GAME_DETAILS["clash-of-clans"];
@@ -13,7 +14,7 @@ const latestBases = getLatestBases(6);
 
 export const metadata = createMetadata({
   title: `${game.name} - Base Layouts, Guides & Strategies | Game365Hub`,
-  description: `Expert ${game.name} base layouts, attack strategies, tier lists & clan war tips. ${baseLayouts.length}+ bases with copy links. Updated for 2026.`,
+  description: `Expert ${game.name} base layouts, attack strategies, tier lists & clan war tips. ${baseLayouts.length + builderBaseLayouts.length}+ bases with copy links. Updated for 2026.`,
   path: "/clash-of-clans",
   tags: ["Clash of Clans", "CoC base layouts", "attack strategies", "war bases", "copy link"],
 });
@@ -26,7 +27,7 @@ export default function ClashOfClansPage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: `${game.name} - Base Layouts, Guides & Strategies`,
-    description: `Expert ${game.name} base layouts, attack strategies, tier lists & clan war tips. ${baseLayouts.length}+ bases with copy links.`,
+    description: `Expert ${game.name} base layouts, attack strategies, tier lists & clan war tips. ${baseLayouts.length + builderBaseLayouts.length}+ bases with copy links.`,
     url: "https://game365hub.com/clash-of-clans",
     isPartOf: { "@type": "WebSite", name: "Game365Hub", url: "https://game365hub.com" },
     about: {
@@ -78,7 +79,7 @@ export default function ClashOfClansPage() {
                     Supercell
                   </span>
                   <span className="text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/10 text-white/60 backdrop-blur-sm">
-                    {baseLayouts.length}+ Bases
+                    {baseLayouts.length + builderBaseLayouts.length}+ Bases
                   </span>
                 </div>
                 <div className="flex items-center gap-3 text-[11px] text-white/40">
@@ -115,7 +116,7 @@ export default function ClashOfClansPage() {
                 </svg>
               </Link>
               <Link
-                href="#content"
+                href="/clash-of-clans/guides"
                 className="px-7 py-3.5 bg-white/10 text-white text-sm font-bold rounded-full hover:bg-white/20 transition-colors border border-white/15 backdrop-blur-sm"
               >
                 Explore Guides
@@ -144,7 +145,7 @@ export default function ClashOfClansPage() {
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {[
-              { value: `${baseLayouts.length}+`, label: "Base Layouts", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6", color: "#DC2626" },
+              { value: `${baseLayouts.length + builderBaseLayouts.length}+`, label: "Base Layouts", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6", color: "#DC2626" },
               { value: "TH7-18", label: "All Town Halls", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4", color: "#F59E0B" },
               { value: "7", label: "Base Types", icon: "M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z", color: "#7C3AED" },
               { value: "Free", label: "Copy Links", icon: "M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3", color: "#059669" },
@@ -263,7 +264,9 @@ export default function ClashOfClansPage() {
                     </span>
                   </div>
                   <h3 className="text-center font-bold text-xs text-[#1a1a2e]">{bh.label}</h3>
-                  <p className="text-center text-[9px] mt-0.5 text-gray-400">Coming soon</p>
+                  <p className="text-center text-[9px] mt-0.5" style={{ color: getBuilderBaseCountByBH(bh.level) > 0 ? bh.color : "#999" }}>
+                    {getBuilderBaseCountByBH(bh.level) > 0 ? `${getBuilderBaseCountByBH(bh.level)} layouts` : "Coming soon"}
+                  </p>
                 </Link>
               );
             })}
@@ -307,6 +310,73 @@ export default function ClashOfClansPage() {
               {featuredBases.map((base) => (
                 <BaseCard key={base.id} base={base} />
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ========== GUIDES ========== */}
+      {cocGuides.length > 0 && (
+        <section className="py-12 bg-[#fafafa]">
+          <div className="container-custom">
+            <div className="flex items-end justify-between mb-10">
+              <div>
+                <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">Strategy Hub</span>
+                <h2 className="text-2xl md:text-3xl font-extrabold mt-2 text-[#1a1a2e]">Latest Guides</h2>
+              </div>
+              <Link
+                href="/clash-of-clans/guides"
+                className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 border border-gray-200 text-sm font-semibold text-[#1a1a2e] rounded-full hover:border-primary hover:text-primary transition-colors"
+              >
+                All Guides
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {cocGuides.slice(0, 4).map((guide) => (
+                <Link
+                  key={guide.slug}
+                  href={`/clash-of-clans/guides/${guide.slug}`}
+                  className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-gray-200 hover:-translate-y-1 transition-all duration-300"
+                >
+                  <div className="relative w-full aspect-[3/2] overflow-hidden bg-[#1a1a2e]">
+                    <Image
+                      src={guide.image}
+                      alt={guide.title}
+                      fill
+                      className="object-contain p-3 group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      unoptimized
+                    />
+                    <span className="absolute bottom-2 left-2 text-[9px] font-bold uppercase tracking-wider text-white/90 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-full">
+                      {guide.category}
+                    </span>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-sm font-bold text-[#1a1a2e] leading-snug line-clamp-2 group-hover:text-primary transition-colors">
+                      {guide.title}
+                    </h3>
+                    <div className="flex items-center gap-2 mt-2 text-[10px] text-muted">
+                      <span>{guide.readTime}</span>
+                      <span className="w-1 h-1 rounded-full bg-gray-300" />
+                      <span>{guide.category}</span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="sm:hidden mt-4 text-center">
+              <Link
+                href="/clash-of-clans/guides"
+                className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-200 text-sm font-semibold text-[#1a1a2e] rounded-full hover:border-primary hover:text-primary transition-colors"
+              >
+                View All Guides
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </section>
@@ -557,7 +627,7 @@ export default function ClashOfClansPage() {
             READY TO DOMINATE?
           </h2>
           <p className="text-white/40 text-sm max-w-md mx-auto mb-8">
-            Browse our collection of {baseLayouts.length}+ base layouts with free copy links. Updated weekly with new strategies.
+            Browse our collection of {baseLayouts.length + builderBaseLayouts.length}+ base layouts with free copy links. Updated weekly with new strategies.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link

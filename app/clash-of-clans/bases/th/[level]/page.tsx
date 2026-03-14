@@ -257,6 +257,8 @@ export default function THBasesPage({
                 width={80}
                 height={80}
                 className="object-contain w-full h-full drop-shadow-xl"
+                priority
+                quality={75}
               />
               <span
                 className="absolute -bottom-1 -right-1 w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-extrabold text-white shadow-lg ring-2 ring-[#0a0a0f]"
@@ -331,6 +333,8 @@ export default function THBasesPage({
                       width={28}
                       height={28}
                       className="object-contain w-full h-full"
+                      loading="lazy"
+                      quality={60}
                     />
                   </div>
                   <div className="flex flex-col">
@@ -373,7 +377,7 @@ export default function THBasesPage({
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
                 <div className="w-7 h-7 sm:w-8 sm:h-8 shrink-0">
-                  <Image src={images.townHalls[prevTH.level]} alt={prevTH.label} width={32} height={32} className="object-contain w-full h-full" />
+                  <Image src={images.townHalls[prevTH.level]} alt={prevTH.label} width={32} height={32} className="object-contain w-full h-full" loading="lazy" quality={60} />
                 </div>
                 <div>
                   <span className="text-[9px] sm:text-[10px] text-muted block">Previous</span>
@@ -399,7 +403,7 @@ export default function THBasesPage({
                   <span className="text-xs sm:text-sm font-bold text-[#1a1a2e]">{nextTH.label} Bases</span>
                 </div>
                 <div className="w-7 h-7 sm:w-8 sm:h-8 shrink-0">
-                  <Image src={images.townHalls[nextTH.level]} alt={nextTH.label} width={32} height={32} className="object-contain w-full h-full" />
+                  <Image src={images.townHalls[nextTH.level]} alt={nextTH.label} width={32} height={32} className="object-contain w-full h-full" loading="lazy" quality={60} />
                 </div>
                 <svg className="w-4 h-4 text-muted group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -488,16 +492,27 @@ export default function THBasesPage({
           </div>
 
           <div className="mt-4 pt-4 border-t border-gray-100">
-            <h3 className="text-sm font-bold text-[#1a1a2e] mb-3">Related</h3>
+            <h3 className="text-sm font-bold text-[#1a1a2e] mb-3">Related Guides</h3>
             <div className="flex flex-wrap gap-2">
-              <Link href="/clash-of-clans/bases" className="text-[10px] sm:text-[11px] font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
-                All CoC Bases
+              {level >= 16 && level <= 18 && (
+                <Link href={`/clash-of-clans/guides/best-th${level}-attack-strategies-2026`} className="text-[10px] sm:text-[11px] font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
+                  {thInfo.label} Attack Strategies
+                </Link>
+              )}
+              <Link href="/clash-of-clans/guides/best-army-compositions-every-town-hall-level" className="text-[10px] sm:text-[11px] font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
+                Best Army Compositions
+              </Link>
+              <Link href="/clash-of-clans/guides/best-clan-war-league-strategy-guide" className="text-[10px] sm:text-[11px] font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
+                CWL Strategy Guide
+              </Link>
+              <Link href="/clash-of-clans/guides/best-defensive-cc-troops-for-war" className="text-[10px] sm:text-[11px] font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
+                Defensive CC Troops
+              </Link>
+              <Link href="/clash-of-clans/guides" className="text-[10px] sm:text-[11px] font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
+                All CoC Guides
               </Link>
               <Link href="/clash-of-clans" className="text-[10px] sm:text-[11px] font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
                 CoC Hub
-              </Link>
-              <Link href="/blog" className="text-[10px] sm:text-[11px] font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
-                Strategy Guides
               </Link>
             </div>
           </div>
