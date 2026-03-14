@@ -1,39 +1,45 @@
 {
-  "timestamp": "2026-03-14T18:40:16.352Z",
-  "totalPosted": 0,
-  "totalFailed": 5,
-  "totalTracked": 0,
+  "timestamp": "2026-03-14T18:46:13.885Z",
+  "totalPosted": 6,
+  "totalFailed": 0,
+  "totalTracked": 6,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th8-farming-base-resource-protection",
-      "title": "TH8 Farming Base — Resources",
-      "success": false,
-      "error": "API error 401: {\"code\":3,\"message\":\"Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write']\"}"
+      "id": "hv-th13-war-base-anti-hybrid",
+      "title": "TH13 Anti Hybrid War Base",
+      "success": true,
+      "pinId": "1092897034673084320"
     },
     {
-      "id": "hv-th11-hybrid-base-balanced",
-      "title": "TH11 Hybrid Base — Balanced",
-      "success": false,
-      "error": "API error 401: {\"code\":3,\"message\":\"Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write']\"}"
+      "id": "hv-th8-war-base-anti-dragon-2026",
+      "title": "TH8 War Base (Anti Dragon)",
+      "success": true,
+      "pinId": "1092897034673084323"
     },
     {
-      "id": "hv-th15-farming-base-passive-loot-guard",
-      "title": "TH15 Farming Base — Passive Loot Guard",
-      "success": false,
-      "error": "API error 401: {\"code\":3,\"message\":\"Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write']\"}"
+      "id": "hv-th15-trophy-base-master-champion-push",
+      "title": "TH15 Trophy Base — Master to Champion",
+      "success": true,
+      "pinId": "1092897034673084324"
     },
     {
-      "id": "hv-th17-cwl-base-anti-root-rider-cwl",
-      "title": "TH17 CWL Anti Root Rider",
-      "success": false,
-      "error": "API error 401: {\"code\":3,\"message\":\"Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write']\"}"
+      "id": "hv-th17-trophy-base-master-champion",
+      "title": "TH17 Master/Champion League Base",
+      "success": true,
+      "pinId": "1092897034673084345"
     },
     {
-      "id": "hv-th14-farming-base-gold-elixir-priority",
-      "title": "TH14 Farming Base — Gold & Elixir Priority",
-      "success": false,
-      "error": "API error 401: {\"code\":3,\"message\":\"Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write']\"}"
+      "id": "hv-th12-trophy-push-base",
+      "title": "TH12 Trophy Push Base",
+      "success": true,
+      "pinId": "1092897034673084351"
+    },
+    {
+      "id": "hv-th18-war-base-ring-style-defense",
+      "title": "TH18 Ring Style War Base",
+      "success": true,
+      "pinId": "1092897034673084356"
     }
   ]
 }
