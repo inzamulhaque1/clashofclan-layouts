@@ -48,6 +48,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={createJsonLd(websiteJsonLd)}
         />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3380799438335685"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-screen flex flex-col font-body">
         {/* Google Analytics */}
