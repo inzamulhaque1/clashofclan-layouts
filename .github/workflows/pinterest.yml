@@ -2,8 +2,8 @@ name: Pinterest Auto-Poster
 
 on:
   schedule:
-    # Runs daily at 8:30 AM UTC (2:30 PM Bangladesh time)
-    - cron: "30 8 * * *"
+    # Runs every 3 hours (1 pin each = 8 pins/day)
+    - cron: "0 0,3,6,9,12,15,18,21 * * *"
   workflow_dispatch: # Allow manual trigger from GitHub Actions UI
 
 permissions:

@@ -10,8 +10,7 @@ export const config = {
     boardId: process.env.PINTEREST_BOARD_ID || "",
   },
   posting: {
-    minPins: 5,
-    maxPins: 10,
+    pinsPerRun: 1, // 1 pin per run, runs every 3 hours = 8 pins/day
     siteUrl: "https://game365hub.com",
     siteName: "Game365Hub",
   },
@@ -21,6 +20,6 @@ export const config = {
     textColor: "#FFFFFF",
     mutedColor: "#9ca3af",
     width: 1000,
-    height: 1150,
+    height: 1200,
   },
 };

@@ -125,25 +125,21 @@ function buildAllPins(): PinData[] {
 
 // Select random pins that haven't been posted yet
 function selectPins(allPins: PinData[], posted: Set<string>): PinData[] {
-  const { minPins, maxPins } = config.posting;
+  const { pinsPerRun } = config.posting;
 
   // Filter out already posted
   let available = allPins.filter((p) => !posted.has(p.id));
 
-  // If all posted, reset and start over with different titles
+  // If all posted, reset and start over
   if (available.length === 0) {
     console.log("All pins posted! Resetting log for recycling.");
     posted.clear();
     available = allPins;
   }
 
-  // Random count between min and max
-  const count = Math.floor(Math.random() * (maxPins - minPins + 1)) + minPins;
-  const selected = Math.min(count, available.length);
-
-  // Shuffle and pick
+  // Shuffle and pick 1 pin per run
   const shuffled = available.sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, selected);
+  return shuffled.slice(0, pinsPerRun);
 }
 
 // Main posting function

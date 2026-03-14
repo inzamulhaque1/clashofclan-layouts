@@ -16,18 +16,16 @@ interface PinData {
   hashtags: string[];
 }
 
-// Pin dimensions — 1000x1150 (compact, minimal dead space)
 const PIN_W = 1000;
-const PIN_H = 1150;
-const IMG_TOP = 80;
-const IMG_H = 650;
-const IMG_PAD = 30;
-const IMG_W = PIN_W - IMG_PAD * 2; // 940
+const PIN_H = 1200;
+const IMG_PAD = 0;
+const IMG_W = PIN_W;
+const IMG_H = 720;
 
 export async function generatePinImage(pin: PinData): Promise<Buffer> {
   const { accentColor, textColor, mutedColor } = config.brand;
 
-  // Fetch image with retry
+  // Fetch image
   let imageBuffer: Buffer | undefined;
   let imageFetched = false;
   for (let attempt = 0; attempt < 3; attempt++) {
@@ -58,100 +56,95 @@ export async function generatePinImage(pin: PinData): Promise<Buffer> {
   const levelText = pin.thLevel ? `TH${pin.thLevel}` : pin.bhLevel ? `BH${pin.bhLevel}` : "COC";
   const badgeText = pin.type === "guide" ? "GUIDE" : pin.baseType?.toUpperCase() || "BASE";
 
-  // Placeholder if no image
+  // Placeholder
   if (!imageFetched || !imageBuffer) {
-    const placeholderSvg = `
+    const phSvg = `
       <svg width="${IMG_W}" height="${IMG_H}" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="glow" cx="50%" cy="50%" r="60%">
-            <stop offset="0%" stop-color="#1a2332" stop-opacity="1"/>
-            <stop offset="100%" stop-color="#0d1117" stop-opacity="1"/>
-          </radialGradient>
+          <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1a3a2a"/>
+            <stop offset="50%" stop-color="#1a2a1a"/>
+            <stop offset="100%" stop-color="#2a3a1a"/>
+          </linearGradient>
         </defs>
-        <rect width="${IMG_W}" height="${IMG_H}" rx="12" fill="url(#glow)"/>
-        <rect x="3" y="3" width="${IMG_W - 6}" height="${IMG_H - 6}" rx="10" fill="none" stroke="${accentColor}" stroke-width="2" opacity="0.4"/>
-        <!-- Grid dots -->
-        ${Array.from({ length: 8 }, (_, r) =>
-          Array.from({ length: 10 }, (_, c) =>
-            `<circle cx="${100 + c * 80}" cy="${100 + r * 70}" r="2" fill="${accentColor}" opacity="0.15"/>`
+        <rect width="${IMG_W}" height="${IMG_H}" fill="url(#bg)"/>
+        ${Array.from({ length: 12 }, (_, r) =>
+          Array.from({ length: 14 }, (_, c) =>
+            `<rect x="${30 + c * 70}" y="${30 + r * 60}" width="40" height="40" rx="4" fill="#2a4a2a" opacity="0.3"/>`
           ).join("")
         ).join("")}
-        <text x="${IMG_W / 2}" y="${IMG_H / 2 - 30}" font-family="Arial Black, Arial, sans-serif" font-size="120" font-weight="900" fill="${accentColor}" text-anchor="middle" opacity="0.7">${escapeXml(levelText)}</text>
-        <text x="${IMG_W / 2}" y="${IMG_H / 2 + 40}" font-family="Arial Black, Arial, sans-serif" font-size="36" font-weight="900" fill="#ffffff" text-anchor="middle" opacity="0.5">${escapeXml(badgeText)} LAYOUT</text>
+        <rect x="${IMG_W / 2 - 140}" y="${IMG_H / 2 - 80}" width="280" height="160" rx="20" fill="#0a0a0f" opacity="0.7"/>
+        <text x="${IMG_W / 2}" y="${IMG_H / 2 - 10}" font-family="Arial Black, Arial, sans-serif" font-size="80" font-weight="900" fill="#4ade80" text-anchor="middle">${escapeXml(levelText)}</text>
+        <text x="${IMG_W / 2}" y="${IMG_H / 2 + 40}" font-family="Arial, sans-serif" font-size="24" fill="#9ca3af" text-anchor="middle">${escapeXml(badgeText)} LAYOUT</text>
       </svg>
     `;
-    imageBuffer = await sharp(Buffer.from(placeholderSvg)).png().toBuffer();
+    imageBuffer = await sharp(Buffer.from(phSvg)).png().toBuffer();
   }
 
-  // Resize image to fit the pin frame (no color modification)
+  // Resize image — no color modification
   const baseImage = await sharp(imageBuffer)
     .resize(IMG_W, IMG_H, { fit: "cover" })
     .png()
     .toBuffer();
 
-  // Title
-  const titleLines = wrapText(pin.title.toUpperCase(), 28);
+  // Text layout
+  const titleLines = wrapText(pin.title.toUpperCase(), 30);
   const ratingStars = pin.rating ? "★".repeat(Math.floor(pin.rating)) + (pin.rating % 1 >= 0.5 ? "½" : "") : "";
   const ratingText = pin.rating ? `${ratingStars} ${pin.rating.toFixed(1)}` : "";
 
-  // Layout positions
-  const textAreaTop = IMG_TOP + IMG_H + 30; // 790
-  const titleY = textAreaTop + 45;
-  const titleEndY = titleY + (titleLines.length - 1) * 50;
-  const subtitleY = titleEndY + 40;
-  const ratingY = subtitleY + 45;
-  const ctaY = pin.rating ? ratingY + 50 : subtitleY + 55;
+  const textTop = IMG_H + 40;
+  const titleY = textTop + 5;
+  const titleEndY = titleY + (titleLines.length - 1) * 48;
+  const subtitleY = titleEndY + 38;
+  const ratingY = subtitleY + 40;
+  const ctaY = pin.rating ? ratingY + 55 : subtitleY + 55;
 
   const titleSvg = titleLines
     .map(
       (line, i) =>
-        `<text x="${PIN_W / 2}" y="${titleY + i * 50}" font-family="Arial Black, Arial, sans-serif" font-size="36" font-weight="900" fill="${textColor}" text-anchor="middle" letter-spacing="0.5">${escapeXml(line)}</text>`
+        `<text x="${PIN_W / 2}" y="${titleY + i * 48}" font-family="Arial Black, Arial, sans-serif" font-size="38" font-weight="900" fill="${textColor}" text-anchor="middle">${escapeXml(line)}</text>`
     )
     .join("\n");
 
-  // Full badge text
-  const fullBadge = `${levelText} • ${badgeText}`;
-
   const svgOverlay = `
     <svg width="${PIN_W}" height="${PIN_H}" xmlns="http://www.w3.org/2000/svg">
-      <!-- Header background -->
-      <rect x="0" y="0" width="${PIN_W}" height="${IMG_TOP}" fill="#0a0a0f"/>
-      <!-- Text area background -->
-      <rect x="0" y="${IMG_TOP + IMG_H}" width="${PIN_W}" height="${PIN_H - IMG_TOP - IMG_H}" fill="#0a0a0f"/>
+      <!-- White/light bottom section -->
+      <rect x="0" y="${IMG_H}" width="${PIN_W}" height="${PIN_H - IMG_H}" fill="#111116"/>
 
-      <!-- Top accent bar -->
-      <rect x="0" y="0" width="${PIN_W}" height="5" fill="${accentColor}"/>
-      <text x="${IMG_PAD}" y="52" font-family="Arial Black, Arial, sans-serif" font-size="24" font-weight="900" fill="${accentColor}" letter-spacing="2">GAME365HUB</text>
-      <!-- Badge pill -->
-      <rect x="${PIN_W - IMG_PAD - 180}" y="22" width="180" height="36" rx="18" fill="${accentColor}"/>
-      <text x="${PIN_W - IMG_PAD - 90}" y="47" font-family="Arial Black, Arial, sans-serif" font-size="15" font-weight="900" fill="${textColor}" text-anchor="middle">${escapeXml(fullBadge)}</text>
+      <!-- Gradient overlay on bottom of image for smooth transition -->
+      <defs>
+        <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#111116" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#111116" stop-opacity="0.85"/>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="${IMG_H - 120}" width="${PIN_W}" height="120" fill="url(#fade)"/>
 
-      <!-- Image border/frame -->
-      <rect x="${IMG_PAD - 4}" y="${IMG_TOP - 4}" width="${IMG_W + 8}" height="${IMG_H + 8}" rx="15" fill="${accentColor}" opacity="0.6"/>
-
-      <!-- (image composited below this SVG layer) -->
-
-      <!-- Divider -->
-      <rect x="80" y="${textAreaTop}" width="${PIN_W - 160}" height="3" rx="1.5" fill="${accentColor}" opacity="0.5"/>
+      <!-- Top overlay bar (semi-transparent on image) -->
+      <rect x="0" y="0" width="${PIN_W}" height="60" fill="#000000" opacity="0.5"/>
+      <text x="24" y="40" font-family="Arial Black, Arial, sans-serif" font-size="20" font-weight="900" fill="${textColor}" letter-spacing="2">GAME365HUB</text>
+      <rect x="${PIN_W - 24 - 150}" y="14" width="150" height="32" rx="16" fill="${accentColor}"/>
+      <text x="${PIN_W - 24 - 75}" y="37" font-family="Arial Black, Arial, sans-serif" font-size="14" font-weight="900" fill="${textColor}" text-anchor="middle">${escapeXml(levelText)} • ${escapeXml(badgeText)}</text>
 
       <!-- Title -->
       ${titleSvg}
 
       <!-- Subtitle -->
-      <text x="${PIN_W / 2}" y="${subtitleY}" font-family="Arial, sans-serif" font-size="21" fill="${mutedColor}" text-anchor="middle">${escapeXml(pin.subtitle)}</text>
+      <text x="${PIN_W / 2}" y="${subtitleY}" font-family="Arial, sans-serif" font-size="20" fill="${mutedColor}" text-anchor="middle">${escapeXml(pin.subtitle)}</text>
 
       <!-- Rating -->
-      ${ratingText ? `<text x="${PIN_W / 2}" y="${ratingY}" font-family="Arial, sans-serif" font-size="28" fill="#FBBF24" text-anchor="middle">${escapeXml(ratingText)}</text>` : ""}
+      ${ratingText ? `<text x="${PIN_W / 2}" y="${ratingY}" font-family="Arial, sans-serif" font-size="26" fill="#FBBF24" text-anchor="middle">${escapeXml(ratingText)}</text>` : ""}
 
       <!-- CTA Button -->
-      <rect x="250" y="${ctaY}" width="500" height="54" rx="27" fill="${accentColor}"/>
-      <text x="${PIN_W / 2}" y="${ctaY + 36}" font-family="Arial Black, Arial, sans-serif" font-size="20" font-weight="900" fill="${textColor}" text-anchor="middle">VIEW BASE + COPY LINK</text>
+      <rect x="220" y="${ctaY}" width="560" height="52" rx="26" fill="${accentColor}"/>
+      <text x="${PIN_W / 2}" y="${ctaY + 34}" font-family="Arial Black, Arial, sans-serif" font-size="19" font-weight="900" fill="${textColor}" text-anchor="middle">VIEW BASE + FREE COPY LINK</text>
 
-      <!-- Bottom branding -->
-      <text x="${PIN_W / 2}" y="${PIN_H - 25}" font-family="Arial, sans-serif" font-size="15" fill="${mutedColor}" text-anchor="middle" opacity="0.5">game365hub.com — Your Mobile Gaming Hub</text>
+      <!-- Bottom URL -->
+      <text x="${PIN_W / 2}" y="${PIN_H - 20}" font-family="Arial, sans-serif" font-size="14" fill="${mutedColor}" text-anchor="middle" opacity="0.5">game365hub.com</text>
 
-      <!-- Bottom accent bar -->
-      <rect x="0" y="${PIN_H - 4}" width="${PIN_W}" height="4" fill="${accentColor}"/>
+      <!-- Top + bottom accent lines -->
+      <rect x="0" y="0" width="${PIN_W}" height="4" fill="${accentColor}"/>
+      <rect x="0" y="${PIN_H - 3}" width="${PIN_W}" height="3" fill="${accentColor}"/>
     </svg>
   `;
 
@@ -160,22 +153,14 @@ export async function generatePinImage(pin: PinData): Promise<Buffer> {
       width: PIN_W,
       height: PIN_H,
       channels: 4,
-      background: { r: 10, g: 10, b: 15, alpha: 1 },
+      background: { r: 17, g: 17, b: 22, alpha: 1 },
     },
   })
     .composite([
-      {
-        input: baseImage,
-        top: IMG_TOP,
-        left: IMG_PAD,
-      },
-      {
-        input: Buffer.from(svgOverlay),
-        top: 0,
-        left: 0,
-      },
+      { input: baseImage, top: 0, left: 0 },
+      { input: Buffer.from(svgOverlay), top: 0, left: 0 },
     ])
-    .png({ quality: 90 })
+    .png({ quality: 85 })
     .toBuffer();
 
   return pinImage;
