@@ -27,3 +27,6 @@ next-env.d.ts
 # misc
 .DS_Store
 Thumbs.db
+
+# Pinterest temp images
+tools/pinterest/temp/
