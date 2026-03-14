@@ -186,7 +186,7 @@ export default function GuidesPage() {
             NEED A BASE LAYOUT?
           </h2>
           <p className="text-white/40 text-xs sm:text-sm max-w-md mx-auto mb-6 sm:mb-8">
-            Browse our collection of {`118`}+ tested base layouts for every Town Hall level with free copy links.
+            Browse our collection of 400+ tested base layouts for every Town Hall and Builder Hall level with free copy links.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Link

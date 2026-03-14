@@ -83,9 +83,9 @@ export const websiteJsonLd = {
   name: SITE_NAME,
   url: SITE_URL,
   description: "Your ultimate mobile gaming resource hub. Guides, strategies, tier lists for Clash of Clans, Brawl Stars, Clash Royale, Free Fire & more.",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: `${SITE_URL}/search?q={search_term_string}`,
-    "query-input": "required name=search_term_string",
+  publisher: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
   },
 };

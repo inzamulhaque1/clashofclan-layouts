@@ -1077,7 +1077,7 @@ export default function BaseDetailPage({
           <div className="mt-5 sm:mt-6 pt-4 border-t border-gray-100">
             <h3 className="text-xs font-bold text-[#1a1a2e] mb-2">Related Guides</h3>
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
-              {base.thLevel >= 16 && base.thLevel <= 18 && (
+              {base.thLevel >= 15 && base.thLevel <= 18 && (
                 <Link
                   href={`/clash-of-clans/guides/best-th${base.thLevel}-attack-strategies-2026`}
                   className="text-[9px] sm:text-[10px] font-semibold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors"

@@ -158,7 +158,7 @@ export default function HomePage() {
             {/* Stats bar */}
             <div className="flex items-center gap-6 md:gap-10 bg-white/[0.04] border border-white/[0.06] rounded-2xl px-8 py-4">
               {[
-                { value: "50+", label: "Pro Guides" },
+                { value: "28+", label: "Pro Guides" },
                 { value: "5+", label: "Games" },
                 { value: "100%", label: "Free" },
                 { value: "Daily", label: "Updates" },
@@ -418,7 +418,7 @@ export default function HomePage() {
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-16">
             {[
               { value: "5+", label: "Games" },
-              { value: "50+", label: "Guides" },
+              { value: "28+", label: "Guides" },
               { value: "Daily", label: "Updates" },
               { value: "Free", label: "Forever" },
             ].map((stat, i) => (

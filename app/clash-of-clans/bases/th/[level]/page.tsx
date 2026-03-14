@@ -494,7 +494,7 @@ export default function THBasesPage({
           <div className="mt-4 pt-4 border-t border-gray-100">
             <h3 className="text-sm font-bold text-[#1a1a2e] mb-3">Related Guides</h3>
             <div className="flex flex-wrap gap-2">
-              {level >= 16 && level <= 18 && (
+              {level >= 15 && level <= 18 && (
                 <Link href={`/clash-of-clans/guides/best-th${level}-attack-strategies-2026`} className="text-[10px] sm:text-[11px] font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-gray-200 text-muted hover:text-primary hover:border-primary/30 transition-colors">
                   {thInfo.label} Attack Strategies
                 </Link>

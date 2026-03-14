@@ -77,7 +77,7 @@ function Sidebar({ currentSlug }: { currentSlug: string }) {
           Need a Base Layout?
         </h3>
         <p className="text-xs text-muted mb-3">
-          Browse 118+ tested CoC base layouts with free copy links for TH7-TH18.
+          Browse 400+ tested CoC base layouts with free copy links for TH7-TH18 and BH3-BH10.
         </p>
         <Link
           href="/clash-of-clans/bases"

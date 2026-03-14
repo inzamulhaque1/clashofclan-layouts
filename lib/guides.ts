@@ -4380,6 +4380,2027 @@ Browse our [base layout collection](/clash-of-clans/bases) for anti-3-star war b
 **Now go fill those Clan Castles, Chief.**
     `.trim(),
   },
+  {
+    slug: "builder-base-complete-guide-2026",
+    title: "Builder Base Complete Guide 2026 — BH2 to BH10, OTTO & 6th Builder",
+    description:
+      "The complete Builder Base guide for 2026. Learn BH progression from BH2 to BH10, unlock OTTO and the 6th Builder, best attack strategies, and how to max your Builder Base efficiently.",
+    category: "Builder Base",
+    date: "2026-03-14",
+    readTime: "25 min read",
+    image: images.blog["coc-builders"],
+    content: `
+Builder Base is a separate game mode within Clash of Clans that exists alongside your Home Village. Introduced in May 2017 as part of one of the biggest updates in CoC history, the Builder Base offers a completely different experience — different troops, different defenses, different rules, and a 1v1 competitive format that rewards precision over brute force. In 2026, with Builder Hall 10 fully established and the OTTO Hut unlocking the coveted 6th Builder for your Home Village, understanding Builder Base is no longer optional. It is essential.
+
+This guide covers everything: BH2 through BH10 progression, every key troop and defense unlock, the OTTO Hut requirements, how to rush efficiently for the 6th Builder, best BH10 attack strategies, and how to make the most of your time in Builder Base.
+
+---
+
+## What Is Builder Base and How Does It Differ from Home Village?
+
+Builder Base is a completely separate village accessible by sailing across the ocean from your Home Village. While the core concept is the same — build a base, train troops, attack opponents — the mechanics are fundamentally different.
+
+### Key Differences from Home Village
+
+| Feature | Home Village | Builder Base |
+|---------|-------------|--------------|
+| Attacks per day | Unlimited | 3 attacks earn loot (unlimited practice) |
+| Army training | Multiple barracks, batch training | Single Army Camp, preset army |
+| Clan Castle | Yes — CC troops for attack/defense | No — no clan donations |
+| Heroes | 4 heroes (BK, AQ, GW, RC) | 1 hero (Battle Machine) |
+| Walls | Surrounding base | Limited wall segments |
+| Loot system | Steal from opponent | Win bonus based on trophies |
+| War | Clan Wars, CWL | Versus Battles (1v1) |
+| Builder | Multiple builders (up to 6) | 1 Master Builder |
+
+The most important difference is the **loot system**. In Builder Base, you do not steal loot from your opponent. Instead, you earn a win bonus based on your trophy count. You get loot from your first 3 wins each day, and that is it — no farming, no grinding hundreds of attacks. This means each attack matters more, and efficiency is rewarded over volume.
+
+---
+
+## Builder Base Progression — BH2 Through BH10
+
+### Builder Hall 2 (Starting Level)
+
+You start at BH2 when you first unlock Builder Base. This level is extremely basic — a few defenses, limited walls, and basic troops. Most players blast through BH2 in a day or two.
+
+**Key unlocks:** Raged Barbarians, Sneaky Archers
+**Strategy:** Mass Raged Barbarians — just overwhelm the small base
+
+### Builder Hall 3
+
+BH3 introduces the **Crusher** — the most iconic Builder Base defense. The Crusher deals massive area damage to ground troops and is the primary threat throughout your entire Builder Base journey.
+
+**Key unlocks:** Boxer Giant, Crusher, Hidden Tesla
+**Strategy:** Boxer Giants to tank the Crusher, Sneaky Archers behind to clean up
+**Base layouts:** [BH3 Base Layouts](/clash-of-clans/bases/bh/3)
+
+### Builder Hall 4
+
+BH4 introduces air troops with the **Baby Dragon** and the **Firecracker** air defense. The meta shifts here as players learn to mix ground and air attacks.
+
+**Key unlocks:** Baby Dragon, Firecracker, Push Trap
+**Strategy:** Mass Baby Dragons is extremely effective at BH4 — each Baby Dragon gets a rage effect when no other air unit is nearby, so spread them out
+**Base layouts:** [BH4 Base Layouts](/clash-of-clans/bases/bh/4)
+
+### Builder Hall 5
+
+BH5 is a major milestone. You unlock the **Battle Machine** — your only hero in Builder Base. The Battle Machine can absorb damage and deal significant DPS, and his Electric Hammer ability makes him a game-changer.
+
+**Key unlocks:** Battle Machine, Battle Copter (later), Multi Mortar
+**Strategy:** Baby Dragon spam with Battle Machine support — use the Machine to tank while dragons clean
+**Base layouts:** [BH5 Base Layouts](/clash-of-clans/bases/bh/5)
+
+### Builder Hall 6
+
+BH6 adds the **Roaster** — a powerful defensive building that shoots streams of fire at both ground and air troops. It also unlocks the Night Witch, one of the most powerful offensive troops in Builder Base.
+
+**Key unlocks:** Night Witch, Roaster, Guard Post
+**Strategy:** Night Witch spam — her bats overwhelm defenses at this level. Drop Witches in a line and let the bats swarm.
+**Base layouts:** [BH6 Base Layouts](/clash-of-clans/bases/bh/6)
+
+### Builder Hall 7
+
+BH7 introduces the **Drop Ship** and the **Giant Cannon**. The Giant Cannon is a devastating single-target defense that can one-shot most ground troops with its cannon ball ability.
+
+**Key unlocks:** Drop Ship, Giant Cannon, Super P.E.K.K.A (later upgrade)
+**Strategy:** Drop Ship + Minions (Dropminion) — Drop Ships tank while Minions deal DPS from behind
+**Base layouts:** [BH7 Base Layouts](/clash-of-clans/bases/bh/7)
+
+### Builder Hall 8
+
+BH8 is where the OTTO Hut grind begins in earnest. You unlock the **Super P.E.K.K.A** — a massive ground troop that deals explosive damage upon death. BH8 also introduces the **Mega Tesla**, one of the OTTO requirements.
+
+**Key unlocks:** Super P.E.K.K.A, Mega Tesla, Lava Launcher
+**Strategy:** Super P.E.K.K.A + Cannon Carts — the P.E.K.K.A tanks while Cannon Carts deal ranged damage
+**OTTO note:** Start working on Mega Tesla to Level 9 and Cannon Cart to Level 18
+**Base layouts:** [BH8 Base Layouts](/clash-of-clans/bases/bh/8)
+
+### Builder Hall 9
+
+BH9 adds the **Hog Glider** — an air troop that dives onto the nearest defense and stuns it. This troop creates entirely new attack strategies and is one of the most fun troops in Builder Base.
+
+**Key unlocks:** Hog Glider, Lava Launcher upgrade
+**Strategy:** Hog Glider + Minions — Gliders stun key defenses while Minions swarm behind them
+**OTTO note:** Continue grinding Battle Machine to Level 30 and gear up buildings
+**Base layouts:** [BH9 Base Layouts](/clash-of-clans/bases/bh/9)
+
+### Builder Hall 10
+
+BH10 is the current max level. It introduces the **Electrofire Wizard** and raises the level caps for all existing troops and defenses. At BH10, the meta is fully developed and competitive Versus Battles require precise execution.
+
+**Key unlocks:** Electrofire Wizard, higher troop/defense level caps
+**Strategy:** Super P.E.K.K.A smash, Mass Hog Glider, or Electrofire Wizard combos
+**OTTO note:** If you have not completed OTTO yet, BH10 provides the resources to finish faster
+**Base layouts:** [BH10 Base Layouts](/clash-of-clans/bases/bh/10)
+
+---
+
+## OTTO Hut Requirements — The Path to the 6th Builder
+
+The OTTO Hut is the single most important reason to progress your Builder Base. Completing the OTTO Hut unlocks **O.T.T.O** — a robotic builder that takes over construction in Builder Base, freeing your Master Builder to travel to your Home Village as your **6th Builder**.
+
+### What Is OTTO?
+
+O.T.T.O stands for "Obsessive Trophy Tinkering and Organizing." When completed, O.T.T.O replaces the Master Builder in Builder Base, and the Master Builder permanently moves to your Home Village as an additional builder. This means you go from 5 builders to 6 — a massive boost to your Home Village progression.
+
+### OTTO Requirements (All 4 Must Be Completed)
+
+| Requirement | Details | Difficulty |
+|------------|---------|------------|
+| **Cannon Cart Level 18** | Upgrade Cannon Cart troop to Level 18 | Medium — requires BH8+ and significant Elixir |
+| **Mega Tesla Level 9** | Upgrade the Mega Tesla defense to Level 9 | Hard — requires BH8+ and lots of Gold |
+| **Battle Machine Level 30** | Upgrade the Battle Machine hero to Level 30 | Hardest — requires enormous Elixir investment |
+| **Gear Up 3 Buildings** | Complete 3 Gear Up upgrades on Home Village buildings | Medium — requires specific building levels |
+
+### Gear Up Buildings Explained
+
+Gear Up upgrades are special upgrades for Home Village buildings that require the Master Builder. You need to complete 3 of these:
+
+1. **Double Cannon** — Gear Up a Cannon to Level 7+ (requires BH4+, Cannon Level 7 in Builder Base)
+2. **Archer Tower (Fast Attack)** — Gear Up an Archer Tower to Level 10+ (requires BH6+, Double Cannon Level 6 in Builder Base)
+3. **Multi Mortar** — Gear Up a Mortar to Level 8+ (requires BH8+, Multi Mortar Level 8 in Builder Base)
+
+Each Gear Up takes 14 days and requires the Master Builder to travel to your Home Village. Plan these during periods when you do not need the Master Builder for Builder Base upgrades.
+
+---
+
+## How to Rush for OTTO — Step by Step
+
+The fastest path to the 6th Builder is to **strategically rush** your Builder Hall. Unlike Home Village where rushing is generally discouraged, rushing Builder Base is the standard strategy for competitive players. Here is how:
+
+### Step 1: Rush to BH8 as Fast as Possible
+
+Upgrade your Builder Hall to BH8 without worrying about maxing each level. The reason is simple — the OTTO requirements (Cannon Cart 18, Mega Tesla 9, Battle Machine 30) cannot even begin until BH8. Every day spent maxing BH5 or BH6 is a day wasted.
+
+**What to upgrade while rushing:**
+- Army Camps (more troop capacity)
+- Your chosen attack troop (Baby Dragons or Cannon Carts)
+- Builder Hall itself
+- Skip most defenses — they can be upgraded later
+
+### Step 2: Unlock and Start Upgrading Key OTTO Requirements
+
+Once at BH8:
+- **Build the Mega Tesla** immediately and start upgrading it toward Level 9
+- **Upgrade Cannon Cart** toward Level 18 (split Elixir between Cannon Cart and Battle Machine)
+- **Upgrade Battle Machine** whenever you have spare Elixir
+
+### Step 3: Manage Resources Between BM and Cannon Cart
+
+Both Battle Machine and Cannon Cart cost Elixir. You cannot upgrade both simultaneously. Alternate:
+- Upgrade Battle Machine when you have 1M+ Elixir
+- Upgrade Cannon Cart when BM is currently upgrading
+- Never let both sit idle — always have one in progress
+
+### Step 4: Complete Gear Ups in Parallel
+
+While grinding BM and Cannon Cart levels, complete the 3 Gear Up requirements on your Home Village. These take 14 days each but can be done while other BB upgrades are in progress. Start Gear Ups early — they are often the last requirement players complete because they forgot about them.
+
+### Step 5: Push to BH9 When Ready
+
+Once your Mega Tesla is approaching Level 9 and your Cannon Cart is near 18, push to BH9 for better loot. Higher BH levels give more resources per win, which accelerates the final levels.
+
+### Estimated Timeline: OTTO Completion
+
+| Starting Point | Estimated Time to OTTO |
+|---------------|----------------------|
+| Brand new Builder Base (BH2) | 4-6 months |
+| BH5 with Battle Machine | 3-4 months |
+| BH8 with BM Level 15 | 2-3 months |
+| BH9 with most requirements near done | 1-2 months |
+
+---
+
+## Getting the 6th Builder — Step by Step
+
+Once all 4 OTTO requirements are complete:
+
+1. The game will notify you that O.T.T.O is ready
+2. Tap the OTTO Hut to activate O.T.T.O
+3. O.T.T.O takes over as the Builder Base builder
+4. The Master Builder travels to your Home Village
+5. You now have **6 Builders** in your Home Village permanently
+
+The 6th Builder is available from **Town Hall 14 onward** in practice (you need TH10+ to have the required Gear Up buildings, but the BH grind typically finishes around TH13-14 for most players).
+
+**Impact of the 6th Builder:**
+- 20% faster Home Village progression
+- One extra building upgrading at all times
+- Significantly reduces the total time to max your Home Village
+- Essential for competitive players pushing through TH14-TH18
+
+---
+
+## Battle Machine — Your Only Builder Base Hero
+
+The Battle Machine is the sole hero in Builder Base. Unlike Home Village where you juggle 4 heroes, Builder Base puts all your hero investment into a single unit — and he is absolutely critical for success.
+
+### How the Battle Machine Works
+
+- **Melee ground unit** with high HP and moderate DPS
+- **Electric Hammer ability** — the Battle Machine slams his hammer, dealing massive area damage and briefly becoming invulnerable. This ability is critical for taking out Crushers, Mega Teslas, and clustered defenses.
+- **Regeneration** — like Home Village heroes, the Battle Machine regenerates health between battles. At high trophy levels, you may need to wait between attacks.
+
+### Upgrade Priority
+
+The Battle Machine should be one of your top Elixir priorities at every BH level. Each level increases his HP, DPS, and ability damage. The jump from Level 5 to Level 10 is especially noticeable — his ability damage doubles.
+
+**Key Battle Machine levels:**
+- **Level 5:** First major power spike — ability becomes genuinely impactful
+- **Level 10:** Significant HP and damage increase
+- **Level 20:** Strong enough to tank most BH8-9 defenses solo
+- **Level 30:** OTTO requirement — max for OTTO unlocking, massive stats
+
+### How to Upgrade the Battle Machine Efficiently
+
+1. Always use win bonuses (3 wins per day) to fund BM upgrades
+2. Complete Clan Games Builder Base challenges for extra loot
+3. Use Clock Tower boosts to speed up upgrade timers
+4. Star Bonus from daily wins provides additional Elixir
+5. Do not waste Elixir on non-essential troop upgrades until BM is Level 30
+
+---
+
+## Clan Games Points from Builder Base
+
+Builder Base offers several Clan Games challenges that can be completed in Versus Battles. These are valuable because:
+
+- They provide Home Village rewards (Books, Potions, Runes)
+- They can be easier to complete than some Home Village challenges
+- They give Builder Base players a reason to stay engaged
+
+**Common Builder Base Clan Games challenges:**
+- Win X Versus Battles
+- Destroy X buildings in Versus Battles
+- Use X troop type in Versus Battles
+- Earn X stars in Versus Battles
+
+**Pro tip:** If you see a "Win 3 Versus Battles" challenge worth 300+ points, take it — it is one of the most efficient Clan Games challenges available, especially if you are already doing your daily 3 wins.
+
+---
+
+## Best BH10 Attack Strategies
+
+At Builder Hall 10, the competitive meta is refined and there are several dominant strategies. Here are the top approaches:
+
+### 1. Super P.E.K.K.A Smash
+
+The Super P.E.K.K.A is a high-HP ground troop that deals explosive damage when it dies (or when its ability activates). At BH10, a maxed Super P.E.K.K.A can absorb enormous damage while your support troops clean up.
+
+**Army composition:**
+- Super P.E.K.K.A x2-3
+- Cannon Cart x3-4
+- Battle Machine
+
+**How to execute:**
+1. Identify the side of the base with the Crusher and Mega Tesla
+2. Deploy Super P.E.K.K.As to tank the Crusher — their high HP absorbs multiple hits
+3. Follow with Cannon Carts behind the P.E.K.K.As for ranged DPS
+4. Use Battle Machine's Electric Hammer on the Crusher or Mega Tesla
+5. Let the P.E.K.K.A death damage finish off clustered buildings
+
+### 2. Mass Hog Glider
+
+Hog Gliders are air units that dive onto the nearest defense and stun it. Mass Hog Glider attacks can chain-stun defenses, buying your troops time to deal damage uncontested.
+
+**Army composition:**
+- Hog Glider x5-6
+- Minion x2 camps
+- Battle Machine
+
+**How to execute:**
+1. Deploy Hog Gliders spread out across one side — each glider stuns a different defense
+2. Follow with Minions to deal air DPS while defenses are stunned
+3. Use Battle Machine on the ground to take out the Crusher while air troops handle the rest
+4. The stun-chain effect often cascades through the base, preventing defenses from ever firing
+
+### 3. Cannon Cart + Bomber Combo
+
+Cannon Carts are ranged ground troops that gain a shield when their main HP bar is depleted. At high levels, this shield makes them incredibly durable. Paired with Bombers (which destroy walls), this combo cuts through compartmented bases.
+
+**Army composition:**
+- Cannon Cart x4-5
+- Bomber x2
+- Battle Machine
+
+**How to execute:**
+1. Deploy Bombers to open the first wall layer
+2. Follow with Cannon Carts spread in a line — their range allows them to hit defenses from outside walls
+3. Use Battle Machine to tank the Crusher while Carts fire from range
+4. When Cannon Carts lose their main HP, the shield activates and they continue fighting — this effectively doubles their survivability
+
+### 4. Electrofire Wizard Spam
+
+The Electrofire Wizard is the newest troop at BH10. It attacks with both fire and electricity, dealing chain damage to multiple buildings simultaneously. Mass Electrofire Wizard attacks are simple but effective.
+
+**Army composition:**
+- Electrofire Wizard x5-6
+- Boxer Giant x1 camp
+- Battle Machine
+
+**How to execute:**
+1. Deploy Boxer Giants first as a meat shield
+2. Spread Electrofire Wizards behind the Giants
+3. The chain lightning clears buildings rapidly while fire damage adds sustained DPS
+4. Use Battle Machine to protect the Wizards from the Crusher
+
+---
+
+## Frequently Asked Questions
+
+### Do I need to max Builder Base before working on OTTO?
+
+No. In fact, rushing to BH8 and focusing exclusively on OTTO requirements is the recommended strategy. You do not need to max defenses, walls, or non-essential troops. The goal is the 6th Builder as fast as possible.
+
+### Can I use O.T.T.O in my Home Village instead of Builder Base?
+
+No — O.T.T.O stays in Builder Base permanently. It is the Master Builder who moves to your Home Village as the 6th Builder. O.T.T.O replaces him in Builder Base so that construction can continue in both villages simultaneously.
+
+### How long does the Battle Machine take to regenerate?
+
+The Battle Machine regenerates over time, similar to Home Village heroes but generally faster. At higher levels, regeneration takes about 15-30 minutes depending on damage taken. You can gem the regeneration timer if you want to attack immediately.
+
+### Is Builder Base worth playing beyond getting OTTO?
+
+Yes, for several reasons. Clan Games challenges often include Builder Base tasks (easy points). Versus Battle wins earn loot that helps upgrade remaining troops and defenses. And at BH10, the competitive 1v1 format can be genuinely fun once you have strong troops.
+
+### What is the best troop to upgrade first in Builder Base?
+
+For rushing to OTTO: **Cannon Cart** (since it is an OTTO requirement at Level 18). For general combat: **Baby Dragons** are the most consistently strong troop from BH4 through BH9 because of their rage ability when deployed solo.
+
+### Can I use Builder Base troops in Home Village?
+
+No. Builder Base troops and Home Village troops are completely separate. You cannot donate Builder Base troops to clan members or use them in Clan Wars. They exist only in Versus Battles.
+
+### How many trophies do I need for good loot in Builder Base?
+
+Loot scales with trophies. At 2000 trophies, you earn around 200,000-250,000 Gold and Elixir per win. At 3000+ trophies, this increases to 300,000-350,000+. Push trophies to increase your daily income.
+
+### Does rushing Builder Hall affect matchmaking?
+
+Builder Base matchmaking is based on trophies, not Builder Hall level. A rushed BH9 at 2000 trophies faces the same opponents as a maxed BH7 at 2000 trophies. This is why rushing is viable — you do not get punished with harder opponents for having a higher BH level.
+
+---
+
+## Related Guides and Resources
+
+Builder Base is just one piece of the Clash of Clans puzzle. Explore more content to level up your game:
+
+- Browse all Builder Base layouts: [BH3](/clash-of-clans/bases/bh/3) | [BH4](/clash-of-clans/bases/bh/4) | [BH5](/clash-of-clans/bases/bh/5) | [BH6](/clash-of-clans/bases/bh/6) | [BH7](/clash-of-clans/bases/bh/7) | [BH8](/clash-of-clans/bases/bh/8) | [BH9](/clash-of-clans/bases/bh/9) | [BH10](/clash-of-clans/bases/bh/10)
+- [All Clash of Clans Guides](/clash-of-clans/guides)
+- [Home Village Base Layouts](/clash-of-clans/bases)
+- [Clash of Clans Beginners Guide 2026](/clash-of-clans/guides/clash-of-clans-beginners-guide-2026)
+
+**Now get building, Chief. That 6th Builder is waiting.**
+    `.trim(),
+  },
+  {
+    slug: "how-to-build-a-strong-base-layout-design-guide",
+    title: "How to Build a Strong Base in Clash of Clans 2026 — Layout Design Guide",
+    description:
+      "Learn how to build a strong base in Clash of Clans with this complete layout design guide. Master compartments, funneling, trap placement, anti-3-star design, and TH-specific tips.",
+    category: "Base Building",
+    date: "2026-03-14",
+    readTime: "28 min read",
+    image: images.blog["coc-base-layout"],
+    content: `
+Your base is your first and last line of defense in Clash of Clans. Whether you are sleeping, at school, or grinding resources, your base layout fights for you — repelling raids, protecting your Town Hall, and earning or saving stars. In 2026, with Town Hall 18 now in the game and meta armies more powerful than ever, a well-designed base is not optional. It is the difference between waking up to a full shield and waking up to empty storages and a dropped trophy count.
+
+This guide covers everything you need to know about base design from the ground up — from fundamental principles to TH-specific tips, trap placement theory, and how to test your layouts before they get hit in a real war.
+
+---
+
+## Why Base Design Matters
+
+Most players underestimate how much a good layout contributes to their overall progress. They spend hours perfecting their attack strategy but slap their defenses down randomly and wonder why they keep getting 3-starred. Here is why intentional base design directly impacts every mode you play.
+
+### War and Clan War Leagues (CWL)
+
+In regular clan wars and CWL, your base needs to hold at least 2 stars — ideally 1 star — against the best attacks your mirror or higher-ranked opponents can throw at you. A base that forces even a mediocre 2-star result is doing its job. Strong war bases deny the Town Hall, force opponents to waste their attack, and give your clan a structural advantage on the war map.
+
+### Legend League
+
+At the top of the ladder, Legend League operates under a fixed attack and defense system — you get 8 attacks and receive up to 8 defenses per day. In this environment, limiting opponents to 2 stars instead of 3 on each defense can save you 8 trophies per hit. Over a full season, that adds up to hundreds of trophies.
+
+### Trophy Pushing
+
+If you are trying to climb through Titan League or reach Legend for the first time, your base needs to protect trophies aggressively. Unlike farming, where you might sacrifice trophies to protect resources, trophy bases prioritize keeping opponents from reaching your Town Hall.
+
+### Farming
+
+Farming bases are a different animal entirely. Here, the goal is resource protection. You may deliberately leave your Town Hall exposed to absorb a cheap shield while keeping your storages deeply buried.
+
+---
+
+## Core Base Design Principles
+
+### Compartmentalization
+
+The most fundamental concept in base design is compartmentalization — dividing your base into distinct sections using walls. Each compartment forces attackers to break through multiple layers of walls, slowing their troops and buying time for your defenses to deal damage.
+
+A well-compartmentalized base has:
+
+- Multiple distinct sections, each requiring wall breakers or a significant troop investment to breach
+- Defenses placed inside compartments, never in open fields
+- No single pathway that allows troops to slide through the entire base unimpeded
+
+### Centralized Town Hall vs Offset Town Hall
+
+**Centralized Town Hall** — Placing the Town Hall at the core is standard for war and CWL. It forces attackers to destroy a large portion of your base before reaching it.
+
+**Offset Town Hall** — Placing the Town Hall slightly off-center but still inside multiple compartments is increasingly common. This makes funneling more difficult.
+
+**Exposed Town Hall (Farming Only)** — For dedicated farmers, placing the Town Hall outside your walls invites a quick TH snipe and shield. Never do this in war.
+
+### Splash Damage Coverage
+
+Splash defenses — Wizard Towers, Scattershots, Multi-Mortars — are your primary tools against mass troop deployments. Key principles:
+
+- Spread Wizard Towers so their ranges do not fully overlap
+- Place Scattershots on the edge of your inner ring
+- Never place all your splash defenses on the same side
+- Ensure at least one Wizard Tower covers your Clan Castle
+
+### Point Defense Coverage
+
+Point defenses — Cannons, Archer Towers, X-Bows, Inferno Towers, Monoliths — handle single-target high-HP threats. Their placement should provide overlapping fire zones in key kill zones.
+
+---
+
+## Funneling — What It Is and How to Design Against It
+
+### What Is Funneling?
+
+When attackers deploy troops, the AI directs them toward the nearest building. Skilled attackers destroy buildings on the outside corners to create a "funnel" that directs their main army through a specific entry point.
+
+### How to Design an Anti-Funnel Base
+
+- **Remove or pull in external buildings** — Every building sitting outside your walls is a free funneling tool for the attacker
+- **Use irregular outer wall shapes** — Square walls are easy to funnel. Irregular shapes force more planning
+- **Place trash buildings strategically** — Spread them at corners so funneling troops are pulled outward
+- **Anchor entry points with defenses** — Common breach areas should have high-DPS defenses
+- **Layer with Skeleton Traps and Tornado Traps** — These disrupt funneling troops at critical chokepoints
+
+---
+
+## Trap Placement Strategy
+
+### Spring Traps
+
+Best placements:
+- On the path leading to your Town Hall through narrow corridors
+- Just inside wall gaps or common breach points
+- Paired in groups of two or three to ensure full spring on heavy troops
+
+### Giant Bombs
+
+- Beneath compartment floors where Hogs typically chain-jump
+- Near defenses that Hogs prioritize
+- Paired Giant Bombs in a 2x1 arrangement to maximize overlap damage
+
+### Seeking Air Mines
+
+- Surround your Air Defenses with Seeking Air Mines
+- Place several near your Eagle Artillery and Town Hall
+- Spread them rather than cluster to avoid being disabled by one spell
+
+### Tornado Traps
+
+- Place directly in front of your Eagle Artillery or Town Hall to disrupt hero charges
+- Use at entry points of important compartments to stall ground kill squads
+- Place near Clan Castle to disrupt troops attacking it
+
+---
+
+## Wall Placement — Ring Bases vs Island Bases vs Hybrid
+
+### Ring Bases
+
+Uses concentric rings of walls. Troops must breach multiple rings to reach the core.
+
+**Pros:** Excellent at slowing ground armies, intuitive to build
+**Cons:** Predictable pathing, vulnerable to Earthquake spam
+
+### Island Bases
+
+Uses disconnected "islands" — small compartments not connected to each other. Troops that break into one island cannot simply walk to the next.
+
+**Pros:** Disrupts troop pathing, neutralizes Queen Walks
+**Cons:** Gaps between compartments that ranged troops exploit
+
+### Hybrid Compartment Bases
+
+The most effective modern bases combine both approaches — a ring-style core with island-style outer compartments and deliberately broken wall sections that control troop flow.
+
+---
+
+## Anti-3-Star vs Anti-2-Star Design Philosophy
+
+### Anti-3-Star Design
+
+Prioritizes preventing a perfect raid:
+- Town Hall deeply buried, requiring 80%+ destruction to reach
+- Eagle Artillery and Monolith as the last defenses reached
+- Heavy trap density in inner compartments
+- Multiple overlapping kill zones
+
+### Anti-2-Star Design
+
+Sacrifices percentage for Town Hall protection:
+- Town Hall in the absolute center surrounded by highest HP walls
+- Outer compartments intentionally lighter to waste attacker troops
+- Trap density concentrated in the inner ring
+
+---
+
+## Common Base Design Mistakes
+
+| Mistake | Why It Hurts | Fix |
+|---|---|---|
+| Walls left at low level | Easy to earthquake open | Upgrade walls consistently |
+| Exposed Town Hall | Gives attackers a free star | Bury TH inside 2+ wall layers |
+| Clan Castle at the edge | CC troops die to small kill squad | Place CC centrally |
+| Dead zones with no defenses | Troops march freely | Cover every section with 2+ defenses |
+| All splash defenses on one side | Attacks exploit the uncovered flank | Spread across all quadrants |
+| Symmetrical trap placement | Experienced attackers read it instantly | Vary positions asymmetrically |
+
+---
+
+## Base Design for Different Purposes
+
+### War Base
+- TH in absolute core, anti-3-star philosophy
+- Eagle Artillery in second-to-last ring
+- Trap density peaks in inner 2 compartments
+- Test in friendly challenge before war
+
+### Farming Base
+- Resource storages in the core
+- TH can be semi-exposed to bait shield attacks
+- Dark Elixir Storage most deeply buried
+
+### Trophy / Push Base
+- TH deeply placed, high-DPS defenses engage early
+- Minimize exposed buildings for easy percentage
+- Trap placement focused on external kill zones
+
+### CWL Base
+- Counter the top 3 current meta strategies
+- Rotate base between wars to prevent scouting
+- Use different layout from standard war base
+
+---
+
+## How to Test Your Base Design
+
+### Friendly Challenges
+
+1. Set up your new base layout
+2. Open a Friendly Challenge in your clan
+3. Ask experienced clanmates to attack with strong armies
+4. Watch the replay carefully
+5. Identify the easiest path to your Town Hall and redesign
+6. Repeat until TH access requires near-perfect execution
+
+### Replay Analysis
+
+After real defenses, always watch replays. Ask:
+- What army was used?
+- Where did they funnel?
+- Which traps were ineffective or never triggered?
+- Was the CC triggered and handled easily?
+
+---
+
+## TH-Specific Base Design Tips
+
+### TH10
+- Double Giant Bomb placement critical for countering Hog Riders
+- Inferno Towers in second compartment layer
+- Air Defenses widely separated
+
+Browse: [TH10 Bases](/clash-of-clans/bases/th/10)
+
+### TH11
+- Eagle Artillery buried in core
+- Grand Warden positioned centrally for maximum aura coverage
+- Place Eagle adjacent to TH but in a different compartment
+
+Browse: [TH11 Bases](/clash-of-clans/bases/th/11)
+
+### TH12
+- Scattershots on elevated inner compartments
+- Do not place Scattershots adjacent to each other
+- Giga Tesla on TH provides built-in defense
+
+Browse: [TH12 Bases](/clash-of-clans/bases/th/12)
+
+### TH13
+- Tornado Traps at innermost compartment entry points
+- Four heroes defending in four quadrants
+- Scattershot count increases — cover all sides
+
+Browse: [TH13 Bases](/clash-of-clans/bases/th/13)
+
+### TH14
+- Pets join defense — optimize Queen equipment for defensive DPS
+- Spell Tower in inner ring for defensive spell casting
+- Base grid expands for more compartment complexity
+
+Browse: [TH14 Bases](/clash-of-clans/bases/th/14)
+
+### TH15
+- Root Riders ignore walls — place DPS defenses deeper
+- Tornado Traps stall Root Rider charges
+- Monolith is the most powerful defense — bury it in core
+
+Browse: [TH15 Bases](/clash-of-clans/bases/th/15)
+
+### TH16–TH18
+- Merged defenses have massive range — position for widest coverage
+- Asymmetric bases outperform symmetric at high TH levels
+- Run TH18 war bases through 10+ friendly challenges minimum
+
+Browse: [TH16](/clash-of-clans/bases/th/16) | [TH17](/clash-of-clans/bases/th/17) | [TH18](/clash-of-clans/bases/th/18)
+
+---
+
+## FAQ — Base Design in Clash of Clans
+
+**Should I copy a base from YouTube or build my own?**
+
+Both have merit. Copying gives you a tested layout immediately. Building your own is a great learning experience. Best approach: copy a high-quality base, use friendly challenges to understand it, then modify with your own traps.
+
+**How often should I change my base layout?**
+
+Change war bases every 2-3 weeks, or immediately after the same strategy 3-stars you repeatedly. Home village bases every 1-2 months.
+
+**Does wall level really matter?**
+
+Absolutely. Low-level walls are bypassed by a single Earthquake + Wall Breaker. High-level walls require multiple, consuming spell capacity the attacker needs elsewhere.
+
+**What should be in my Clan Castle for defense?**
+
+As of 2026: Super Witch + Inferno Dragon for ground defense. Electro Dragon for air defense. Always ensure CC is filled before war.
+
+**What is the biggest mistake beginners make?**
+
+Placing everything outside their walls. These buildings serve as free funneling tools. Everything goes inside compartments.
+
+**Is the Clan Castle more effective in the center or slightly off-center?**
+
+Slightly off-center but within your innermost ring. Dead center is predictable — off-center forces attackers to adjust their kill squad deployment.
+
+---
+
+Explore our full base library and strategy guides:
+
+- Browse all layouts: [Clash of Clans Bases](/clash-of-clans/bases)
+- [All Clash of Clans Guides](/clash-of-clans/guides)
+
+**The best base is the one your enemy cannot figure out — keep them guessing, keep improving, and protect your village like a champion.**
+    `.trim(),
+  },
+  {
+    slug: "coc-upgrade-priority-guide-2026",
+    title: "CoC Upgrade Priority Guide 2026 — What to Upgrade First at Every Town Hall",
+    description:
+      "The complete Clash of Clans upgrade priority guide for 2026. Learn what to upgrade first at every Town Hall from TH7 to TH18, avoid common mistakes, and progress efficiently.",
+    category: "Strategy",
+    date: "2026-03-14",
+    readTime: "30 min read",
+    image: images.blog["coc-town-hall"],
+    content: `
+Knowing what to upgrade first in Clash of Clans is the single most important skill separating casual players from competitive ones. Every builder minute wasted on the wrong upgrade is time stolen from your war performance, trophy pushing, and overall progression. Whether you just hit Town Hall 7 or you are grinding through Town Hall 18, this guide breaks down exactly what to upgrade first, why it matters, and which mistakes to avoid at every stage of the game.
+
+---
+
+## The Golden Philosophy of CoC Upgrades
+
+Before diving into Town Hall-specific priorities, you need to internalize one rule that applies everywhere:
+
+**Offense first. Always.**
+
+Clash of Clans is an offensive game at its core. Your trophies come from attacking. Your war stars come from attacking. Your loot comes from attacking.
+
+### The Universal Upgrade Hierarchy
+
+| Priority | Category | Reason |
+|----------|----------|--------|
+| 1 | Clan Castle | More troops = better offense and defense |
+| 2 | Army Camps | More housing space = bigger armies |
+| 3 | Barracks + Dark Barracks | Unlock new troops faster |
+| 4 | Laboratory | Troop upgrades are the longest investments |
+| 5 | Heroes | The most impactful units in the game |
+| 6 | Spell Factory | Spell upgrades and new unlocks |
+| 7 | Defenses | Protect loot and trophies |
+| 8 | Walls | Last priority, use leftover gold/elixir |
+
+Start your Laboratory and Hero upgrades immediately upon reaching a new Town Hall. Never let your Laboratory sit idle.
+
+---
+
+## TH7 — Your First Dark Elixir Milestone
+
+1. **Clan Castle to Level 4** — 25 troop capacity
+2. **Army Camps to Level 6** — 200 housing space for full Dragon attacks
+3. **Laboratory** — Dragons to Level 3, Giants to Level 5
+4. **Barbarian King** — Push to Level 5-10
+5. **Spell Factory** — Lightning and Healing Spells
+
+Defense priorities: Air Defenses > Mortars > Archer Towers > Cannons > Teslas
+
+Base layouts: [TH7 Bases](/clash-of-clans/bases/th/7)
+
+---
+
+## TH8 — Dark Troops and GoWiPe Era
+
+1. **Place new buildings** immediately
+2. **Laboratory** — Hog Riders Level 3+, Golems Level 1+, Pekka Level 3
+3. **Barbarian King to Level 10**
+4. **Army Camps**
+5. **Defense**: Air Defenses > Mortars > Teslas
+
+GoWiPe (Golems, Wizards, Pekka) is the dominant TH8 war strategy.
+
+Base layouts: [TH8 Bases](/clash-of-clans/bases/th/8)
+
+---
+
+## TH9 — The Grind Begins
+
+**Day 1:** Upgrade Clan Castle to Level 5, drop Archer Queen immediately, start Lab.
+
+**Hero priorities:** Archer Queen to Level 30 is THE #1 priority. She is the most impactful upgrade at TH9. Rotate heroes — never have both upgrading during war.
+
+**Lab priorities:** Lava Hound Level 2 > Balloons Level 6 > Hog Riders Level 5 > Dragons Level 4
+
+X-Bows are your strongest defensive buildings — prioritize them early.
+
+Base layouts: [TH9 Bases](/clash-of-clans/bases/th/9)
+
+---
+
+## TH10 — Miners, Bowlers, and Heroes to 40
+
+1. **Inferno Towers** — Place immediately
+2. **Army Camps to Level 8** — 240 housing space
+3. **Lab**: Miners Level 3+ > Bowlers Level 2+ > Hogs Level 6
+
+Push both BK and AQ to Level 40. Always prioritize AQ.
+
+Base layouts: [TH10 Bases](/clash-of-clans/bases/th/10)
+
+---
+
+## TH11 — Grand Warden Joins
+
+**Grand Warden** — Start immediately. His aura and Eternal Tome ability change every attack. Push to Level 20 fast.
+
+**Eagle Artillery** — Your strongest defense. Upgrade immediately.
+
+**Lab**: Electro Dragons > Miners Level 4 > Bowlers Level 3
+
+Hero targets: GW 20, AQ 50, BK 50. Priority: GW(to 20) > AQ > BK.
+
+Base layouts: [TH11 Bases](/clash-of-clans/bases/th/11)
+
+---
+
+## TH12 — Siege Workshop and Yeti
+
+Week 1: **Siege Workshop** > **Giga Tesla** > **Army Camps Level 9** > **Clan Castle Level 7**
+
+Siege Machine priority: Wall Wrecker > Battle Blimp > Stone Slammer
+
+**Lab**: Yeti Level 2+ as soon as possible
+
+Hero targets: AQ 55, GW 30, BK 55. Priority: AQ > GW > BK.
+
+Base layouts: [TH12 Bases](/clash-of-clans/bases/th/12)
+
+---
+
+## TH13 — Royal Champion and Scattershot
+
+**Royal Champion** — Place immediately. Push to Level 25.
+
+**Scattershot** — Devastating splash defense. Upgrade in first wave.
+
+**Lab**: Super Troops unlock, Yeti Level 3, Headhunter Level 2
+
+Hero targets: RC 25, AQ 65, GW 45, BK 65. Priority: RC(to 25) > AQ > GW > BK.
+
+Base layouts: [TH13 Bases](/clash-of-clans/bases/th/13)
+
+---
+
+## TH14 — Pets System
+
+**Pet House** — Build immediately. Best pets to level first:
+
+| Pet | Hero Pairing | Effect |
+|-----|-------------|--------|
+| L.A.S.S.I | Archer Queen | High-jump targeting |
+| Mighty Yak | Barbarian King | Destroys walls |
+| Electro Owl | Grand Warden | Targets same unit |
+| Unicorn | Royal Champion | Heals hero continuously |
+
+Hero targets: AQ 75, BK 75, GW 50, RC 40. Priority: AQ > RC > GW > BK.
+
+Base layouts: [TH14 Bases](/clash-of-clans/bases/th/14)
+
+---
+
+## TH15 — Monolith, Spell Tower, Recall Spell
+
+**Monolith** — Percentage-based damage. Most feared defense. Upgrade to Level 2 first.
+
+**Spell Tower** — Automatically casts spells on troops. Set to Rage or Freeze mode.
+
+**Recall Spell** — Game-changing strategic tool. Upgrade early.
+
+**Lab**: Root Rider > Recall Spell > Super Witch
+
+Base layouts: [TH15 Bases](/clash-of-clans/bases/th/15)
+
+---
+
+## TH16 — New Defenses and Troop Meta
+
+1. Build all new defensive buildings immediately
+2. Upgrade Clan Castle to maximum
+3. **Key troops**: Druid (new support troop), Root Rider remains powerful
+
+Hero priority: AQ > BK > RC > GW (Elixir-based, upgrade separately).
+
+Defense: New defenses > Monolith > Scattershot > Spell Tower > Infernos
+
+Base layouts: [TH16 Bases](/clash-of-clans/bases/th/16)
+
+---
+
+## TH17 — The Penultimate Town Hall
+
+Offense first — always. Heroes are in the high 80s-90s. Keep Lab running constantly.
+
+Focus: Eagle Artillery > Monolith > Scattershot > Infernos > Spell Tower > X-Bows > Air Defenses > Walls.
+
+Base layouts: [TH17 Bases](/clash-of-clans/bases/th/17)
+
+---
+
+## TH18 — The Latest Content
+
+TH18 brings the highest-tier defenses, new hero equipment upgrades, and additional pet slots. Hero Equipment system matures here.
+
+**Priority**: All new TH18 buildings > Monolith > Eagle Artillery > Scattershots > remaining defenses.
+
+Base layouts: [TH18 Bases](/clash-of-clans/bases/th/18)
+
+---
+
+## Common Upgrade Mistakes to Avoid
+
+1. **Rushing TH without maxing troops** — Your attacks underperform in wars
+2. **Upgrading walls before heroes** — Heroes are active, walls are passive
+3. **Letting the Laboratory sit idle** — Always queue an upgrade
+4. **Ignoring Clan Castle** — First building to upgrade at every TH
+5. **Upgrading both heroes during wars** — Stagger so one is always available
+6. **Skipping Spell Factory** — New spells shift the meta
+7. **Hoarding resources** — Spend DE on heroes immediately, it can be stolen
+8. **Neglecting Builder Base** — OTTO gives you the 6th Builder
+
+---
+
+## FAQ
+
+**Should I max out before upgrading TH?**
+
+Max your Lab (troops), Heroes, and Army Camps. Defenses and walls can be slightly behind.
+
+**How many Builders should I have?**
+
+Get all 6 (5 + OTTO) as fast as possible. More builders = more parallel upgrades.
+
+**Best Dark Elixir farming strategy?**
+
+Low TH: Mass Hog Rider on collector bases. High TH: Super Goblin farming. Always target exposed Drills.
+
+**How long to max a Town Hall?**
+
+| TH | Time (Active Player) |
+|----|---------------------|
+| TH7-8 | 2-4 weeks |
+| TH9-10 | 6-10 weeks |
+| TH11-12 | 10-16 weeks |
+| TH13-14 | 16-24 weeks |
+| TH15-16 | 22-28 weeks |
+| TH17-18 | 26-30+ weeks |
+
+---
+
+Browse all our [Clash of Clans guides](/clash-of-clans/guides) and find the best base layouts for your Town Hall:
+- [TH7](/clash-of-clans/bases/th/7) | [TH8](/clash-of-clans/bases/th/8) | [TH9](/clash-of-clans/bases/th/9) | [TH10](/clash-of-clans/bases/th/10)
+- [TH11](/clash-of-clans/bases/th/11) | [TH12](/clash-of-clans/bases/th/12) | [TH13](/clash-of-clans/bases/th/13) | [TH14](/clash-of-clans/bases/th/14)
+- [TH15](/clash-of-clans/bases/th/15) | [TH16](/clash-of-clans/bases/th/16) | [TH17](/clash-of-clans/bases/th/17) | [TH18](/clash-of-clans/bases/th/18)
+
+**Follow this priority order, stay consistent, and you will outpace players who have been playing longer but without a plan.**
+    `.trim(),
+  },
+  {
+    slug: "clan-capital-guide-2026",
+    title: "Clan Capital Guide 2026 — Raid Weekends, Districts & Capital Gold",
+    description:
+      "The complete Clan Capital guide for 2026. Learn how Raid Weekends work, all districts explained, how to earn Capital Gold and Raid Medals, and best attack strategies.",
+    category: "Strategy",
+    date: "2026-03-14",
+    readTime: "25 min read",
+    image: images.blog["coc-clan-castle"],
+    content: `
+Clan Capital is one of the most exciting cooperative features ever added to Clash of Clans, transforming the game from a solo and clan war experience into a fully shared, collaborative base-building and raiding system. Introduced in **May 2022**, Clan Capital gave every clan a massive shared base spread across multiple districts, requiring members to work together to upgrade it, defend it, and raid other clans during Raid Weekends.
+
+This guide covers everything: how Clan Capital works, all districts, Capital Hall levels, Raid Weekend mechanics, the best attack strategies, how to earn and spend Raid Medals, and how to organize your clan for maximum efficiency.
+
+---
+
+## What Is Clan Capital?
+
+Clan Capital launched globally on **May 2, 2022**. It introduced an entirely new game layer separate from your home village and Builder Base. Instead of each player managing their own base independently, Clan Capital is a **shared clan base** — every member contributes to building and upgrading it together.
+
+At launch, Clan Capital featured Capital Hall levels 1 through 5 with five initial districts. Supercell has since expanded it significantly, adding new districts, raising the Capital Hall cap to **level 10**, and continuously refining the balance.
+
+---
+
+## How Clan Capital Works — The Core Loop
+
+### Capital Gold
+
+**Capital Gold** is the primary currency of Clan Capital. It is used exclusively to upgrade Clan Capital buildings, walls, and district halls. Every member earns Capital Gold through various activities and contributes it to the clan's shared base.
+
+### Raid Medals
+
+**Raid Medals** are the reward currency earned by participating in Raid Weekends. Unlike Capital Gold, Raid Medals are personal — you spend them at the Trader for resources, Builder Potions, Hero Equipment shards, and more.
+
+### The Weekly Cycle
+
+- **Sunday through Friday**: The building phase. Members contribute Capital Gold to upgrade buildings.
+- **Raid Weekend (Friday to Sunday)**: The attacking phase. Your clan attacks other clans' Capitals.
+
+---
+
+## Capital Hall Levels 1 Through 10
+
+| Capital Hall Level | Key Unlocks |
+|---|---|
+| Level 1 | Capital Peak district active, basic defenses |
+| Level 2 | Barbarian Camp district unlocked |
+| Level 3 | Wizard Valley district unlocked |
+| Level 4 | Balloon Lagoon district unlocked |
+| Level 5 | Builder's Workshop district unlocked |
+| Level 6 | Dragon Cliffs district unlocked |
+| Level 7 | Golem Quarry district unlocked |
+| Level 8 | Skeleton Park district unlocked |
+| Level 9 | Higher building level caps across all districts |
+| Level 10 | Maximum level — all districts fully available |
+
+---
+
+## All Clan Capital Districts Explained
+
+### Capital Peak
+The main district housing the Capital Hall. Most heavily fortified. Defending Capital Peak is the top priority.
+
+### Barbarian Camp (CH2)
+First additional district. Heavy ground defenses. Attackers typically use massed ground troops.
+
+### Wizard Valley (CH3)
+Magical defenses and Air Defenses. Winding paths make funneling tricky.
+
+### Balloon Lagoon (CH4)
+Air-focused district on water terrain. Best attacked with Rocket Balloons.
+
+### Builder's Workshop (CH5)
+Mechanical theme with unique traps. Multiple compartments requiring efficient wall breaking.
+
+### Dragon Cliffs (CH6)
+Elevated cliffs with strong splash defenses. Air attacks (Super Dragons) work well.
+
+### Golem Quarry (CH7)
+Heavy defenses and high-HP structures. One of the tougher districts to three-star.
+
+### Skeleton Park (CH8)
+The final and most dangerous district. Layered defensive rings and powerful traps.
+
+---
+
+## How Raid Weekends Work
+
+### Attack Allocation
+
+Each member receives **5 attacks per Raid Weekend**, plus **1 bonus attack** if your clan fully destroys at least one enemy Capital (6 total). Attacks work differently than Clan Wars:
+
+- Multiple members can attack the **same district** — progress carries over
+- Once a district's District Hall is destroyed, it is conquered
+- Troops are selected from Clan Capital barracks (separate from Home Village)
+
+### Raid Weekend Scoring
+
+Performance is scored by districts destroyed, total destruction percentage, and stars earned. Raid Medal payout is distributed to all participating members at the end.
+
+---
+
+## Capital Gold — How to Earn It
+
+### Forge in Your Home Village
+The primary method. Forge Capital Gold at the **Forge building** using Gold, Elixir, and Dark Elixir. Higher TH players can forge more per day.
+
+### Raid Weekends
+Participating in Raid Weekends earns Capital Gold based on destruction caused.
+
+### Clan Games
+Some Clan Games tiers include Capital Gold rewards.
+
+### Tips for Forging
+- Forge every day, even small amounts — consistency builds up
+- TH15+ players can forge thousands per day
+- Lower TH players (6-9) still contribute meaningfully
+
+---
+
+## Raid Medals — How to Earn and Spend
+
+### Earning Raid Medals
+- Number of attacks used
+- Districts destroyed
+- Defensive performance
+- Total clan performance
+
+A fully active member can earn **1,200 to 1,600+ Raid Medals** per weekend at higher Capital Hall levels.
+
+### Spending Raid Medals — The Trader
+
+| Item | Approximate Medal Cost |
+|---|---|
+| Gold, Elixir, DE bundles | 25–150 medals |
+| Builder Potion | 75 medals |
+| Research Potion | 75 medals |
+| Book of Heroes | 500 medals |
+| Book of Building | 500 medals |
+| Hero Equipment shards | 200–500 medals |
+
+**Pro tip**: Books of Building and Heroes are limited quantity — active raiders can grab these weekly.
+
+---
+
+## Best Attack Strategies for Raid Weekends
+
+### Super Wizard Spam
+**Best for**: Capital Peak, Wizard Valley, large open districts. Deploy Giants first as meat shields, then Super Wizards in a line behind them. Use Lightning Spells on high-DPS defenses.
+
+### Super Dragon Attack
+**Best for**: Dragon Cliffs, Skeleton Park, linear districts. Line up Super Dragons along one edge. Deploy Rocket Balloons ahead to clear Air Defenses.
+
+### Rocket Balloon Attack
+**Best for**: Balloon Lagoon, Builder's Workshop. Deploy ground tanks first, then Rocket Balloons in a wave. Rage Spells when they reach the core.
+
+### Mixed Cleanup Compositions
+For finishing partially damaged districts: Golems/Giants to absorb, Super Minions/Archers to clean, Healing Spells for sustain.
+
+---
+
+## How to Prioritize Capital Upgrades
+
+### 1. Capital Hall First (Always)
+Every Capital Hall level unlocks new districts or raises building caps.
+
+### 2. District Halls Second
+District Hall levels control caps for all buildings within that district.
+
+### 3. Defenses Third
+Stronger defenses = more defensive medals earned each Raid Weekend.
+
+### 4. Walls and Traps Last
+Important but lower medal-earning impact than upgraded defenses.
+
+---
+
+## Capital Contributions — Organizing Your Clan
+
+### Set Weekly Contribution Goals
+- **Top players (TH13+)**: 3,000–5,000 Capital Gold per week
+- **Mid players (TH10–12)**: 1,500–2,500 per week
+- **Lower players (TH6–9)**: 500–1,000 per week
+
+### Designate Upgrade Decision Makers
+Assign Co-Leaders as "Capital Managers" to prevent random building upgrades.
+
+### Coordinate Raid Weekend Attacks
+- Attack weakest enemy Capital first to guarantee bonus attack
+- Use clan chat to communicate priority targets
+
+### Track Contributions
+The in-game Clan Capital tab shows each member's contributions and attacks used.
+
+---
+
+## FAQ
+
+**Do I need to be a high Town Hall to contribute?**
+No. Even TH6 players can forge Capital Gold and use Raid Weekend attacks.
+
+**Can I change my army composition mid-Raid Weekend?**
+Yes. You select troops fresh for each attack, allowing different strategies for different districts.
+
+**How are clans matched for Raid Weekends?**
+Primarily based on Capital Hall level and total district development.
+
+**Can I donate Capital Gold to clanmates?**
+No. You spend Capital Gold directly on upgrades yourself, but the upgrades benefit the whole clan.
+
+**What is the fastest way to earn Raid Medals?**
+Use all 5-6 attacks every weekend, focus on high-destruction attacks, and ensure your clan destroys at least one enemy Capital for the bonus attack.
+
+---
+
+## Related Guides
+
+- [Best Clash of Clans Bases 2026](/clash-of-clans/bases)
+- [Clash of Clans Guides Hub](/clash-of-clans/guides)
+- [Best Clan War League Strategy Guide](/clash-of-clans/guides/best-clan-war-league-strategy-guide)
+
+**Clan Capital separates great clans from casual ones — get raiding, keep contributing, and never waste a Raid Weekend again.**
+    `.trim(),
+  },
+  {
+    slug: "best-th15-attack-strategies-2026",
+    title: "Best TH15 Attack Strategies 2026 — War, CWL & Trophy Pushing",
+    description:
+      "Master TH15 attacks with the best war strategies for 2026. Yeti Smash, Root Rider, Blizzard LaLoon, Hybrid, and EDrag spam with army compositions and step-by-step guides.",
+    category: "Attack Strategy",
+    date: "2026-03-14",
+    readTime: "30 min read",
+    image: images.blog["coc-troops"],
+    content: `
+Town Hall 15 is one of the most exciting and technically demanding levels in Clash of Clans. With the Monolith, Spell Tower, Recall Spell, and elevated hero levels (BK 80, AQ 80, GW 55, RC 30), TH15 rewards players who understand the meta and attack with precision.
+
+---
+
+## What's New at Town Hall 15
+
+### Monolith
+The Monolith deals percentage-based damage to troops, meaning it scales with troop health. High-HP troops like Giants, Golems, and Yetis take massive damage. Always account for the Monolith in your attack plan.
+
+### Spell Tower
+Automatically casts spells on attackers at timed intervals — Rage, Freeze, or Poison depending on configuration. Scout the Spell Tower type before every attack.
+
+### Recall Spell
+Allows you to recall troops back and redeploy them anywhere. Opens new attack angles, lets you salvage struggling pushes, or set up second fronts. Does not recall heroes.
+
+### Root Rider
+A powerful troop that targets defenses and can destroy walls while sustaining heavy fire.
+
+---
+
+## Top 5 TH15 War Attack Strategies
+
+### 1. Yeti Smash with Recall Spell
+
+The most consistent three-star strategy at TH15.
+
+| Troop | Quantity |
+|---|---|
+| Yeti | 7 |
+| Bowler | 8 |
+| Super Witch | 2 |
+| Ice Golem | 2 |
+| Wall Breaker | 4 |
+| Baby Dragon | 2 |
+
+**Spells:** Rage x2, Freeze x2, Recall x1, Earthquake x1, Jump x1
+**CC:** Super Witch + Bowlers
+
+**Steps:** Queen Walk one side → funnel with Baby Dragons → deploy Ice Golems, Yetis, Bowlers → Recall Spell to redirect if veering off → Jump/EQ to core → Freeze Monolith and Scattershots.
+
+---
+
+### 2. Root Rider Smash
+
+Root Riders handle walls automatically, making them excellent against compartmentalized bases.
+
+| Troop | Quantity |
+|---|---|
+| Root Rider | 10 |
+| Valkyrie | 10 |
+| Healer | 6 |
+| Wall Breaker | 4 |
+| Super Witch | 2 |
+
+**Spells:** Rage x3, Heal x2, Recall x1, Freeze x1
+**CC:** Root Riders or Super Witch + Bowlers
+
+**Steps:** Queen Walk to clear outer defenses → deploy Root Riders in a line (not stacked) → follow with Valkyries → Heal when engaging Monolith → Recall to reposition if needed.
+
+---
+
+### 3. Blizzard LaLoon
+
+High skill-cap air strategy using a Blimp kill squad + LaLoon backend.
+
+| Troop | Quantity |
+|---|---|
+| Lava Hound | 3 |
+| Balloon | 14 |
+| Minion | 6 |
+| Baby Dragon | 3 |
+
+**Spells:** Rage x2, Freeze x3, Haste x2, Bat x1
+**CC:** Super Wizards + Electro Dragon (in Battle Blimp)
+
+**Steps:** Zap Air Defenses on Blimp path → Queen Walk on far side → launch Blimp to core → deploy Lava Hounds at remaining Air Defenses → Balloons behind → Haste on Balloons → Bat Spell for cleanup.
+
+---
+
+### 4. Hybrid (Hog Riders + Miners)
+
+Straightforward ground strategy. Best for players learning TH15.
+
+| Troop | Quantity |
+|---|---|
+| Hog Rider | 20 |
+| Miner | 15 |
+| Super Witch | 2 |
+| Healer | 3 |
+| Wall Breaker | 2 |
+
+**Spells:** Heal x3, Rage x2, Poison x1, Recall x1
+**CC:** Hog Riders or Super Witches
+
+**Steps:** Queen Walk/RC Walk to clear a section → spread Hog Riders along attack side → Miners behind → Heal Spells through defensive zones → Rage for core push.
+
+---
+
+### 5. Electro Dragon Spam
+
+Simple trophy pushing strategy. Less reliable in competitive war.
+
+| Troop | Quantity |
+|---|---|
+| Electro Dragon | 7 |
+| Baby Dragon | 3 |
+| Balloon | 4 |
+| Minion | 8 |
+
+**Spells:** Lightning x6, Rage x1, Freeze x1
+**CC:** Electro Dragon
+
+**Steps:** Zap 2-3 Air Defenses → spread EDrags along one side → Baby Dragons on flanks → Rage on core entry → Freeze Infernos → Warden ability in core.
+
+---
+
+## Dealing with TH15 Defenses
+
+### Countering the Monolith
+
+| Strategy | Counter |
+|---|---|
+| Yeti Smash | Freeze Spell on Monolith |
+| Root Rider | Root Riders target and destroy it directly |
+| Blizzard LaLoon | Blimp kill squad should damage/destroy it |
+| Hybrid | Heal Spell when Hogs engage it |
+| EDrag Spam | Rage through it |
+
+### Countering the Spell Tower
+
+| Type | Effect | Counter |
+|---|---|---|
+| Rage | Buffs nearby defenses | Route troops away from radius |
+| Freeze | Freezes attacking troops | Time hero movement around it |
+| Poison | Damages and slows troops | Use Heal Spells to counteract |
+
+---
+
+## Hero Equipment Recommendations
+
+For detailed rankings, see our [Best Hero Equipment Rankings 2026](/clash-of-clans/guides/best-hero-equipment-rankings-2026).
+
+- **AQ (Level 80):** Giant Gauntlet + Frozen Arrow for tank queen walks
+- **BK (Level 80):** Earthquake Boots + Giant Gauntlet
+- **GW (Level 55):** Eternal Tome + Rage Vial
+- **RC (Level 30):** Hog Rider Puppet + Haste Vial
+
+---
+
+## Farming Strategies for TH15
+
+### Sneaky Goblin Farming
+Sneaky Goblins x20, Wall Breaker x8, Baby Dragon x4. Spells: EQ x4 + Rage x1. Target collector bases for quick loot.
+
+### Super Barbarian Farming
+Super Barb x15, Sneaky Goblin x10, Wall Breaker x6. Spells: Heal x2 + Rage x1. Works well against outside resources.
+
+---
+
+## CWL Tips for TH15
+
+1. **Three-star your assigned target** — always prioritize clean three-stars
+2. **Use your comfort strategy** — CWL is not for experimenting
+3. **Save strong attacks for Day 7** if close in stars
+4. **Request correct CC troops** before war day begins
+
+---
+
+## Common TH15 Attack Mistakes
+
+1. Ignoring the Monolith during scouting
+2. Deploying Recall Spell too early
+3. Misusing Grand Warden Ability on outer ring
+4. Forgetting the Spell Tower spell type
+5. Stacking troops under a Scattershot
+6. Skipping the queen walk on compact bases
+7. Wrong equipment selection
+8. Forgetting to lure CC troops
+
+---
+
+## FAQ
+
+**Best TH15 army for 3-starring in war?** Yeti Smash with Recall Spell — most consistent and forgiving.
+
+**Is EDrag spam viable at TH15?** Yes for trophy pushing, less reliable in competitive war.
+
+**How important is hero level at TH15?** Extremely. A maxed AQ (80) is dramatically more powerful than a Level 65 Queen.
+
+**Can I three-star a TH16 with TH15 armies?** Extremely difficult and not recommended. Focus on three-starring TH15 targets consistently.
+
+---
+
+## Related Guides
+
+- [TH15 Base Layouts](/clash-of-clans/bases/th/15)
+- [Best Army Compositions for Every Town Hall Level](/clash-of-clans/guides/best-army-compositions-for-every-town-hall-level)
+- [Best Hero Equipment Rankings 2026](/clash-of-clans/guides/best-hero-equipment-rankings-2026)
+- [All Clash of Clans Guides](/clash-of-clans/guides)
+
+**Master TH15 takes time and practice. Start with Yeti Smash or Hybrid, work toward Blizzard LaLoon, and three-stars will follow.**
+    `.trim(),
+  },
+  {
+    slug: "how-to-run-a-successful-clan-2026",
+    title: "How to Run a Successful Clan in Clash of Clans 2026 — Leadership & Recruitment Guide",
+    description:
+      "The complete guide to running a successful clan in Clash of Clans 2026. Learn recruitment, war management, CWL rosters, Clan Games, Clan Capital coordination, and leadership tips.",
+    category: "Clan Management",
+    date: "2026-03-14",
+    readTime: "28 min read",
+    image: images.blog["coc-clan-castle"],
+    content: `
+Running a successful clan in Clash of Clans is one of the most rewarding — and most challenging — experiences the game has to offer. With Clan Capital, CWL, Clan Games, and an increasingly competitive player base, the expectations placed on clan leaders are higher than ever. This guide covers everything from creating vs joining a clan, all the way through war management, CWL rosters, and keeping members engaged.
+
+---
+
+## Creating vs. Joining a Clan
+
+### When to Join an Existing Clan
+- You learn by observation — watch experienced leaders handle decisions
+- Immediate community — more fun than a 3-person clan
+- Less pressure — focus on improving your own base first
+
+If you are below TH10, have fewer than 500 war stars, or never participated in CWL — consider joining first.
+
+### When to Start Your Own
+- You have friends or an existing community ready to join
+- You have been frustrated by poor leadership and know you can do better
+- You are TH12+ with solid understanding of war mechanics
+- You want a specific niche (casual-only, competitive, nationality-based)
+
+**Hard truth:** Most new clans fail within 60 days. Going in with realistic expectations and a clear plan dramatically improves your odds.
+
+---
+
+## Setting Up Your Clan
+
+### Clan Name
+Keep it memorable and under 15 characters. Avoid excessive special characters. Your name is permanent.
+
+### Clan Description
+Include: clan focus, language, activity expectations, how to join, culture summary.
+
+### Join Requirements
+
+| Setting | Early (0-20 members) | Established (20-50) |
+|---|---|---|
+| Trophy requirement | 0-1000 | 1500-2500+ |
+| Join type | Open or Invite Only | Invite Only or Closed |
+
+---
+
+## Clan Roles — Who Gets What
+
+### Leader (1 per clan)
+Full permissions. Final decision-maker on kicks, promotions, war starts, CWL roster.
+
+### Co-Leader (3-5 recommended)
+Nearly all Leader permissions. Should be trusted 3+ month members who actively help.
+
+### Elder
+Can accept join requests and kick Members. Good 1-2 month members with solid activity.
+
+### Member
+Default role. Progression to Elder → Co-Leader should feel earned.
+
+**Avoid:** Promoting within first week, using promotions as bribes, demoting publicly.
+
+---
+
+## Recruitment Strategies
+
+### Reddit — r/ClashOfClansRecruit
+Post regularly with clan tag, TH requirements, war record, CWL league, Discord link.
+
+### Discord Recruitment Servers
+Multiple large CoC Discord servers have dedicated recruitment channels.
+
+### Player-to-Player
+When you war against impressive opponents, reach out with a respectful recruitment message.
+
+### Retention Is Recruitment
+Every member who stays 6+ months is one you do not have to replace. Invest in keeping good members happy.
+
+---
+
+## Setting Clan Rules
+
+### War Participation
+- Opt-in vs opt-out system
+- Both attacks required (specify consequences for missing)
+- Base calling system (first come/leader assigned/Discord sheet)
+
+### Donation Requirements
+- Minimum donations per season
+- Acceptable donation-to-request ratio
+- Only donate requested troop types
+
+### Activity Requirements
+- Log in frequency
+- Clan Games minimum points
+- Clan Capital contribution
+- Response time to messages
+
+---
+
+## Running Clan Wars Effectively
+
+### War Search Timing
+Experiment with off-peak hours for faster/better matchmaking.
+
+### Base Calling
+- **Method 1:** Numbered calling in clan chat (first claim wins)
+- **Method 2:** Discord pinned sheet (organized for larger wars)
+- **Method 3:** Leader-assigned (best for competitive clans)
+
+### Attack Order Strategy
+- Top players attack first — clear strongest bases early
+- Save 1-2 top attacks for emergency cleanup
+- Track remaining attacks in final 2 hours
+
+### Post-War Analysis
+Review which bases were easy/hard, who missed attacks, what strategies worked.
+
+---
+
+## CWL Management
+
+### Roster Selection Principles
+- Prioritize active war attackers over higher TH unreliable players
+- Include most consistent 3-star attackers
+- Communicate roster decisions early (1 week before)
+
+### Bonus Medal Distribution
+
+| Method | Best For |
+|---|---|
+| Equal split | Casual clans |
+| Performance-based | Competitive clans |
+| Seniority-based | Mixed clans |
+| Needs-based | Developing clans |
+
+Be transparent about your method. Medal drama causes clan splits.
+
+For in-depth CWL tactics: [CWL Strategy Guide](/clash-of-clans/guides/best-clan-war-league-strategy-guide)
+
+---
+
+## Clan Games — Maximizing Rewards
+
+### Setting Minimums
+- Casual clans: 500-1,000 points
+- Active clans: 1,500-2,000 points
+- Competitive clans: 4,000 points (maximum)
+
+### Tips
+- Do highest-point challenges first
+- Prioritize tiers with magic items (Books, Runes)
+- Rally members via Discord when close to next tier
+
+---
+
+## Clan Capital Coordination
+
+### Capital Gold Contributions
+- Always donate when available
+- Follow upgrade priority set by Co-Leaders
+- Focus on completing districts before starting new ones
+
+### Raid Weekend Organization
+- Experienced attackers go first
+- No wasted attacks — coordinate before attacking
+- Minimum X attacks per weekend (typically 5-6)
+
+---
+
+## Handling Drama and Conflict
+
+### Prevention First
+Clear rules + consistent enforcement + private conversations = minimal drama.
+
+### Common Conflicts
+
+**Inactive Veteran:** Private conversation → set timeline → apply same kick policy as anyone else.
+
+**Drama Starter:** Address once privately → demote if continues → kick if persists.
+
+**Power-Hungry Co-Leader:** Remove elevated role immediately → discuss expectations privately.
+
+### When to Kick
+- Broken clearly stated rule after warning
+- Toxic behavior affecting clan culture
+- Inactive beyond stated threshold
+- Deliberately undermining leadership
+
+**Always warn before you kick** unless the offense is severe.
+
+---
+
+## Keeping Members Active
+
+### Discord as Your Hub
+Set up: #announcements, #war-calls, #donations, #general, #leadership (private).
+
+### In-Game Engagement
+- Run internal competitions (most stars, highest donations)
+- Celebrate individual achievements
+- Use seasonal resets as fresh starts
+
+### Recognize and Reward
+Call out exceptional performances. Early promotions for standout members. These cost nothing but mean a lot.
+
+---
+
+## Growing From 10 to 50 Members
+
+### 10-25 Members: Survival Mode
+- War carefully — only if enough active members
+- Recruit daily on Reddit, Discord, in-game
+- Do Clan Games and Clan Capital
+- Bring in real-life connections
+
+### 25-40 Members: Building Culture
+- Enforce rules more consistently
+- Launch Discord
+- Run first CWL with full roster
+- Identify and promote best 3-5 members
+
+### 40-50 Members: Quality Control
+- Be selective — raise join requirements
+- Establish clear promotion pipeline
+- Focus on retention over recruitment
+- Create clan identity — motto, signature style
+
+---
+
+## FAQ
+
+**How many Co-Leaders for 50 members?** 3-5 is the sweet spot.
+
+**Best way to handle missed war attacks?** First: private message. Second: official warning. Third: roster removal or kick.
+
+**Should I require Discord?** Yes for any clan above 20 members doing regular wars or CWL.
+
+**How do I prevent Clan Games freeloaders?** Track activity in non-Clan Games weeks. Set minimum membership before participating in rewards.
+
+**My clan leader went inactive — where do I start?** Audit members (kick 14+ day inactive), update description, post on Reddit/Discord, promote 2-3 trustworthy members.
+
+**Great player but toxic in chat?** Warn privately → demote → kick. A toxic top performer costs you 5 good members for every war they win.
+
+---
+
+## Related Guides
+
+- [Clash of Clans Guides Hub](/clash-of-clans/guides)
+- [CWL Strategy Guide](/clash-of-clans/guides/best-clan-war-league-strategy-guide)
+- [CoC Base Layouts](/clash-of-clans/bases)
+
+**The clans that last are the ones with a leader who genuinely cares about every member. Start with clear rules, recruit consistently, and always remember — behind every username is a real person who chose to spend their time in your clan. Make it worth their while.**
+    `.trim(),
+  },
+  {
+    slug: "complete-guide-to-siege-machines",
+    title: "Complete Guide to Siege Machines in Clash of Clans 2026 — Every Siege Explained",
+    description:
+      "The complete guide to all 7 Siege Machines in Clash of Clans 2026. Learn Wall Wrecker, Battle Blimp, Stone Slammer, Siege Barracks, Log Launcher, Flame Flinger, and Battle Drill.",
+    category: "Strategy",
+    date: "2026-03-14",
+    readTime: "28 min read",
+    image: images.blog["coc-troops"],
+    content: `
+Siege Machines are one of the most powerful tools in Clash of Clans, transforming how attacks are structured at Town Hall 10 and beyond. Whether you are a newer player borrowing one from your Clan Castle or a seasoned attacker choosing the perfect Siege for your army composition, understanding every Siege Machine is the difference between a two-star and a three-star.
+
+---
+
+## What Are Siege Machines?
+
+Siege Machines are special war machines donated through the Clan Castle. They carry CC troops inside and deliver them to a target location while dealing damage along the way. Built in the **Workshop** (unlocked at TH12), but usable by **TH10+ players** via Clan Castle donations.
+
+### Key Facts
+- Workshop unlocks at TH12
+- Usable by TH10, 11, 12, 13, 14, 15, 16+ via CC
+- Carry Clan Castle troops inside
+- One Siege Machine per attack
+- Cannot be recalled once deployed
+
+---
+
+## All 7 Siege Machines Explained
+
+### 1. Wall Wrecker
+
+Ground siege that charges directly toward the Town Hall, smashing through every wall in its path. CC troops released when it reaches the TH or is destroyed.
+
+**Best for:** Ground attacks needing a direct core path — QC Hybrid, GoWiPe, Yeti Smash
+**Weakness:** Vulnerable to Scattershots, Eagle Artillery, Giant Bombs
+
+---
+
+### 2. Battle Blimp
+
+Flying siege that ignores walls, flying directly to the Town Hall. Drops a death bomb and releases CC troops on arrival.
+
+**Best for:** Zap-Blimp strategies (Lightning + EQ to clear Air Defenses first), Super Wizard CC delivery
+**Weakness:** Dies fast if Air Defenses remain active. Must zap ADs first.
+
+---
+
+### 3. Stone Slammer
+
+Flying siege that targets **defenses** (not TH), dropping boulders that deal splash damage. Path is less predictable.
+
+**Best for:** LavaLoon attacks — softens defenses while Balloons follow behind
+**Weakness:** Unpredictable pathing, vulnerable to Air Defenses
+
+---
+
+### 4. Siege Barracks
+
+Stationary spawner placed on the battlefield. Deploys CC troops at placement point — no movement required. Gets CC troops behind enemy walls without a funnel.
+
+**Best for:** Flanking attacks, Mass Dragon rear deployment, pincer strategies
+**Weakness:** Stationary with low HP, troops deploy based on AI after release
+
+---
+
+### 5. Log Launcher
+
+Ground siege that fires giant logs horizontally toward the TH. Logs break walls and damage buildings along the line.
+
+**Best for:** Corner or edge TH bases, paired with Yetis or Super Bowlers
+**Weakness:** Less effective against deeply centered Town Halls
+
+---
+
+### 6. Flame Flinger
+
+Long-range catapult siege that launches fire projectiles in an arc. Stays behind troops and bombards from range.
+
+**Best for:** Cleanup attacks, supporting Witch/Golem armies from rear
+**Weakness:** Least precise targeting, may waste shots on resource buildings
+
+---
+
+### 7. Battle Drill
+
+Travels **underground**, immune to all defenses while moving. Surfaces at target dealing massive area damage, then releases CC troops.
+
+**Best for:** Heavily defended cores, Super Miner armies, bases with strong perimeters
+**Weakness:** Once surfaced, becomes vulnerable. Surfacing position depends on deployment angle.
+
+---
+
+## Which Siege Machine for Which Strategy
+
+| Attack Strategy | Recommended Siege | Why |
+|---|---|---|
+| QC Hybrid (Miners) | Wall Wrecker | Opens core for Miners |
+| QC LavaLoon | Battle Blimp or Stone Slammer | Air path, softens defenses |
+| GoWiPe | Wall Wrecker | Smashes walls for ground troops |
+| Super Witch Smash | Battle Blimp | Drops Super Witches in core |
+| Yeti Smash | Wall Wrecker or Log Launcher | Creates TH path for Yetis |
+| Mass Dragon | Siege Barracks | Deploys Dragons behind lines |
+| Super Bowler Smash | Log Launcher | Breaks multiple wall sections |
+| Miner Army | Battle Drill | Underground delivery |
+
+---
+
+## Best Siege Machine + CC Troop Combos
+
+### Battle Blimp + Super Wizards
+The iconic combo. Zap Air Defenses, send Blimp to core, Super Wizards shred everything with chain lightning.
+
+### Wall Wrecker + Yetis
+Wall Wrecker smashes to TH, releases Yetis in the core. Fast, hard-to-stop attack.
+
+### Wall Wrecker + Ice Golems
+Ice Golems slow defenses on death. Excellent for Queen Charge Hybrid.
+
+### Battle Blimp + Super Witches
+Super Witch dropped on TH spawns skeletons immediately. Massive distraction value.
+
+### Stone Slammer + Balloons
+Stone Slammer damages defenses, releases Balloons inside the base naturally.
+
+### Log Launcher + Super Bowlers
+Log corridor + bouncing Bowler shots = devastating corridor attack.
+
+### Battle Drill + Super Miners
+Full subsurface assault. Ignores traps and perimeter defenses entirely.
+
+---
+
+## Defending Against Each Siege Machine
+
+**Wall Wrecker:** Deep TH + multiple wall layers + Scattershots
+**Battle Blimp:** Spread Air Defenses + Seeking Air Mines on flight path
+**Stone Slammer:** Spread Air Defenses + multi-target Infernos
+**Siege Barracks:** Strong edge defenses + CC troops that rush out
+**Log Launcher:** Avoid corner TH placement + irregular wall shapes
+**Flame Flinger:** Strong perimeter defenses (easiest to survive)
+**Battle Drill:** Strong central CC troops + Giant Bombs near expected surface point
+
+---
+
+## Siege Machine Upgrade Priority
+
+1. **Wall Wrecker** — Most universally useful
+2. **Battle Blimp** — Most powerful air siege, enables Zap-Blimp
+3. **Battle Drill** — Underground immunity exceptional in war
+4. **Log Launcher** — Great for TH13-15 multi-compartment bases
+5. **Stone Slammer** — Good for air strategies
+6. **Siege Barracks** — Situationally powerful, niche
+7. **Flame Flinger** — Least precise, lowest war priority
+
+---
+
+## Siege Machine Donation Strategy
+
+### Who Should Donate
+Only TH12+ players with a Workshop. Designate 3-5 active Workshop builders.
+
+### Communication Protocol
+Attackers should specify: which Siege Machine, what CC troops inside, level requirements.
+
+### Workshop Queue Management
+Always keep the Workshop producing. Siege Machines take 30-60 minutes to build.
+
+---
+
+## Advanced Techniques
+
+### Wall Wrecker Pathing Manipulation
+Deploy at different angles to approach TH through different wall sections. Test in practice mode.
+
+### Blimp Timing
+Never send Blimp until targeted Air Defenses are confirmed destroyed. Deploy main army simultaneously — defenses targeting your army helps the Blimp survive.
+
+### Battle Drill Surfacing Control
+Deploy from an angle where the straight-line underground path leads to your target. Practice to develop intuition.
+
+### Stone Slammer as Distractor
+Deploy on one side to pull Air Defense fire while Lava Hounds and Balloons enter from the opposite side.
+
+---
+
+## FAQ
+
+**Can TH10 players use Siege Machines?** Yes, via CC donation from TH12+ clanmates.
+
+**What happens if the Siege Machine is destroyed early?** CC troops release at the destruction point — potentially outside the base.
+
+**Can the Battle Drill be targeted while underground?** No. Completely immune until it surfaces.
+
+**Can I use two Siege Machines in one attack?** No. One per attack.
+
+**Wall Wrecker or Log Launcher for wall breaching?** Wall Wrecker for centrally located TH. Log Launcher for corner/edge TH.
+
+**Which Siege Machine is best for TH12?** Battle Blimp (Zap-Blimp is extremely effective) or Wall Wrecker for ground.
+
+---
+
+## Related Guides
+
+- [Best Army Compositions for Every Town Hall Level](/clash-of-clans/guides/best-army-compositions-for-every-town-hall-level)
+- [Clash of Clans Guides](/clash-of-clans/guides)
+- [Best CoC Base Layouts](/clash-of-clans/bases)
+
+**Siege Machines are fundamental to every serious attack at TH10+. Master the Wall Wrecker and Blimp first, then expand your toolkit. A well-donated Blimp with Super Wizards can be the difference between a 2-star and a flawless 3-star.**
+    `.trim(),
+  },
+  {
+    slug: "hero-upgrade-order-guide-2026",
+    title: "Hero Upgrade Order Guide 2026 — BK, AQ, GW & Royal Champion Priority",
+    description:
+      "The complete hero upgrade order guide for 2026. Learn when to upgrade Barbarian King, Archer Queen, Grand Warden, and Royal Champion at every Town Hall from TH7 to TH18.",
+    category: "Strategy",
+    date: "2026-03-14",
+    readTime: "28 min read",
+    image: images.blog["coc-heroes"],
+    content: `
+If there is one universal truth in Clash of Clans, it is this: your heroes determine your attack ceiling more than any other single factor. A player with maxed heroes and average troops will consistently out-perform a player with maxed troops and weak heroes. Heroes are always on the field, they reset between attacks, and at higher Town Hall levels they carry entire raid strategies on their backs.
+
+This guide breaks down every hero, the correct upgrade priority at every Town Hall from TH7 to TH18, the Hero Equipment system, Dark Elixir farming strategies, and the smart use of Books and Hammers.
+
+---
+
+## Why Heroes Are the Most Important Upgrades
+
+Heroes are permanent. Every other troop gets used once and must be brewed again. Heroes regenerate automatically and are available for every attack you make — multiplayer, Clan War, CWL, Clan Games, Legend League.
+
+**Key reasons to always prioritize heroes:**
+- They scale with your attack strategy — stronger heroes open more powerful strategies
+- Hero abilities become dramatically more effective at higher levels
+- In CWL and Legend League, hero levels directly determine competitive viability
+- Every Dark Elixir you have should go into heroes first
+
+---
+
+## The Four Heroes
+
+### Barbarian King (TH7+)
+Ground melee tank. **Iron Fist ability** summons Barbarians, boosts speed and damage, regenerates health. Primary role: tanking in funnels and walks.
+
+### Archer Queen (TH9+)
+The most important hero in the game. Ranged DPS. **Royal Cloak ability** — goes invisible, summons Archers, regenerates health. Enables Queen Walk — the most powerful funnel tool. **Always upgrade AQ first from TH9 onward.**
+
+### Grand Warden (TH11+)
+Support hero with passive aura buffing nearby troops' HP. **Eternal Tome ability** — makes all nearby troops temporarily invincible. Can toggle between Ground and Air mode.
+
+### Royal Champion (TH13+)
+Ranged DPS hero targeting defenses. **Seeking Shield ability** — bounces between multiple defenses dealing high damage. Exceptional at dismantling defense clusters.
+
+---
+
+## Hero Upgrade Priority by Town Hall
+
+| Town Hall | BK Cap | AQ Cap | GW Cap | RC Cap | Priority Order |
+|-----------|--------|--------|--------|--------|----------------|
+| TH7 | 5 | — | — | — | BK |
+| TH8 | 10 | — | — | — | BK |
+| TH9 | 30 | 30 | — | — | AQ > BK |
+| TH10 | 40 | 40 | — | — | AQ > BK |
+| TH11 | 50 | 50 | 20 | — | GW(1-20) > AQ > BK |
+| TH12 | 65 | 65 | 40 | — | AQ > GW > BK |
+| TH13 | 75 | 75 | 50 | 25 | RC(1-25) > AQ > GW > BK |
+| TH14 | 80 | 80 | 55 | 30 | AQ > RC > GW > BK |
+| TH15+ | 90+ | 90+ | 65+ | 40+ | AQ > RC > GW > BK + Equipment |
+
+### TH7-8: BK Only
+Push Barbarian King as high as possible. Stockpile DE for unlocking AQ at TH9.
+
+### TH9: AQ First (Most Important)
+**AQ to 30 is the #1 priority.** Queen Walk becomes available and transforms your attack capability. Never let AQ sit idle — always queue the next upgrade. If you only have DE for one hero, always choose the Queen.
+
+### TH10: AQ to 40 > BK to 40
+Same principle. AQ should never be more than 5-10 levels behind your TH cap.
+
+### TH11: GW to 20 First
+Grand Warden's early levels are cheap and fast. Get him to 20 quickly for the aura bonus, then shift DE back to Queen. After GW 20, resume AQ priority.
+
+### TH12: AQ > GW > BK
+AQ cap jumps to 65. A Level 65 Queen with full Cloak can reliably deal with Eagle Artillery areas.
+
+### TH13: RC to 25 First
+Royal Champion starts at Level 1 and needs investment to be useful. Get her to 25 where Seeking Shield becomes meaningful, then resume AQ-first.
+
+### TH14: AQ > RC > GW > BK
+All heroes push toward max (80/80/55/30). The gap between TH13 and TH14 hero levels is substantial.
+
+### TH15-18: Equipment System Dominates
+Heroes still level up, but effectiveness is heavily influenced by Hero Equipment. Balance DE for levels and Ores for equipment.
+
+---
+
+## Hero Equipment System (TH15+)
+
+Each hero has two equipment slots with swappable items. Upgraded using Ores (Shiny, Glowy, Starry). Epic equipment is significantly more powerful than Common.
+
+### Best Equipment Per Hero (2026)
+
+**Barbarian King:** Giant Gauntlet (Epic) + Vampstache
+**Archer Queen:** Frozen Arrow (Epic) + Healer Puppet
+**Grand Warden:** Eternal Tome + Rage Gem (Epic)
+**Royal Champion:** Hog Puppet (Epic) + Rocket Spear
+
+### Equipment Upgrade Priority
+1. Frozen Arrow (AQ) — transforms Queen Walk
+2. Hog Puppet (RC) — massive RC charge impact
+3. Giant Gauntlet (BK) — changes BK's role
+4. Rage Gem (GW) — amplifies Eternal Tome
+
+For full rankings: [Best Hero Equipment Rankings 2026](/clash-of-clans/guides/best-hero-equipment-rankings-2026)
+
+---
+
+## Dark Elixir Farming Tips
+
+### Best Strategies
+- **Goblin Knife (TH9-11):** Small army of Goblins + Giants + Wall Breakers targeting DE storages
+- **Sneaky Goblin farming (TH12+):** Super Goblins invisible for 5 seconds, deal double damage to resources
+- **Target rushed bases** with full DE storages and weak defenses
+
+### Maximize Passive Income
+- Upgrade all Dark Elixir Drills to max
+- Collect frequently — full drills stop producing
+- Spend DE immediately — resources in storage can be stolen
+
+---
+
+## Should You Upgrade Heroes During CWL?
+
+**Best approach:** Use Books of Heroes or Hammers during CWL — instant completion means hero is available for all 7 attacks.
+
+**If no Books/Hammers:** Pause hero upgrades during CWL. A sleeping hero during the 8-day event hurts more than one level helps.
+
+**Exception:** If CWL is casual for your clan, continue upgrading.
+
+---
+
+## Books and Hammers — Efficient Usage
+
+### Book of Heroes
+- Instantly completes any hero upgrade
+- **When to use:** Before CWL, on Level 40+ heroes where downtime is 7-14 days
+- **When NOT to use:** On low-level heroes where impact is minimal
+
+### Hammer of Heroes
+- Covers resource cost AND time
+- **When to use:** Only on Level 70+ heroes where cost is 200K+ DE and time is 14+ days
+
+### Priority
+Always use magic items on the Archer Queen above all other heroes.
+
+---
+
+## Common Hero Upgrade Mistakes
+
+1. **Ignoring AQ for BK** — AQ provides dramatically more value per DE spent
+2. **Rushing TH with underleveled heroes** — Creates a months-long deficit
+3. **Saving DE instead of spending** — Sitting in storage earns nothing, can be stolen
+4. **Using Books on low-level heroes** — Save for Level 40+ where downtime is 7-14 days
+5. **Not queuing immediately** — Check heroes every login, queue next level instantly
+6. **Neglecting Equipment at TH15+** — Epic equipment multiplies hero effectiveness
+7. **Upgrading GW before AQ at TH12+** — GW-first only applies to first 20 levels at TH11
+8. **Not setting GW to correct mode** — Always check Ground vs Air before attacking
+
+---
+
+## FAQ
+
+**AQ or BK first at TH9?** Always Archer Queen. She enables Queen Walk and her Royal Cloak scales dramatically.
+
+**Can I use a hero during an upgrade?** No. Heroes are unavailable while upgrading. Books and Hammers skip downtime.
+
+**How long to max all heroes?** TH9 to TH12 max: 6-9 months. TH13 to TH14 max: 3-5 months. Season Pass books accelerate significantly.
+
+**Is the Royal Champion worth upgrading early?** Yes — get her to Level 25 at TH13. After that, resume AQ-first priority.
+
+**Best DE farming at TH9?** Goblin Knife targeting DE storages. Farm at Champion league where opponents have fuller storages.
+
+**Do hero levels matter in Legend League?** Absolutely. Hero levels are a primary factor determining your ceiling.
+
+**Heroes or Lab first?** Heroes first, always. The only exception is unlocking a troop that enables an entirely new strategy.
+
+---
+
+## Related Guides
+
+- [Best Hero Equipment Rankings 2026](/clash-of-clans/guides/best-hero-equipment-rankings-2026)
+- [How to Max Your Base Fast — F2P Guide](/clash-of-clans/guides/how-to-max-your-base-fast-f2p-guide)
+- [Clash of Clans Base Layouts](/clash-of-clans/bases)
+- [All CoC Guides](/clash-of-clans/guides)
+
+**Heroes are the backbone of every attack. Upgrade the Queen first, use Books wisely, never let DE sit idle, and your heroes will carry you from TH7 to Legend League.**
+    `.trim(),
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {
