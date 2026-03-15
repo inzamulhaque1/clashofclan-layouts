@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-15T15:27:23.805Z",
+  "timestamp": "2026-03-15T18:35:15.194Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 24,
+  "totalTracked": 25,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th13-farming-base-de-protection",
-      "title": "TH13 Farming Base — DE Focus",
+      "id": "hv-th18-cwl-anti-3-star-competitive-base",
+      "title": "TH18 CWL Anti 3 Star Base",
       "success": true,
-      "pinId": "1092897034673140079"
+      "pinId": "1092897034673151396"
     }
   ]
 }
