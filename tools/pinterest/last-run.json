@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-15T18:35:15.194Z",
+  "timestamp": "2026-03-15T21:25:50.508Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 25,
+  "totalTracked": 26,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th18-cwl-anti-3-star-competitive-base",
-      "title": "TH18 CWL Anti 3 Star Base",
+      "id": "bh-bh8-war-crusher-island-base",
+      "title": "BH8 War Crusher Island Base",
       "success": true,
-      "pinId": "1092897034673151396"
+      "pinId": "1092897034673162619"
     }
   ]
 }
