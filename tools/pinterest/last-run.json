@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-15T09:31:55.352Z",
+  "timestamp": "2026-03-15T12:46:30.775Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 22,
+  "totalTracked": 23,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th13-farming-base-max-resource-spread",
-      "title": "TH13 Max Resource Spread Farming Base",
+      "id": "hv-th13-trophy-base-titan-push",
+      "title": "TH13 Titan League Push Base",
       "success": true,
-      "pinId": "1092897034673124475"
+      "pinId": "1092897034673132036"
     }
   ]
 }
