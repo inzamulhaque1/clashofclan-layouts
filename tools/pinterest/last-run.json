@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-15T12:46:30.775Z",
+  "timestamp": "2026-03-15T15:27:23.805Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 23,
+  "totalTracked": 24,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th13-trophy-base-titan-push",
-      "title": "TH13 Titan League Push Base",
+      "id": "hv-th13-farming-base-de-protection",
+      "title": "TH13 Farming Base — DE Focus",
       "success": true,
-      "pinId": "1092897034673132036"
+      "pinId": "1092897034673140079"
     }
   ]
 }
