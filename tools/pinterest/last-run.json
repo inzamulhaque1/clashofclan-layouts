@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-15T05:03:42.129Z",
+  "timestamp": "2026-03-15T06:53:42.324Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 20,
+  "totalTracked": 21,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh3-best-versus-battle-layout-2026",
-      "title": "BH3 Best Versus Battle Layout",
+      "id": "hv-th8-war-base-tesla-farm",
+      "title": "TH8 Tesla Farm War Base",
       "success": true,
-      "pinId": "1092897034673114934"
+      "pinId": "1092897034673118888"
     }
   ]
 }
