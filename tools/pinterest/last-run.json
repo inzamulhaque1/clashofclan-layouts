@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-16T18:58:19.702Z",
+  "timestamp": "2026-03-16T21:37:12.669Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 33,
+  "totalTracked": 34,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh3-compact-war-base-2026",
-      "title": "BH3 Compact War Base",
+      "id": "bh-bh3-resource-protection-farming-base-2026",
+      "title": "BH3 Resource Protection Farming Base",
       "success": true,
-      "pinId": "1092897034673219113"
+      "pinId": "1092897034673227850"
     }
   ]
 }
