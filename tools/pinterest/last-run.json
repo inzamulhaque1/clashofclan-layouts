@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-16T02:07:51.686Z",
+  "timestamp": "2026-03-16T05:12:40.173Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 27,
+  "totalTracked": 28,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th8-war-base-anti-gowipe",
-      "title": "TH8 War Base Anti GoWiPe",
+      "id": "hv-th7-trophy-base-bk-defense",
+      "title": "TH7 BK Defense Trophy Base",
       "success": true,
-      "pinId": "1092897034673176071"
+      "pinId": "1092897034673183808"
     }
   ]
 }
