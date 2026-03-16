@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-16T13:05:31.755Z",
+  "timestamp": "2026-03-16T16:03:32.127Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 31,
+  "totalTracked": 32,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "guide-best-th16-attack-strategies-2026",
-      "title": "Best TH16 Attack Strategies 2026",
+      "id": "hv-th9-war-base-anti-witch-slap",
+      "title": "TH9 Anti Witch Slap War Base",
       "success": true,
-      "pinId": "1092897034673201028"
+      "pinId": "1092897034673210264"
     }
   ]
 }
