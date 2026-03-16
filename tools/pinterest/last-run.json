@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-16T05:12:40.173Z",
+  "timestamp": "2026-03-16T07:13:12.601Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 28,
+  "totalTracked": 29,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th7-trophy-base-bk-defense",
-      "title": "TH7 BK Defense Trophy Base",
+      "id": "hv-th13-hybrid-base-war-trophy",
+      "title": "TH13 Hybrid Base — War & Trophy",
       "success": true,
-      "pinId": "1092897034673183808"
+      "pinId": "1092897034673187970"
     }
   ]
 }
