@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-17T07:01:15.942Z",
+  "timestamp": "2026-03-17T09:54:05.651Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 37,
+  "totalTracked": 38,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th11-farming-base-anti-barch",
-      "title": "TH11 Anti-Barch Farming Base",
+      "id": "hv-th18-farming-base-anti-sneaky-goblin",
+      "title": "TH18 Anti Sneaky Goblin Farming Base",
       "success": true,
-      "pinId": "1092897034673249867"
+      "pinId": "1092897034673255340"
     }
   ]
 }
