@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-17T18:58:55.626Z",
+  "timestamp": "2026-03-17T21:35:14.356Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 41,
+  "totalTracked": 42,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th7-war-base-anti-hog-rider",
-      "title": "TH7 Anti Hog Rider War Base",
+      "id": "hv-th14-cwl-war-base-island-style-defense",
+      "title": "TH14 CWL Base — Island Defense",
       "success": true,
-      "pinId": "1092897034673280669"
+      "pinId": "1092897034673288580"
     }
   ]
 }
