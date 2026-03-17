@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-17T13:06:03.362Z",
+  "timestamp": "2026-03-17T16:03:28.570Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 39,
+  "totalTracked": 40,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th9-hybrid-base-new-th9-starter",
-      "title": "TH9 New Player Hybrid Base",
+      "id": "hv-th12-farming-base-resource-protection",
+      "title": "TH12 Farming Base — Resources",
       "success": true,
-      "pinId": "1092897034673262673"
+      "pinId": "1092897034673270602"
     }
   ]
 }
