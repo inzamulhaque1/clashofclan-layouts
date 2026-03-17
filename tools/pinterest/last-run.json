@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-17T09:54:05.651Z",
+  "timestamp": "2026-03-17T13:06:03.362Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 38,
+  "totalTracked": 39,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th18-farming-base-anti-sneaky-goblin",
-      "title": "TH18 Anti Sneaky Goblin Farming Base",
+      "id": "hv-th9-hybrid-base-new-th9-starter",
+      "title": "TH9 New Player Hybrid Base",
       "success": true,
-      "pinId": "1092897034673255340"
+      "pinId": "1092897034673262673"
     }
   ]
 }
