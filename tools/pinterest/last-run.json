@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-16T21:37:12.669Z",
+  "timestamp": "2026-03-17T01:54:43.825Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 34,
+  "totalTracked": 35,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh3-resource-protection-farming-base-2026",
-      "title": "BH3 Resource Protection Farming Base",
+      "id": "hv-th16-anti-2-star-centered-th-base",
+      "title": "TH16 Anti 2 Star Base",
       "success": true,
-      "pinId": "1092897034673227850"
+      "pinId": "1092897034673238874"
     }
   ]
 }
