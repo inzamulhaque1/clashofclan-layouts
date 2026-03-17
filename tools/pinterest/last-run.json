@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-17T16:03:28.570Z",
+  "timestamp": "2026-03-17T18:58:55.626Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 40,
+  "totalTracked": 41,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th12-farming-base-resource-protection",
-      "title": "TH12 Farming Base — Resources",
+      "id": "hv-th7-war-base-anti-hog-rider",
+      "title": "TH7 Anti Hog Rider War Base",
       "success": true,
-      "pinId": "1092897034673270602"
+      "pinId": "1092897034673280669"
     }
   ]
 }
