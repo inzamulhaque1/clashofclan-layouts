@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-17T04:49:47.853Z",
+  "timestamp": "2026-03-17T07:01:15.942Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 36,
+  "totalTracked": 37,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th7-trophy-base-compartment-defense",
-      "title": "TH7 Compartment Trophy Base",
+      "id": "hv-th11-farming-base-anti-barch",
+      "title": "TH11 Anti-Barch Farming Base",
       "success": true,
-      "pinId": "1092897034673245507"
+      "pinId": "1092897034673249867"
     }
   ]
 }
