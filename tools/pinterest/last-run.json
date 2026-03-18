@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-18T09:52:02.091Z",
+  "timestamp": "2026-03-18T13:05:18.948Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 46,
+  "totalTracked": 47,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th9-cwl-war-base-15v15",
-      "title": "TH9 CWL War Base (15v15)",
+      "id": "hv-th11-hybrid-base-war-farm-combo",
+      "title": "TH11 Hybrid Base — War & Farm Combo",
       "success": true,
-      "pinId": "1092897034673318249"
+      "pinId": "1092897034673326643"
     }
   ]
 }
