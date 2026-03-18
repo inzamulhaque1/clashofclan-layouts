@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-17T21:35:14.356Z",
+  "timestamp": "2026-03-18T01:59:23.552Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 42,
+  "totalTracked": 43,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th14-cwl-war-base-island-style-defense",
-      "title": "TH14 CWL Base — Island Defense",
+      "id": "bh-bh5-collector-ring-farming-base-2026",
+      "title": "BH5 Collector Ring Farming Base",
       "success": true,
-      "pinId": "1092897034673288580"
+      "pinId": "1092897034673300702"
     }
   ]
 }
