@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-18T18:56:03.862Z",
+  "timestamp": "2026-03-18T21:31:46.544Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 49,
+  "totalTracked": 50,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th11-hybrid-base-anti-ground-air",
-      "title": "TH11 Hybrid Base — Anti Ground & Air",
+      "id": "hv-th8-anti-3-star-clan-war-base",
+      "title": "TH8 Clan War Anti 3 Star Base",
       "success": true,
-      "pinId": "1092897034673343757"
+      "pinId": "1092897034673352036"
     }
   ]
 }
