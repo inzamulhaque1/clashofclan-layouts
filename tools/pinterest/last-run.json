@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-18T13:05:18.948Z",
+  "timestamp": "2026-03-18T16:06:55.396Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 47,
+  "totalTracked": 48,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th11-hybrid-base-war-farm-combo",
-      "title": "TH11 Hybrid Base — War & Farm Combo",
+      "id": "hv-th17-war-base-offset-th-placement",
+      "title": "TH17 Offset TH War Base",
       "success": true,
-      "pinId": "1092897034673326643"
+      "pinId": "1092897034673335776"
     }
   ]
 }
