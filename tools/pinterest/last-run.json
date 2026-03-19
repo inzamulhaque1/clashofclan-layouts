@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-19T12:59:24.783Z",
+  "timestamp": "2026-03-19T15:52:39.708Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 54,
+  "totalTracked": 55,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th18-farming-base-collector-outside-shield",
-      "title": "TH18 Shield Farming Base",
+      "id": "hv-th12-hybrid-base-balanced",
+      "title": "TH12 Hybrid Base — Balanced",
       "success": true,
-      "pinId": "1092897034673386670"
+      "pinId": "1092897034673395233"
     }
   ]
 }
