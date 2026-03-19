@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-19T15:52:39.708Z",
+  "timestamp": "2026-03-19T18:55:06.458Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 55,
+  "totalTracked": 56,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th12-hybrid-base-balanced",
-      "title": "TH12 Hybrid Base — Balanced",
+      "id": "hv-th8-trophy-push-base-crystal",
+      "title": "TH8 Crystal League Trophy Base",
       "success": true,
-      "pinId": "1092897034673395233"
+      "pinId": "1092897034673405638"
     }
   ]
 }
