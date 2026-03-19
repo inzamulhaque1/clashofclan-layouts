@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-19T06:55:15.226Z",
+  "timestamp": "2026-03-19T09:40:20.722Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 52,
+  "totalTracked": 53,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th18-trophy-base-legend-defense-2026",
-      "title": "TH18 Legend League Defense Base (2026)",
+      "id": "hv-th14-farming-base-gold-elixir-priority",
+      "title": "TH14 Farming Base — Gold & Elixir Priority",
       "success": true,
-      "pinId": "1092897034673373254"
+      "pinId": "1092897034673378778"
     }
   ]
 }
