@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-18T21:31:46.544Z",
+  "timestamp": "2026-03-19T04:52:21.402Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 50,
+  "totalTracked": 51,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th8-anti-3-star-clan-war-base",
-      "title": "TH8 Clan War Anti 3 Star Base",
+      "id": "hv-th8-trophy-base-wizard-tower-defense",
+      "title": "TH8 WT Defense Trophy Base",
       "success": true,
-      "pinId": "1092897034673352036"
+      "pinId": "1092897034673369461"
     }
   ]
 }
