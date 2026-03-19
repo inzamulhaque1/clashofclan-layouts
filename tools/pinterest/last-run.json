@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-19T09:40:20.722Z",
+  "timestamp": "2026-03-19T12:59:24.783Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 53,
+  "totalTracked": 54,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th14-farming-base-gold-elixir-priority",
-      "title": "TH14 Farming Base — Gold & Elixir Priority",
+      "id": "hv-th18-farming-base-collector-outside-shield",
+      "title": "TH18 Shield Farming Base",
       "success": true,
-      "pinId": "1092897034673378778"
+      "pinId": "1092897034673386670"
     }
   ]
 }
