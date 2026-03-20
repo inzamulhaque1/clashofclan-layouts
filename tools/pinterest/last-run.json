@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-20T06:52:10.768Z",
+  "timestamp": "2026-03-20T09:38:22.271Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 60,
+  "totalTracked": 61,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th18-legend-league-trophy-push-base",
-      "title": "TH18 Legend League Trophy Push Base",
+      "id": "hv-th16-farming-base-max-gold-elixir",
+      "title": "TH16 Farming Base — Max Gold & Elixir",
       "success": true,
-      "pinId": "1092897034673434100"
+      "pinId": "1092897034673440395"
     }
   ]
 }
