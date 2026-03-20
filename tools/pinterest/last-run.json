@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-20T04:45:15.517Z",
+  "timestamp": "2026-03-20T06:52:10.768Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 59,
+  "totalTracked": 60,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh4-mega-tesla-versus-base-2026",
-      "title": "BH4 Mega Tesla Versus Base",
+      "id": "hv-th18-legend-league-trophy-push-base",
+      "title": "TH18 Legend League Trophy Push Base",
       "success": true,
-      "pinId": "1092897034673430295"
+      "pinId": "1092897034673434100"
     }
   ]
 }
