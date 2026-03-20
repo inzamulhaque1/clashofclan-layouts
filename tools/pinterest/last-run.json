@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-20T01:54:06.801Z",
+  "timestamp": "2026-03-20T04:45:15.517Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 58,
+  "totalTracked": 59,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "guide-hero-upgrade-order-guide-2026",
-      "title": "Hero Upgrade Order Guide 2026",
+      "id": "bh-bh4-mega-tesla-versus-base-2026",
+      "title": "BH4 Mega Tesla Versus Base",
       "success": true,
-      "pinId": "1092897034673424385"
+      "pinId": "1092897034673430295"
     }
   ]
 }
