@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-20T15:40:20.291Z",
+  "timestamp": "2026-03-20T18:44:01.949Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 63,
+  "totalTracked": 64,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th14-anti-3-star-base-deceptive-traps",
-      "title": "TH14 Anti 3 Star Deceptive Trap Base",
+      "id": "bh-bh4-best-trophy-layout-2026",
+      "title": "BH4 Best Trophy Layout",
       "success": true,
-      "pinId": "1092897034673456351"
+      "pinId": "1092897034673465570"
     }
   ]
 }
