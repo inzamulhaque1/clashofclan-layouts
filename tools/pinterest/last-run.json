@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-20T18:44:01.949Z",
+  "timestamp": "2026-03-20T21:28:03.032Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 64,
+  "totalTracked": 65,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh4-best-trophy-layout-2026",
-      "title": "BH4 Best Trophy Layout",
+      "id": "bh-bh7-clan-war-fortress-base",
+      "title": "BH7 Clan War Fortress Base",
       "success": true,
-      "pinId": "1092897034673465570"
+      "pinId": "1092897034673474478"
     }
   ]
 }
