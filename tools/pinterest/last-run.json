@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-19T21:33:09.438Z",
+  "timestamp": "2026-03-20T01:54:06.801Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 57,
+  "totalTracked": 58,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh6-clan-war-anti-3-star-base",
-      "title": "BH6 Clan War Anti 3 Star Base",
+      "id": "guide-hero-upgrade-order-guide-2026",
+      "title": "Hero Upgrade Order Guide 2026",
       "success": true,
-      "pinId": "1092897034673412874"
+      "pinId": "1092897034673424385"
     }
   ]
 }
