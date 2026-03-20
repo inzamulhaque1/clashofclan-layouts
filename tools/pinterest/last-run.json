@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-20T12:54:28.487Z",
+  "timestamp": "2026-03-20T15:40:20.291Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 62,
+  "totalTracked": 63,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th7-war-base-spread-defense-2026",
-      "title": "TH7 Spread Defense War Base (2026)",
+      "id": "hv-th14-anti-3-star-base-deceptive-traps",
+      "title": "TH14 Anti 3 Star Deceptive Trap Base",
       "success": true,
-      "pinId": "1092897034673448077"
+      "pinId": "1092897034673456351"
     }
   ]
 }
