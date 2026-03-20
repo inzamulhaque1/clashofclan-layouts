@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-20T09:38:22.271Z",
+  "timestamp": "2026-03-20T12:54:28.487Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 61,
+  "totalTracked": 62,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th16-farming-base-max-gold-elixir",
-      "title": "TH16 Farming Base — Max Gold & Elixir",
+      "id": "hv-th7-war-base-spread-defense-2026",
+      "title": "TH7 Spread Defense War Base (2026)",
       "success": true,
-      "pinId": "1092897034673440395"
+      "pinId": "1092897034673448077"
     }
   ]
 }
