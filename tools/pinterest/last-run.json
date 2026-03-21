@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-21T04:25:19.825Z",
+  "timestamp": "2026-03-21T06:39:20.733Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 67,
+  "totalTracked": 68,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th8-war-base-compact-core-defense",
-      "title": "TH8 Compact Core War Base",
+      "id": "hv-th12-trophy-base-legends-league",
+      "title": "TH12 Legends League Trophy Base",
       "success": true,
-      "pinId": "1092897034673489935"
+      "pinId": "1092897034673494483"
     }
   ]
 }
