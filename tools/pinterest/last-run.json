@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-21T01:48:24.047Z",
+  "timestamp": "2026-03-21T04:25:19.825Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 66,
+  "totalTracked": 67,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th18-anti-root-rider-war-base-2026",
-      "title": "TH18 Anti Root Rider War Base",
+      "id": "hv-th8-war-base-compact-core-defense",
+      "title": "TH8 Compact Core War Base",
       "success": true,
-      "pinId": "1092897034673484595"
+      "pinId": "1092897034673489935"
     }
   ]
 }
