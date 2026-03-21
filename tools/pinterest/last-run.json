@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-20T21:28:03.032Z",
+  "timestamp": "2026-03-21T01:48:24.047Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 65,
+  "totalTracked": 66,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh7-clan-war-fortress-base",
-      "title": "BH7 Clan War Fortress Base",
+      "id": "hv-th18-anti-root-rider-war-base-2026",
+      "title": "TH18 Anti Root Rider War Base",
       "success": true,
-      "pinId": "1092897034673474478"
+      "pinId": "1092897034673484595"
     }
   ]
 }
