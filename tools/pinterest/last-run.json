@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-21T15:23:14.860Z",
+  "timestamp": "2026-03-21T18:32:51.391Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 71,
+  "totalTracked": 72,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th14-farming-base-dark-elixir-protection",
-      "title": "TH14 Farming Base — DE Protection",
+      "id": "hv-th17-war-base-anti-everything-2026",
+      "title": "TH17 Anti Everything War Base",
       "success": true,
-      "pinId": "1092897034673514221"
+      "pinId": "1092897034673524724"
     }
   ]
 }
