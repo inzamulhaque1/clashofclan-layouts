@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-21T12:42:11.417Z",
+  "timestamp": "2026-03-21T15:23:14.860Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 70,
+  "totalTracked": 71,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh3-war-anti-barbarian-base-2026",
-      "title": "BH3 War Anti Barbarian Base",
+      "id": "hv-th14-farming-base-dark-elixir-protection",
+      "title": "TH14 Farming Base — DE Protection",
       "success": true,
-      "pinId": "1092897034673506796"
+      "pinId": "1092897034673514221"
     }
   ]
 }
