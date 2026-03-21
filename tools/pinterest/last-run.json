@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-21T18:32:51.391Z",
+  "timestamp": "2026-03-21T21:22:35.196Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 72,
+  "totalTracked": 73,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-war-base-anti-everything-2026",
-      "title": "TH17 Anti Everything War Base",
+      "id": "hv-th11-hybrid-base-trophy-farm-balance",
+      "title": "TH11 Hybrid Base — Trophy & Farm Balance",
       "success": true,
-      "pinId": "1092897034673524724"
+      "pinId": "1092897034673534365"
     }
   ]
 }
