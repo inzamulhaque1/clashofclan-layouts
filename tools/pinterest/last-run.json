@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-22T06:47:53.175Z",
+  "timestamp": "2026-03-22T09:29:43.569Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 76,
+  "totalTracked": 77,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh4-anti-boxer-giant-versus-base-2026",
-      "title": "BH4 Anti Boxer Giant Versus Base",
+      "id": "hv-th15-war-base-anti-electro-titan",
+      "title": "TH15 War Base Anti Electro Titan",
       "success": true,
-      "pinId": "1092897034673557203"
+      "pinId": "1092897034673562430"
     }
   ]
 }
