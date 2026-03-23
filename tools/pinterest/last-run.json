@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-23T05:01:00.564Z",
+  "timestamp": "2026-03-23T07:06:31.127Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 83,
+  "totalTracked": 84,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th11-war-base-anti-lavaloon",
-      "title": "TH11 Anti LavaLoon War Base",
+      "id": "hv-th18-war-base-eagle-centered-2026",
+      "title": "TH18 Eagle Centered War Base (2026)",
       "success": true,
-      "pinId": "1092897034673621179"
+      "pinId": "1092897034673624481"
     }
   ]
 }
