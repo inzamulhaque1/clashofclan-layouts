@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-23T18:52:00.255Z",
+  "timestamp": "2026-03-23T21:33:30.348Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 88,
+  "totalTracked": 89,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th7-farming-base-dark-elixir-focus",
-      "title": "TH7 DE Protection Farming Base",
+      "id": "guide-how-to-run-a-successful-clan-2026",
+      "title": "How to Run a Successful Clan in Clash of Clans 2026",
       "success": true,
-      "pinId": "1092897034673655011"
+      "pinId": "1092897034673662481"
     }
   ]
 }
