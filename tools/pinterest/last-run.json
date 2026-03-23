@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-23T10:00:03.272Z",
+  "timestamp": "2026-03-23T13:01:57.486Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 85,
+  "totalTracked": 86,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th16-war-base-anti-lavaloon",
-      "title": "TH16 War Base Anti LavaLoon",
+      "id": "hv-th18-cwl-medal-maximize-base",
+      "title": "TH18 Medal Maximize CWL Base",
       "success": true,
-      "pinId": "1092897034673629780"
+      "pinId": "1092897034673636056"
     }
   ]
 }
