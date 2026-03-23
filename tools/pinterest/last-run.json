@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-23T15:57:57.309Z",
+  "timestamp": "2026-03-23T18:52:00.255Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 87,
+  "totalTracked": 88,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th9-anti-3-star-trap-base-2026",
-      "title": "TH9 Trap Base Anti 3 Star (2026)",
+      "id": "hv-th7-farming-base-dark-elixir-focus",
+      "title": "TH7 DE Protection Farming Base",
       "success": true,
-      "pinId": "1092897034673645236"
+      "pinId": "1092897034673655011"
     }
   ]
 }
