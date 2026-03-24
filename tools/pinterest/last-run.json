@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-24T09:53:53.224Z",
+  "timestamp": "2026-03-24T13:06:34.464Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 93,
+  "totalTracked": 94,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th11-war-base-anti-witch-slap",
-      "title": "TH11 Anti Witch Slap War Base",
+      "id": "hv-th8-trophy-base-compartment-maze",
+      "title": "TH8 Maze Trophy Base",
       "success": true,
-      "pinId": "1092897034673691656"
+      "pinId": "1092897034673700434"
     }
   ]
 }
