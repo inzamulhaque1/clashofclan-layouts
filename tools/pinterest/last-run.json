@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-24T13:06:34.464Z",
+  "timestamp": "2026-03-24T16:04:56.520Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 94,
+  "totalTracked": 95,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th8-trophy-base-compartment-maze",
-      "title": "TH8 Maze Trophy Base",
+      "id": "hv-th16-best-war-base-anti-root-rider",
+      "title": "TH16 Best War Base (Anti Root Rider)",
       "success": true,
-      "pinId": "1092897034673700434"
+      "pinId": "1092897034673708829"
     }
   ]
 }
