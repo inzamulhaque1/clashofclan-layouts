@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-24T16:04:56.520Z",
+  "timestamp": "2026-03-24T18:59:29.400Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 95,
+  "totalTracked": 96,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th16-best-war-base-anti-root-rider",
-      "title": "TH16 Best War Base (Anti Root Rider)",
+      "id": "bh-bh8-anti-cannon-cart-trophy-base",
+      "title": "BH8 Anti Cannon Cart Trophy Base",
       "success": true,
-      "pinId": "1092897034673708829"
+      "pinId": "1092897034673717672"
     }
   ]
 }
