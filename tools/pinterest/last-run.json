@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-24T04:51:40.584Z",
+  "timestamp": "2026-03-24T07:01:06.360Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 91,
+  "totalTracked": 92,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th8-anti-3-star-trap-heavy-base",
-      "title": "TH8 Trap Heavy Anti 3 Star Base",
+      "id": "hv-th10-war-base-anti-queen-walk",
+      "title": "TH10 Anti Queen Walk War Base",
       "success": true,
-      "pinId": "1092897034673681592"
+      "pinId": "1092897034673686235"
     }
   ]
 }
