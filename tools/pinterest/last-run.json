@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-25T09:51:46.733Z",
-  "totalPosted": 0,
-  "totalFailed": 1,
-  "totalTracked": 100,
+  "timestamp": "2026-03-25T13:03:47.493Z",
+  "totalPosted": 1,
+  "totalFailed": 0,
+  "totalTracked": 101,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh10-funnel-breaker-versus-base",
-      "title": "BH10 Funnel Breaker Versus Base",
-      "success": false,
-      "error": "API error 500: {\"code\":12,\"message\":\"Something went wrong on our end. Sorry about that.\",\"details\":{\"request_id\":\"1088706808290835\"}}"
+      "id": "hv-th13-war-base-anti-lavaloon",
+      "title": "TH13 War Base Anti LavaLoon",
+      "success": true,
+      "pinId": "1092897034673758766"
     }
   ]
 }
