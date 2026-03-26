@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-26T09:58:58.465Z",
+  "timestamp": "2026-03-26T13:09:26.490Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 108,
+  "totalTracked": 109,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th10-anti-3-star-war-base",
-      "title": "TH10 Anti 3 Star War Base",
+      "id": "hv-th18-war-base-multi-inferno-spread",
+      "title": "TH18 Multi Inferno Spread War Base",
       "success": true,
-      "pinId": "1092897034673809866"
+      "pinId": "1092897034673817062"
     }
   ]
 }
