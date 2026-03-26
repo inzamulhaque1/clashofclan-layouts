@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-26T13:09:26.490Z",
+  "timestamp": "2026-03-26T16:10:36.449Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 109,
+  "totalTracked": 110,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th18-war-base-multi-inferno-spread",
-      "title": "TH18 Multi Inferno Spread War Base",
+      "id": "bh-bh4-hybrid-all-rounder-base-2026",
+      "title": "BH4 Hybrid All-Rounder Base",
       "success": true,
-      "pinId": "1092897034673817062"
+      "pinId": "1092897034673824642"
     }
   ]
 }
