@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-26T05:03:43.303Z",
+  "timestamp": "2026-03-26T07:04:20.051Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 106,
+  "totalTracked": 107,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th15-war-base-anti-lavaloon-2026",
-      "title": "TH15 War Base Anti LavaLoon",
+      "id": "hv-th17-cwl-base-anti-root-rider-cwl",
+      "title": "TH17 CWL Anti Root Rider",
       "success": true,
-      "pinId": "1092897034673801762"
+      "pinId": "1092897034673805080"
     }
   ]
 }
