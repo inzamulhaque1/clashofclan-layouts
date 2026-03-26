@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-26T02:04:50.964Z",
+  "timestamp": "2026-03-26T05:03:43.303Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 105,
+  "totalTracked": 106,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th13-trophy-push-base",
-      "title": "TH13 Trophy Push Base",
+      "id": "hv-th15-war-base-anti-lavaloon-2026",
+      "title": "TH15 War Base Anti LavaLoon",
       "success": true,
-      "pinId": "1092897034673795224"
+      "pinId": "1092897034673801762"
     }
   ]
 }
