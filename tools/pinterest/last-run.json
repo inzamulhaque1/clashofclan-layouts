@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-27T09:52:23.970Z",
+  "timestamp": "2026-03-27T13:00:30.938Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 116,
+  "totalTracked": 117,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh6-anti-boxer-giant-trophy-base",
-      "title": "BH6 Anti Boxer Giant Trophy Base",
+      "id": "hv-th16-hybrid-base-trophy-farming",
+      "title": "TH16 Hybrid Base — Trophy & Farming",
       "success": true,
-      "pinId": "1092897034673871586"
+      "pinId": "1092897034673880074"
     }
   ]
 }
