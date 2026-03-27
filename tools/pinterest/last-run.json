@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-27T13:00:30.938Z",
+  "timestamp": "2026-03-27T15:51:30.279Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 117,
+  "totalTracked": 118,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th16-hybrid-base-trophy-farming",
-      "title": "TH16 Hybrid Base — Trophy & Farming",
+      "id": "hv-th8-farming-base-shield-farming",
+      "title": "TH8 Shield Farming Base",
       "success": true,
-      "pinId": "1092897034673880074"
+      "pinId": "1092897034673888793"
     }
   ]
 }
