@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-27T05:04:45.454Z",
+  "timestamp": "2026-03-27T07:03:47.032Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 114,
+  "totalTracked": 115,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-war-base-x-formation",
-      "title": "TH17 X-Formation War Base",
+      "id": "hv-th11-farming-base-all-resource-max",
+      "title": "TH11 Max Resource Protection Farming Base",
       "success": true,
-      "pinId": "1092897034673860964"
+      "pinId": "1092897034673865451"
     }
   ]
 }
