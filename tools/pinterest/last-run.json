@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-28T18:36:39.434Z",
+  "timestamp": "2026-03-28T21:27:35.075Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 127,
+  "totalTracked": 128,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th13-trophy-base-anti-edrags",
-      "title": "TH13 Anti E-Drag Trophy Base",
+      "id": "hv-th8-hybrid-base-progress-layout",
+      "title": "TH8 Progress Hybrid Base",
       "success": true,
-      "pinId": "1092897034673963310"
+      "pinId": "1092897034673972811"
     }
   ]
 }
