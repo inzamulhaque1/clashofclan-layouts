@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-27T21:31:35.747Z",
+  "timestamp": "2026-03-28T01:57:00.263Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 120,
+  "totalTracked": 121,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th14-anti-3-star-base-ring-layout",
-      "title": "TH14 Anti 3 Star Ring Base",
+      "id": "hv-th18-farming-base-max-resource-protection",
+      "title": "TH18 Farming Base — Max Resources",
       "success": true,
-      "pinId": "1092897034673908142"
+      "pinId": "1092897034673919426"
     }
   ]
 }
