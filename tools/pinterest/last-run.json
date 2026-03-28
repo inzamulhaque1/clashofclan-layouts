@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-28T12:50:03.006Z",
+  "timestamp": "2026-03-28T15:28:39.940Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 125,
+  "totalTracked": 126,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-legend-league-trophy-base",
-      "title": "TH17 Legend League Trophy Base",
+      "id": "hv-th15-war-base-anti-super-witch-2026",
+      "title": "TH15 War Base Anti Super Witch",
       "success": true,
-      "pinId": "1092897034673944082"
+      "pinId": "1092897034673952359"
     }
   ]
 }
