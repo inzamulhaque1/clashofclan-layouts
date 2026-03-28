@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-28T09:35:01.170Z",
+  "timestamp": "2026-03-28T12:50:03.006Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 124,
+  "totalTracked": 125,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th10-war-base-anti-edrag-spam",
-      "title": "TH10 Anti E-Drag War Base",
+      "id": "hv-th17-legend-league-trophy-base",
+      "title": "TH17 Legend League Trophy Base",
       "success": true,
-      "pinId": "1092897034673936024"
+      "pinId": "1092897034673944082"
     }
   ]
 }
