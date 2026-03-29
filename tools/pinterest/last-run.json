@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-29T09:34:27.431Z",
+  "timestamp": "2026-03-29T12:50:47.680Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 132,
+  "totalTracked": 133,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-farming-base-gold-elixir-protection",
-      "title": "TH17 Farming Base — Gold & Elixir",
+      "id": "hv-th17-war-base-anti-yeti-smash",
+      "title": "TH17 War Base Anti Yeti Smash",
       "success": true,
-      "pinId": "1092897034673999233"
+      "pinId": "1092897034674006576"
     }
   ]
 }
