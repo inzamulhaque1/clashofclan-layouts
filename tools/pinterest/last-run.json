@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-29T18:39:44.540Z",
+  "timestamp": "2026-03-29T21:29:00.909Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 135,
+  "totalTracked": 136,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh8-versus-battle-diamond-layout",
-      "title": "BH8 Versus Battle Diamond Layout",
+      "id": "hv-th17-trophy-base-legend-league-pro",
+      "title": "TH17 Legend League Pro Base",
       "success": true,
-      "pinId": "1092897034674026502"
+      "pinId": "1092897034674035194"
     }
   ]
 }
