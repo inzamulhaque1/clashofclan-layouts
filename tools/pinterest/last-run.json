@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-29T06:59:57.638Z",
+  "timestamp": "2026-03-29T09:34:27.431Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 131,
+  "totalTracked": 132,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-war-base-anti-bowler-witch",
-      "title": "TH17 War Base Anti Bowler-Witch",
+      "id": "hv-th17-farming-base-gold-elixir-protection",
+      "title": "TH17 Farming Base — Gold & Elixir",
       "success": true,
-      "pinId": "1092897034673994645"
+      "pinId": "1092897034673999233"
     }
   ]
 }
