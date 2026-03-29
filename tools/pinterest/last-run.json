@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-29T15:28:56.672Z",
+  "timestamp": "2026-03-29T18:39:44.540Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 134,
+  "totalTracked": 135,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th12-cwl-base-anti-siege-machine",
-      "title": "TH12 CWL Anti Siege Machine Base",
+      "id": "bh-bh8-versus-battle-diamond-layout",
+      "title": "BH8 Versus Battle Diamond Layout",
       "success": true,
-      "pinId": "1092897034674015442"
+      "pinId": "1092897034674026502"
     }
   ]
 }
