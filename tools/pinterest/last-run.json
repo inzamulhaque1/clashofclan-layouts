@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-29T02:08:10.707Z",
+  "timestamp": "2026-03-29T05:08:36.099Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 129,
+  "totalTracked": 130,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th18-farming-base-de-focus-hero",
-      "title": "TH18 DE Focus Farming Base",
+      "id": "hv-th16-hybrid-base-merged-defense-core",
+      "title": "TH16 Hybrid Base — Merged Defense Core",
       "success": true,
-      "pinId": "1092897034673985265"
+      "pinId": "1092897034673991151"
     }
   ]
 }
