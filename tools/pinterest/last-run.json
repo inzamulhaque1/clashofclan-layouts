@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-30T16:04:17.702Z",
+  "timestamp": "2026-03-30T18:56:34.073Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 142,
+  "totalTracked": 143,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh6-anti-night-witch-versus-layout",
-      "title": "BH6 Anti Night Witch Versus Layout",
+      "id": "hv-th12-war-base-island-inferno",
+      "title": "TH12 Island Inferno War Layout",
       "success": true,
-      "pinId": "1092897034674076309"
+      "pinId": "1092897034674086331"
     }
   ]
 }
