@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-30T05:22:10.465Z",
+  "timestamp": "2026-03-30T07:23:44.307Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 138,
+  "totalTracked": 139,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th16-war-base-anti-super-witch",
-      "title": "TH16 War Base Anti Super Witch",
+      "id": "hv-th7-farming-base-anti-barch",
+      "title": "TH7 Anti Barch Farming Base",
       "success": true,
-      "pinId": "1092897034674051425"
+      "pinId": "1092897034674054897"
     }
   ]
 }
