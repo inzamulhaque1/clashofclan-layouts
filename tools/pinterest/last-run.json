@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-29T21:29:00.909Z",
+  "timestamp": "2026-03-30T02:10:24.073Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 136,
+  "totalTracked": 137,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-trophy-base-legend-league-pro",
-      "title": "TH17 Legend League Pro Base",
+      "id": "hv-th17-anti-3-star-dead-zone-design",
+      "title": "TH17 Anti 3 Star Dead Zone Base",
       "success": true,
-      "pinId": "1092897034674035194"
+      "pinId": "1092897034674045697"
     }
   ]
 }
