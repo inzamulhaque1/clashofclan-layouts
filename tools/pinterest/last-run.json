@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-30T07:23:44.307Z",
+  "timestamp": "2026-03-30T10:14:37.277Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 139,
+  "totalTracked": 140,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th7-farming-base-anti-barch",
-      "title": "TH7 Anti Barch Farming Base",
+      "id": "hv-th7-war-base-anti-dragon",
+      "title": "TH7 War Base (Anti Dragon)",
       "success": true,
-      "pinId": "1092897034674054897"
+      "pinId": "1092897034674060315"
     }
   ]
 }
