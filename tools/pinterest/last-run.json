@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-30T21:39:44.082Z",
+  "timestamp": "2026-03-31T02:06:23.414Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 144,
+  "totalTracked": 145,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th12-cwl-base-anti-queen-charge",
-      "title": "TH12 CWL Anti Queen Charge Base",
+      "id": "hv-th17-farming-base-max-dark-elixir",
+      "title": "TH17 Max DE Farming Base",
       "success": true,
-      "pinId": "1092897034674094207"
+      "pinId": "1092897034674104636"
     }
   ]
 }
