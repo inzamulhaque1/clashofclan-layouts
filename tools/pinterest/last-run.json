@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-31T18:58:58.412Z",
+  "timestamp": "2026-03-31T21:36:43.686Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 150,
+  "totalTracked": 151,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th9-anti-3-star-war-base-competitive",
-      "title": "TH9 Competitive Anti 3 Star Base",
+      "id": "bh-bh9-lava-launcher-war-fortress",
+      "title": "BH9 Lava Launcher War Fortress",
       "success": true,
-      "pinId": "1092897034674145536"
+      "pinId": "1092897034674153381"
     }
   ]
 }
