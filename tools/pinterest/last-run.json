@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-31T02:06:23.414Z",
+  "timestamp": "2026-03-31T05:07:01.794Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 145,
+  "totalTracked": 146,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-farming-base-max-dark-elixir",
-      "title": "TH17 Max DE Farming Base",
+      "id": "hv-th7-farming-base-maxed-walls-2026",
+      "title": "TH7 Max Walls Farming Base (2026)",
       "success": true,
-      "pinId": "1092897034674104636"
+      "pinId": "1092897034674110482"
     }
   ]
 }
