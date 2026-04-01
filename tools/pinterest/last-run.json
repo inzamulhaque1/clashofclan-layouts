@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-01T10:04:31.823Z",
+  "timestamp": "2026-04-01T13:15:58.477Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 155,
+  "totalTracked": 156,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th13-hybrid-base-anti-queen-charge",
-      "title": "TH13 Anti Queen Charge Hybrid Base",
+      "id": "bh-bh4-gold-protection-farming-base-2026",
+      "title": "BH4 Gold Protection Farming Base",
       "success": true,
-      "pinId": "1092897034674180300"
+      "pinId": "1092897034674187965"
     }
   ]
 }
