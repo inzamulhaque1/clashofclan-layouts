@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-01T07:16:45.349Z",
+  "timestamp": "2026-04-01T10:04:31.823Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 154,
+  "totalTracked": 155,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh8-anti-super-pekka-versus-base",
-      "title": "BH8 Anti Super P.E.K.K.A Versus Base",
+      "id": "hv-th13-hybrid-base-anti-queen-charge",
+      "title": "TH13 Anti Queen Charge Hybrid Base",
       "success": true,
-      "pinId": "1092897034674175106"
+      "pinId": "1092897034674180300"
     }
   ]
 }
