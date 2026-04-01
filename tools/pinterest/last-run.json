@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-01T05:21:59.994Z",
+  "timestamp": "2026-04-01T07:16:45.349Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 153,
+  "totalTracked": 154,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-war-base-edge-th-placement",
-      "title": "TH17 Edge TH War Base",
+      "id": "bh-bh8-anti-super-pekka-versus-base",
+      "title": "BH8 Anti Super P.E.K.K.A Versus Base",
       "success": true,
-      "pinId": "1092897034674171147"
+      "pinId": "1092897034674175106"
     }
   ]
 }
