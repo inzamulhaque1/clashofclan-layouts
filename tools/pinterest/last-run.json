@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-01T18:58:14.121Z",
-  "totalPosted": 0,
-  "totalFailed": 1,
-  "totalTracked": 157,
+  "timestamp": "2026-04-01T21:39:11.088Z",
+  "totalPosted": 1,
+  "totalFailed": 0,
+  "totalTracked": 158,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th18-hybrid-base-trophy-farming-balanced",
-      "title": "TH18 Hybrid Base — Trophy & Farming",
-      "success": false,
-      "error": "API error 500: {\"code\":12,\"message\":\"Something went wrong on our end. Sorry about that.\",\"details\":{\"request_id\":\"3195020289700120\"}}"
+      "id": "hv-th15-farming-base-hero-upgrade-safe",
+      "title": "TH15 Farming Base — Hero Upgrade Safe",
+      "success": true,
+      "pinId": "1092897034674212729"
     }
   ]
 }
