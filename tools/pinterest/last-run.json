@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-01T16:08:37.677Z",
-  "totalPosted": 1,
-  "totalFailed": 0,
+  "timestamp": "2026-04-01T18:58:14.121Z",
+  "totalPosted": 0,
+  "totalFailed": 1,
   "totalTracked": 157,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th15-farming-base-passive-loot-guard",
-      "title": "TH15 Farming Base — Passive Loot Guard",
-      "success": true,
-      "pinId": "1092897034674196812"
+      "id": "hv-th18-hybrid-base-trophy-farming-balanced",
+      "title": "TH18 Hybrid Base — Trophy & Farming",
+      "success": false,
+      "error": "API error 500: {\"code\":12,\"message\":\"Something went wrong on our end. Sorry about that.\",\"details\":{\"request_id\":\"3195020289700120\"}}"
     }
   ]
 }
