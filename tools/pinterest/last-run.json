@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-02T15:58:44.022Z",
+  "timestamp": "2026-04-02T18:53:42.715Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 164,
+  "totalTracked": 165,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-war-base-anti-sui-hero",
-      "title": "TH17 War Base Anti Sui Hero",
+      "id": "hv-th14-cwl-war-base-competitive",
+      "title": "TH14 CWL War Base",
       "success": true,
-      "pinId": "1092897034674256645"
+      "pinId": "1092897034674267523"
     }
   ]
 }
