@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-02T18:53:42.715Z",
+  "timestamp": "2026-04-02T21:35:24.002Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 165,
+  "totalTracked": 166,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th14-cwl-war-base-competitive",
-      "title": "TH14 CWL War Base",
+      "id": "hv-th13-hybrid-base-balanced-defense",
+      "title": "TH13 Hybrid Base — Balanced",
       "success": true,
-      "pinId": "1092897034674267523"
+      "pinId": "1092897034674275684"
     }
   ]
 }
