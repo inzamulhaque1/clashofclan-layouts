@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-02T09:59:21.078Z",
+  "timestamp": "2026-04-02T13:07:05.691Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 162,
+  "totalTracked": 163,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th9-hybrid-base-balanced-2026",
-      "title": "TH9 Balanced Hybrid Base (2026)",
+      "id": "hv-th14-trophy-push-titan-league",
+      "title": "TH14 Trophy Base — Titan League",
       "success": true,
-      "pinId": "1092897034674239553"
+      "pinId": "1092897034674247194"
     }
   ]
 }
