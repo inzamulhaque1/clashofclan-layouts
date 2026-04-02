@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-02T02:02:28.848Z",
+  "timestamp": "2026-04-02T05:00:15.622Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 159,
+  "totalTracked": 160,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th14-farming-base-all-resources",
-      "title": "TH14 Farming Base — All Resources",
+      "id": "hv-th12-war-base-anti-yeti-smash",
+      "title": "TH12 War Base (Anti Yeti Smash)",
       "success": true,
-      "pinId": "1092897034674222800"
+      "pinId": "1092897034674229408"
     }
   ]
 }
