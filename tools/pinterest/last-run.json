@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-03T18:42:25.017Z",
+  "timestamp": "2026-04-03T21:31:09.230Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 173,
+  "totalTracked": 174,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th11-war-base-island-eagle",
-      "title": "TH11 Island Eagle War Base",
+      "id": "bh-bh9-spread-war-denial-base",
+      "title": "BH9 Spread War Denial Base",
       "success": true,
-      "pinId": "1092897034674331019"
+      "pinId": "1092897034674340362"
     }
   ]
 }
