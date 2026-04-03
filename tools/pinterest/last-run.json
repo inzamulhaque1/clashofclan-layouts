@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-03T09:50:41.349Z",
+  "timestamp": "2026-04-03T12:58:25.676Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 170,
+  "totalTracked": 171,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh4-push-trap-versus-layout-2026",
-      "title": "BH4 Push Trap Versus Layout",
+      "id": "hv-th17-war-base-anti-electro-titan",
+      "title": "TH17 Anti Electro Titan War Base",
       "success": true,
-      "pinId": "1092897034674303886"
+      "pinId": "1092897034674311611"
     }
   ]
 }
