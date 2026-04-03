@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-03T05:02:40.547Z",
+  "timestamp": "2026-04-03T07:04:02.919Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 168,
+  "totalTracked": 169,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th11-farming-base-de-protection",
-      "title": "TH11 Farming Base — DE Focus",
+      "id": "hv-th8-trophy-base-anti-giant-healer",
+      "title": "TH8 Anti Giant-Healer Trophy Base",
       "success": true,
-      "pinId": "1092897034674294341"
+      "pinId": "1092897034674298487"
     }
   ]
 }
