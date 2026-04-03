@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-03T12:58:25.676Z",
+  "timestamp": "2026-04-03T15:37:33.853Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 171,
+  "totalTracked": 172,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-war-base-anti-electro-titan",
-      "title": "TH17 Anti Electro Titan War Base",
+      "id": "hv-th15-hybrid-base-war-and-trophy",
+      "title": "TH15 Hybrid Base — War & Trophy",
       "success": true,
-      "pinId": "1092897034674311611"
+      "pinId": "1092897034674319903"
     }
   ]
 }
