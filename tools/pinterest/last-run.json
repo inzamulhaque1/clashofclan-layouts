@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-04T12:50:32.283Z",
+  "timestamp": "2026-04-04T15:28:41.690Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 179,
+  "totalTracked": 180,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "guide-best-hero-equipment-rankings-2026",
-      "title": "Best Hero Equipment Rankings 2026",
+      "id": "hv-th17-war-base-island-inferno-design",
+      "title": "TH17 Island Inferno War Base",
       "success": true,
-      "pinId": "1092897034674375239"
+      "pinId": "1092897034674382449"
     }
   ]
 }
