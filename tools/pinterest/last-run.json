@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-04T15:28:41.690Z",
+  "timestamp": "2026-04-04T18:38:18.077Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 180,
+  "totalTracked": 181,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-war-base-island-inferno-design",
-      "title": "TH17 Island Inferno War Base",
+      "id": "bh-bh3-elixir-guard-farming-base-2026",
+      "title": "BH3 Elixir Guard Farming Base",
       "success": true,
-      "pinId": "1092897034674382449"
+      "pinId": "1092897034674391974"
     }
   ]
 }
