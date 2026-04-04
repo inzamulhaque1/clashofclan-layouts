@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-04T18:38:18.077Z",
+  "timestamp": "2026-04-04T21:29:02.224Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 181,
+  "totalTracked": 182,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh3-elixir-guard-farming-base-2026",
-      "title": "BH3 Elixir Guard Farming Base",
+      "id": "hv-th8-farming-base-de-protection",
+      "title": "TH8 DE Protection Farming Base",
       "success": true,
-      "pinId": "1092897034674391974"
+      "pinId": "1092897034674400768"
     }
   ]
 }
