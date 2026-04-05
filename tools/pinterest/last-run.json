@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-05T07:02:11.495Z",
+  "timestamp": "2026-04-05T09:36:44.329Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 185,
+  "totalTracked": 186,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th13-war-base-teaser-design",
-      "title": "TH13 Teaser War Base",
+      "id": "hv-th8-war-base-anti-hog-rider",
+      "title": "TH8 Anti Hog Rider War Base",
       "success": true,
-      "pinId": "1092897034674422198"
+      "pinId": "1092897034674427277"
     }
   ]
 }
