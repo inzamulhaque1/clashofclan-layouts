@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-05T09:36:44.329Z",
+  "timestamp": "2026-04-05T12:52:42.223Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 186,
+  "totalTracked": 187,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th8-war-base-anti-hog-rider",
-      "title": "TH8 Anti Hog Rider War Base",
+      "id": "hv-th15-anti-3-star-base-asymmetric-trap",
+      "title": "TH15 Anti 3 Star — Asymmetric Trap Base",
       "success": true,
-      "pinId": "1092897034674427277"
+      "pinId": "1092897034674435033"
     }
   ]
 }
