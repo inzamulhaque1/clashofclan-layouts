@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-05T12:52:42.223Z",
+  "timestamp": "2026-04-05T15:29:28.457Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 187,
+  "totalTracked": 188,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th15-anti-3-star-base-asymmetric-trap",
-      "title": "TH15 Anti 3 Star — Asymmetric Trap Base",
+      "id": "bh-bh8-farming-resource-spread-base",
+      "title": "BH8 Farming Resource Spread Base",
       "success": true,
-      "pinId": "1092897034674435033"
+      "pinId": "1092897034674442444"
     }
   ]
 }
