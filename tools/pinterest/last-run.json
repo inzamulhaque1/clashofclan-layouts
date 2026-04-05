@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-05T18:40:19.605Z",
+  "timestamp": "2026-04-05T21:28:31.875Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 189,
+  "totalTracked": 190,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th13-cwl-base-anti-pekka-smash",
-      "title": "TH13 CWL Base Anti Pekka Smash",
+      "id": "hv-th9-cwl-medal-farming-base",
+      "title": "TH9 CWL Medal Farming Base",
       "success": true,
-      "pinId": "1092897034674452824"
+      "pinId": "1092897034674460545"
     }
   ]
 }
