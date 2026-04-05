@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-05T02:10:07.159Z",
+  "timestamp": "2026-04-05T05:09:43.047Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 183,
+  "totalTracked": 184,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh9-hybrid-trophy-resource-base",
-      "title": "BH9 Hybrid Trophy-Resource Base",
+      "id": "hv-th16-anti-3-star-war-base-2026",
+      "title": "TH16 Anti 3 Star War Base (March 2026)",
       "success": true,
-      "pinId": "1092897034674411523"
+      "pinId": "1092897034674418335"
     }
   ]
 }
