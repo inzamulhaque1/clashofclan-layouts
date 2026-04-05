@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-05T15:29:28.457Z",
+  "timestamp": "2026-04-05T18:40:19.605Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 188,
+  "totalTracked": 189,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh8-farming-resource-spread-base",
-      "title": "BH8 Farming Resource Spread Base",
+      "id": "hv-th13-cwl-base-anti-pekka-smash",
+      "title": "TH13 CWL Base Anti Pekka Smash",
       "success": true,
-      "pinId": "1092897034674442444"
+      "pinId": "1092897034674452824"
     }
   ]
 }
