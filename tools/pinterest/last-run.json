@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-06T05:21:20.196Z",
+  "timestamp": "2026-04-06T07:26:10.620Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 192,
+  "totalTracked": 193,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-trophy-base-anti-queen-charge",
-      "title": "TH17 Trophy Base Anti Queen Charge",
+      "id": "hv-th17-war-base-anti-super-archer",
+      "title": "TH17 War Base Anti Super Archer",
       "success": true,
-      "pinId": "1092897034674477532"
+      "pinId": "1092897034674481414"
     }
   ]
 }
