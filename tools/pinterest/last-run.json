@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-07T10:06:02.513Z",
+  "timestamp": "2026-04-07T13:13:53.312Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 202,
+  "totalTracked": 203,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-cwl-base-pro-15v15",
-      "title": "TH17 CWL Base — Pro 15v15",
+      "id": "hv-th17-anti-root-rider-war-base-2026",
+      "title": "TH17 Anti Root Rider War Base",
       "success": true,
-      "pinId": "1092897034674544402"
+      "pinId": "1092897034674551832"
     }
   ]
 }
