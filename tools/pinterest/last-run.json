@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-07T16:08:44.088Z",
+  "timestamp": "2026-04-07T19:00:10.080Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 204,
+  "totalTracked": 205,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th10-war-base-asymmetric-2026",
-      "title": "TH10 Asymmetric War Base (2026)",
+      "id": "bh-bh7-gold-elixir-farming-spread",
+      "title": "BH7 Gold & Elixir Farming Spread",
       "success": true,
-      "pinId": "1092897034674560849"
+      "pinId": "1092897034674569388"
     }
   ]
 }
