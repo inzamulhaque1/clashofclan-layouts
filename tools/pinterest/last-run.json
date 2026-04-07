@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-07T05:07:16.561Z",
+  "timestamp": "2026-04-07T07:12:21.366Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 200,
+  "totalTracked": 201,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th12-trophy-base-titan-league",
-      "title": "TH12 Titan League Trophy Base",
+      "id": "hv-th11-cwl-base-compact-core",
+      "title": "TH11 CWL Base — Compact Core",
       "success": true,
-      "pinId": "1092897034674534980"
+      "pinId": "1092897034674538809"
     }
   ]
 }
