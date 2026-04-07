@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-07T02:06:51.455Z",
+  "timestamp": "2026-04-07T05:07:16.561Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 199,
+  "totalTracked": 200,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh3-best-trophy-defense-base-2026",
-      "title": "BH3 Best Trophy Defense Base",
+      "id": "hv-th12-trophy-base-titan-league",
+      "title": "TH12 Titan League Trophy Base",
       "success": true,
-      "pinId": "1092897034674528790"
+      "pinId": "1092897034674534980"
     }
   ]
 }
