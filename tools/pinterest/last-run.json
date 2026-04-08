@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-08T07:14:40.159Z",
+  "timestamp": "2026-04-08T10:05:42.474Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 209,
+  "totalTracked": 210,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "guide-best-army-compositions-every-town-hall-level",
-      "title": "Best Army Compositions for Every Town Hall Level 2026",
+      "id": "bh-bh8-trophy-push-box-base",
+      "title": "BH8 Trophy Push Box Base",
       "success": true,
-      "pinId": "1092897034674599754"
+      "pinId": "1092897034674605706"
     }
   ]
 }
