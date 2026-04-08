@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-08T05:08:57.110Z",
+  "timestamp": "2026-04-08T07:14:40.159Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 208,
+  "totalTracked": 209,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th18-war-base-anti-hydra-attack",
-      "title": "TH18 Anti Hydra War Base",
+      "id": "guide-best-army-compositions-every-town-hall-level",
+      "title": "Best Army Compositions for Every Town Hall Level 2026",
       "success": true,
-      "pinId": "1092897034674595101"
+      "pinId": "1092897034674599754"
     }
   ]
 }
