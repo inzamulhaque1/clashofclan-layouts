@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-08T16:13:47.861Z",
+  "timestamp": "2026-04-08T19:12:41.200Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 212,
+  "totalTracked": 213,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th9-war-base-x-bow-diamond",
-      "title": "TH9 X-Bow Diamond War Base",
+      "id": "hv-th18-farming-base-max-resource-2026",
+      "title": "TH18 Max Resource Farming Base (2026)",
       "success": true,
-      "pinId": "1092897034674624574"
+      "pinId": "1092897034674633766"
     }
   ]
 }
