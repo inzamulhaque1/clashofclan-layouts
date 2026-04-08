@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-08T10:05:42.474Z",
+  "timestamp": "2026-04-08T13:15:47.067Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 210,
+  "totalTracked": 211,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh8-trophy-push-box-base",
-      "title": "BH8 Trophy Push Box Base",
+      "id": "hv-th13-farming-base-collectors-outside",
+      "title": "TH13 Collector Farming Base",
       "success": true,
-      "pinId": "1092897034674605706"
+      "pinId": "1092897034674615339"
     }
   ]
 }
