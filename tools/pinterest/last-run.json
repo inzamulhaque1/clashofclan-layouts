@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-08T19:12:41.200Z",
+  "timestamp": "2026-04-08T21:39:00.518Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 213,
+  "totalTracked": 214,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th18-farming-base-max-resource-2026",
-      "title": "TH18 Max Resource Farming Base (2026)",
+      "id": "hv-th15-farming-base-gold-elixir-protection",
+      "title": "TH15 Farming Base — All Resources",
       "success": true,
-      "pinId": "1092897034674633766"
+      "pinId": "1092897034674640408"
     }
   ]
 }
