@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-08T02:07:48.459Z",
+  "timestamp": "2026-04-08T05:08:57.110Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 207,
+  "totalTracked": 208,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th11-hybrid-base-balanced",
-      "title": "TH11 Hybrid Base — Balanced",
+      "id": "hv-th18-war-base-anti-hydra-attack",
+      "title": "TH18 Anti Hydra War Base",
       "success": true,
-      "pinId": "1092897034674588350"
+      "pinId": "1092897034674595101"
     }
   ]
 }
