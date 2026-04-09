@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-09T07:18:08.466Z",
+  "timestamp": "2026-04-09T10:11:28.080Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 217,
+  "totalTracked": 218,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-anti-3-star-time-fail-base",
-      "title": "TH17 Anti 3 Star Time Fail Base",
+      "id": "hv-th9-hybrid-base-hero-upgrade-friendly",
+      "title": "TH9 Hero Upgrade Hybrid Base",
       "success": true,
-      "pinId": "1092897034674662102"
+      "pinId": "1092897034674668708"
     }
   ]
 }
