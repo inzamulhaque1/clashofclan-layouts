@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-09T16:15:52.626Z",
+  "timestamp": "2026-04-09T19:01:41.182Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 220,
+  "totalTracked": 221,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh10-battle-copter-bait-versus-base",
-      "title": "BH10 Battle Copter Bait Versus Base",
+      "id": "hv-th12-farming-base-gold-elixir-focus",
+      "title": "TH12 Gold & Elixir Farming Base",
       "success": true,
-      "pinId": "1092897034674686122"
+      "pinId": "1092897034674694616"
     }
   ]
 }
