@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-09T05:07:14.172Z",
+  "timestamp": "2026-04-09T07:18:08.466Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 216,
+  "totalTracked": 217,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th8-hybrid-base-balanced-defense",
-      "title": "TH8 Balanced Hybrid Base",
+      "id": "hv-th17-anti-3-star-time-fail-base",
+      "title": "TH17 Anti 3 Star Time Fail Base",
       "success": true,
-      "pinId": "1092897034674658079"
+      "pinId": "1092897034674662102"
     }
   ]
 }
