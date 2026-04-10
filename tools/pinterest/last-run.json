@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-09T21:42:36.762Z",
+  "timestamp": "2026-04-10T02:12:46.008Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 222,
+  "totalTracked": 223,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th13-farming-base-gold-elixir-protection",
-      "title": "TH13 Farming Base — Gold & Elixir",
+      "id": "bh-bh4-war-fortress-base-2026",
+      "title": "BH4 War Fortress Base",
       "success": true,
-      "pinId": "1092897034674702340"
+      "pinId": "1092897034674712055"
     }
   ]
 }
