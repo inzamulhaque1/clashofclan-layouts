@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-10T05:22:58.017Z",
+  "timestamp": "2026-04-10T07:23:58.959Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 224,
+  "totalTracked": 225,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th16-war-base-anti-hydra-merged-defenses",
-      "title": "TH16 War Base Anti Hydra (Merged Defenses)",
+      "id": "guide-best-th17-attack-strategies-2026",
+      "title": "Best TH17 Attack Strategies 2026",
       "success": true,
-      "pinId": "1092897034674718120"
+      "pinId": "1092897034674722717"
     }
   ]
 }
