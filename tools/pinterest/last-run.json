@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-10T13:03:40.996Z",
+  "timestamp": "2026-04-10T15:51:11.027Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 227,
+  "totalTracked": 228,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th10-hybrid-base-new-th10-2026",
-      "title": "TH10 New Player Hybrid Base (2026)",
+      "id": "hv-th18-war-base-compact-island-core",
+      "title": "TH18 Island Core War Base",
       "success": true,
-      "pinId": "1092897034674735396"
+      "pinId": "1092897034674743818"
     }
   ]
 }
