@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-10T02:12:46.008Z",
+  "timestamp": "2026-04-10T05:22:58.017Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 223,
+  "totalTracked": 224,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh4-war-fortress-base-2026",
-      "title": "BH4 War Fortress Base",
+      "id": "hv-th16-war-base-anti-hydra-merged-defenses",
+      "title": "TH16 War Base Anti Hydra (Merged Defenses)",
       "success": true,
-      "pinId": "1092897034674712055"
+      "pinId": "1092897034674718120"
     }
   ]
 }
