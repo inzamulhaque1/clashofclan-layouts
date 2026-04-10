@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-10T10:06:16.490Z",
+  "timestamp": "2026-04-10T13:03:40.996Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 226,
+  "totalTracked": 227,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh7-giant-cannon-core-versus-base",
-      "title": "BH7 Giant Cannon Core Versus Base",
+      "id": "hv-th10-hybrid-base-new-th10-2026",
+      "title": "TH10 New Player Hybrid Base (2026)",
       "success": true,
-      "pinId": "1092897034674727853"
+      "pinId": "1092897034674735396"
     }
   ]
 }
