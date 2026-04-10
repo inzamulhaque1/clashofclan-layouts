@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-10T18:47:54.139Z",
+  "timestamp": "2026-04-10T21:34:54.299Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 229,
+  "totalTracked": 230,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th10-cwl-medal-farm-base",
-      "title": "TH10 CWL Medal Farming Base",
+      "id": "hv-th8-farming-base-resource-protection",
+      "title": "TH8 Farming Base — Resources",
       "success": true,
-      "pinId": "1092897034674753694"
+      "pinId": "1092897034674761780"
     }
   ]
 }
