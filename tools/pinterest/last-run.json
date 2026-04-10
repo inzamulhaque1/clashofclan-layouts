@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-10T15:51:11.027Z",
+  "timestamp": "2026-04-10T18:47:54.139Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 228,
+  "totalTracked": 229,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th18-war-base-compact-island-core",
-      "title": "TH18 Island Core War Base",
+      "id": "hv-th10-cwl-medal-farm-base",
+      "title": "TH10 CWL Medal Farming Base",
       "success": true,
-      "pinId": "1092897034674743818"
+      "pinId": "1092897034674753694"
     }
   ]
 }
