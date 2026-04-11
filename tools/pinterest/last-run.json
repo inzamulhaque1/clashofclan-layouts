@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-11T09:37:28.591Z",
+  "timestamp": "2026-04-11T12:52:24.050Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 234,
+  "totalTracked": 235,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th18-trophy-base-spread-defense-push",
-      "title": "TH18 Spread Defense Trophy Base",
+      "id": "bh-bh9-lava-launcher-trophy-push-base",
+      "title": "BH9 Lava Launcher Trophy Push Base",
       "success": true,
-      "pinId": "1092897034674788331"
+      "pinId": "1092897034674796182"
     }
   ]
 }
