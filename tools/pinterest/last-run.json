@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-10T21:34:54.299Z",
+  "timestamp": "2026-04-11T02:01:11.617Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 230,
+  "totalTracked": 231,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th8-farming-base-resource-protection",
-      "title": "TH8 Farming Base — Resources",
+      "id": "bh-bh6-balanced-hybrid-all-rounder",
+      "title": "BH6 Balanced Hybrid All-Rounder",
       "success": true,
-      "pinId": "1092897034674761780"
+      "pinId": "1092897034674771448"
     }
   ]
 }
