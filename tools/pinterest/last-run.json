@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-11T04:52:28.856Z",
+  "timestamp": "2026-04-11T06:58:10.625Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 232,
+  "totalTracked": 233,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th15-war-base-anti-root-rider",
-      "title": "TH15 War Base Anti Root Rider",
+      "id": "hv-th17-hybrid-base-resource-trophy-split",
+      "title": "TH17 Hybrid Split Design",
       "success": true,
-      "pinId": "1092897034674778020"
+      "pinId": "1092897034674782967"
     }
   ]
 }
