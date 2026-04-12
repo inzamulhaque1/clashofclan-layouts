@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-12T12:56:19.163Z",
+  "timestamp": "2026-04-12T15:33:49.987Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 243,
+  "totalTracked": 244,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-ring-base-war-layout",
-      "title": "TH17 Ring Base War Layout",
+      "id": "guide-best-th18-attack-strategies-2026",
+      "title": "Best TH18 Attack Strategies 2026",
       "success": true,
-      "pinId": "1092897034674862357"
+      "pinId": "1092897034674871650"
     }
   ]
 }
