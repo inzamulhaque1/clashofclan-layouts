@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-12T09:42:46.925Z",
+  "timestamp": "2026-04-12T12:56:19.163Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 242,
+  "totalTracked": 243,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh4-spread-farming-layout-2026",
-      "title": "BH4 Spread Farming Layout",
+      "id": "hv-th17-ring-base-war-layout",
+      "title": "TH17 Ring Base War Layout",
       "success": true,
-      "pinId": "1092897034674854273"
+      "pinId": "1092897034674862357"
     }
   ]
 }
