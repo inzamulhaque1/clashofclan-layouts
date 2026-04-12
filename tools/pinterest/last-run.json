@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-11T21:30:04.524Z",
+  "timestamp": "2026-04-12T02:22:54.990Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 238,
+  "totalTracked": 239,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th15-trophy-base-champion-league",
-      "title": "TH15 Champion League Trophy Base",
+      "id": "bh-bh5-ring-trophy-base-2026",
+      "title": "BH5 Ring Trophy Base",
       "success": true,
-      "pinId": "1092897034674826390"
+      "pinId": "1092897034674837543"
     }
   ]
 }
