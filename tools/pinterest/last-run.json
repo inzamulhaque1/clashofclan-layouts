@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-13T16:09:49.704Z",
+  "timestamp": "2026-04-13T19:12:10.447Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 252,
+  "totalTracked": 253,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh7-collector-ring-farming-layout",
-      "title": "BH7 Collector Ring Farming Layout",
+      "id": "hv-th14-hybrid-base-war-farming-versatile",
+      "title": "TH14 Hybrid Base — War & Farming",
       "success": true,
-      "pinId": "1092897034674936005"
+      "pinId": "1092897034674944457"
     }
   ]
 }
