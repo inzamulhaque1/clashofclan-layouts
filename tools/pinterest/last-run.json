@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-13T05:38:56.448Z",
+  "timestamp": "2026-04-13T07:58:54.252Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 248,
+  "totalTracked": 249,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th8-war-base-asymmetric-2026",
-      "title": "TH8 Asymmetric War Base (2026)",
+      "id": "hv-th8-trophy-base-masters-push-2026",
+      "title": "TH8 Masters Push Base (2026)",
       "success": true,
-      "pinId": "1092897034674911224"
+      "pinId": "1092897034674915300"
     }
   ]
 }
