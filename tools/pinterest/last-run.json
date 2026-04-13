@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-13T10:43:23.584Z",
+  "timestamp": "2026-04-13T13:21:08.268Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 250,
+  "totalTracked": 251,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th9-farming-base-max-walls-2026",
-      "title": "TH9 Max Walls Farming Base (2026)",
+      "id": "guide-legend-league-push-guide-2026",
+      "title": "Legend League Push Guide 2026",
       "success": true,
-      "pinId": "1092897034674920678"
+      "pinId": "1092897034674927379"
     }
   ]
 }
