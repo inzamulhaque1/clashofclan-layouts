@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-13T07:58:54.252Z",
+  "timestamp": "2026-04-13T10:43:23.584Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 249,
+  "totalTracked": 250,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th8-trophy-base-masters-push-2026",
-      "title": "TH8 Masters Push Base (2026)",
+      "id": "hv-th9-farming-base-max-walls-2026",
+      "title": "TH9 Max Walls Farming Base (2026)",
       "success": true,
-      "pinId": "1092897034674915300"
+      "pinId": "1092897034674920678"
     }
   ]
 }
