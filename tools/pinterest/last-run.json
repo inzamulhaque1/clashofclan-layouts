@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-13T02:27:20.855Z",
+  "timestamp": "2026-04-13T05:38:56.448Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 247,
+  "totalTracked": 248,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th18-hybrid-base-legend-farming",
-      "title": "TH18 Legend Farming Hybrid Base",
+      "id": "hv-th8-war-base-asymmetric-2026",
+      "title": "TH8 Asymmetric War Base (2026)",
       "success": true,
-      "pinId": "1092897034674904606"
+      "pinId": "1092897034674911224"
     }
   ]
 }
