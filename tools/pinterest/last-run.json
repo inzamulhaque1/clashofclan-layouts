@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-13T13:21:08.268Z",
+  "timestamp": "2026-04-13T16:09:49.704Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 251,
+  "totalTracked": 252,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "guide-legend-league-push-guide-2026",
-      "title": "Legend League Push Guide 2026",
+      "id": "bh-bh7-collector-ring-farming-layout",
+      "title": "BH7 Collector Ring Farming Layout",
       "success": true,
-      "pinId": "1092897034674927379"
+      "pinId": "1092897034674936005"
     }
   ]
 }
