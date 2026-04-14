@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-14T10:13:50.007Z",
+  "timestamp": "2026-04-14T13:19:55.312Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 258,
+  "totalTracked": 259,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th15-cwl-base-anti-root-rider-cwl",
-      "title": "TH15 CWL Base Anti Root Rider",
+      "id": "hv-th15-cwl-base-anti-electro-dragon",
+      "title": "TH15 CWL Base (Anti E-Drag)",
       "success": true,
-      "pinId": "1092897034674978466"
+      "pinId": "1092897034674986957"
     }
   ]
 }
