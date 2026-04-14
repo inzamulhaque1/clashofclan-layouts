@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-13T21:44:44.265Z",
+  "timestamp": "2026-04-14T02:13:25.081Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 254,
+  "totalTracked": 255,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-war-base-spread-defense-anti-spam",
-      "title": "TH17 Spread Defense War Base",
+      "id": "bh-bh3-balanced-hybrid-base-2026",
+      "title": "BH3 Balanced Hybrid Base",
       "success": true,
-      "pinId": "1092897034674952280"
+      "pinId": "1092897034674961609"
     }
   ]
 }
