@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-14T19:10:15.300Z",
+  "timestamp": "2026-04-14T21:49:26.301Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 261,
+  "totalTracked": 262,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-cwl-anti-3-star-base",
-      "title": "TH17 CWL Anti 3 Star Base",
+      "id": "bh-bh6-compact-war-defense-base",
+      "title": "BH6 Compact War Defense Base",
       "success": true,
-      "pinId": "1092897034675005186"
+      "pinId": "1092897034675012607"
     }
   ]
 }
