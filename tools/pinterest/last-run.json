@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-15T19:12:46.645Z",
+  "timestamp": "2026-04-15T21:49:32.970Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 269,
+  "totalTracked": 270,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "guide-best-th15-attack-strategies-2026",
-      "title": "Best TH15 Attack Strategies 2026",
+      "id": "hv-th8-farming-base-anti-barch",
+      "title": "TH8 Anti Barch Farming Base",
       "success": true,
-      "pinId": "1092897034675062256"
+      "pinId": "1092897034675068924"
     }
   ]
 }
