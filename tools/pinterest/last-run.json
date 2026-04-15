@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-15T13:19:32.259Z",
+  "timestamp": "2026-04-15T16:03:05.775Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 267,
+  "totalTracked": 268,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th14-war-base-anti-super-witch",
-      "title": "TH14 War Base Anti Super Witch",
+      "id": "hv-th17-cwl-base-anti-blizzard-lalo",
+      "title": "TH17 CWL Anti Blizzard Lalo",
       "success": true,
-      "pinId": "1092897034675044364"
+      "pinId": "1092897034675052262"
     }
   ]
 }
