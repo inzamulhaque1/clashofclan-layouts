@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-15T10:15:15.035Z",
+  "timestamp": "2026-04-15T13:19:32.259Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 266,
+  "totalTracked": 267,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh5-best-trophy-push-base-2026",
-      "title": "BH5 Best Trophy Push Base",
+      "id": "hv-th14-war-base-anti-super-witch",
+      "title": "TH14 War Base Anti Super Witch",
       "success": true,
-      "pinId": "1092897034675036997"
+      "pinId": "1092897034675044364"
     }
   ]
 }
