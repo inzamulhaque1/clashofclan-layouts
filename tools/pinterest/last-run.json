@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-15T05:21:36.493Z",
+  "timestamp": "2026-04-15T07:27:23.915Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 264,
+  "totalTracked": 265,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th14-farming-base-pet-house-centered",
-      "title": "TH14 Farming Base — Pet House Centered",
+      "id": "guide-clan-capital-guide-2026",
+      "title": "Clan Capital Guide 2026",
       "success": true,
-      "pinId": "1092897034675028721"
+      "pinId": "1092897034675032402"
     }
   ]
 }
