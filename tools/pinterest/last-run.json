@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-14T21:49:26.301Z",
+  "timestamp": "2026-04-15T02:10:37.058Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 262,
+  "totalTracked": 263,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh6-compact-war-defense-base",
-      "title": "BH6 Compact War Defense Base",
+      "id": "bh-bh8-hybrid-all-rounder-base",
+      "title": "BH8 Hybrid All-Rounder Base",
       "success": true,
-      "pinId": "1092897034675012607"
+      "pinId": "1092897034675022438"
     }
   ]
 }
