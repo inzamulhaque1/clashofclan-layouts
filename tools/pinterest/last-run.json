@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-16T05:28:25.500Z",
+  "timestamp": "2026-04-16T07:28:05.502Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 272,
+  "totalTracked": 273,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th14-trophy-base-anti-queen-charge",
-      "title": "TH14 Trophy Base Anti Queen Charge",
+      "id": "bh-bh5-anti-bomber-war-base-2026",
+      "title": "BH5 Anti Bomber War Base",
       "success": true,
-      "pinId": "1092897034675085325"
+      "pinId": "1092897034675089736"
     }
   ]
 }
