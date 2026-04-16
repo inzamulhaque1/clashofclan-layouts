@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-16T07:28:05.502Z",
+  "timestamp": "2026-04-16T10:13:50.010Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 273,
+  "totalTracked": 274,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh5-anti-bomber-war-base-2026",
-      "title": "BH5 Anti Bomber War Base",
+      "id": "hv-th18-trophy-base-centered-th-weapon",
+      "title": "TH18 Centered TH Weapon Trophy Base",
       "success": true,
-      "pinId": "1092897034675089736"
+      "pinId": "1092897034675095969"
     }
   ]
 }
