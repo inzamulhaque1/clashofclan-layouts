@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-16T19:08:14.640Z",
+  "timestamp": "2026-04-16T21:41:00.532Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 277,
+  "totalTracked": 278,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh6-resource-protection-farming-layout",
-      "title": "BH6 Resource Protection Farming Layout",
+      "id": "hv-th15-farming-base-max-de-protection",
+      "title": "TH15 Farming Base — Max DE",
       "success": true,
-      "pinId": "1092897034675122872"
+      "pinId": "1092897034675129997"
     }
   ]
 }
