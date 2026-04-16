@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-15T21:49:32.970Z",
+  "timestamp": "2026-04-16T02:26:46.622Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 270,
+  "totalTracked": 271,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th8-farming-base-anti-barch",
-      "title": "TH8 Anti Barch Farming Base",
+      "id": "hv-th7-war-base-compact-core",
+      "title": "TH7 Compact Core War Base",
       "success": true,
-      "pinId": "1092897034675068924"
+      "pinId": "1092897034675078819"
     }
   ]
 }
