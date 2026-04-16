@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-16T02:26:46.622Z",
+  "timestamp": "2026-04-16T05:28:25.500Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 271,
+  "totalTracked": 272,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th7-war-base-compact-core",
-      "title": "TH7 Compact Core War Base",
+      "id": "hv-th14-trophy-base-anti-queen-charge",
+      "title": "TH14 Trophy Base Anti Queen Charge",
       "success": true,
-      "pinId": "1092897034675078819"
+      "pinId": "1092897034675085325"
     }
   ]
 }
