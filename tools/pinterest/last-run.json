@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-17T07:28:45.760Z",
+  "timestamp": "2026-04-17T10:12:21.532Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 281,
+  "totalTracked": 282,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-cwl-anti-2-star-centered-th",
-      "title": "TH17 CWL Anti 2 Star Base",
+      "id": "hv-th17-anti-3-star-war-base-updated",
+      "title": "TH17 Anti 3 Star War Base (Updated)",
       "success": true,
-      "pinId": "1092897034675150480"
+      "pinId": "1092897034675156466"
     }
   ]
 }
