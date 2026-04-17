@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-17T13:13:25.497Z",
+  "timestamp": "2026-04-17T15:58:18.271Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 283,
+  "totalTracked": 284,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th17-war-base-compartment-heavy",
-      "title": "TH17 Multi-Compartment War Base",
+      "id": "hv-th14-anti-3-star-spread-base",
+      "title": "TH14 Anti 3 Star Spread Base",
       "success": true,
-      "pinId": "1092897034675164596"
+      "pinId": "1092897034675172913"
     }
   ]
 }
