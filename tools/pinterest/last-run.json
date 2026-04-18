@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-18T05:04:14.620Z",
+  "timestamp": "2026-04-18T07:03:41.987Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 288,
+  "totalTracked": 289,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th16-farming-base-resource-protection",
-      "title": "TH16 Farming Base — Max Resource Protection",
+      "id": "hv-th7-war-base-cc-centered",
+      "title": "TH7 CC Centered War Base",
       "success": true,
-      "pinId": "1092897034675208330"
+      "pinId": "1092897034675212372"
     }
   ]
 }
