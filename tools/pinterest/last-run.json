@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-18T09:44:14.119Z",
+  "timestamp": "2026-04-18T12:56:55.916Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 290,
+  "totalTracked": 291,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th10-farming-base-anti-goblin-knife",
-      "title": "TH10 Anti Goblin Knife Farming Base",
+      "id": "bh-bh3-anti-sneaky-archer-versus-base-2026",
+      "title": "BH3 Anti Sneaky Archer Versus Base",
       "success": true,
-      "pinId": "1092897034675218430"
+      "pinId": "1092897034675227539"
     }
   ]
 }
