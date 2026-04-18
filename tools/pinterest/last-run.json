@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-18T07:03:41.987Z",
+  "timestamp": "2026-04-18T09:44:14.119Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 289,
+  "totalTracked": 290,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th7-war-base-cc-centered",
-      "title": "TH7 CC Centered War Base",
+      "id": "hv-th10-farming-base-anti-goblin-knife",
+      "title": "TH10 Anti Goblin Knife Farming Base",
       "success": true,
-      "pinId": "1092897034675212372"
+      "pinId": "1092897034675218430"
     }
   ]
 }
