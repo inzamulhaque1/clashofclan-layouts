@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-18T18:43:59.551Z",
+  "timestamp": "2026-04-18T21:32:11.212Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 293,
+  "totalTracked": 294,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "bh-bh8-anti-3-star-war-base",
-      "title": "BH8 Anti 3-Star War Base",
+      "id": "hv-th12-war-base-anti-electro-dragon-spam",
+      "title": "TH12 War Base (Anti E-Drag Spam)",
       "success": true,
-      "pinId": "1092897034675248177"
+      "pinId": "1092897034675257492"
     }
   ]
 }
