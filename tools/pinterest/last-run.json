@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-18T02:05:37.311Z",
+  "timestamp": "2026-04-18T05:04:14.620Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 287,
+  "totalTracked": 288,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th11-trophy-base-ring-style",
-      "title": "TH11 Ring Style Trophy Base",
+      "id": "hv-th16-farming-base-resource-protection",
+      "title": "TH16 Farming Base — Max Resource Protection",
       "success": true,
-      "pinId": "1092897034675202182"
+      "pinId": "1092897034675208330"
     }
   ]
 }
