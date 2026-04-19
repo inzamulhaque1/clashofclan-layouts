@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-19T15:35:27.479Z",
+  "timestamp": "2026-04-19T18:44:20.683Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 300,
+  "totalTracked": 301,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th11-cwl-base-anti-dip",
-      "title": "TH11 CWL Base — Anti Dip",
+      "id": "hv-th11-war-base-anti-edrag",
+      "title": "TH11 War Base Anti E-Drag",
       "success": true,
-      "pinId": "1092897034675305913"
+      "pinId": "1092897034675318829"
     }
   ]
 }
