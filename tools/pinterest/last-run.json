@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-19T09:44:24.482Z",
+  "timestamp": "2026-04-19T12:56:05.910Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 298,
+  "totalTracked": 299,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th10-hybrid-base-balanced",
-      "title": "TH10 Hybrid Base — Balanced",
+      "id": "hv-th10-trophy-base-masters-push",
+      "title": "TH10 Masters League Push Base",
       "success": true,
-      "pinId": "1092897034675287652"
+      "pinId": "1092897034675296550"
     }
   ]
 }
