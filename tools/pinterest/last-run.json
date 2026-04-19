@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-18T21:32:11.212Z",
+  "timestamp": "2026-04-19T02:26:54.996Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 294,
+  "totalTracked": 295,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th12-war-base-anti-electro-dragon-spam",
-      "title": "TH12 War Base (Anti E-Drag Spam)",
+      "id": "bh-bh4-anti-beta-minion-war-base-2026",
+      "title": "BH4 Anti Beta Minion War Base",
       "success": true,
-      "pinId": "1092897034675257492"
+      "pinId": "1092897034675270264"
     }
   ]
 }
