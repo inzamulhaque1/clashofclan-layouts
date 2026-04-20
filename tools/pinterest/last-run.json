@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-20T13:24:11.208Z",
+  "timestamp": "2026-04-20T16:06:20.870Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 307,
+  "totalTracked": 308,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th12-war-base-anti-ground",
-      "title": "TH12 Anti Ground War Base",
+      "id": "hv-th16-anti-3-star-ring-base",
+      "title": "TH16 Anti 3 Star Ring Base",
       "success": true,
-      "pinId": "1092897034675363172"
+      "pinId": "1092897034675372136"
     }
   ]
 }
