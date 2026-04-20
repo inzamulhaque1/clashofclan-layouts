@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-20T08:02:29.597Z",
+  "timestamp": "2026-04-20T10:45:25.472Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 305,
+  "totalTracked": 306,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th12-farming-base-crow-style",
-      "title": "TH12 Crow-Style Farming Base",
+      "id": "hv-th13-anti-3-star-base-spread-defense",
+      "title": "TH13 Anti 3 Star Spread Defense",
       "success": true,
-      "pinId": "1092897034675350647"
+      "pinId": "1092897034675356281"
     }
   ]
 }
