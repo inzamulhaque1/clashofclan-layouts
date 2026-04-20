@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-20T16:06:20.870Z",
+  "timestamp": "2026-04-20T19:01:30.671Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 308,
+  "totalTracked": 309,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th16-anti-3-star-ring-base",
-      "title": "TH16 Anti 3 Star Ring Base",
+      "id": "hv-th8-war-base-spread-ad",
+      "title": "TH8 Spread AD War Base",
       "success": true,
-      "pinId": "1092897034675372136"
+      "pinId": "1092897034675382101"
     }
   ]
 }
