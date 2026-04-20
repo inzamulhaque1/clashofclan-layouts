@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-20T19:01:30.671Z",
+  "timestamp": "2026-04-20T21:43:17.380Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 309,
+  "totalTracked": 310,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th8-war-base-spread-ad",
-      "title": "TH8 Spread AD War Base",
+      "id": "hv-th10-hybrid-base-inferno-balanced",
+      "title": "TH10 Inferno Balanced Hybrid Base",
       "success": true,
-      "pinId": "1092897034675382101"
+      "pinId": "1092897034675390528"
     }
   ]
 }
