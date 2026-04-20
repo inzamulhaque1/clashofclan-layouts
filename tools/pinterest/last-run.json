@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-20T02:27:36.043Z",
+  "timestamp": "2026-04-20T05:38:18.727Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 303,
+  "totalTracked": 304,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th13-cwl-base-all-rounder",
-      "title": "TH13 CWL All-Rounder Base",
+      "id": "hv-th15-hybrid-base-all-rounder-defense",
+      "title": "TH15 Hybrid Base — All-Rounder",
       "success": true,
-      "pinId": "1092897034675339196"
+      "pinId": "1092897034675345279"
     }
   ]
 }
