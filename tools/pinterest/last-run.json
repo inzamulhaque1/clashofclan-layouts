@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-19T21:33:02.683Z",
+  "timestamp": "2026-04-20T02:27:36.043Z",
   "totalPosted": 1,
   "totalFailed": 0,
-  "totalTracked": 302,
+  "totalTracked": 303,
   "totalAvailable": 425,
   "results": [
     {
-      "id": "hv-th7-hybrid-base-anti-everything",
-      "title": "TH7 Anti Everything Hybrid Base",
+      "id": "hv-th13-cwl-base-all-rounder",
+      "title": "TH13 CWL All-Rounder Base",
       "success": true,
-      "pinId": "1092897034675327979"
+      "pinId": "1092897034675339196"
     }
   ]
 }
