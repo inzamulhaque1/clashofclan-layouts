@@ -1,209 +1,171 @@
-# Game365Hub - Project Plan & Checklist
+# Game365Hub — 3-Day Launch Plan
 
-> Last updated: March 14, 2026
-> Site: game365hub.com | Next.js 14 + TypeScript + Tailwind
-> Strategy: **Quality over quantity** — Blog + CoC depth first, other games later
-
----
-
-## Current Status
-
-| Area | Status | Score |
-|------|--------|-------|
-| Technical SEO | Strong | 8/10 |
-| Structured Data (JSON-LD) | Strong | 9/10 |
-| Site Structure | Solid | 8/10 |
-| Page Speed | Good | 7/10 |
-| Blog Content | 10 articles (~55K words) | Good |
-| CoC Base Layouts | 408 bases (322 HV + 86 BH) | Excellent |
-| CoC Guides | 10 written (~40K words) | Good — needs 8 more |
-| Builder Base | 86 layouts (BH3-BH10) | Complete |
-| AdSense Readiness | Almost Ready | 6/10 |
-
-### Strategy: Two Pillars
-
-1. **Blog** — General mobile gaming articles (broad traffic)
-2. **Clash of Clans** — Deep content hub (bases + guides = topical authority)
-
-Other games (Brawl Stars, Clash Royale, Free Fire, PUBG) are set to "Coming Soon" until CoC is fully built out. Quality > quantity.
+> Last updated: 2026-05-13
+> Status: Restructure code shipped (commit ec9c45e). Scraper broken (false positives, dead source URLs). Site live but `/codes` and `/[game]/codes` pages empty. Cron disabled until rebuild.
+> Goal: Launch a working game-codes aggregator in 3 focused days, then go live in one push.
 
 ---
 
-## PHASE 1: Fixes (DONE)
+## Mission
 
-- [x] Fix 404 page broken `gradient-text` CSS class
-- [x] Add JSON-LD to all game pages (Brawl Stars, Clash Royale, Free Fire)
-- [x] Add JSON-LD to About page (Organization schema)
-- [x] Add JSON-LD to Contact page (ContactPage schema)
-- [x] Fix social share buttons on blog posts (Twitter, Facebook, LinkedIn)
-- [x] Add AggregateRating schema to base detail pages
-- [x] Add `unoptimized` prop to base images
-- [x] Add `loading="lazy"` to below-fold images
-- [x] Add blur placeholder to base card images
-- [x] Reduce bases per page from 12 to 9
-- [x] Fix 5 broken blog images (Epic Games CDN → Steam/Wikipedia)
-- [x] Fix hardcoded "offline games" keyword in Article JSON-LD
-- [x] Standardize gameName across all articles
-- [x] Stagger publish dates (Mar 2-12 instead of all Mar 8)
-- [x] Set Brawl Stars, Clash Royale, Free Fire to "Coming Soon" (no fake guide counts)
-- [x] Update CoC card stats to "118 Bases" (real number)
+Daily redemption codes hub for 10 popular live-service games. Trustworthy, fast, mobile-first. Monetized via display ads + top-up affiliate links. Realistic 6-month target: $20–30/month at 3–4 hr/day effort.
+
+## Why this works (and why the v1 scraper didn't)
+
+People search **"[game] codes [month] [year]"** every few days — recurring intent we can rank for. Codes themselves are facts (not copyrightable) so they're scrapable.
+
+The v1 scraper failed because:
+- 9 of 10 source URLs were invented and 404'd.
+- The regex `\b[A-Z0-9]{6,20}\b` matched any all-caps string on the page (meta tag names, tracking IDs). One HSR run produced 449 "codes", all junk.
+- No verification layer, no source authority, no manual override.
+
+The v2 design fixes all three: real sources, per-game extractors, manual approval queue.
 
 ---
 
-## PHASE 2: CoC Content Hub
+## Day 1 — Data foundation & content seeding
 
-### CoC Guides Written (10/18):
+**Goal:** End the day with `data/codes.json` containing real codes for every game, sourced manually. Site renders properly with real content, no automation needed yet.
 
-1. [x] Clash of Clans Beginners Guide 2026
-2. [x] Best TH18 Attack Strategies 2026
-3. [x] Best TH17 Attack Strategies 2026
-4. [x] Best TH16 Attack Strategies 2026
-5. [x] Best Army Compositions for Every Town Hall Level
-6. [x] How to Max Your Base Fast — F2P Guide
-7. [x] Best Clan War League Strategy Guide
-8. [x] Best Hero Equipment Rankings 2026
-9. [x] Legend League Push Guide 2026
-10. [x] Best Defensive CC Troops for War
+### Tasks
 
-### CoC Guides To Write (8 remaining — NEXT SESSION):
+1. **Lineup decision (30 min)**
+   - CoC doesn't have classic redeem codes (Supercell uses event passes, not codes). Two options:
+     - **A.** Drop CoC, add **Brawl Stars** (Supercell, has creator codes + promo events).
+     - **B.** Keep CoC but reframe its page as "Supercell creator codes + events" — content will be thin.
+   - Default: A. Confirm with user before executing.
 
-11. [ ] Builder Base Complete Guide 2026: BH2-BH10 (upgrade order, OTTO, 6th builder)
-12. [ ] How to Build a Strong Base: Layout Design Guide (compartments, funneling, traps)
-13. [ ] CoC Upgrade Priority Guide 2026: What to Upgrade First (top searched topic)
-14. [ ] Clan Capital Guide 2026: Raid Weekends & Districts
-15. [ ] Best TH15 Attack Strategies 2026 (completes TH attack series)
-16. [ ] How to Run a Successful Clan in CoC 2026 (recruitment, rules, leadership)
-17. [ ] Complete Guide to Siege Machines in CoC
-18. [ ] Hero Upgrade Order Guide 2026: BK, AQ, GW, RC Priority
+2. **Source map per game (2 hr)**
+   For each game produce a row in `docs/sources.md`:
+   - Official redeem URL (verified live)
+   - Official X/Twitter account (codes drop here first)
+   - 2–3 trusted secondary sources (validate URLs return 200 + actually list codes)
+   - Known code pattern as regex (e.g. HSR: `STARRAIL[A-Z0-9]*` / `HSR[A-Z0-9]+`; FF: `[A-Z0-9]{12}`)
+   - Typical reward type
 
-### CoC Home Village Bases (COMPLETE — 322):
+3. **Schema upgrade for `data/codes.json` (30 min)**
+   Per-code fields: `code`, `reward`, `firstSeen`, `lastVerified`, `source`, `region` (`"global"` or specific), `addedBy` (`"manual"` | `"scraper"`), `verified` (bool).
+   Add `expired[]` entries: `code`, `reward`, `expiredOn`, `firstSeen`.
 
-| TH Level | Count | Status |
-|----------|-------|--------|
-| TH7 | 25 | Excellent |
-| TH8 | 25 | Excellent |
-| TH9 | 25 | Excellent |
-| TH10 | 25 | Excellent |
-| TH11 | 25 | Excellent |
-| TH12 | 25 | Excellent |
-| TH13 | 25 | Excellent |
-| TH14 | 25 | Excellent |
-| TH15 | 25 | Excellent |
-| TH16 | 25 | Excellent |
-| TH17 | 46 | Excellent |
-| TH18 | 25 | Excellent |
-| **Total** | **322** | **Excellent** |
+4. **Manual seed data (3 hr)**
+   Hand-curate for each game:
+   - 5–10 active codes with real rewards
+   - 10–20 expired codes (helps long-tail SEO and gives the page visible history on day one)
+   Sources for seeding: each game's official Twitter, hoyo-codes.com (HoYoverse), Pocket Tactics archives, Pro Game Guides archives, Polygon code articles.
 
-### CoC Builder Base Layouts (COMPLETE — 86):
+5. **Schema-drive page render check (1 hr)**
+   Wire `app/[game]/codes/page.tsx` to read new schema. Render locally and verify all 10 game code pages display correctly. Fix any breakage in `CodeRow`/`CodeTable` from new fields.
 
-| BH Level | Count | Status |
-|----------|-------|--------|
-| BH2 | 0 | No images available |
-| BH3 | 10 | Complete |
-| BH4 | 10 | Complete |
-| BH5 | 10 | Complete |
-| BH6 | 10 | Complete |
-| BH7 | 10 | Complete |
-| BH8 | 12 | Complete |
-| BH9 | 12 | Complete |
-| BH10 | 12 | Complete |
-| **Total** | **86** | **Complete** |
-
-### Internal Linking:
-- [x] Link CoC guides → relevant TH base pages
-- [x] Link base pages → relevant CoC guides
-- [x] Link blog articles → CoC page where relevant
-- [ ] Link BH pages → Builder Base guide (after guide #11 is written)
-- [ ] Link TH pages → matching attack strategy guides
+**End-of-day check:** `npm run build` passes, all 10 `/[game]/codes` routes render real codes, `/codes` index aggregates correctly.
 
 ---
 
-## PHASE 3: SEO & Polish (AFTER GUIDES)
+## Day 2 — Smart scraper & verification
 
-- [ ] Submit sitemap to Google Search Console
-- [ ] Verify site ownership in Google Search Console
-- [ ] Set up Google Analytics
-- [ ] Test pages with Google Rich Results Test
-- [ ] Check Core Web Vitals in PageSpeed Insights
-- [ ] Add FAQ schema to Contact page (5 FAQs exist, needs JSON-LD)
-- [ ] Add `<link rel="preconnect">` for external image domains
-- [ ] Add `FAQPage` schema to guides with FAQ sections
-- [ ] Add `HowTo` schema to attack strategy guides
-- [ ] Update BH page meta descriptions with actual base counts
+**Goal:** Replace the naive scraper with per-game extractors that produce only valid codes, with manual approval gate.
 
----
+### Tasks
 
-## PHASE 4: AdSense
+1. **HoYoverse games via API (1 hr)**
+   Integrate `hoyo-codes.com/api/codes?game={genshin|hkrpg|nap}` — community-maintained, fast, JSON. Covers Genshin, HSR, ZZZ.
 
-**Requirements:**
-- [x] 10+ quality articles (10 written, ~55K words)
-- [x] Privacy Policy page
-- [x] Terms of Service page
-- [x] About page
-- [x] Contact page
-- [ ] Domain age 1-3+ months
-- [ ] Consistent organic traffic
-- [ ] No policy violations
-- [ ] Add ads.txt to public/ (after approval)
+2. **Per-game HTML extractors (3 hr)**
+   For each remaining game, write an extractor in `scripts/extractors/{game-id}.ts` that:
+   - Fetches the specific source URL identified Day 1.
+   - Uses a site-specific CSS selector (e.g. `ul.codes-list li`, `.entry-content table tr`) — never a page-wide regex.
+   - Applies the game's known code pattern.
+   - Returns `{ code, reward, source }[]`.
+   Use `node-html-parser` or `cheerio` (~30 KB) for proper DOM parsing instead of regex on raw HTML.
 
----
+3. **Verification layer (1 hr)**
+   - Pattern check: code must match game's regex.
+   - Cross-source: code must appear in ≥2 sources OR be flagged for manual review.
+   - Auto-expire: if a code in `active` hasn't been seen in any source for 14 days → move to `expired`.
 
-## PHASE 5: Expand to Other Games (Future)
+4. **Manual approval queue (1 hr)**
+   Scraper writes new candidates to `data/pending-codes.json` instead of directly to `codes.json`. A second script `scripts/approve-codes.ts` (local, manual) lists pending, you accept/reject, accepted codes merge to `codes.json`. Cron only runs the scraper part — approval stays human-in-the-loop.
 
-Only after CoC content hub is solid (18+ guides, 400+ bases):
+5. **Cron + notification (30 min)**
+   Re-enable `.github/workflows/scrape-codes.yml` on a saner cadence (every 2 hours, not 30 min — codes don't drop that fast). On new candidates, open a GitHub issue assigned to you with the pending list. Keeps you in the loop without emailing.
 
-1. **Brawl Stars** — flip from "Coming Soon" to active, write 5-10 guides
-2. **Clash Royale** — flip active, write 5-7 guides
-3. **Free Fire** — flip active, write 5-6 guides
-4. **PUBG Mobile** — create page, write 5 guides
+6. **Dry-run end-to-end (1 hr)**
+   Trigger the workflow manually, inspect the issue / pending file, approve cleanly. Verify the produced `codes.json` is clean.
+
+**End-of-day check:** Scraper finds 5–20 real codes across 10 games, zero junk in `data/codes.json`.
 
 ---
 
-## PHASE 6: Polish
+## Day 3 — UI, SEO & launch
 
-- [ ] Add global search or remove SearchAction from schema
-- [ ] Fix newsletter signup (currently non-functional)
-- [ ] Migrate game hero images to external URLs
-- [ ] Add RSS feed for blog
+**Goal:** Site looks pro, ranks for codes queries, ad-slot-ready. Then deploy.
+
+### Tasks
+
+1. **Codes page redesign (3 hr)**
+   - Active codes: card or table with the code in monospace, large copy button, reward, "Redeem now" button linking to the game's official redeem URL, "verified" badge, age (`2 days ago`).
+   - Expired codes: collapsed accordion below.
+   - "Last updated" timestamp prominent above the fold.
+   - Mobile-first — most code searches are mobile.
+
+2. **Per-game landing pages (2 hr)**
+   `/[game]` template pulling from `games.json`:
+   - Hero with logo, name, active codes count, CTA → `/[game]/codes`.
+   - "How to redeem" — 4–6 step list (write per game, ~5 min each).
+   - FAQ accordion — 3–5 Q&A per game (template + game-specific).
+   - Internal links to other games.
+
+3. **SEO (2 hr)**
+   - Title format: `{Game} Redeem Codes ({Month} {Year}) — Active Working Codes`
+   - Meta description: `{N} working {Game} codes for {Month} {Year}. Free {currency}, rewards & more. Updated {today's date}.`
+   - JSON-LD on each codes page: `ItemList` for codes, `FAQPage` for FAQ, `HowTo` for redeem steps.
+   - Open Graph + Twitter card images (auto-generate using `@vercel/og` or static per-game OG images).
+   - Verify `sitemap.ts` and `robots.ts` are current.
+
+4. **Monetization stubs (1 hr)**
+   - AdSense placeholder slots: above-fold banner on `/codes`, in-content between active/expired on `/[game]/codes`, sticky bottom on mobile. Structure HTML, don't enable yet.
+   - Affiliate stub: link to Codashop / official top-up pages with placeholder affiliate tag. Wire up when Codashop affiliate is approved.
+
+5. **About + Footer + Header (30 min)**
+   - About page: rewrite around codes mission.
+   - Footer: link block with all 10 game codes pages.
+   - Header: simplified nav.
+
+6. **Launch checklist (1 hr)**
+   - Local: `npm run build` passes, all routes 200.
+   - Mobile responsive walkthrough.
+   - Lighthouse on `/codes` and a representative `/[game]/codes` (target Performance ≥ 85, Accessibility ≥ 95).
+   - Vercel preview deploy, smoke test from phone.
+   - Push to `main`, verify production.
+   - Submit sitemap to Google Search Console.
+   - Re-enable scraper cron.
+
+**End-of-day 3: Live.**
 
 ---
 
-## All Routes (Verified Working)
+## Open decisions (resolve before Day 1 starts)
 
-| Route | Status |
-|-------|--------|
-| `/` | 200 |
-| `/about` | 200 |
-| `/blog` | 200 |
-| `/blog/[slug]` (x10) | 200 |
-| `/clash-of-clans` | 200 |
-| `/clash-of-clans/bases` | 200 |
-| `/clash-of-clans/bases/th/[level]` (x12) | 200 |
-| `/clash-of-clans/bases/bh/[level]` (x9) | 200 |
-| `/clash-of-clans/bases/base/[slug]` (x408) | 200 |
-| `/clash-of-clans/guides` | 200 |
-| `/clash-of-clans/guides/[slug]` (x10) | 200 |
-| `/brawl-stars` | 200 |
-| `/clash-royale` | 200 |
-| `/free-fire` | 200 |
-| `/contact` | 200 |
-| `/privacy` | 200 |
-| `/terms` | 200 |
+| # | Decision | Default recommendation |
+|---|---|---|
+| 1 | Keep CoC or swap for Brawl Stars? | **Swap to Brawl Stars** — Supercell brand fit, actually has promo codes |
+| 2 | Auto-publish scraped codes or manual approval? | **Manual approval** — daily 3–4 hr budget is plenty, $20–30/mo target doesn't justify junk-risk of auto |
+| 3 | AdSense application timing? | **Structure ad slots Day 3, apply 1–2 weeks after launch** once Google sees consistent updates and traffic |
+| 4 | Codashop affiliate? | **Yes**, apply Day 3 in parallel with launch — even pending status, we can stub the links |
 
 ---
 
-## Key Files
+## Success criteria
 
-| File | Purpose |
-|------|---------|
-| `lib/blog.ts` | All 10 blog articles |
-| `lib/bases.ts` | All 408 base layouts (322 HV + 86 BH) |
-| `lib/guides.ts` | All 10 CoC guides |
-| `lib/constants.ts` | GAMES array, nav links, game details |
-| `lib/images.ts` | Centralized external image URLs |
-| `lib/seo.ts` | SEO metadata + JSON-LD helpers |
-| `app/sitemap.ts` | Auto-generated sitemap |
-| `components/bases/BaseCard.tsx` | Home Village base card |
-| `components/bases/BHBaseCard.tsx` | Builder Base card |
-| `components/bases/BaseListingClient.tsx` | HV base listing with filters |
-| `components/bases/BHBaseListingClient.tsx` | BH base listing with filters |
+- All 10 game code pages live with real, hand-verified codes by end of Day 1.
+- Scraper finds 5+ new candidate codes in a 24-hour window with zero junk by end of Day 2.
+- Production deploy passing all routes, Lighthouse mobile ≥ 85 Performance, by end of Day 3.
+- First indexed page in Google Search Console within 7 days of launch.
+
+## Out of scope (Phase 2, post-launch)
+
+- Tier lists, build guides, character pages
+- Reddit/Discord integration
+- Newsletter
+- Per-user code submission
+- Multi-language (English first, add Hindi/Indonesian later if traffic warrants)
+- Pinterest auto-poster (re-enable separately if codes site gets traction)

@@ -1,9 +1,9 @@
 name: Auto Code Scraper
 
 on:
-  schedule:
-    # Every 30 minutes
-    - cron: "*/30 * * * *"
+  # Cron disabled until scraper is rewritten with real sources + structured
+  # extraction. Currently produces false-positive junk codes. Re-enable after
+  # the 3-day rebuild plan ships. Manual runs still allowed via workflow_dispatch.
   workflow_dispatch:
 
 permissions:
