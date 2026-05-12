@@ -1,251 +1,1499 @@
 {
   "schemaVersion": 2,
-  "lastUpdated": "2026-05-13T00:00:00Z",
+  "lastUpdated": "2026-05-12T23:01:04.634Z",
   "games": {
     "genshin-impact": {
-      "lastUpdated": "2026-05-13T00:00:00Z",
+      "lastUpdated": "2026-05-12T23:01:04.634Z",
       "active": [
-        { "code": "BACKTOSUMERU", "reward": "100 primogems and 10 mystic enhancement ore", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/genshin-impact/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "NicolaCoco", "reward": "100 primogems and 5 hero's wit", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/genshin-impact/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "WilltoWin", "reward": "100 primogems and 50k mora", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/genshin-impact/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "FEOMBCVX6UO7", "reward": "10k mora, 10 adventurer's experience, 5 fine enhancement ore, 5 jueyun chili chicken, 5 stir-fried fish noodles", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/genshin-impact/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "A0NBWRZZI3XJ", "reward": "20 primogems and 160 geodes of replication", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/genshin-impact/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "PSCA8NL4ZSPD", "reward": "60 primogems and 5 adventurer's experience", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/genshin-impact/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "GENSHINGIFT", "reward": "50 primogems and 3 hero's wit (refreshes periodically)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/genshin-impact/codes", "region": "global", "addedBy": "manual", "verified": true }
+        {
+          "code": "BACKTOSUMERU",
+          "reward": "100 primogems and 10 mystic enhancement ore",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/genshin-impact/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "NicolaCoco",
+          "reward": "100 primogems and 5 hero's wit",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/genshin-impact/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "WilltoWin",
+          "reward": "100 primogems and 50k mora",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/genshin-impact/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FEOMBCVX6UO7",
+          "reward": "10k mora, 10 adventurer's experience, 5 fine enhancement ore, 5 jueyun chili chicken, 5 stir-fried fish noodles",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/genshin-impact/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": true
+        },
+        {
+          "code": "A0NBWRZZI3XJ",
+          "reward": "20 primogems and 160 geodes of replication",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/genshin-impact/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": true
+        },
+        {
+          "code": "PSCA8NL4ZSPD",
+          "reward": "60 primogems and 5 adventurer's experience",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/genshin-impact/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": true
+        },
+        {
+          "code": "GENSHINGIFT",
+          "reward": "50 primogems and 3 hero's wit (refreshes periodically)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/genshin-impact/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": true
+        },
+        {
+          "code": "G5HS7EMI47D0",
+          "reward": "Primogem*60;Adventurer's Experience*5",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://hoyo-codes.seria.moe/codes?game=genshin",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        }
       ],
       "expired": [
-        { "code": "snezhnaya20260812", "reward": "200 primogems", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "FairyGirlLinnea", "reward": "30 primogems, 20k mora, 3 tattered warrans", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "INUH43366326", "reward": "10k mora, 10 adventurer's experience, 5 fine enhancement ore, 5 jueyun chili chicken, 5 stir-fried fish noodles", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "8BHA0KFRG94K", "reward": "60 primogems and 5 adventurer's experience", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "RFVE7Z244V81", "reward": "10k mora, 10 adventurer's experience, 5 fine enhancement ore, 5 jueyun chili chicken, 5 stir-fried fish noodles", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "MIXF44DAP7HW", "reward": "20 primogems and 160 geodes of replication", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "LinneaClassTime", "reward": "100 primogems and 10 mystic enhancement ore", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "TempleofSpace", "reward": "100 primogems and 5 hero's wit", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "Scaleblade", "reward": "100 primogems and 50k mora", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ZECVVP1DT7Z2", "reward": "10k mora, 10 adventurer's experience, 5 fine enhancement ore, 5 jueyun chili chicken, 5 stir-fried fish noodles", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "8X73KH58KDHN", "reward": "60 primogems and 5 adventurer's experience", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "LTT3DVKVLUQZ", "reward": "30 primogems, 20k mora, 3 broken drive shafts", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "BLINYMOIBLINY", "reward": "20k mora, 3 hero's wit, and various foods", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "GS64YTW65O", "reward": "30k mora, 3 hero's wit, 5 mystic enhancement ore, and materials", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "JTSHBHPPKUSV", "reward": "20 primogems and 160 geodes of replication", "expiredOn": "2026-05-12", "addedBy": "manual" }
+        {
+          "code": "snezhnaya20260812",
+          "reward": "200 primogems",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "FairyGirlLinnea",
+          "reward": "30 primogems, 20k mora, 3 tattered warrans",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "INUH43366326",
+          "reward": "10k mora, 10 adventurer's experience, 5 fine enhancement ore, 5 jueyun chili chicken, 5 stir-fried fish noodles",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "8BHA0KFRG94K",
+          "reward": "60 primogems and 5 adventurer's experience",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "RFVE7Z244V81",
+          "reward": "10k mora, 10 adventurer's experience, 5 fine enhancement ore, 5 jueyun chili chicken, 5 stir-fried fish noodles",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "MIXF44DAP7HW",
+          "reward": "20 primogems and 160 geodes of replication",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "LinneaClassTime",
+          "reward": "100 primogems and 10 mystic enhancement ore",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "TempleofSpace",
+          "reward": "100 primogems and 5 hero's wit",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "Scaleblade",
+          "reward": "100 primogems and 50k mora",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ZECVVP1DT7Z2",
+          "reward": "10k mora, 10 adventurer's experience, 5 fine enhancement ore, 5 jueyun chili chicken, 5 stir-fried fish noodles",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "8X73KH58KDHN",
+          "reward": "60 primogems and 5 adventurer's experience",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "LTT3DVKVLUQZ",
+          "reward": "30 primogems, 20k mora, 3 broken drive shafts",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "BLINYMOIBLINY",
+          "reward": "20k mora, 3 hero's wit, and various foods",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "GS64YTW65O",
+          "reward": "30k mora, 3 hero's wit, 5 mystic enhancement ore, and materials",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "JTSHBHPPKUSV",
+          "reward": "20 primogems and 160 geodes of replication",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        }
       ]
     },
     "honkai-star-rail": {
-      "lastUpdated": "2026-05-13T00:00:00Z",
+      "lastUpdated": "2026-05-12T23:01:04.634Z",
       "active": [
-        { "code": "QS395DJQU4HK", "reward": "60 stellar jade", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/honkai-star-rail/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "EB28LCJRU4W3", "reward": "50 stellar jade and 10k credits", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/honkai-star-rail/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "SILVERWOLFLV999", "reward": "3 traveler's guides and 2 badge battle robes", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/honkai-star-rail/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "OMEGA", "reward": "60 stellar jade and 1 fuel", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/honkai-star-rail/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "CREATIONNYMPH", "reward": "60 stellar jade and 1 fuel", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/honkai-star-rail/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "FAREWELL", "reward": "60 stellar jade and 1 fuel", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/honkai-star-rail/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "IFYOUAREREADINGTHIS", "reward": "60 stellar jade and 1 fuel", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/honkai-star-rail/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "4TKSX77Y58QK", "reward": "30 stellar jade, 3 traveler's guides, 5 condensed aether, 4 lost gold fragments, 20k credits", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/honkai-star-rail/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "5S6ZHRWTDNJB", "reward": "60 stellar jade", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/honkai-star-rail/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "STARRAILGIFT", "reward": "50 stellar jade, 10k credits, 2 traveler's guides, 5 bottled soda", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/honkai-star-rail/codes", "region": "global", "addedBy": "manual", "verified": true }
+        {
+          "code": "QS395DJQU4HK",
+          "reward": "60 stellar jade",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/honkai-star-rail/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": true
+        },
+        {
+          "code": "EB28LCJRU4W3",
+          "reward": "50 stellar jade and 10k credits",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/honkai-star-rail/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "SILVERWOLFLV999",
+          "reward": "3 traveler's guides and 2 badge battle robes",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/honkai-star-rail/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": true
+        },
+        {
+          "code": "OMEGA",
+          "reward": "60 stellar jade and 1 fuel",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-13",
+          "source": "https://www.pockettactics.com/honkai-star-rail/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "CREATIONNYMPH",
+          "reward": "60 stellar jade and 1 fuel",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/honkai-star-rail/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": true
+        },
+        {
+          "code": "FAREWELL",
+          "reward": "60 stellar jade and 1 fuel",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/honkai-star-rail/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": true
+        },
+        {
+          "code": "IFYOUAREREADINGTHIS",
+          "reward": "60 stellar jade and 1 fuel",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/honkai-star-rail/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": true
+        },
+        {
+          "code": "4TKSX77Y58QK",
+          "reward": "30 stellar jade, 3 traveler's guides, 5 condensed aether, 4 lost gold fragments, 20k credits",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/honkai-star-rail/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": true
+        },
+        {
+          "code": "5S6ZHRWTDNJB",
+          "reward": "60 stellar jade",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/honkai-star-rail/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": true
+        },
+        {
+          "code": "STARRAILGIFT",
+          "reward": "50 stellar jade, 10k credits, 2 traveler's guides, 5 bottled soda",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/honkai-star-rail/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": true
+        },
+        {
+          "code": "CTK5DRQVT48F",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://hoyo-codes.seria.moe/codes?game=hkrpg",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        }
       ],
       "expired": [
-        { "code": "BS3265PKCVXT", "reward": "100 stellar jade and 50k credits", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "BZ61Z8D5Q6K1", "reward": "20k credits, 3 traveler's guides, 3 immortal's delight", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "IC66H7K4D1F3", "reward": "20k credits, 3 traveler's guides, 3 oat cake rolls", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "TT33Z3K5T7V1", "reward": "20k credits, 3 lost crystals, 3 Clockie pizzas", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "QI75N8V1J2G7", "reward": "20k credits, 3 refined aether, 3 Dreamville specials", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "YF61G7F3P4Q2", "reward": "30k credits and 3 traveler's guides", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "VCUB4T2V4L8N5", "reward": "20k credits, 3 classic SoulGlad, 3 refined aether", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "WOVPRK19JGM41", "reward": "20k credits, 3 lost crystals, 3 dreamy cones", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "HSRFUGUE1225", "reward": "3 traveler's guides and 2 immortal's delight", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "SUNDAYCALENDAR", "reward": "3 traveler's guides and 2 classic SoulGlad", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "AS3J6MNJVCA7", "reward": "50 stellar jade and 10k credits", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "TINGYUNISBACK", "reward": "2 immortal's delight and 5k credits", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "HAPPYSUNDAY", "reward": "5k credits and 2 Halovian winged burgers", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "THANKSPOMPOM", "reward": "3 condensed aether, 2 lost gold fragments, 3 Halovian winged burgers, 10k credits", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "HSRSEASTHEDAY", "reward": "60 stellar jade", "expiredOn": "2026-05-12", "addedBy": "manual" }
+        {
+          "code": "BS3265PKCVXT",
+          "reward": "100 stellar jade and 50k credits",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "BZ61Z8D5Q6K1",
+          "reward": "20k credits, 3 traveler's guides, 3 immortal's delight",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "IC66H7K4D1F3",
+          "reward": "20k credits, 3 traveler's guides, 3 oat cake rolls",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "TT33Z3K5T7V1",
+          "reward": "20k credits, 3 lost crystals, 3 Clockie pizzas",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "QI75N8V1J2G7",
+          "reward": "20k credits, 3 refined aether, 3 Dreamville specials",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "YF61G7F3P4Q2",
+          "reward": "30k credits and 3 traveler's guides",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "VCUB4T2V4L8N5",
+          "reward": "20k credits, 3 classic SoulGlad, 3 refined aether",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "WOVPRK19JGM41",
+          "reward": "20k credits, 3 lost crystals, 3 dreamy cones",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "HSRFUGUE1225",
+          "reward": "3 traveler's guides and 2 immortal's delight",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "SUNDAYCALENDAR",
+          "reward": "3 traveler's guides and 2 classic SoulGlad",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "AS3J6MNJVCA7",
+          "reward": "50 stellar jade and 10k credits",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "TINGYUNISBACK",
+          "reward": "2 immortal's delight and 5k credits",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "HAPPYSUNDAY",
+          "reward": "5k credits and 2 Halovian winged burgers",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "THANKSPOMPOM",
+          "reward": "3 condensed aether, 2 lost gold fragments, 3 Halovian winged burgers, 10k credits",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "HSRSEASTHEDAY",
+          "reward": "60 stellar jade",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        }
       ]
     },
     "wuthering-waves": {
-      "lastUpdated": "2026-05-13T00:00:00Z",
+      "lastUpdated": "2026-05-12T23:00:44.924Z",
       "active": [
-        { "code": "WUTHERINGGIFT", "reward": "2 premium resonance potions, 2 medium revival inhalers, 2 medium energy bags, 10k shell credits, 50 astrite", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/wuthering-waves/codes", "region": "global", "addedBy": "manual", "verified": false }
+        {
+          "code": "WUTHERINGGIFT",
+          "reward": "2 premium resonance potions, 2 medium revival inhalers, 2 medium energy bags, 10k shell credits, 50 astrite",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/wuthering-waves/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        }
       ],
       "expired": [
-        { "code": "WUTHERING2024", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "WUTHERINGWAVESGIFT", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "DCARD3VN7M", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "PTTMYZSOM", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "FORYOU", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "SHOREKEEPER", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "BLACKSHORES", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "GETREADY", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "OFFWEGO", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "JOINCARNEVALE", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ALLEYESONUS", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "STARRYSTAGE", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "TREASUREHUNT", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "VAULTOPS", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "SETSAIL", "reward": "Astrites & in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" }
+        {
+          "code": "WUTHERING2024",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "WUTHERINGWAVESGIFT",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "DCARD3VN7M",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "PTTMYZSOM",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "FORYOU",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "SHOREKEEPER",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "BLACKSHORES",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "GETREADY",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "OFFWEGO",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "JOINCARNEVALE",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ALLEYESONUS",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "STARRYSTAGE",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "TREASUREHUNT",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "VAULTOPS",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "SETSAIL",
+          "reward": "Astrites & in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        }
       ]
     },
     "zenless-zone-zero": {
-      "lastUpdated": "2026-05-13T00:00:00Z",
+      "lastUpdated": "2026-05-12T23:00:44.924Z",
       "active": [
-        { "code": "ZZZ28HERO", "reward": "60 polychrome and 6,666 dennies", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/zenless-zone-zero/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "ZZZ27CHAMPION", "reward": "60 polychrome and 6,666 dennies", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/zenless-zone-zero/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "zzzCuteness", "reward": "1 w-engine energy module and 20k dennies", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/zenless-zone-zero/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "ZENLESSGIFT", "reward": "50 polychrome, 2 official investigator logs, 3 w-engine power supplies, 1 bangboo algorithm module", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/zenless-zone-zero/codes", "region": "global", "addedBy": "manual", "verified": true }
+        {
+          "code": "ZZZ28HERO",
+          "reward": "60 polychrome and 6,666 dennies",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/zenless-zone-zero/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": true
+        },
+        {
+          "code": "ZZZ27CHAMPION",
+          "reward": "60 polychrome and 6,666 dennies",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/zenless-zone-zero/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "zzzCuteness",
+          "reward": "1 w-engine energy module and 20k dennies",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/zenless-zone-zero/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "ZENLESSGIFT",
+          "reward": "50 polychrome, 2 official investigator logs, 3 w-engine power supplies, 1 bangboo algorithm module",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/zenless-zone-zero/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": true
+        }
       ],
       "expired": [
-        { "code": "PROMEIA", "reward": "300 polychrome, 30k dennies, 2 senior investigator logs, 3 w-engine energy modules", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ZZZGIGO", "reward": "1 w-engine energy module, 1 senior investigator log, 15k dennies", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ZZZ26DELUSION", "reward": "60 polychrome and 6,666 dennies", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ZZZCREATOR26", "reward": "2 senior investigator logs, 3 w-engine energy modules, 10k dennies", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ZZZANGELS", "reward": "50 polychrome", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ZHAOISFREE", "reward": "50 polychrome", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "AODDebut", "reward": "30 polychrome, 3 senior investigator logs, 6,666 dennies", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "MISSHISS", "reward": "300 polychrome, 30k dennies, 2 senior investigator logs, 3 w-engine energy modules", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ZZZAOD0206", "reward": "10 polychrome, 2 senior investigator logs, 2 w-engine energy modules, 5k dennies", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ZZZ2026", "reward": "5 senior investigator logs, 2 w-engine energy modules, 30k dennies", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ZZZ25MINA", "reward": "60 polychrome and 6,666 dennies", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ShunguangWinterGift", "reward": "30 polychrome", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "BJLHLMVGCN", "reward": "20k dennies", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ZZZ25ROWBY", "reward": "60 polychrome and 6,666 dennies", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "DREAMINGANGEL", "reward": "300 polychrome, 30k dennies, 2 senior investigator logs, 3 w-engine energy modules", "expiredOn": "2026-05-12", "addedBy": "manual" }
+        {
+          "code": "PROMEIA",
+          "reward": "300 polychrome, 30k dennies, 2 senior investigator logs, 3 w-engine energy modules",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ZZZGIGO",
+          "reward": "1 w-engine energy module, 1 senior investigator log, 15k dennies",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ZZZ26DELUSION",
+          "reward": "60 polychrome and 6,666 dennies",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ZZZCREATOR26",
+          "reward": "2 senior investigator logs, 3 w-engine energy modules, 10k dennies",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ZZZANGELS",
+          "reward": "50 polychrome",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ZHAOISFREE",
+          "reward": "50 polychrome",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "AODDebut",
+          "reward": "30 polychrome, 3 senior investigator logs, 6,666 dennies",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "MISSHISS",
+          "reward": "300 polychrome, 30k dennies, 2 senior investigator logs, 3 w-engine energy modules",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ZZZAOD0206",
+          "reward": "10 polychrome, 2 senior investigator logs, 2 w-engine energy modules, 5k dennies",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ZZZ2026",
+          "reward": "5 senior investigator logs, 2 w-engine energy modules, 30k dennies",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ZZZ25MINA",
+          "reward": "60 polychrome and 6,666 dennies",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ShunguangWinterGift",
+          "reward": "30 polychrome",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "BJLHLMVGCN",
+          "reward": "20k dennies",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ZZZ25ROWBY",
+          "reward": "60 polychrome and 6,666 dennies",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "DREAMINGANGEL",
+          "reward": "300 polychrome, 30k dennies, 2 senior investigator logs, 3 w-engine energy modules",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        }
       ]
     },
     "free-fire": {
-      "lastUpdated": "2026-05-13T00:00:00Z",
+      "lastUpdated": "2026-05-12T23:00:44.924Z",
       "active": [
-        { "code": "FFRSX4CYHLLQ", "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/garena-free-fire/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "FFSKTXVQF2NR", "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/garena-free-fire/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "NPTF2FWSPXN9", "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/garena-free-fire/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "FFDMNSW9KG2", "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/garena-free-fire/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "FFCBRAXQTS9S", "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/garena-free-fire/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "FFSGT7KNFQ2X", "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/garena-free-fire/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "FPSTQ7MXNPY5", "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/garena-free-fire/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "H8YC4TN6VKQ9", "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/garena-free-fire/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "FF6YH3BFD7VT", "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/garena-free-fire/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "B1RK7C5ZL8YT", "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/garena-free-fire/codes", "region": "global", "addedBy": "manual", "verified": false }
+        {
+          "code": "FFRSX4CYHLLQ",
+          "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FFSKTXVQF2NR",
+          "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "NPTF2FWSPXN9",
+          "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FFDMNSW9KG2",
+          "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FFCBRAXQTS9S",
+          "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FFSGT7KNFQ2X",
+          "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FPSTQ7MXNPY5",
+          "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "H8YC4TN6VKQ9",
+          "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FF6YH3BFD7VT",
+          "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "B1RK7C5ZL8YT",
+          "reward": "Diamonds, weapon crates, or vouchers (rewards vary; codes expire fast)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        }
       ],
       "expired": []
     },
     "mobile-legends": {
-      "lastUpdated": "2026-05-13T00:00:00Z",
+      "lastUpdated": "2026-05-12T23:00:44.924Z",
       "active": [
-        { "code": "2y3vo2r3x", "reward": "Diamonds or in-game rewards (delivered via in-game mail)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pocketgamer.com/mobile-legends-bang-bang/codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "0nc9lhok9", "reward": "Diamonds or in-game rewards (delivered via in-game mail)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pocketgamer.com/mobile-legends-bang-bang/codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "3r83efok9", "reward": "Diamonds or in-game rewards (delivered via in-game mail)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pocketgamer.com/mobile-legends-bang-bang/codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "MRO20241209", "reward": "Diamonds or in-game rewards (delivered via in-game mail)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pocketgamer.com/mobile-legends-bang-bang/codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "HOLAMLBB", "reward": "Diamonds or in-game rewards (new players only)", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pocketgamer.com/mobile-legends-bang-bang/codes/", "region": "global", "addedBy": "manual", "verified": false }
+        {
+          "code": "2y3vo2r3x",
+          "reward": "Diamonds or in-game rewards (delivered via in-game mail)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pocketgamer.com/mobile-legends-bang-bang/codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "0nc9lhok9",
+          "reward": "Diamonds or in-game rewards (delivered via in-game mail)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pocketgamer.com/mobile-legends-bang-bang/codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "3r83efok9",
+          "reward": "Diamonds or in-game rewards (delivered via in-game mail)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pocketgamer.com/mobile-legends-bang-bang/codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "MRO20241209",
+          "reward": "Diamonds or in-game rewards (delivered via in-game mail)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pocketgamer.com/mobile-legends-bang-bang/codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "HOLAMLBB",
+          "reward": "Diamonds or in-game rewards (new players only)",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pocketgamer.com/mobile-legends-bang-bang/codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        }
       ],
       "expired": [
-        { "code": "oojms4okc", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "Dynamo03", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ma3n8hokb", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ck73ahokb", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "h4vbc3okb", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ghjqs4okb", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "89d2q9okb", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "MLBBRISING", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "MLBBSPEC", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "MROELITE", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "041a4fmxk", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "007a51mxk", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "MSCDarkNexus", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "dwfpg9lps", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "5uqhtvjr4", "reward": "Diamonds or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" }
+        {
+          "code": "oojms4okc",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "Dynamo03",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ma3n8hokb",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ck73ahokb",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "h4vbc3okb",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ghjqs4okb",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "89d2q9okb",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "MLBBRISING",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "MLBBSPEC",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "MROELITE",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "041a4fmxk",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "007a51mxk",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "MSCDarkNexus",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "dwfpg9lps",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "5uqhtvjr4",
+          "reward": "Diamonds or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        }
       ]
     },
     "pubg-mobile": {
-      "lastUpdated": "2026-05-13T00:00:00Z",
+      "lastUpdated": "2026-05-12T23:00:44.924Z",
       "active": [
-        { "code": "PUBGGAMECODECITY", "reward": "1k UC", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/pubg-mobile/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "PUBGMOBGIFTFREE", "reward": "Free Elite Royale Pass voucher", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/pubg-mobile/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "GAMECODECITYPUBGMOBILE", "reward": "Free premium character skin", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/pubg-mobile/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "PUBGMBGCCTODAY", "reward": "Free weapon skin", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/pubg-mobile/codes", "region": "global", "addedBy": "manual", "verified": false }
+        {
+          "code": "PUBGGAMECODECITY",
+          "reward": "1k UC",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/pubg-mobile/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "PUBGMOBGIFTFREE",
+          "reward": "Free Elite Royale Pass voucher",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/pubg-mobile/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "GAMECODECITYPUBGMOBILE",
+          "reward": "Free premium character skin",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/pubg-mobile/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "PUBGMBGCCTODAY",
+          "reward": "Free weapon skin",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/pubg-mobile/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        }
       ],
       "expired": [
-        { "code": "BBKVZBZ6FW", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "UKUZBZGWF", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "KARZBZYTR", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "QEJZLCIZ5M4", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "R89FPLM9S", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "EKJONARKJO", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "UCBYSD600", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "MIDASBUY", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "TIFZBIZACZG", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "TIFZBJZWMN", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "BBKTZEZET3", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "GOODMORNING", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "SD16Z66XHH", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "RAAZBZJGS", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "BBKRZBZBF9", "reward": "UC, outfits, or in-game rewards", "expiredOn": "2026-05-12", "addedBy": "manual" }
+        {
+          "code": "BBKVZBZ6FW",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "UKUZBZGWF",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "KARZBZYTR",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "QEJZLCIZ5M4",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "R89FPLM9S",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "EKJONARKJO",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "UCBYSD600",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "MIDASBUY",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "TIFZBIZACZG",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "TIFZBJZWMN",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "BBKTZEZET3",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "GOODMORNING",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "SD16Z66XHH",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "RAAZBZJGS",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "BBKRZBZBF9",
+          "reward": "UC, outfits, or in-game rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        }
       ]
     },
     "roblox-blox-fruits": {
-      "lastUpdated": "2026-05-13T00:00:00Z",
+      "lastUpdated": "2026-05-12T23:00:44.924Z",
       "active": [
-        { "code": "BIGNEWS", "reward": "In-game title", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "Enyu_is_Pro", "reward": "20 minutes of 2x EXP Boost", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "Axiore", "reward": "20 minutes of 2x EXP Boost", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "Bluxxy", "reward": "EXP Boost", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "THEGREATACE", "reward": "20 minutes of 2x EXP Boost", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "Starcodeheo", "reward": "20 minutes of 2x EXP Boost", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "LIGHTNINGABUSE", "reward": "20 minutes of 2x EXP Boost", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "JCWK", "reward": "20 minutes of 2x EXP Boost", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "kittgaming", "reward": "20 minutes of 2x EXP Boost", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "Magicbus", "reward": "20 minutes of 2x EXP Boost", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "SUB2GAMERROBOT_EXP1", "reward": "30 minutes of 2x Experience", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "Sub2Daigrock", "reward": "15 minutes of 2x Experience", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "Sub2UncleKizaru", "reward": "x1 Stat Refund", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "Sub2Fer999", "reward": "20 minutes of 2x EXP Boost", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "SUB2GAMERROBOT_RESET1", "reward": "x1 Stat Refund", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "Sub2OfficialNoobie", "reward": "20 minutes of 2x Experience", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "SUB2NOOBMASTER123", "reward": "15 minutes of 2x Experience", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "FUDD10", "reward": "$1 in-game", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "TantaiGaming", "reward": "15 minutes of 2x Experience", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "Sub2CaptainMaui", "reward": "20 minutes of 2x EXP Boost", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "fudd10_v2", "reward": "2 Beli", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "StrawHatMaine", "reward": "20 minutes of 2x Experience", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "KITT_RESET", "reward": "x1 Stat Refund", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "EASTEREXP", "reward": "20 minutes of 2x EXP Boost", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/", "region": "global", "addedBy": "manual", "verified": false }
+        {
+          "code": "BIGNEWS",
+          "reward": "In-game title",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "Enyu_is_Pro",
+          "reward": "20 minutes of 2x EXP Boost",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "Axiore",
+          "reward": "20 minutes of 2x EXP Boost",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "Bluxxy",
+          "reward": "EXP Boost",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "THEGREATACE",
+          "reward": "20 minutes of 2x EXP Boost",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "Starcodeheo",
+          "reward": "20 minutes of 2x EXP Boost",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "LIGHTNINGABUSE",
+          "reward": "20 minutes of 2x EXP Boost",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "JCWK",
+          "reward": "20 minutes of 2x EXP Boost",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "kittgaming",
+          "reward": "20 minutes of 2x EXP Boost",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "Magicbus",
+          "reward": "20 minutes of 2x EXP Boost",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "SUB2GAMERROBOT_EXP1",
+          "reward": "30 minutes of 2x Experience",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "Sub2Daigrock",
+          "reward": "15 minutes of 2x Experience",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "Sub2UncleKizaru",
+          "reward": "x1 Stat Refund",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "Sub2Fer999",
+          "reward": "20 minutes of 2x EXP Boost",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "SUB2GAMERROBOT_RESET1",
+          "reward": "x1 Stat Refund",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "Sub2OfficialNoobie",
+          "reward": "20 minutes of 2x Experience",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "SUB2NOOBMASTER123",
+          "reward": "15 minutes of 2x Experience",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FUDD10",
+          "reward": "$1 in-game",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "TantaiGaming",
+          "reward": "15 minutes of 2x Experience",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "Sub2CaptainMaui",
+          "reward": "20 minutes of 2x EXP Boost",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "fudd10_v2",
+          "reward": "2 Beli",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "StrawHatMaine",
+          "reward": "20 minutes of 2x Experience",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "KITT_RESET",
+          "reward": "x1 Stat Refund",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "EASTEREXP",
+          "reward": "20 minutes of 2x EXP Boost",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://progameguides.com/roblox/roblox-blox-fruits-codes/",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        }
       ],
       "expired": [
-        { "code": "NOOB2ADMIN", "reward": "20 minutes of 2x EXP Boost", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "ZIOLES", "reward": "Various rewards", "expiredOn": "2026-05-12", "addedBy": "manual" }
+        {
+          "code": "NOOB2ADMIN",
+          "reward": "20 minutes of 2x EXP Boost",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "ZIOLES",
+          "reward": "Various rewards",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        }
       ]
     },
     "afk-journey": {
-      "lastUpdated": "2026-05-13T00:00:00Z",
+      "lastUpdated": "2026-05-12T23:00:44.924Z",
       "active": [
-        { "code": "LILITH13TH", "reward": "1.3k diamonds and 13 invite letters", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/afk-journey/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "QhqsNkDpTX", "reward": "500 diamonds, 10 origami hamsters, 50k gold", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/afk-journey/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "Rye60YMmfg7f", "reward": "10 invite letters", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/afk-journey/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "164PATCHUPDATE", "reward": "Diamonds and gold", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/afk-journey/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "QUAGXFVEAB", "reward": "100 diamonds", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/afk-journey/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "AFKJ10", "reward": "10 summon letters", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/afk-journey/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "AFKJCOMMUNITY", "reward": "100 diamonds and 10k gold", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/afk-journey/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "PLAYAFKJOURNEY", "reward": "200 diamonds and 10k gold", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/afk-journey/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "AFKJRPG888", "reward": "300 diamonds and 10k gold", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/afk-journey/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "AFKJPC", "reward": "100 diamonds and 20k gold", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/afk-journey/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "AFKJ8888", "reward": "188 diamonds and 18k gold", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/afk-journey/codes", "region": "global", "addedBy": "manual", "verified": false },
-        { "code": "AFKJ9999", "reward": "188 diamonds and 1 invitation letter", "firstSeen": "2026-05-13", "lastVerified": "2026-05-13", "source": "https://www.pockettactics.com/afk-journey/codes", "region": "global", "addedBy": "manual", "verified": false }
+        {
+          "code": "LILITH13TH",
+          "reward": "1.3k diamonds and 13 invite letters",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/afk-journey/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "QhqsNkDpTX",
+          "reward": "500 diamonds, 10 origami hamsters, 50k gold",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/afk-journey/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "Rye60YMmfg7f",
+          "reward": "10 invite letters",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/afk-journey/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "164PATCHUPDATE",
+          "reward": "Diamonds and gold",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/afk-journey/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "QUAGXFVEAB",
+          "reward": "100 diamonds",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/afk-journey/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "AFKJ10",
+          "reward": "10 summon letters",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/afk-journey/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "AFKJCOMMUNITY",
+          "reward": "100 diamonds and 10k gold",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/afk-journey/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "PLAYAFKJOURNEY",
+          "reward": "200 diamonds and 10k gold",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/afk-journey/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "AFKJRPG888",
+          "reward": "300 diamonds and 10k gold",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/afk-journey/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "AFKJPC",
+          "reward": "100 diamonds and 20k gold",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/afk-journey/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "AFKJ8888",
+          "reward": "188 diamonds and 18k gold",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/afk-journey/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "AFKJ9999",
+          "reward": "188 diamonds and 1 invitation letter",
+          "firstSeen": "2026-05-13",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/afk-journey/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        }
       ],
       "expired": [
-        { "code": "NFCHQFJCXY", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "BigCollabComing", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "JOURNEY2YRS", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "LGSKEQXERTA", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "AFKHomestead0130", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "CheerforAnniv", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "AFKJMOONLIGHT", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "LQUQEUJGNO", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "LILITHHAPPY2026", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "AFKJWITHME2026", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "SPRINGFEST2026", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "SoliseWelcomeBack", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "AFKJMagicSeason", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "AuroraBestGift", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" },
-        { "code": "AFKJTOD", "reward": "Diamonds & gold", "expiredOn": "2026-05-12", "addedBy": "manual" }
+        {
+          "code": "NFCHQFJCXY",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "BigCollabComing",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "JOURNEY2YRS",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "LGSKEQXERTA",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "AFKHomestead0130",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "CheerforAnniv",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "AFKJMOONLIGHT",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "LQUQEUJGNO",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "LILITHHAPPY2026",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "AFKJWITHME2026",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "SPRINGFEST2026",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "SoliseWelcomeBack",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "AFKJMagicSeason",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "AuroraBestGift",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        },
+        {
+          "code": "AFKJTOD",
+          "reward": "Diamonds & gold",
+          "expiredOn": "2026-05-12",
+          "addedBy": "manual"
+        }
       ]
     }
   }

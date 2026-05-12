@@ -1,13 +1,15 @@
 name: Auto Code Scraper
 
 on:
-  # Cron disabled until scraper is rewritten with real sources + structured
-  # extraction. Currently produces false-positive junk codes. Re-enable after
-  # the 3-day rebuild plan ships. Manual runs still allowed via workflow_dispatch.
+  schedule:
+    # Every 2 hours. Code drop cadence rarely exceeds this; daily would also
+    # be fine but 2h catches livestream codes while they're still fresh.
+    - cron: "0 */2 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   scrape:
@@ -27,13 +29,56 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run code scraper
+      - name: Run scraper
         run: npx tsx scripts/grab-codes.ts
 
-      - name: Commit updated codes
+      - name: Detect pending candidates
+        id: pending
+        run: |
+          if [ ! -f data/pending-codes.json ]; then
+            echo "count=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          COUNT=$(node -e "console.log(JSON.parse(require('fs').readFileSync('data/pending-codes.json','utf8')).candidates.length)")
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "Pending candidates: $COUNT"
+
+      - name: Commit safe updates (timestamps, auto-expires, new pending)
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          git add data/codes.json
-          git diff --staged --quiet || git commit -m "Auto: update redeem codes [skip ci]"
+          git add data/codes.json data/pending-codes.json
+          git diff --staged --quiet || git commit -m "Auto: refresh codes + pending queue [skip ci]"
           git push
+
+      - name: Update tracking issue when pending > 0
+        if: steps.pending.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PENDING_COUNT="${{ steps.pending.outputs.count }}"
+          ISSUE_TITLE="Pending code candidates ($PENDING_COUNT)"
+          # Look for an existing tracking issue
+          EXISTING=$(gh issue list --state open --search "Pending code candidates" --json number,title --jq '.[0].number // empty')
+          BODY_FILE="$(mktemp)"
+          {
+            echo "Scraper found $PENDING_COUNT candidate code(s) awaiting manual approval."
+            echo ""
+            echo "Review them locally with:"
+            echo ""
+            echo '```bash'
+            echo "npx tsx scripts/approve-codes.ts list"
+            echo "npx tsx scripts/approve-codes.ts approve <CODE> [...]"
+            echo "npx tsx scripts/approve-codes.ts reject  <CODE> [...]"
+            echo '```'
+            echo ""
+            echo "See \`data/pending-codes.json\` for the full queue."
+            echo ""
+            echo "_Last scrape: $(date -u +'%Y-%m-%d %H:%M UTC')_"
+          } > "$BODY_FILE"
+
+          if [ -n "$EXISTING" ]; then
+            gh issue edit "$EXISTING" --title "$ISSUE_TITLE" --body-file "$BODY_FILE"
+          else
+            gh issue create --title "$ISSUE_TITLE" --body-file "$BODY_FILE" --label "codes-queue"
+          fi

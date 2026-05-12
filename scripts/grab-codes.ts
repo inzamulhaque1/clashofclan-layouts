@@ -1,22 +1,64 @@
 /**
- * grab-codes.ts
+ * grab-codes.ts — Codes scraper orchestrator (v2)
  *
- * Runs on a schedule (GitHub Actions, every 30 minutes).
- * Scrapes public aggregator sites for the latest redeem codes,
- * extracts code strings, deduplicates, and updates data/codes.json.
+ * Each game has one or more extractors (HoYoverse API for Genshin/HSR/ZZZ,
+ * cheerio HTML extractors for the rest). This script:
  *
- * Codes themselves are facts (not copyrightable). We do not copy
- * any article text — only the code strings and reward descriptions
- * which are factual data.
+ *   1. Runs every configured extractor for every game.
+ *   2. Validates each raw code against a per-game regex.
+ *   3. For codes already in data/codes.json#active: refresh lastVerified.
+ *   4. For active codes not seen in any source today: leave them unless they
+ *      are >14 days stale, in which case auto-expire them.
+ *   5. New, never-seen codes: write to data/pending-codes.json for manual
+ *      approval (see scripts/approve-codes.ts).
+ *
+ * The cron-driven workflow may commit safe updates (codes.json timestamp
+ * bumps + auto-expires + pending-codes.json). New codes never enter
+ * codes.json#active automatically — that path is gated by approve-codes.ts.
  */
 
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
+
+import { hoyoverseExtractor } from "./extractors/hoyoverse";
+import { pocketTacticsExtractor } from "./extractors/pockettactics";
+import { pocketGamerExtractor } from "./extractors/pocketgamer";
+import { proGameGuidesExtractor } from "./extractors/progameguides";
+import type { Extractor, RawCode } from "./extractors/types";
+
+// ─── Config ─────────────────────────────────────────────────────────
 
 const ROOT = path.resolve(__dirname, "..");
 const CODES_PATH = path.join(ROOT, "data", "codes.json");
+const PENDING_PATH = path.join(ROOT, "data", "pending-codes.json");
 
-// ─── Types ──────────────────────────────────────────────────────────
+const AUTO_EXPIRE_DAYS = 14;
+
+const EXTRACTORS: readonly Extractor[] = [
+  hoyoverseExtractor,
+  pocketTacticsExtractor,
+  pocketGamerExtractor,
+  proGameGuidesExtractor,
+];
+
+// Per-game validators. A scraped string must match the game's pattern to be
+// considered a real candidate. Patterns are intentionally a touch broader
+// than the typical observed range; the cross-source check is the real filter.
+const PATTERNS: Record<string, RegExp> = {
+  "genshin-impact": /^[A-Za-z0-9]{6,18}$/,
+  "honkai-star-rail": /^[A-Za-z0-9]{8,20}$/,
+  "wuthering-waves": /^[A-Z0-9]{6,24}$/,
+  "zenless-zone-zero": /^[A-Za-z0-9]{6,20}$/,
+  "free-fire": /^[A-Z0-9]{10,16}$/,
+  "mobile-legends": /^[a-zA-Z0-9]{6,16}$/,
+  "pubg-mobile": /^[A-Z0-9]{8,24}$/,
+  "roblox-blox-fruits": /^[A-Za-z0-9_]{4,30}$/,
+  "afk-journey": /^[a-zA-Z0-9]{4,20}$/,
+};
+
+const ALL_GAME_IDS = Object.keys(PATTERNS);
+
+// ─── Data types ─────────────────────────────────────────────────────
 
 interface Code {
   code: string;
@@ -49,226 +91,200 @@ interface CodesFile {
   games: Record<string, GameCodes>;
 }
 
-// ─── Source configuration ──────────────────────────────────────────
-// Each game has 1-3 source URLs. We fetch HTML and run a regex pass.
-// The article text is never copied — only the code strings.
-
-interface Source {
+interface PendingCandidate {
   gameId: string;
-  url: string;
-  // Reward inference (loose heuristic from surrounding text)
-  defaultReward: string;
+  code: string;
+  reward: string;
+  firstSeen: string;
+  lastSeen: string;
+  sources: string[];
 }
 
-const SOURCES: Source[] = [
-  // Genshin Impact
-  {
-    gameId: "genshin-impact",
-    url: "https://www.pcgamer.com/genshin-impact-codes/",
-    defaultReward: "Primogems & in-game rewards",
-  },
-  {
-    gameId: "genshin-impact",
-    url: "https://www.polygon.com/genshin-impact-guides-walkthroughs",
-    defaultReward: "Primogems & in-game rewards",
-  },
-  // Honkai Star Rail
-  {
-    gameId: "honkai-star-rail",
-    url: "https://www.pcgamer.com/honkai-star-rail-codes/",
-    defaultReward: "Stellar Jade & in-game rewards",
-  },
-  // Wuthering Waves
-  {
-    gameId: "wuthering-waves",
-    url: "https://www.pcgamer.com/wuthering-waves-codes/",
-    defaultReward: "Astrites & in-game rewards",
-  },
-  // Zenless Zone Zero
-  {
-    gameId: "zenless-zone-zero",
-    url: "https://www.pcgamer.com/zenless-zone-zero-codes/",
-    defaultReward: "Polychrome & in-game rewards",
-  },
-  // Free Fire
-  {
-    gameId: "free-fire",
-    url: "https://www.pcgamer.com/free-fire-redeem-codes/",
-    defaultReward: "Diamonds, skins & in-game rewards",
-  },
-  // Mobile Legends
-  {
-    gameId: "mobile-legends",
-    url: "https://www.pcgamer.com/mobile-legends-codes/",
-    defaultReward: "Diamonds & in-game rewards",
-  },
-  // PUBG Mobile
-  {
-    gameId: "pubg-mobile",
-    url: "https://www.pcgamer.com/pubg-mobile-redeem-codes/",
-    defaultReward: "UC, outfits & in-game rewards",
-  },
-  // Roblox Blox Fruits
-  {
-    gameId: "roblox-blox-fruits",
-    url: "https://www.pcgamer.com/blox-fruits-codes/",
-    defaultReward: "Beli, XP boosts & stat resets",
-  },
-  // AFK Journey
-  {
-    gameId: "afk-journey",
-    url: "https://www.pcgamer.com/afk-journey-codes/",
-    defaultReward: "Diamonds & summon tickets",
-  },
-];
-
-// ─── Regex for redemption code patterns ────────────────────────────
-// Most codes match these patterns:
-//   - All uppercase + digits, 6-20 chars
-//   - Sometimes contain digits at the end (FF codes)
-//   - Excludes common false positives (acronyms like "TWITTER", "RELOAD")
-
-const CODE_REGEX = /\b[A-Z0-9]{6,20}\b/g;
-
-const FALSE_POSITIVES = new Set([
-  "TWITTER", "DISCORD", "REDDIT", "YOUTUBE", "FACEBOOK", "INSTAGRAM",
-  "RELOAD", "REFRESH", "UPDATE", "UPGRADE", "PATCH", "SEASON",
-  "GENSHIN", "HONKAI", "STARRAIL", "WUTHERING", "WAVES", "ZENLESS",
-  "MOBILE", "LEGENDS", "BANG", "GARENA", "FREEFIRE", "ROBLOX",
-  "DEVELOPER", "PUBLISHER", "OFFICIAL", "WEBSITE", "PLAYSTATION",
-  "EXPIRED", "ACTIVE", "WORKING", "REDEEM", "CODES", "CLAIM",
-  "REWARDS", "WELCOME", "ANDROID", "WINDOWS", "VERSION", "ACCOUNT",
-  "DOWNLOAD", "UPDATE", "ALPHA", "BETA", "GAMMA", "DELTA",
-  "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
-  "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER",
-  "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY",
-  "WARNING", "NOTICE", "IMPORTANT", "GUIDE", "TUTORIAL", "TIPS",
-]);
-
-// ─── Helpers ───────────────────────────────────────────────────────
-
-async function fetchHtml(url: string): Promise<string> {
-  try {
-    const res = await fetch(url, {
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
-          "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        Accept: "text/html,application/xhtml+xml",
-      },
-      // 15 second timeout
-      signal: AbortSignal.timeout(15000),
-    });
-    if (!res.ok) {
-      console.warn(`[WARN] ${url} returned ${res.status}`);
-      return "";
-    }
-    return await res.text();
-  } catch (err) {
-    console.warn(`[WARN] Failed to fetch ${url}:`, (err as Error).message);
-    return "";
-  }
+interface PendingFile {
+  lastUpdated: string;
+  candidates: PendingCandidate[];
 }
 
-function extractCodes(html: string): string[] {
-  // Strip script/style tags for cleaner parsing
-  const cleaned = html
-    .replace(/<script[\s\S]*?<\/script>/gi, "")
-    .replace(/<style[\s\S]*?<\/style>/gi, "");
+// ─── IO helpers ─────────────────────────────────────────────────────
 
-  const matches = cleaned.match(CODE_REGEX) ?? [];
-  const seen = new Set<string>();
-  const codes: string[] = [];
-
-  for (const raw of matches) {
-    if (FALSE_POSITIVES.has(raw)) continue;
-    if (seen.has(raw)) continue;
-    // Must contain at least one digit OR be 8+ chars (heuristic)
-    if (!/\d/.test(raw) && raw.length < 8) continue;
-    seen.add(raw);
-    codes.push(raw);
-  }
-
-  return codes;
+function readJson<T>(p: string, fallback: T): T {
+  if (!existsSync(p)) return fallback;
+  return JSON.parse(readFileSync(p, "utf-8")) as T;
 }
 
-function loadCodes(): CodesFile {
-  const raw = readFileSync(CODES_PATH, "utf-8");
-  return JSON.parse(raw) as CodesFile;
+function writeJson(p: string, data: unknown): void {
+  writeFileSync(p, JSON.stringify(data, null, 2) + "\n");
 }
 
-function saveCodes(data: CodesFile): void {
-  writeFileSync(CODES_PATH, JSON.stringify(data, null, 2) + "\n");
+function daysBetween(a: string, b: string): number {
+  return Math.floor(
+    (new Date(b).getTime() - new Date(a).getTime()) / 86400000
+  );
 }
 
-// ─── Main ──────────────────────────────────────────────────────────
+// ─── Main ───────────────────────────────────────────────────────────
 
 async function main(): Promise<void> {
-  const data = loadCodes();
-  const now = new Date().toISOString();
-  let totalNew = 0;
+  const codes = readJson<CodesFile>(CODES_PATH, {
+    schemaVersion: 2,
+    lastUpdated: new Date().toISOString(),
+    games: {},
+  });
 
-  // Group sources by game
-  const byGame = new Map<string, Source[]>();
-  for (const src of SOURCES) {
-    const list = byGame.get(src.gameId) ?? [];
-    list.push(src);
-    byGame.set(src.gameId, list);
+  const pending = readJson<PendingFile>(PENDING_PATH, {
+    lastUpdated: new Date().toISOString(),
+    candidates: [],
+  });
+
+  const today = new Date().toISOString().split("T")[0]!;
+  const nowISO = new Date().toISOString();
+
+  // Pull from every extractor for every game it claims to handle.
+  // Result: per-game map of code -> { reward, sources[] }
+  type Hit = { reward: string; sources: Set<string> };
+  const perGameHits = new Map<string, Map<string, Hit>>();
+
+  for (const gameId of ALL_GAME_IDS) {
+    perGameHits.set(gameId, new Map());
   }
 
-  for (const [gameId, sources] of byGame.entries()) {
-    if (!data.games[gameId]) continue;
+  for (const ex of EXTRACTORS) {
+    for (const gameId of ex.gameIds) {
+      if (!perGameHits.has(gameId)) continue;
+      const hits = perGameHits.get(gameId)!;
+      const pattern = PATTERNS[gameId]!;
+      let raws: RawCode[];
+      try {
+        raws = await ex.extract(gameId);
+      } catch (err) {
+        console.warn(
+          `[ex] ${ex.name} for ${gameId} threw: ${(err as Error).message}`
+        );
+        continue;
+      }
+      let kept = 0;
+      let rejected = 0;
+      for (const raw of raws) {
+        if (!pattern.test(raw.code)) {
+          rejected++;
+          continue;
+        }
+        const existing = hits.get(raw.code);
+        if (existing) {
+          existing.sources.add(raw.source);
+        } else {
+          hits.set(raw.code, {
+            reward: raw.reward,
+            sources: new Set([raw.source]),
+          });
+        }
+        kept++;
+      }
+      console.log(
+        `[ex] ${ex.name} ${gameId}: kept ${kept}, rejected ${rejected}`
+      );
+    }
+  }
 
-    const existing = new Set(
-      data.games[gameId].active.map((c) => c.code.toUpperCase())
-    );
-    const expired = new Set(
-      data.games[gameId].expired.map((c) => c.code.toUpperCase())
-    );
-    const found = new Map<string, number>(); // code -> source count
+  let timestampBumps = 0;
+  let autoExpired = 0;
+  let newPending = 0;
+  let updatedPending = 0;
 
-    for (const src of sources) {
-      console.log(`[INFO] Fetching ${src.url}`);
-      const html = await fetchHtml(src.url);
-      if (!html) continue;
-      const codes = extractCodes(html);
-      for (const code of codes) {
-        found.set(code, (found.get(code) ?? 0) + 1);
+  for (const gameId of ALL_GAME_IDS) {
+    const hits = perGameHits.get(gameId)!;
+    const game =
+      codes.games[gameId] ??
+      (codes.games[gameId] = {
+        lastUpdated: nowISO,
+        active: [],
+        expired: [],
+      });
+
+    const activeByCode = new Map(game.active.map((c) => [c.code, c]));
+    const expiredCodes = new Set(game.expired.map((c) => c.code));
+
+    // 1) Refresh active codes still seen in any source.
+    let sawAny = false;
+    for (const [code, hit] of hits.entries()) {
+      const existing = activeByCode.get(code);
+      if (!existing) continue;
+      existing.lastVerified = today;
+      if (hit.sources.size >= 2) existing.verified = true;
+      sawAny = true;
+      timestampBumps++;
+    }
+
+    // 2) Auto-expire active codes not seen in source for AUTO_EXPIRE_DAYS.
+    const survivors: Code[] = [];
+    for (const c of game.active) {
+      if (hits.has(c.code)) {
+        survivors.push(c);
+        continue;
+      }
+      const lastSeen = c.lastVerified ?? c.firstSeen;
+      const age = daysBetween(lastSeen, today);
+      if (age >= AUTO_EXPIRE_DAYS) {
+        game.expired.unshift({
+          code: c.code,
+          reward: c.reward,
+          firstSeen: c.firstSeen,
+          expiredOn: today,
+          addedBy: c.addedBy,
+        });
+        autoExpired++;
+      } else {
+        survivors.push(c);
+      }
+    }
+    game.active = survivors;
+
+    // 3) Queue new (unseen) codes to pending.
+    const pendingByCode = new Map(
+      pending.candidates
+        .filter((p) => p.gameId === gameId)
+        .map((p) => [p.code, p])
+    );
+
+    for (const [code, hit] of hits.entries()) {
+      if (activeByCode.has(code)) continue;
+      if (expiredCodes.has(code)) continue;
+      const existing = pendingByCode.get(code);
+      if (existing) {
+        existing.lastSeen = today;
+        for (const s of hit.sources) {
+          if (!existing.sources.includes(s)) existing.sources.push(s);
+        }
+        updatedPending++;
+      } else {
+        pending.candidates.push({
+          gameId,
+          code,
+          reward: hit.reward,
+          firstSeen: today,
+          lastSeen: today,
+          sources: Array.from(hit.sources),
+        });
+        newPending++;
       }
     }
 
-    // Add codes that appear in at least one source AND aren't already known
-    let added = 0;
-    for (const [code, sourceCount] of found.entries()) {
-      if (existing.has(code) || expired.has(code)) continue;
-      // Require 1+ source mention. Use 2+ when multiple sources configured
-      const minSources = sources.length >= 2 ? 2 : 1;
-      if (sourceCount < minSources) continue;
-
-      data.games[gameId].active.push({
-        code,
-        reward: sources[0]?.defaultReward ?? "In-game rewards",
-        firstSeen: now.split("T")[0],
-        lastVerified: now.split("T")[0],
-        source: sources[0]?.url,
-        region: "global",
-        addedBy: "scraper",
-        verified: sourceCount >= 2,
-      });
-      added += 1;
-    }
-
-    if (added > 0) {
-      data.games[gameId].lastUpdated = now;
-      console.log(`[OK] ${gameId}: +${added} new codes`);
-      totalNew += added;
-    }
+    if (sawAny) game.lastUpdated = nowISO;
   }
 
-  data.lastUpdated = now;
-  saveCodes(data);
+  codes.lastUpdated = nowISO;
+  pending.lastUpdated = nowISO;
 
-  console.log(`\n[DONE] Added ${totalNew} new codes total.`);
+  writeJson(CODES_PATH, codes);
+  writeJson(PENDING_PATH, pending);
+
+  console.log("");
+  console.log("─── Summary ─────────────────────────────────────");
+  console.log(`  Active codes confirmed today: ${timestampBumps}`);
+  console.log(`  Active codes auto-expired:    ${autoExpired}`);
+  console.log(`  New pending candidates:       ${newPending}`);
+  console.log(`  Pending candidates updated:   ${updatedPending}`);
+  console.log(`  Total pending in queue:       ${pending.candidates.length}`);
 }
 
 main().catch((err) => {
