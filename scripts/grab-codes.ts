@@ -21,14 +21,20 @@ const CODES_PATH = path.join(ROOT, "data", "codes.json");
 interface Code {
   code: string;
   reward: string;
-  added: string;
+  firstSeen: string;
+  lastVerified?: string;
+  source?: string;
+  region?: string;
+  addedBy?: "manual" | "scraper";
   verified?: boolean;
 }
 
 interface ExpiredCode {
   code: string;
   reward?: string;
+  firstSeen?: string;
   expiredOn: string;
+  addedBy?: "manual" | "scraper";
 }
 
 interface GameCodes {
@@ -38,6 +44,7 @@ interface GameCodes {
 }
 
 interface CodesFile {
+  schemaVersion: number;
   lastUpdated: string;
   games: Record<string, GameCodes>;
 }
@@ -241,7 +248,11 @@ async function main(): Promise<void> {
       data.games[gameId].active.push({
         code,
         reward: sources[0]?.defaultReward ?? "In-game rewards",
-        added: now.split("T")[0],
+        firstSeen: now.split("T")[0],
+        lastVerified: now.split("T")[0],
+        source: sources[0]?.url,
+        region: "global",
+        addedBy: "scraper",
         verified: sourceCount >= 2,
       });
       added += 1;

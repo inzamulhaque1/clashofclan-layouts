@@ -162,23 +162,5 @@
       "Enter the code",
       "Tap Confirm — rewards via in-game mail"
     ]
-  },
-  "clash-of-clans": {
-    "id": "clash-of-clans",
-    "name": "Clash of Clans",
-    "developer": "Supercell",
-    "platforms": ["iOS", "Android"],
-    "currency": "Gems & Resources",
-    "codeFrequency": "Event-based (rare)",
-    "redeemUrl": "In-app via Settings",
-    "officialTwitter": "https://twitter.com/ClashofClans",
-    "intro": "Clash of Clans is Supercell's iconic strategy game. Build your village, train troops, and battle in Clan Wars across millions of players worldwide.",
-    "redeemSteps": [
-      "Open Clash of Clans",
-      "Tap the gear icon (Settings)",
-      "Tap More Settings > Redeem Code",
-      "Enter the code",
-      "Tap Submit to claim"
-    ]
   }
 }

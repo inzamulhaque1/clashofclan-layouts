@@ -6,20 +6,23 @@ import LatestCodesSection from "@/components/LatestCodesSection";
 import { GAMES } from "@/lib/constants";
 import { gameLogos } from "@/lib/images";
 
+const FLOATING_LOGO_POSITIONS = [
+  { pos: "top-[8%] left-[5%]", size: 56, rot: "-rotate-6", op: "opacity-35" },
+  { pos: "top-[10%] right-[6%]", size: 52, rot: "rotate-12", op: "opacity-35" },
+  { pos: "top-[40%] left-[3%]", size: 50, rot: "rotate-6", op: "opacity-40" },
+  { pos: "top-[38%] right-[3%]", size: 52, rot: "-rotate-12", op: "opacity-40" },
+  { pos: "bottom-[22%] left-[6%]", size: 50, rot: "rotate-3", op: "opacity-35" },
+  { pos: "bottom-[18%] right-[6%]", size: 48, rot: "-rotate-6", op: "opacity-35" },
+  { pos: "top-[20%] left-[20%]", size: 40, rot: "-rotate-3", op: "opacity-25" },
+  { pos: "bottom-[12%] right-[20%]", size: 40, rot: "rotate-6", op: "opacity-25" },
+  { pos: "top-[16%] right-[18%]", size: 40, rot: "-rotate-12", op: "opacity-25" },
+  { pos: "bottom-[8%] left-[22%]", size: 40, rot: "rotate-12", op: "opacity-25" },
+];
+
 export default function HomePage() {
-  // 10 logos for floating decoration in hero
-  const floatingLogos = [
-    { gameId: GAMES[0].id, pos: "top-[8%] left-[5%]", size: 56, rot: "-rotate-6", op: "opacity-35" },
-    { gameId: GAMES[1].id, pos: "top-[10%] right-[6%]", size: 52, rot: "rotate-12", op: "opacity-35" },
-    { gameId: GAMES[2].id, pos: "top-[40%] left-[3%]", size: 50, rot: "rotate-6", op: "opacity-40" },
-    { gameId: GAMES[3].id, pos: "top-[38%] right-[3%]", size: 52, rot: "-rotate-12", op: "opacity-40" },
-    { gameId: GAMES[4].id, pos: "bottom-[22%] left-[6%]", size: 50, rot: "rotate-3", op: "opacity-35" },
-    { gameId: GAMES[5].id, pos: "bottom-[18%] right-[6%]", size: 48, rot: "-rotate-6", op: "opacity-35" },
-    { gameId: GAMES[6].id, pos: "top-[20%] left-[20%]", size: 40, rot: "-rotate-3", op: "opacity-25" },
-    { gameId: GAMES[7].id, pos: "bottom-[12%] right-[20%]", size: 40, rot: "rotate-6", op: "opacity-25" },
-    { gameId: GAMES[8].id, pos: "top-[16%] right-[18%]", size: 40, rot: "-rotate-12", op: "opacity-25" },
-    { gameId: GAMES[9].id, pos: "bottom-[8%] left-[22%]", size: 40, rot: "rotate-12", op: "opacity-25" },
-  ];
+  const floatingLogos = FLOATING_LOGO_POSITIONS.slice(0, GAMES.length).map(
+    (placement, i) => ({ gameId: GAMES[i].id, ...placement })
+  );
 
   return (
     <>

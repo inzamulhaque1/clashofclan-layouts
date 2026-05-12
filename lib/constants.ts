@@ -12,8 +12,7 @@ export type GameId =
   | "mobile-legends"
   | "pubg-mobile"
   | "roblox-blox-fruits"
-  | "afk-journey"
-  | "clash-of-clans";
+  | "afk-journey";
 
 export interface GameInfo {
   id: GameId;
@@ -22,7 +21,7 @@ export interface GameInfo {
   description: string;
   color: string;
   developer: string;
-  category: "Gacha" | "Battle Royale" | "MOBA" | "Strategy" | "Roblox";
+  category: "Gacha" | "Battle Royale" | "MOBA" | "Roblox";
 }
 
 export const GAMES: GameInfo[] = [
@@ -106,15 +105,6 @@ export const GAMES: GameInfo[] = [
     color: "#A855F7",
     developer: "Lilith Games",
     category: "Gacha",
-  },
-  {
-    id: "clash-of-clans",
-    name: "Clash of Clans",
-    shortName: "CoC",
-    description: "Event codes, base layouts & attack strategies",
-    color: "#F59E0B",
-    developer: "Supercell",
-    category: "Strategy",
   },
 ];
 

@@ -187,10 +187,12 @@ export default function TermsPage() {
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
                 <p className="text-sm text-amber-800">
                   <span className="font-semibold">Third-Party Trademarks:</span>{" "}
-                  Game names, logos, characters, and images (Clash of Clans, Brawl
-                  Stars, Clash Royale, Free Fire, PUBG Mobile, etc.) are
-                  trademarks of their respective owners including Supercell Oy,
-                  Garena International, and Krafton Inc. {SITE_NAME} is an
+                  Game names, logos, characters, and images (Genshin Impact,
+                  Honkai: Star Rail, Wuthering Waves, Zenless Zone Zero, Free
+                  Fire, Mobile Legends, PUBG Mobile, Blox Fruits, AFK Journey,
+                  etc.) are trademarks of their respective owners including
+                  HoYoverse, Kuro Games, Garena International, Moonton, Krafton
+                  Inc., Gamer Robot Inc., and Lilith Games. {SITE_NAME} is an
                   independent fan-made resource and is not endorsed by, affiliated
                   with, or sponsored by any game developer or publisher.
                 </p>

@@ -31,6 +31,4 @@ export const gameLogos: Record<GameId, string> = {
     "https://tr.rbxcdn.com/180DAY-21d8c3f6f78f3eb37e8e6ff60d4d7c7f/420/420/Image/Webp/noFilter",
   "afk-journey":
     "https://play-lh.googleusercontent.com/yKHQwj-mEIu_4CJTsMlIp7-RY8C7HpwYrqs1FVPqVU4kEYr6PSWcRTpXVCKD1f7gxV4=w240-h480",
-  "clash-of-clans":
-    "https://i.pinimg.com/564x/98/92/8c/98928c82f78bdd50c5a28d8fa4633035.jpg",
 };

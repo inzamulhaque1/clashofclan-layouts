@@ -18,8 +18,8 @@
 - NO heavy image backgrounds — use CSS shapes instead
 - External image URLs only (no local logo files in `public/`)
 
-## 10 Games Covered
-Genshin Impact, Honkai: Star Rail, Wuthering Waves, Zenless Zone Zero, Garena Free Fire, Mobile Legends: Bang Bang, PUBG Mobile, Blox Fruits (Roblox), AFK Journey, Clash of Clans. CoC may be swapped for Brawl Stars — see Open Decisions in `PROJECT_PLAN.md`.
+## 9 Games Covered
+Genshin Impact, Honkai: Star Rail, Wuthering Waves, Zenless Zone Zero, Garena Free Fire, Mobile Legends: Bang Bang, PUBG Mobile, Blox Fruits (Roblox), AFK Journey. (CoC dropped on 2026-05-13 — Supercell doesn't issue traditional redeem codes.)
 
 ## Routes
 - `/` — homepage (hero, latest codes, games grid, about, CTA)

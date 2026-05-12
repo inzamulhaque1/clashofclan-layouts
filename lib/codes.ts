@@ -4,14 +4,20 @@ import type { GameId } from "./constants";
 export interface Code {
   code: string;
   reward: string;
-  added: string;
+  firstSeen: string;
+  lastVerified?: string;
+  source?: string;
+  region?: string;
+  addedBy?: "manual" | "scraper";
   verified?: boolean;
 }
 
 export interface ExpiredCode {
   code: string;
   reward?: string;
+  firstSeen?: string;
   expiredOn: string;
+  addedBy?: "manual" | "scraper";
 }
 
 export interface GameCodes {
@@ -21,6 +27,7 @@ export interface GameCodes {
 }
 
 interface CodesFile {
+  schemaVersion: number;
   lastUpdated: string;
   games: Record<string, GameCodes>;
 }
