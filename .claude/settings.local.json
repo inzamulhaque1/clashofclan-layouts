@@ -38,7 +38,15 @@
       "Bash(vercel --yes:*)",
       "Bash(dir:*)",
       "Bash(ls:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(npx next:*)",
+      "WebFetch(domain:game365hub.com)",
+      "Bash(find d:coc -type f \\\\\\(-name *.py -o -name *schedule* -o -name *auto* -o -name *social* -o -name *.json \\\\\\))",
+      "Bash(npx tsx -e \":*)",
+      "Bash(npx tsx:*)",
+      "Bash(node -e \":*)",
+      "Bash(node -e \"fetch\\(''https://www.clashofclans-layouts.com/uploads/layout-images/th18_plans/war/preview/th18_war_1.jpg''\\).then\\(r => console.log\\(''Status:'', r.status, ''Size:'', r.headers.get\\(''content-length''\\)\\)\\).catch\\(e => console.log\\(''Error:'', e.message\\)\\)\")",
+      "Bash(node -e \"fetch\\(''https://clashofclans-layouts.com/pics/th17_plans/war/preview/th17_war_181.jpg''\\).then\\(r => console.log\\(''Status:'', r.status, ''Type:'', r.headers.get\\(''content-type''\\), ''Size:'', r.headers.get\\(''content-length''\\)\\)\\).catch\\(e => console.log\\(''Error:'', e.message\\)\\)\")"
     ]
   }
 }

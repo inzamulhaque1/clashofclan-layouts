@@ -3,14 +3,15 @@ import Image from "next/image";
 import { GAMES, SITE_NAME } from "@/lib/constants";
 
 export default function Footer() {
-  const activeGames = GAMES.filter((g) => g.active);
+  // Show first 6 games in footer
+  const featuredGames = GAMES.slice(0, 6);
 
   return (
     <footer className="bg-gray-50 border-t border-gray-200 mt-20">
       <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand */}
-          <div className="md:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Image
                 src="/logo.png"
@@ -20,8 +21,8 @@ export default function Footer() {
               />
             </Link>
             <p className="text-muted text-sm leading-relaxed">
-              Your ultimate mobile gaming resource hub. Guides, strategies & tier
-              lists for top mobile games.
+              Daily redeem codes, tier lists, and pro guides for the games you
+              play. Updated every day. Free forever.
             </p>
           </div>
 
@@ -31,13 +32,13 @@ export default function Footer() {
               Games
             </h3>
             <ul className="space-y-2">
-              {activeGames.map((game) => (
+              {featuredGames.map((game) => (
                 <li key={game.id}>
                   <Link
                     href={`/${game.id}`}
                     className="text-sm text-muted hover:text-light transition-colors"
                   >
-                    {game.name}
+                    {game.shortName}
                   </Link>
                 </li>
               ))}
@@ -52,10 +53,18 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/blog"
+                  href="/codes"
                   className="text-sm text-muted hover:text-light transition-colors"
                 >
-                  Blog
+                  All Codes
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides"
+                  className="text-sm text-muted hover:text-light transition-colors"
+                >
+                  Guides
                 </Link>
               </li>
               <li>
@@ -108,8 +117,9 @@ export default function Footer() {
           <p className="text-sm text-muted">
             &copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
           </p>
-          <p className="text-xs text-muted">
-            Not affiliated with Supercell, Garena, or Krafton.
+          <p className="text-xs text-muted text-center sm:text-right">
+            Not affiliated with HoYoverse, Supercell, Garena, Moonton, Tencent,
+            Krafton, Kuro Games, Lilith Games, or Roblox.
           </p>
         </div>
       </div>

@@ -20,9 +20,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = createMetadata({
-  title: `${SITE_NAME} - Your Ultimate Mobile Gaming Resource Hub`,
+  title: `${SITE_NAME} - Daily Codes, Tier Lists & Guides`,
   description:
-    "Guides, strategies, tier lists & tips for Clash of Clans, Brawl Stars, Clash Royale, Free Fire & more. Level up your mobile gaming today.",
+    "Daily redeem codes, tier lists, and pro guides for Genshin Impact, Honkai Star Rail, Free Fire, Mobile Legends, Roblox & more. Updated every day. Free forever.",
 });
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;

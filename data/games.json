@@ -1,0 +1,184 @@
+{
+  "genshin-impact": {
+    "id": "genshin-impact",
+    "name": "Genshin Impact",
+    "developer": "HoYoverse",
+    "platforms": ["PC", "iOS", "Android", "PlayStation"],
+    "currency": "Primogems",
+    "codeFrequency": "Every 6 weeks (version update)",
+    "redeemUrl": "https://genshin.hoyoverse.com/en/gift",
+    "officialTwitter": "https://twitter.com/GenshinImpact",
+    "intro": "Genshin Impact is HoYoverse's open-world action RPG. Players explore the world of Teyvat, collect characters through a gacha system, and battle using elemental combat.",
+    "redeemSteps": [
+      "Open Genshin Impact and reach Adventure Rank 10",
+      "Tap the Paimon menu (top-left)",
+      "Go to Settings > Account > Redeem Code",
+      "Paste or type the code exactly as shown",
+      "Tap Exchange",
+      "Check your in-game mail for rewards"
+    ]
+  },
+  "honkai-star-rail": {
+    "id": "honkai-star-rail",
+    "name": "Honkai: Star Rail",
+    "developer": "HoYoverse",
+    "platforms": ["PC", "iOS", "Android", "PlayStation"],
+    "currency": "Stellar Jade",
+    "codeFrequency": "Every 6 weeks (version update)",
+    "redeemUrl": "https://hsr.hoyoverse.com/gift",
+    "officialTwitter": "https://twitter.com/honkaistarrail",
+    "intro": "Honkai: Star Rail is a turn-based space-fantasy RPG by HoYoverse. Build your team across the galaxy with strategic combat and stunning visuals.",
+    "redeemSteps": [
+      "Open Honkai: Star Rail and complete the tutorial (Trailblaze Level 10)",
+      "Tap the Phone icon (top-left menu)",
+      "Go to Account > Redemption Code",
+      "Enter the code",
+      "Tap Confirm",
+      "Rewards arrive via in-game mail within minutes"
+    ]
+  },
+  "wuthering-waves": {
+    "id": "wuthering-waves",
+    "name": "Wuthering Waves",
+    "developer": "Kuro Games",
+    "platforms": ["PC", "iOS", "Android"],
+    "currency": "Astrites",
+    "codeFrequency": "Every 6 weeks (version update)",
+    "redeemUrl": "https://wutheringwaves.kurogames.com/en/main/gift",
+    "officialTwitter": "https://twitter.com/Wuthering_Waves",
+    "intro": "Wuthering Waves is a post-apocalyptic open-world ARPG by Kuro Games. Battle the Tacet Discords with fluid combat and explore the world of Solaris-3.",
+    "redeemSteps": [
+      "Open Wuthering Waves and reach Union Level 22",
+      "Open the in-game menu",
+      "Go to Settings > Other > Redeem Code",
+      "Enter the code carefully",
+      "Confirm and check mail"
+    ]
+  },
+  "zenless-zone-zero": {
+    "id": "zenless-zone-zero",
+    "name": "Zenless Zone Zero",
+    "developer": "HoYoverse",
+    "platforms": ["PC", "iOS", "Android", "PlayStation"],
+    "currency": "Polychrome",
+    "codeFrequency": "Every 6 weeks (version update)",
+    "redeemUrl": "https://zenless.hoyoverse.com/redemption",
+    "officialTwitter": "https://twitter.com/ZZZ_EN",
+    "intro": "Zenless Zone Zero is HoYoverse's stylish urban-fantasy action RPG. Fight Ethereals in the city of New Eridu with fast-paced combo combat.",
+    "redeemSteps": [
+      "Open Zenless Zone Zero and reach Inter-Knot Level 8",
+      "Open the menu (ESC on PC, gear icon on mobile)",
+      "Go to More > Redemption Code",
+      "Enter the code",
+      "Confirm to claim rewards"
+    ]
+  },
+  "free-fire": {
+    "id": "free-fire",
+    "name": "Garena Free Fire",
+    "developer": "Garena",
+    "platforms": ["iOS", "Android"],
+    "currency": "Diamonds & Skins",
+    "codeFrequency": "Daily / Weekly",
+    "redeemUrl": "https://reward.ff.garena.com",
+    "officialTwitter": "https://twitter.com/FreeFireBR",
+    "intro": "Garena Free Fire is a fast-paced mobile battle royale. Drop into a 10-minute match with 49 other players and fight to be the last one standing.",
+    "redeemSteps": [
+      "Visit https://reward.ff.garena.com on a browser",
+      "Log in with your Free Fire account (Facebook/Google/VK/etc.)",
+      "Enter the redemption code",
+      "Click Confirm",
+      "Rewards arrive in-game within 24 hours via mail"
+    ]
+  },
+  "mobile-legends": {
+    "id": "mobile-legends",
+    "name": "Mobile Legends: Bang Bang",
+    "developer": "Moonton",
+    "platforms": ["iOS", "Android"],
+    "currency": "Diamonds & Skins",
+    "codeFrequency": "Weekly / Event-based",
+    "redeemUrl": "https://m.mobilelegends.com/en/redemption",
+    "officialTwitter": "https://twitter.com/MobileLegendsOL",
+    "intro": "Mobile Legends: Bang Bang is a 5v5 MOBA by Moonton. Pick from 100+ heroes and battle in 10-minute matches with classic MOBA gameplay.",
+    "redeemSteps": [
+      "Visit the official redemption page",
+      "Enter your ML User ID and Server ID (find them in-game Profile)",
+      "Enter the verification code sent to your in-game mail",
+      "Enter the redemption code",
+      "Click Redeem"
+    ]
+  },
+  "pubg-mobile": {
+    "id": "pubg-mobile",
+    "name": "PUBG Mobile",
+    "developer": "Tencent / Krafton",
+    "platforms": ["iOS", "Android"],
+    "currency": "UC & Outfits",
+    "codeFrequency": "Weekly / Event-based",
+    "redeemUrl": "https://www.midasbuy.com/midasbuy/in/redeem/pubgm",
+    "officialTwitter": "https://twitter.com/PUBGMOBILE",
+    "intro": "PUBG Mobile is the mobile version of the original battle royale. 100 players, one shrinking map, last team standing.",
+    "redeemSteps": [
+      "Visit the Midasbuy redemption page",
+      "Enter your PUBG Mobile Character ID (found in Profile)",
+      "Enter the redemption code",
+      "Verify with the captcha",
+      "Claim rewards in-game via Mail"
+    ]
+  },
+  "roblox-blox-fruits": {
+    "id": "roblox-blox-fruits",
+    "name": "Blox Fruits (Roblox)",
+    "developer": "Gamer Robot Inc.",
+    "platforms": ["PC", "iOS", "Android", "Xbox", "PlayStation"],
+    "currency": "Beli, XP Boosts, Stat Resets",
+    "codeFrequency": "Random / Update-based",
+    "redeemUrl": "In-game menu",
+    "officialTwitter": "https://twitter.com/BloxFruits",
+    "intro": "Blox Fruits is one of the most popular Roblox games, inspired by One Piece. Eat devil fruits, master sword & gun combat, and become the strongest pirate.",
+    "redeemSteps": [
+      "Launch Blox Fruits in Roblox",
+      "Click the Settings cog icon on the left side of the screen",
+      "Scroll down to find the Redeem Code box",
+      "Enter the code exactly (case-sensitive)",
+      "Click Redeem to claim the reward"
+    ]
+  },
+  "afk-journey": {
+    "id": "afk-journey",
+    "name": "AFK Journey",
+    "developer": "Lilith Games",
+    "platforms": ["PC", "iOS", "Android"],
+    "currency": "Diamonds & Summon Tickets",
+    "codeFrequency": "Monthly / Event-based",
+    "redeemUrl": "https://afkjourney.farlightgames.com/en/redeem",
+    "officialTwitter": "https://twitter.com/AFKJourney",
+    "intro": "AFK Journey is the successor to AFK Arena by Lilith Games. Idle RPG with strategic team building, gorgeous art, and consistent rewards.",
+    "redeemSteps": [
+      "Open AFK Journey",
+      "Tap your avatar (top-left) > Settings",
+      "Tap Account > Redemption Code",
+      "Enter the code",
+      "Tap Confirm — rewards via in-game mail"
+    ]
+  },
+  "clash-of-clans": {
+    "id": "clash-of-clans",
+    "name": "Clash of Clans",
+    "developer": "Supercell",
+    "platforms": ["iOS", "Android"],
+    "currency": "Gems & Resources",
+    "codeFrequency": "Event-based (rare)",
+    "redeemUrl": "In-app via Settings",
+    "officialTwitter": "https://twitter.com/ClashofClans",
+    "intro": "Clash of Clans is Supercell's iconic strategy game. Build your village, train troops, and battle in Clan Wars across millions of players worldwide.",
+    "redeemSteps": [
+      "Open Clash of Clans",
+      "Tap the gear icon (Settings)",
+      "Tap More Settings > Redeem Code",
+      "Enter the code",
+      "Tap Submit to claim"
+    ]
+  }
+}

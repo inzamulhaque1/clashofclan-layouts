@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Game365Hub - Mobile Gaming Resource Hub",
+    name: "Game365Hub - Daily Codes & Guides",
     short_name: "Game365Hub",
     description:
-      "Guides, strategies, tier lists & tips for Clash of Clans, Brawl Stars, Clash Royale, Free Fire & more.",
+      "Daily redeem codes, tier lists, and guides for Genshin Impact, Honkai Star Rail, Free Fire, Mobile Legends, Roblox & more.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

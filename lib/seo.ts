@@ -82,7 +82,8 @@ export const websiteJsonLd = {
   "@type": "WebSite",
   name: SITE_NAME,
   url: SITE_URL,
-  description: "Your ultimate mobile gaming resource hub. Guides, strategies, tier lists for Clash of Clans, Brawl Stars, Clash Royale, Free Fire & more.",
+  description:
+    "Daily redeem codes, tier lists, and guides for Genshin Impact, Honkai Star Rail, Free Fire, Mobile Legends, Roblox & more. Updated every day.",
   publisher: {
     "@type": "Organization",
     name: SITE_NAME,
