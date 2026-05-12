@@ -5,12 +5,14 @@ interface CodeTableProps {
   active: Code[];
   expired: ExpiredCode[];
   accentColor: string;
+  redeemUrl?: string;
 }
 
 export default function CodeTable({
   active,
   expired,
   accentColor,
+  redeemUrl,
 }: CodeTableProps) {
   return (
     <div className="space-y-8">
@@ -40,37 +42,54 @@ export default function CodeTable({
                 key={code.code}
                 code={code}
                 accentColor={accentColor}
+                redeemUrl={redeemUrl}
               />
             ))}
           </div>
         )}
       </div>
 
-      {/* Expired Codes */}
+      {/* Expired Codes (collapsible) */}
       {expired.length > 0 && (
-        <div>
-          <div className="flex items-center gap-2 mb-4">
+        <details className="group">
+          <summary className="flex items-center gap-2 mb-4 cursor-pointer list-none">
             <span className="w-2 h-2 rounded-full bg-gray-300" />
             <h2 className="text-lg font-extrabold text-light">
               Expired Codes ({expired.length})
             </h2>
-          </div>
+            <svg
+              className="w-4 h-4 text-muted transition-transform group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+            <span className="text-xs text-muted ml-auto">
+              Click to expand history
+            </span>
+          </summary>
           <div className="bg-gray-50 border border-gray-200 rounded-2xl divide-y divide-gray-200">
             {expired.map((code) => (
               <div
                 key={code.code}
-                className="flex items-center justify-between px-5 py-3"
+                className="flex items-center justify-between px-5 py-3 gap-4"
               >
-                <code className="font-mono text-sm text-gray-500 line-through">
+                <code className="font-mono text-sm text-gray-500 line-through break-all">
                   {code.code}
                 </code>
-                <span className="text-xs text-gray-400">
+                <span className="text-xs text-gray-400 shrink-0">
                   Expired {code.expiredOn}
                 </span>
               </div>
             ))}
           </div>
-        </div>
+        </details>
       )}
     </div>
   );

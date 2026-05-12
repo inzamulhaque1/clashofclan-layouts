@@ -4,12 +4,20 @@ import type { Metadata } from "next";
 import { GAMES } from "@/lib/constants";
 import { gameLogos } from "@/lib/images";
 import { getCodesForGame, formatRelativeTime, getLastUpdated } from "@/lib/codes";
-import { createMetadata } from "@/lib/seo";
+import {
+  createMetadata,
+  createJsonLd,
+  breadcrumbJsonLd,
+} from "@/lib/seo";
+
+const monthYear = new Date().toLocaleString("en-US", {
+  month: "long",
+  year: "numeric",
+});
 
 export const metadata: Metadata = createMetadata({
-  title: "All Redeem Codes — Daily Updated",
-  description:
-    "Active redeem codes for Genshin Impact, Honkai Star Rail, Free Fire, Mobile Legends, Roblox & more. Updated every day.",
+  title: `All Redeem Codes (${monthYear}) — 9 Games, Updated Daily`,
+  description: `Active redemption codes for Genshin Impact, Honkai: Star Rail, Wuthering Waves, Zenless Zone Zero, Free Fire, Mobile Legends, PUBG Mobile, Blox Fruits, and AFK Journey. Verified and refreshed every 2 hours.`,
   path: "/codes",
 });
 
@@ -22,9 +30,22 @@ export default function AllCodesPage() {
     year: "numeric",
   });
   const lastUpdated = getLastUpdated();
+  const totalActive = GAMES.reduce(
+    (sum, g) => sum + getCodesForGame(g.id).active.length,
+    0
+  );
 
   return (
     <div style={{ fontFamily: "'Manrope', sans-serif" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={createJsonLd(
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "All Codes", path: "/codes" },
+          ])
+        )}
+      />
       {/* Header */}
       <section className="bg-[#0a0a0f] text-white py-12 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -32,7 +53,7 @@ export default function AllCodesPage() {
         </div>
         <div className="relative container-custom text-center">
           <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">
-            All Games
+            All Games — {today}
           </span>
           <h1
             className="text-3xl md:text-4xl font-normal mt-2 tracking-wide"
@@ -41,8 +62,8 @@ export default function AllCodesPage() {
             Redeem Codes Database
           </h1>
           <p className="text-white/50 text-sm mt-3 max-w-xl mx-auto">
-            All active codes for {GAMES.length} games — verified and updated daily. Last refreshed{" "}
-            {formatRelativeTime(lastUpdated)}.
+            {totalActive} active codes across {GAMES.length} games. Verified, refreshed every 2 hours.
+            Last refresh {formatRelativeTime(lastUpdated)}.
           </p>
         </div>
       </section>

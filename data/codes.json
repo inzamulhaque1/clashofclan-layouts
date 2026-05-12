@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "lastUpdated": "2026-05-12T23:01:04.634Z",
+  "lastUpdated": "2026-05-12T23:14:04.366Z",
   "games": {
     "genshin-impact": {
-      "lastUpdated": "2026-05-12T23:01:04.634Z",
+      "lastUpdated": "2026-05-12T23:14:02.494Z",
       "active": [
         {
           "code": "BACKTOSUMERU",
@@ -77,6 +77,16 @@
         },
         {
           "code": "G5HS7EMI47D0",
+          "reward": "Primogem*60;Adventurer's Experience*5",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://hoyo-codes.seria.moe/codes?game=genshin",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "PFY1S40I88T9",
           "reward": "Primogem*60;Adventurer's Experience*5",
           "firstSeen": "2026-05-12",
           "lastVerified": "2026-05-12",
@@ -180,7 +190,7 @@
       ]
     },
     "honkai-star-rail": {
-      "lastUpdated": "2026-05-12T23:01:04.634Z",
+      "lastUpdated": "2026-05-12T23:13:33.024Z",
       "active": [
         {
           "code": "QS395DJQU4HK",
@@ -387,7 +397,7 @@
       ]
     },
     "wuthering-waves": {
-      "lastUpdated": "2026-05-12T23:00:44.924Z",
+      "lastUpdated": "2026-05-12T23:13:33.024Z",
       "active": [
         {
           "code": "WUTHERINGGIFT",
@@ -494,7 +504,7 @@
       ]
     },
     "zenless-zone-zero": {
-      "lastUpdated": "2026-05-12T23:00:44.924Z",
+      "lastUpdated": "2026-05-12T23:13:33.024Z",
       "active": [
         {
           "code": "ZZZ28HERO",
@@ -631,7 +641,7 @@
       ]
     },
     "free-fire": {
-      "lastUpdated": "2026-05-12T23:00:44.924Z",
+      "lastUpdated": "2026-05-12T23:14:04.366Z",
       "active": [
         {
           "code": "FFRSX4CYHLLQ",
@@ -732,12 +742,172 @@
           "region": "global",
           "addedBy": "manual",
           "verified": false
+        },
+        {
+          "code": "BR43FMAPYEZZ",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "UPQ7X5NMJ64V",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "S9QK2L6VP3MR",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FFR4G3HM5YJN",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "6KWMFJVMQQYG",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FZ5X1C7V9B2N",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FT4E9Y5U1I3O",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FP9O1I5U3Y2T",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FM6N1B8V3C4X",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FA3S7D5F1G9H",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FK3J9H5G1F7D",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FU1I5O3P7A9S",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "F7F9A3B2K6G8",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "FE2R8T6Y4U1I",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "4N8M2XL9R1G3",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "4ST1ZTBZBRP9",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-12",
+          "source": "https://www.pockettactics.com/garena-free-fire/codes",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
         }
       ],
       "expired": []
     },
     "mobile-legends": {
-      "lastUpdated": "2026-05-12T23:00:44.924Z",
+      "lastUpdated": "2026-05-12T23:13:33.024Z",
       "active": [
         {
           "code": "2y3vo2r3x",
@@ -884,7 +1054,7 @@
       ]
     },
     "pubg-mobile": {
-      "lastUpdated": "2026-05-12T23:00:44.924Z",
+      "lastUpdated": "2026-05-12T23:13:33.024Z",
       "active": [
         {
           "code": "PUBGGAMECODECITY",
@@ -1021,7 +1191,7 @@
       ]
     },
     "roblox-blox-fruits": {
-      "lastUpdated": "2026-05-12T23:00:44.924Z",
+      "lastUpdated": "2026-05-12T23:13:33.024Z",
       "active": [
         {
           "code": "BIGNEWS",
@@ -1280,7 +1450,7 @@
       ]
     },
     "afk-journey": {
-      "lastUpdated": "2026-05-12T23:00:44.924Z",
+      "lastUpdated": "2026-05-12T23:13:33.024Z",
       "active": [
         {
           "code": "LILITH13TH",

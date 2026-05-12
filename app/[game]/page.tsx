@@ -9,7 +9,12 @@ import {
   getCodesForGame,
   formatRelativeTime,
 } from "@/lib/codes";
-import { createMetadata } from "@/lib/seo";
+import {
+  createMetadata,
+  createJsonLd,
+  breadcrumbJsonLd,
+  howToJsonLd,
+} from "@/lib/seo";
 
 export async function generateStaticParams() {
   return GAMES.map((game) => ({ game: game.id }));
@@ -24,8 +29,8 @@ export async function generateMetadata({
   const game = GAMES.find((g) => g.id === params.game)!;
   const meta = getGameMetadata(params.game);
   return createMetadata({
-    title: `${game.name} — Codes, Guides & Tier Lists`,
-    description: `${game.name} daily redeem codes, tier lists, build guides, and tips. ${meta?.intro ?? ""}`,
+    title: `${game.name} — Daily Codes & Redeem Guide`,
+    description: `${game.name} redeem codes, redemption steps, and rewards. ${meta?.intro ?? ""}`,
     path: `/${game.id}`,
   });
 }
@@ -37,9 +42,28 @@ export default function GamePage({ params }: { params: { game: string } }) {
   const game = GAMES.find((g) => g.id === gameId)!;
   const meta = getGameMetadata(gameId);
   const codes = getCodesForGame(gameId);
+  const otherGames = GAMES.filter((g) => g.id !== gameId);
 
   return (
     <div style={{ fontFamily: "'Manrope', sans-serif" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={createJsonLd(
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: game.shortName, path: `/${gameId}` },
+          ])
+        )}
+      />
+      {meta?.redeemSteps && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={createJsonLd(
+            howToJsonLd(`How to redeem ${game.name} codes`, meta.redeemSteps)
+          )}
+        />
+      )}
+
       {/* Hero */}
       <section
         className="relative overflow-hidden"
@@ -96,24 +120,26 @@ export default function GamePage({ params }: { params: { game: string } }) {
               <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
               {codes.active.length} Active Codes
             </Link>
-            <a
-              href={meta?.redeemUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-gray-100 text-light hover:bg-gray-200"
-            >
-              Official Redeem Page
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
+            {meta?.redeemUrl?.startsWith("http") && (
+              <a
+                href={meta.redeemUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-gray-100 text-light hover:bg-gray-200"
+              >
+                Official Redeem Page
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            )}
             <a
               href={meta?.officialTwitter}
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-gray-100 text-light hover:bg-gray-200"
             >
-              Official Twitter
+              Official X / Twitter
             </a>
           </div>
         </div>
@@ -122,7 +148,6 @@ export default function GamePage({ params }: { params: { game: string } }) {
       {/* Game Info Grid */}
       <section className="container-custom py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Game info */}
           <div className="md:col-span-2 space-y-6">
             <div>
               <h2 className="text-xl font-extrabold mb-3">About {game.name}</h2>
@@ -159,7 +184,9 @@ export default function GamePage({ params }: { params: { game: string } }) {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider opacity-60 mb-1">
-                    {codes.active.length > 0 ? "Active Codes Available" : "Check Codes Page"}
+                    {codes.active.length > 0
+                      ? `${codes.active.length} active right now`
+                      : "Check codes page"}
                   </p>
                   <p className="text-lg font-bold">
                     View all {game.shortName} codes →
@@ -220,6 +247,36 @@ export default function GamePage({ params }: { params: { game: string } }) {
               </dl>
             </div>
           </aside>
+        </div>
+
+        {/* Other games */}
+        <div className="mt-12">
+          <h2 className="text-xl font-extrabold mb-4">
+            Codes for other games
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+            {otherGames.map((g) => (
+              <Link
+                key={g.id}
+                href={`/${g.id}/codes`}
+                className="group bg-white border border-gray-200 rounded-2xl p-3 hover:border-gray-300 hover:-translate-y-0.5 transition-all text-center"
+              >
+                <div className="w-10 h-10 mx-auto rounded-xl overflow-hidden mb-2 bg-white ring-1 ring-gray-100">
+                  <Image
+                    src={gameLogos[g.id]}
+                    alt={g.name}
+                    width={40}
+                    height={40}
+                    className="object-cover w-full h-full"
+                    unoptimized
+                  />
+                </div>
+                <p className="text-[11px] font-bold text-light leading-tight line-clamp-2">
+                  {g.shortName}
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </div>

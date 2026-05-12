@@ -2,8 +2,8 @@ import { createMetadata, createJsonLd } from "@/lib/seo";
 import { SITE_NAME, GAMES } from "@/lib/constants";
 
 export const metadata = createMetadata({
-  title: `About - ${SITE_NAME}`,
-  description: `Learn about ${SITE_NAME}, the daily codes & guides hub for Genshin Impact, Honkai Star Rail, Free Fire, Mobile Legends, Roblox and more.`,
+  title: `About — ${SITE_NAME}`,
+  description: `${SITE_NAME} aggregates daily redemption codes for ${GAMES.length} popular live-service games. Independent, free, refreshed every 2 hours.`,
   path: "/about",
 });
 
@@ -18,7 +18,7 @@ const aboutJsonLd = {
     url: "https://game365hub.com",
     logo: "https://game365hub.com/logo.png",
     description:
-      "Daily redeem codes, tier lists, and pro guides for top mobile and PC games. Updated every day.",
+      "Daily redemption codes aggregator for live-service games. Independent and free.",
     email: "inzamul.dev@gmail.com",
     foundingDate: "2026",
   },
@@ -37,16 +37,17 @@ export default function AboutPage() {
             About <span className="text-primary">{SITE_NAME}</span>
           </h1>
           <p className="text-muted text-sm mb-10">
-            Daily redeem codes, tier lists, and pro guides — since 2026
+            A daily redemption codes hub for {GAMES.length} live-service games. Independent. Free. Refreshed every 2 hours.
           </p>
 
           {/* Intro */}
           <div className="bg-[#1B1C3C] text-white rounded-2xl p-6 mb-10">
             <p className="text-sm text-gray-300 leading-relaxed">
-              {SITE_NAME} is your daily destination for verified redeem codes,
-              tier lists, and pro guides across {GAMES.length}+ of the most
-              popular games. We update codes multiple times every day so you
-              never miss free in-game rewards.
+              {SITE_NAME} exists to solve one annoying problem: keeping up with
+              the redemption codes that publishers like HoYoverse, Kuro Games,
+              Garena, Moonton, Krafton, Lilith Games, and Roblox studios drop
+              across livestreams, Twitter, and Discord. We collect them, verify
+              them, and put them on one clean page per game.
             </p>
           </div>
 
@@ -54,61 +55,64 @@ export default function AboutPage() {
           <section className="mb-10">
             <h2 className="text-xl font-bold text-light mb-3">Our Mission</h2>
             <p className="text-muted text-sm leading-relaxed">
-              Free in-game rewards should be easy to find. Developers like
-              HoYoverse, Garena, Moonton, and Roblox studios drop codes
-              constantly — but tracking them across Twitter, Discord, and
-              livestreams is a pain. We do the work, verify each code, and
-              publish them on one clean page per game.
+              Free in-game currency, characters, and items should be easy to
+              claim. Publishers drop codes constantly, but tracking them across
+              dozens of channels is a chore. {SITE_NAME} watches the canonical
+              sources for you and surfaces only what's currently active.
             </p>
           </section>
 
-          {/* What We Offer */}
+          {/* How it works */}
           <section className="mb-10">
-            <h2 className="text-xl font-bold text-light mb-4">What We Offer</h2>
+            <h2 className="text-xl font-bold text-light mb-4">How it works</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="border border-gray-200 rounded-xl p-5">
                 <h3 className="font-bold text-light text-sm mb-1">
-                  Daily Verified Codes
+                  Automated sourcing
                 </h3>
                 <p className="text-muted text-xs leading-relaxed">
-                  Every code is cross-checked across multiple official sources
-                  before we publish it. No fake or expired codes.
+                  Every 2 hours we pull from a curated set of canonical sources
+                  — including the community-maintained HoYoverse codes API and
+                  established gaming-press code trackers.
                 </p>
               </div>
               <div className="border border-gray-200 rounded-xl p-5">
                 <h3 className="font-bold text-light text-sm mb-1">
-                  Pro Tier Lists
+                  Cross-source verification
                 </h3>
                 <p className="text-muted text-xs leading-relaxed">
-                  Updated after every patch and balance change. Know which
-                  characters, heroes, or weapons to invest in.
+                  A code marked "verified" has been seen in two or more
+                  independent sources. Single-source codes are still listed but
+                  flagged so you know to redeem fast.
                 </p>
               </div>
               <div className="border border-gray-200 rounded-xl p-5">
                 <h3 className="font-bold text-light text-sm mb-1">
-                  Build & Strategy Guides
+                  Manual review gate
                 </h3>
                 <p className="text-muted text-xs leading-relaxed">
-                  Character builds, team comps, weapon loadouts, and meta
-                  strategies — written for both F2P and whales.
+                  New codes never enter the public list automatically. They go
+                  into a pending queue that we review before publishing — so
+                  nothing junk gets to you.
                 </p>
               </div>
               <div className="border border-gray-200 rounded-xl p-5">
                 <h3 className="font-bold text-light text-sm mb-1">
-                  100% Free, Forever
+                  Auto-expire stale codes
                 </h3>
                 <p className="text-muted text-xs leading-relaxed">
-                  No paywalls. No signups. No subscriptions. Every guide, every
-                  code, every tier list — completely free.
+                  If a code disappears from every source for 14 days, we move it
+                  to the expired list automatically. You only see codes that
+                  still have a real chance of working.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Games We Cover */}
+          {/* Games */}
           <section className="mb-10">
             <h2 className="text-xl font-bold text-light mb-4">
-              Games We Cover
+              Games we cover
             </h2>
             <div className="flex flex-wrap gap-2">
               {GAMES.map((game) => (
@@ -126,9 +130,9 @@ export default function AboutPage() {
           <section className="mb-10">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { value: `${GAMES.length}+`, label: "Games" },
+                { value: `${GAMES.length}`, label: "Games" },
+                { value: "2 hr", label: "Refresh" },
                 { value: "Daily", label: "Updates" },
-                { value: "30 min", label: "Refresh" },
                 { value: "100%", label: "Free" },
               ].map((stat) => (
                 <div
@@ -153,10 +157,10 @@ export default function AboutPage() {
               <p className="text-sm text-amber-700 leading-relaxed">
                 {SITE_NAME} is an independent fan-made resource site. We are
                 not affiliated with, endorsed by, or connected to HoYoverse,
-                Supercell, Garena, Moonton, Tencent, Krafton, Kuro Games,
-                Lilith Games, Roblox Corporation, or any other game developer
-                or publisher. All game names, logos, characters, and images are
-                trademarks of their respective owners.
+                Kuro Games, Garena International, Moonton, Krafton Inc., Gamer
+                Robot Inc., Lilith Games, Roblox Corporation, or any other game
+                developer or publisher. All game names, logos, characters, and
+                images are trademarks of their respective owners.
               </p>
             </div>
           </section>

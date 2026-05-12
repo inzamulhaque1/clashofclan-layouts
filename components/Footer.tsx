@@ -3,9 +3,6 @@ import Image from "next/image";
 import { GAMES, SITE_NAME } from "@/lib/constants";
 
 export default function Footer() {
-  // Show first 6 games in footer
-  const featuredGames = GAMES.slice(0, 6);
-
   return (
     <footer className="bg-gray-50 border-t border-gray-200 mt-20">
       <div className="container-custom py-12">
@@ -21,24 +18,24 @@ export default function Footer() {
               />
             </Link>
             <p className="text-muted text-sm leading-relaxed">
-              Daily redeem codes, tier lists, and pro guides for the games you
-              play. Updated every day. Free forever.
+              Daily redemption codes for popular live-service games. Refreshed
+              every 2 hours. Free forever.
             </p>
           </div>
 
-          {/* Games */}
+          {/* Games — all 9, two columns on mobile */}
           <div>
             <h3 className="text-sm font-semibold text-light uppercase tracking-wider mb-4">
               Games
             </h3>
             <ul className="space-y-2">
-              {featuredGames.map((game) => (
+              {GAMES.map((game) => (
                 <li key={game.id}>
                   <Link
-                    href={`/${game.id}`}
+                    href={`/${game.id}/codes`}
                     className="text-sm text-muted hover:text-light transition-colors"
                   >
-                    {game.shortName}
+                    {game.shortName} codes
                   </Link>
                 </li>
               ))}
@@ -118,8 +115,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
           </p>
           <p className="text-xs text-muted text-center sm:text-right">
-            Not affiliated with HoYoverse, Supercell, Garena, Moonton, Tencent,
-            Krafton, Kuro Games, Lilith Games, or Roblox.
+            Not affiliated with HoYoverse, Kuro Games, Garena, Moonton, Krafton,
+            Gamer Robot Inc., Lilith Games, or Roblox Corporation.
           </p>
         </div>
       </div>

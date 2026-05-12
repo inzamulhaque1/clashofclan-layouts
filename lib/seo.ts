@@ -83,10 +83,81 @@ export const websiteJsonLd = {
   name: SITE_NAME,
   url: SITE_URL,
   description:
-    "Daily redeem codes, tier lists, and guides for Genshin Impact, Honkai Star Rail, Free Fire, Mobile Legends, Roblox & more. Updated every day.",
+    "Daily redeem codes for Genshin Impact, Honkai Star Rail, Free Fire, Mobile Legends, Roblox & more. Verified and updated daily.",
   publisher: {
     "@type": "Organization",
     name: SITE_NAME,
     url: SITE_URL,
   },
 };
+
+// ─── JSON-LD builders ──────────────────────────────────────────────
+
+export function breadcrumbJsonLd(
+  items: { name: string; path: string }[]
+): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.name,
+      item: `${SITE_URL}${item.path}`,
+    })),
+  };
+}
+
+export function codesItemListJsonLd(
+  gameName: string,
+  pagePath: string,
+  codes: { code: string; reward: string }[]
+): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `Active ${gameName} Redeem Codes`,
+    description: `Current working ${gameName} redemption codes.`,
+    url: `${SITE_URL}${pagePath}`,
+    numberOfItems: codes.length,
+    itemListElement: codes.map((c, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: c.code,
+      description: c.reward,
+    })),
+  };
+}
+
+export function howToJsonLd(
+  name: string,
+  steps: string[]
+): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    step: steps.map((text, idx) => ({
+      "@type": "HowToStep",
+      position: idx + 1,
+      text,
+    })),
+  };
+}
+
+export function faqJsonLd(
+  qa: { question: string; answer: string }[]
+): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: qa.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
