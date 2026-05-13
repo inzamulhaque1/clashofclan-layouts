@@ -39,14 +39,16 @@ export async function generateMetadata({
     year: "numeric",
   });
   return createMetadata({
-    title: `${game.name} Redeem Codes (${monthYear}) — ${codes.active.length} Working`,
-    description: `${codes.active.length} active ${game.name} codes for ${monthYear}. Free ${game.shortName} rewards, verified and updated daily. Updated ${today}.`,
+    title: `${game.name} Redeem Codes Today — ${today} (${codes.active.length} Active)`,
+    description: `Latest working ${game.name} redeem codes for ${today}. ${codes.active.length} active codes, free ${game.shortName} rewards, verified and refreshed every 2 hours. Updated today.`,
     path: `/${game.id}/codes`,
   });
 }
 
 export const dynamic = "force-static";
-export const revalidate = 300;
+// Revalidate every hour so the "Today" date in the title stays current
+// without waiting for the scraper cron's 2-hour rebuild cadence.
+export const revalidate = 3600;
 
 function buildFaq(gameName: string, shortName: string, currency: string, redeemUrl: string) {
   const officialUrl = redeemUrl.startsWith("http") ? redeemUrl : null;
