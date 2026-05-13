@@ -19,11 +19,16 @@ const manrope = Manrope({
   display: "swap",
 });
 
-export const metadata: Metadata = createMetadata({
-  title: `${SITE_NAME} - Daily Codes, Tier Lists & Guides`,
-  description:
-    "Daily redeem codes, tier lists, and pro guides for Genshin Impact, Honkai Star Rail, Free Fire, Mobile Legends, Roblox & more. Updated every day. Free forever.",
-});
+export const metadata: Metadata = {
+  ...createMetadata({
+    title: `${SITE_NAME} — Daily Redemption Codes for 9 Live-Service Games`,
+    description:
+      "Daily redemption codes for Genshin Impact, Honkai: Star Rail, Wuthering Waves, ZZZ, Free Fire, Mobile Legends, PUBG Mobile, Blox Fruits, and AFK Journey. Verified and refreshed every 2 hours.",
+  }),
+  verification: {
+    google: "Uv-gSwY8rqQK2cd5klXswNlxNxrXeoPXBVdL_T7856I",
+  },
+};
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
