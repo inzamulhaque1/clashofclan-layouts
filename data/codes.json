@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "lastUpdated": "2026-05-13T06:42:26.454Z",
+  "lastUpdated": "2026-05-13T08:53:19.646Z",
   "games": {
     "genshin-impact": {
       "lastUpdated": "2026-05-13T06:42:26.454Z",
@@ -190,7 +190,7 @@
       ]
     },
     "honkai-star-rail": {
-      "lastUpdated": "2026-05-13T06:42:26.454Z",
+      "lastUpdated": "2026-05-13T08:53:19.646Z",
       "active": [
         {
           "code": "QS395DJQU4HK",
@@ -296,6 +296,16 @@
           "code": "CTK5DRQVT48F",
           "reward": "In-game rewards",
           "firstSeen": "2026-05-12",
+          "lastVerified": "2026-05-13",
+          "source": "https://hoyo-codes.seria.moe/codes?game=hkrpg",
+          "region": "global",
+          "addedBy": "manual",
+          "verified": false
+        },
+        {
+          "code": "VS3Q5VK9CMFP",
+          "reward": "In-game rewards",
+          "firstSeen": "2026-05-13",
           "lastVerified": "2026-05-13",
           "source": "https://hoyo-codes.seria.moe/codes?game=hkrpg",
           "region": "global",
