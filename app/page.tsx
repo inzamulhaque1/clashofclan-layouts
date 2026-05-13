@@ -101,8 +101,8 @@ export default function HomePage() {
 
             {/* Subtext */}
             <p className="text-white/40 text-sm md:text-[15px] leading-relaxed max-w-xl mb-8">
-              Fresh redeem codes, tier lists, and pro guides for the games you
-              play — verified and updated every day. 100% free.
+              The latest redemption codes for {GAMES.length} live-service games.
+              Sourced from official channels, refreshed every 2 hours. 100% free.
             </p>
 
             {/* CTA Buttons */}
@@ -137,10 +137,10 @@ export default function HomePage() {
             {/* Stats bar */}
             <div className="flex items-center gap-6 md:gap-10 bg-white/[0.04] border border-white/[0.06] rounded-2xl px-8 py-4">
               {[
-                { value: "10+", label: "Games" },
-                { value: "Daily", label: "Updates" },
+                { value: `${GAMES.length}`, label: "Games" },
+                { value: "2 hr", label: "Refresh" },
                 { value: "100%", label: "Free" },
-                { value: "24/7", label: "Fresh" },
+                { value: "Daily", label: "Updates" },
               ].map((stat, i) => (
                 <div
                   key={stat.label}
@@ -183,7 +183,7 @@ export default function HomePage() {
               Pick Your Game
             </h2>
             <p className="text-muted text-sm mt-3 max-w-md mx-auto">
-              Daily codes, tier lists, and pro guides for every game we cover.
+              Active redemption codes for every game we cover. Refreshed every 2 hours.
             </p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
@@ -211,18 +211,18 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: "Verified Daily",
-                desc: "Every code is verified across multiple sources before we publish it. No fake or expired codes.",
+                title: "Cross-source verified",
+                desc: "Codes seen in two or more independent sources get a verified badge. Every new code passes a manual review before it goes live.",
                 icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
               },
               {
-                title: "Always Fresh",
-                desc: "Our system checks for new codes every 30 minutes. You get the codes before anyone else.",
+                title: "Auto-refreshed",
+                desc: "Our scraper checks every 2 hours. Codes silently auto-expire after 14 days of inactivity, so you only see codes that still have a chance to work.",
                 icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
               },
               {
                 title: "100% Free",
-                desc: "No paywalls, no signups. Every code, every guide, every tier list — completely free.",
+                desc: "No paywalls, no signups, no ads on the codes themselves. Every code on every page, free forever.",
                 icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
               },
             ].map((item) => (

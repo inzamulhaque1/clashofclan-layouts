@@ -29,7 +29,7 @@ export default function LatestCodesSection() {
               Latest Redeem Codes
             </h2>
             <p className="text-muted text-sm mt-2">
-              Updated {formatRelativeTime(lastUpdated)} — fresh codes every day
+              Updated {formatRelativeTime(lastUpdated)} — auto-refreshed every 2 hours
             </p>
           </div>
           <Link

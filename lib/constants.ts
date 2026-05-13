@@ -1,7 +1,7 @@
 export const SITE_NAME = "Game365Hub";
 export const SITE_URL = "https://game365hub.com";
 export const SITE_DESCRIPTION =
-  "Daily redeem codes, tier lists, and guides for Genshin Impact, Honkai Star Rail, Free Fire, Mobile Legends, Roblox & more. Updated every day.";
+  "Daily redemption codes for Genshin Impact, Honkai: Star Rail, Wuthering Waves, ZZZ, Free Fire, Mobile Legends, PUBG Mobile, Blox Fruits, and AFK Journey. Verified and refreshed every 2 hours.";
 
 export type GameId =
   | "genshin-impact"
@@ -29,7 +29,7 @@ export const GAMES: GameInfo[] = [
     id: "genshin-impact",
     name: "Genshin Impact",
     shortName: "Genshin",
-    description: "Daily codes, character tier list & build guides",
+    description: "Active redemption codes for free primogems and rewards",
     color: "#4A90E2",
     developer: "HoYoverse",
     category: "Gacha",
@@ -38,7 +38,7 @@ export const GAMES: GameInfo[] = [
     id: "honkai-star-rail",
     name: "Honkai: Star Rail",
     shortName: "HSR",
-    description: "Redeem codes, light cones & character builds",
+    description: "Active redemption codes for free stellar jade and credits",
     color: "#8B5CF6",
     developer: "HoYoverse",
     category: "Gacha",
@@ -47,7 +47,7 @@ export const GAMES: GameInfo[] = [
     id: "wuthering-waves",
     name: "Wuthering Waves",
     shortName: "WuWa",
-    description: "Active codes, resonator tier list & echo guides",
+    description: "Active redemption codes for free astrites and shell credits",
     color: "#06B6D4",
     developer: "Kuro Games",
     category: "Gacha",
@@ -56,7 +56,7 @@ export const GAMES: GameInfo[] = [
     id: "zenless-zone-zero",
     name: "Zenless Zone Zero",
     shortName: "ZZZ",
-    description: "Polychrome codes, agent tier list & team comps",
+    description: "Active redemption codes for free polychrome and dennies",
     color: "#F59E0B",
     developer: "HoYoverse",
     category: "Gacha",
@@ -65,7 +65,7 @@ export const GAMES: GameInfo[] = [
     id: "free-fire",
     name: "Garena Free Fire",
     shortName: "Free Fire",
-    description: "Daily redeem codes, weapon guides & loadouts",
+    description: "Daily redeem codes for diamonds, skins, and weapon crates",
     color: "#EF4444",
     developer: "Garena",
     category: "Battle Royale",
@@ -74,7 +74,7 @@ export const GAMES: GameInfo[] = [
     id: "mobile-legends",
     name: "Mobile Legends: Bang Bang",
     shortName: "MLBB",
-    description: "Redemption codes, hero tier list & meta builds",
+    description: "Redemption codes for diamonds, skins, and in-game items",
     color: "#3B82F6",
     developer: "Moonton",
     category: "MOBA",
@@ -83,16 +83,16 @@ export const GAMES: GameInfo[] = [
     id: "pubg-mobile",
     name: "PUBG Mobile",
     shortName: "PUBG",
-    description: "Redeem codes, sensitivity settings & weapon stats",
+    description: "Redeem codes for UC, outfits, and weapon skins",
     color: "#FBBF24",
-    developer: "Tencent",
+    developer: "Tencent / Krafton",
     category: "Battle Royale",
   },
   {
     id: "roblox-blox-fruits",
     name: "Blox Fruits (Roblox)",
     shortName: "Blox Fruits",
-    description: "Active codes, fruit tier list & update guides",
+    description: "Active codes for EXP boosts, stat refunds, and Beli",
     color: "#10B981",
     developer: "Gamer Robot",
     category: "Roblox",
@@ -101,7 +101,7 @@ export const GAMES: GameInfo[] = [
     id: "afk-journey",
     name: "AFK Journey",
     shortName: "AFK",
-    description: "Redeem codes, hero tier list & team formations",
+    description: "Active codes for diamonds, summon letters, and gold",
     color: "#A855F7",
     developer: "Lilith Games",
     category: "Gacha",
