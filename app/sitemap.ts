@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { GAMES, SITE_URL } from "@/lib/constants";
+import { guideArticles } from "@/lib/guide-articles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -21,7 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: p.priority,
   }));
 
-  // Per-game pages
   const gameUrls = GAMES.flatMap((game) => [
     {
       url: `${SITE_URL}/${game.id}`,
@@ -37,5 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]);
 
-  return [...staticUrls, ...gameUrls];
+  const guideUrls = guideArticles.map((article) => ({
+    url: `${SITE_URL}/guides/${article.slug}`,
+    lastModified: new Date(article.updatedDate),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticUrls, ...gameUrls, ...guideUrls];
 }

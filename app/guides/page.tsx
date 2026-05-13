@@ -1,93 +1,91 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
-import { GAMES } from "@/lib/constants";
-import { gameLogos } from "@/lib/images";
-import { createMetadata } from "@/lib/seo";
+import { createMetadata, createJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+import { guideArticles } from "@/lib/guide-articles";
 
 export const metadata: Metadata = createMetadata({
-  title: "Game Guides, Tier Lists & Tips",
+  title: "Guides — Redemption Codes Explained",
   description:
-    "Pro guides, tier lists, character builds, and pro tips for Genshin Impact, Honkai Star Rail, Free Fire, Mobile Legends, Roblox & more.",
+    "Long-form guides on how game redemption codes work, why they expire, how to find them faster, and how to troubleshoot when they don't.",
   path: "/guides",
 });
 
 export default function GuidesPage() {
   return (
     <div style={{ fontFamily: "'Manrope', sans-serif" }}>
-      {/* Header */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={createJsonLd(
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Guides", path: "/guides" },
+          ])
+        )}
+      />
+
       <section className="bg-[#0a0a0f] text-white py-12 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-primary/10 blur-3xl" />
         </div>
         <div className="relative container-custom text-center">
           <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">
-            Guides & Tier Lists
+            Guides
           </span>
           <h1
             className="text-3xl md:text-4xl font-normal mt-2 tracking-wide"
             style={{ fontFamily: "'Michroma', sans-serif" }}
           >
-            Pro Guides Library
+            Codes, Explained
           </h1>
           <p className="text-white/50 text-sm mt-3 max-w-xl mx-auto">
-            Tier lists, character builds, team comps, and pro tips for every game we cover.
+            Deep dives on how redemption codes actually work, why publishers
+            issue them, and how to never miss one again.
           </p>
         </div>
       </section>
 
-      {/* Game grid */}
       <section className="container-custom py-12">
-        <div className="text-center mb-8">
-          <h2 className="text-xl font-extrabold text-light">
-            Pick a game to explore guides
-          </h2>
-          <p className="text-muted text-sm mt-1">
-            New guides published every week
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {GAMES.map((game) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {guideArticles.map((article) => (
             <Link
-              key={game.id}
-              href={`/${game.id}`}
-              className="group bg-white border border-gray-200 rounded-2xl p-5 hover:border-gray-300 hover:-translate-y-0.5 transition-all"
+              key={article.slug}
+              href={`/guides/${article.slug}`}
+              className="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-gray-300 hover:-translate-y-0.5 transition-all"
             >
-              <div className="w-14 h-14 rounded-xl overflow-hidden bg-white ring-1 ring-gray-100 mb-3">
-                <Image
-                  src={gameLogos[game.id]}
-                  alt={game.name}
-                  width={56}
-                  height={56}
-                  className="object-cover w-full h-full"
-                  unoptimized
-                />
+              <div className="flex items-center gap-2 text-[11px] text-muted mb-2">
+                <span>{article.publishedDate}</span>
+                <span>•</span>
+                <span>{article.readMinutes} min read</span>
               </div>
-              <p className="text-sm font-bold text-light leading-tight">
-                {game.shortName}
+              <h2 className="text-lg font-extrabold text-light leading-tight mb-2 group-hover:text-primary transition-colors">
+                {article.title}
+              </h2>
+              <p className="text-sm text-muted leading-relaxed">
+                {article.excerpt}
               </p>
-              <p
-                className="text-[11px] font-semibold mt-1"
-                style={{ color: game.color }}
-              >
-                View guides →
+              <p className="text-xs font-semibold text-primary mt-4 inline-flex items-center gap-1">
+                Read guide
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </p>
             </Link>
           ))}
         </div>
 
-        {/* Coming soon banner */}
-        <div className="mt-12 bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8 text-center">
+        <div className="mt-12 bg-gray-50 rounded-2xl p-8 text-center">
           <h3 className="text-lg font-extrabold text-light mb-2">
-            More guides coming soon
+            Looking for a specific topic?
           </h3>
           <p className="text-sm text-muted max-w-md mx-auto">
-            We are publishing new tier lists and build guides every week. Have a topic request?{" "}
-            <Link href="/contact" className="text-primary font-semibold hover:underline">
-              Let us know
-            </Link>
-            .
+            Have a code-related question that's not covered here? Email us at{" "}
+            <a
+              href="mailto:inzamul.dev@gmail.com"
+              className="text-primary font-semibold hover:underline"
+            >
+              inzamul.dev@gmail.com
+            </a>{" "}
+            and we'll write it up.
           </p>
         </div>
       </section>

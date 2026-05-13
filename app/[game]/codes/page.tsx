@@ -6,6 +6,7 @@ import { GAMES, type GameId } from "@/lib/constants";
 import { gameLogos } from "@/lib/images";
 import { getGameMetadata, isValidGameId } from "@/lib/games";
 import { getCodesForGame, formatRelativeTime } from "@/lib/codes";
+import { codeGuides } from "@/lib/code-guides";
 import {
   createMetadata,
   createJsonLd,
@@ -95,6 +96,7 @@ export default function CodesPage({
   const redeemUrl = meta?.redeemUrl ?? "";
   const externalRedeem = redeemUrl.startsWith("http");
   const faq = buildFaq(game.name, game.shortName, meta?.currency ?? "rewards", redeemUrl);
+  const guide = codeGuides[gameId];
 
   const otherGames = GAMES.filter((g) => g.id !== gameId).slice(0, 6);
 
@@ -174,23 +176,40 @@ export default function CodesPage({
 
         {/* Freshness banner */}
         <div
-          className="flex items-center gap-3 px-4 py-3 rounded-2xl mb-6 border"
+          className="px-4 py-3 rounded-2xl mb-6 border"
           style={{
             backgroundColor: `${game.color}10`,
             borderColor: `${game.color}40`,
           }}
         >
-          <span
-            className="w-2 h-2 rounded-full animate-pulse"
-            style={{ backgroundColor: game.color }}
-          />
-          <p className="text-xs font-semibold" style={{ color: game.color }}>
-            Last refresh: {formatRelativeTime(codes.lastUpdated)}
+          <div className="flex items-center gap-3">
+            <span
+              className="w-2 h-2 rounded-full animate-pulse"
+              style={{ backgroundColor: game.color }}
+            />
+            <p className="text-xs font-semibold" style={{ color: game.color }}>
+              Last refresh: {formatRelativeTime(codes.lastUpdated)}
+            </p>
+            <span className="text-xs text-muted ml-auto hidden sm:inline">
+              Auto-checked every 2 hours
+            </span>
+          </div>
+          <p className="text-xs text-muted mt-2 leading-relaxed">
+            {guide.freshnessNote}
           </p>
-          <span className="text-xs text-muted ml-auto hidden sm:inline">
-            Auto-checked every 2 hours
-          </span>
         </div>
+
+        {/* Overview — long-form context */}
+        <section className="mb-10">
+          <h2 className="text-xl font-extrabold mb-3">
+            About {game.name} Codes
+          </h2>
+          <div className="space-y-3 text-sm text-muted leading-relaxed">
+            {guide.overview.map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
+        </section>
 
         {/* Ad slot — top of content */}
         <div
@@ -217,53 +236,72 @@ export default function CodesPage({
         </div>
 
         {/* How to redeem */}
-        <div className="mt-12 bg-gray-50 rounded-2xl p-6">
-          <h2 className="text-lg font-extrabold mb-4">
+        <section className="mt-12">
+          <h2 className="text-xl font-extrabold mb-3">
             How to Redeem {game.shortName} Codes
           </h2>
-          <ol className="space-y-2">
-            {meta?.redeemSteps.map((step, i) => (
-              <li key={i} className="flex gap-3 text-sm">
-                <span
-                  className="shrink-0 w-6 h-6 rounded-full text-white text-xs font-bold flex items-center justify-center"
-                  style={{ backgroundColor: game.color }}
-                >
-                  {i + 1}
-                </span>
-                <span className="text-muted leading-relaxed pt-0.5">
-                  {step}
-                </span>
-              </li>
+          <div className="space-y-3 text-sm text-muted leading-relaxed mb-5">
+            {guide.howCodesWork.map((para, i) => (
+              <p key={i}>{para}</p>
             ))}
-          </ol>
-          {externalRedeem && (
-            <a
-              href={redeemUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-5 px-4 py-2 rounded-full text-sm font-semibold text-white"
-              style={{ backgroundColor: game.color }}
-            >
-              Open Official Redeem Page
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          )}
-        </div>
+          </div>
+          <div className="bg-gray-50 rounded-2xl p-6">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-light mb-4">
+              Redemption Steps
+            </h3>
+            <ol className="space-y-2">
+              {meta?.redeemSteps.map((step, i) => (
+                <li key={i} className="flex gap-3 text-sm">
+                  <span
+                    className="shrink-0 w-6 h-6 rounded-full text-white text-xs font-bold flex items-center justify-center"
+                    style={{ backgroundColor: game.color }}
+                  >
+                    {i + 1}
+                  </span>
+                  <span className="text-muted leading-relaxed pt-0.5">
+                    {step}
+                  </span>
+                </li>
+              ))}
+            </ol>
+            {externalRedeem && (
+              <a
+                href={redeemUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-5 px-4 py-2 rounded-full text-sm font-semibold text-white"
+                style={{ backgroundColor: game.color }}
+              >
+                Open Official Redeem Page
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            )}
+          </div>
+        </section>
 
-        {/* Tips */}
-        <div className="mt-8 bg-amber-50 border border-amber-200 rounded-2xl p-5">
-          <h2 className="text-sm font-bold text-amber-900 mb-2">
-            Tips for redeeming
+        {/* Common pitfalls — replaces generic Tips */}
+        <section className="mt-10">
+          <h2 className="text-xl font-extrabold mb-4">
+            Common Pitfalls
           </h2>
-          <ul className="text-sm text-amber-800 space-y-1.5 leading-relaxed">
-            <li>• Codes are case-sensitive — type them exactly as shown</li>
-            <li>• Codes expire fast (often within days) — redeem ASAP</li>
-            <li>• Each code can only be redeemed once per account</li>
-            <li>• Bookmark this page — we update codes every 2 hours</li>
-          </ul>
-        </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {guide.pitfalls.map((p, i) => (
+              <div
+                key={i}
+                className="bg-amber-50 border border-amber-200 rounded-2xl p-4"
+              >
+                <h3 className="text-sm font-bold text-amber-900 mb-1">
+                  {p.title}
+                </h3>
+                <p className="text-xs text-amber-800 leading-relaxed">
+                  {p.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* FAQ */}
         <div className="mt-10">
