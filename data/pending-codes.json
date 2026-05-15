@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-15T10:12:57.071Z",
+  "lastUpdated": "2026-05-15T13:43:23.613Z",
   "candidates": [
     {
       "gameId": "honkai-star-rail",
@@ -77,6 +77,16 @@
       "reward": "In-game rewards",
       "firstSeen": "2026-05-13",
       "lastSeen": "2026-05-14",
+      "sources": [
+        "https://www.pockettactics.com/garena-free-fire/codes"
+      ]
+    },
+    {
+      "gameId": "free-fire",
+      "code": "FQ9W2E1R7T5Y",
+      "reward": "In-game rewards",
+      "firstSeen": "2026-05-15",
+      "lastSeen": "2026-05-15",
       "sources": [
         "https://www.pockettactics.com/garena-free-fire/codes"
       ]
